@@ -1,0 +1,31 @@
+<script>
+  function get_context(){
+
+    $.ajax({
+              url: "/verse/get_context",
+              data: {verse_id:<%= params[:id] %>} ,
+              success: function( data ) {
+                $('.list-points').html($(data).find('ol'));
+                $('#arabic-verse').html("");
+                }
+            });
+  }
+</script>
+<div class="arabic-text">
+  <% unless params[:prev].blank? %>
+    <div id="prev-link">
+      <a href="<%= params[:prev] %>"> <h3> << back to question </h3> </a>
+    </div>
+  <% end %>
+  <div class="arabic" id="arabic-verse" dir="rtl">
+    <div onclick="get_context();">Context</div>
+    <%= @verse.text %>
+  </div>
+  <div class="list-points">
+  </div>
+  <% unless params[:prev].blank? %>
+    <div id="prev-link">
+      <a href="<%= params[:prev] %>"> <h3> << back to question </h3> </a>
+    </div>
+  <% end %>
+</div>

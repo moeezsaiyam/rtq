@@ -1,0 +1,16 @@
+<div class="list-points">
+  <% unless @verses.blank? %>
+    <ol>
+      <% @verses.each_with_index do |verse,i| %>
+        <div <%= 'class="context-of"' if verse.id.to_s == params[:verse_id] %>>
+          <div class="arabic" dir="rtl">
+            <%=h verse.text %>
+          </div>
+          <li>
+            <%= verse.translate_to("eng")[0].text %>
+          </li>
+        </div>
+      <% end %>
+    </ol>
+  <% end %>
+</div>

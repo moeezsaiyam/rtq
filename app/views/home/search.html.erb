@@ -1,0 +1,43 @@
+<div class="content-body">
+  <ul>
+    <% unless @topics.blank? %>
+      <h1>Topics:</h1>
+      <% @topics.each do |topic| %>
+        <li>
+          <a href="/<%= topic.name_slug %>"><h3><%= h topic.name %></h3></a>
+          <div>
+            <p>
+              <%=h topic.description[0..100] %><%= "..." if topic.description.chars.count > 100 %>
+            </p>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+    <% unless @sub_topics.blank? %>
+      <h1>Sub Topics:</h1>
+      <% @sub_topics.each do |sub_topic| %>
+        <li>
+          <a href="/<%= sub_topic.topic.name_slug %>/<%= sub_topic.name_slug %>"><h3><%= h sub_topic.name %></h3></a>
+          <div>
+            <p>
+              <%=h sub_topic.description[0..100] %><%= "..." if sub_topic.description.chars.count > 100 %>
+            </p>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+    <% unless @questions.blank? %>
+      <h1>Questions:</h1>
+      <% @questions.each do |question| %>
+        <li>
+          <a href="/<%= question.sub_topic.topic.name_slug %>/<%= question.sub_topic.name_slug %>/<%= question.quest_slug %>"><h3><%= h question.quest %></h3></a>
+          <div>
+            <p>
+              <%=h question.answer[0..100] %><%= "..." if question.answer.chars.count > 100 %>
+            </p>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

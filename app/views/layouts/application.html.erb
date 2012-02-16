@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Refer to Quran</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/icon_Quran.ico">
+    <%= stylesheet_link_tag 'style' %>
+    <%= javascript_include_tag 'jquery' %>
+  </head>
+<body>
+
+<div id="wrapper">
+
+  <!--header-->
+  <div id="header">
+    <%= render :partial => "shared/header" %>
+  </div>
+  <!--/header-->
+  <div class="clear"></div>
+
+  <!--content-->
+  <div id="content">
+  
+    <!-- col-1-->
+    <div id="col-1">
+
+      <div class="side-nav">
+        <%= render :partial => "shared/left_sidebar" %>
+      </div>
+
+      <div class="clear"></div>
+
+      <a href="#" class="quranic-dua"></a>
+    </div>
+    <!--/col-1-->
+    
+    <!--col-2 -->
+    <div id="col-2">
+
+      <!--search-container -->
+      <div class="search-container">
+        <%= render :partial => "shared/search" %>
+      </div> 
+      <!--/search-container -->
+
+      <div class="clear"></div>
+
+      <% unless current_user %>
+        <% if params[:controller]!="sessions" %>
+          <!--slider-->
+          <div id="slider">
+            <%= render :partial => "shared/slider" %>
+          </div>
+          <!--/slider-->
+        <% end %>
+      <% end %>
+
+      <% if !flash[:error].blank? %>
+        <div class="error-box">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+      <% if !flash[:notice].blank? %>
+        <div class="notice-box">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <div class="clear"></div>
+
+      <%= yield %>
+
+    </div>
+    <!--/col-2 -->
+
+    <div class="clear"></div>
+  </div>
+  <!--/content-->
+
+</div>
+
+  <!--footer-->
+  <div id="footer">
+    <%= render :partial => "shared/footer" %>
+  </div>
+  <!--/footer-->
+  
+</body>
+</html>

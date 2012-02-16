@@ -1,0 +1,22 @@
+<div class="content-body">
+  <h1><%=h @topic.name %></h1>
+  <h4>
+    <%=h @topic.meaning %>
+  </h4>
+  <div>
+    <p>
+      <%=h @topic.description %>
+    </p>
+  </div>
+  <% if logged_in? %>
+    <div class = "actions">
+      <%= link_to 'Edit', edit_topic_path(@topic), :class => "action-button button rounded-borders" %>
+      <%= link_to 'Add Sub topic', new_topic_sub_topic_path(@topic), :class => "action-button button rounded-borders" %>
+      <%= link_to 'Back', topics_path, :class => "action-button button rounded-borders" %>
+    </div>
+  <% end %>
+</div>
+<div class="clear"></div>
+<div>
+  <%= render :partial => "sub_topics" %>
+</div>

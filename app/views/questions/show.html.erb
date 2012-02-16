@@ -1,0 +1,16 @@
+<div class="content-body">
+  <h1><%=h @question.quest %></h1>
+  <div>
+    <h4><%=h @question.answer %></h4>
+  </div>
+  <% if logged_in? %>
+    <div class = "actions">
+      <%= link_to 'Edit', edit_topic_sub_topic_question_path(@question.sub_topic.topic,@question.sub_topic,@question), :class => "action-button button rounded-borders" %>
+      <%= link_to 'Back', topic_sub_topic_questions_path(@question.sub_topic.topic,@question.sub_topic), :class => "action-button button rounded-borders" %>
+    </div>
+  <% end %>
+</div>
+<div class="clear"></div>
+<div>
+  <%= render :partial => "references" %>
+</div>

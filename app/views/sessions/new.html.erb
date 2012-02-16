@@ -1,0 +1,25 @@
+<div id="log">
+ 
+  <!--login -->
+  <div id="login">
+
+    <div class="login-bar"> Login</div>
+    <% form_tag session_path do -%>
+      <div class="user">
+        <div class="u-icon"><img src="images/u-name.png" width="36" height="37" alt=""></div>
+        <%= text_field_tag 'login', @login, :class => 'u-input', :id => 'login-input' %>
+      </div>
+
+      <div class="user">
+        <div class="u-icon"><img src="images/pwrd.png" width="36" height="37" alt=""></div>
+        <%= password_field_tag 'password', nil, :class => 'u-input' %>
+      </div>
+
+      <div class="clear"></div>
+
+      <%= submit_tag 'Login', :class => 'login-btn' %>
+    <% end -%>
+  </div><!--/login -->
+
+</div>
+

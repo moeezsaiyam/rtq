@@ -1,0 +1,24 @@
+<h1>Editing <%= @sub_topic.name unless @sub_topic.blank? %> subtopic</h1>
+
+<% form_for @sub_topic, :url => topic_sub_topic_path(@sub_topic.topic,@sub_topic) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :topic_id %><br />
+    <%= select("sub_topic", "topic_id", Topic.all.collect {|t| [ t.name, t.id ] }, { :include_blank => true }) %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', topic_sub_topic_path(@sub_topic.topic,@sub_topic) %> |
+<%= link_to 'Back', topic_sub_topics_path(@sub_topic.topic) %>

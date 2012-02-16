@@ -1,0 +1,17 @@
+<div class="list-points">
+  <h1>References</h1>
+  <% unless @verses.blank? %>
+    <ol>
+      <% tags = parse_tags(@question).split(",") %>
+      <% @verses.each_with_index do |verse,i| %>
+          <div class="arabic" dir="rtl">
+            <h3><%= tags[i] %></h3>
+            <%=h verse.text %>
+          </div>
+        <li>
+          <%= verse.translate_to("eng")[0].text %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>

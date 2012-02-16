@@ -1,0 +1,27 @@
+<h1>New question</h1>
+
+<% form_for @question,:url => topic_sub_topic_questions_path(params[:topic_id],params[:sub_topic_id]), :method => :post do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :sub_topic_id %><br />
+    <%= select("question", "sub_topic_id", SubTopic.find_all_by_topic_id(params[:topic_id]).collect {|t| [ t.name, t.id ] }, { :include_blank => true }) %>
+  </p>
+  <p>
+    <%= f.label :quest %><br />
+    <%= f.text_field :quest %>
+  </p>
+  <p>
+    <%= f.label :answer %><br />
+    <%= f.text_field :answer %>
+  </p>
+  <p>
+    <%= f.label :tags %><br />
+    <%= f.text_field :tags %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', topic_sub_topic_questions_path(params[:topic_id],params[:sub_topic_id]) %>

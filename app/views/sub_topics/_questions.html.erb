@@ -1,0 +1,10 @@
+<div class="list-points">
+  <h1>List of Questions</h1>
+  <ol>
+    <% @sub_topic.questions.each do |question| %>
+      <li>
+        <%= link_to question.quest, question_slug_path(@sub_topic.topic.name_slug,@sub_topic.name_slug,question.quest_slug) %>
+      </li>
+    <% end %>
+  </ol>
+</div>
