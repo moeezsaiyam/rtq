@@ -1,8 +1,10 @@
+<%= bread_crumb(@topic) %>
 <div class="content-body">
   <h1><%=h @topic.name %></h1>
   <h4>
     <%=h @topic.meaning %>
   </h4>
+  <%= addthis_widget %>
   <div>
     <p>
       <%=h @topic.description %>

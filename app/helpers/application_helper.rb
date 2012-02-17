@@ -23,4 +23,14 @@ module ApplicationHelper
     return html = "<div class='right'><a href='/verse/#{id}'>Next</a></div>" if id < 6237
   end
 
+  def addthis_widget
+    addthis_html='
+    <!-- AddThis Button BEGIN -->
+    <a class="addthis_button right" href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4f3ce9187e4e7a58"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="150" height="16" alt="Bookmark and Share" style="border:0"/></a>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f3ce9187e4e7a58"></script>
+    <!-- AddThis Button END -->
+    <div class="clear"></div>'
+    return addthis_html
+  end
+
 end

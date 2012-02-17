@@ -1,7 +1,8 @@
+<%= bread_crumb_sub_topic(@sub_topic) %>
 <div class="content-body">
 
   <h1><%=h @sub_topic.name %></h1>
-
+  <%= addthis_widget %>
   <div class="content-body">
     <p><%=h @sub_topic.description %></p>
   </div>
