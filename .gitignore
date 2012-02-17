@@ -1,0 +1,11 @@
+config/local.rb
+.DS_Store
+*~
+*.swp
+*.sphinx.conf
+log/*
+tmp/*
+db/sphinx/*
+public/assets/
+public/assets/
+log/development.log
