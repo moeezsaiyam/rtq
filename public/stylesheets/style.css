@@ -306,7 +306,7 @@ body {
   display:inline-block;
 	}
 	
-.side-nav ul li a:hover{
+.side-nav ul li a:hover, .side-nav ul li a.slected{
 	float:left;
 	font-size:14px;
 	color:#FFF;
