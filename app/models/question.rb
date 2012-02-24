@@ -9,6 +9,8 @@ class Question < ActiveRecord::Base
     indexes answer
   end
 
+  named_scope :most_viewed, :limit => 6, :order => 'view_count DESC'
+
   def validate
     unless self.tags.blank?
       record_tags = Array.new

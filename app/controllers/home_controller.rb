@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @sub_topics = SubTopic.popular
+    @questions = Question.most_viewed
   end
 
   def search

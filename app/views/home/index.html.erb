@@ -36,13 +36,11 @@ Popular-Questions
 <div class="question">
 
 <ul>
-<li><a href="#">Suspendisse tincidunt ultricies neque. Phasellus ultricies cursus ligula. Nulla ullamcorper</a></li>
- <li><a href="#">Suspendisse tincidunt ultricies neque. Phasellus ultricies cursus ligula. Nulla ullamcorper</a></li>
-  <li><a href="#">Suspendisse tincidunt ultricies neque. Phasellus ultricies cursus ligula. Nulla ullamcorper</a></li>
-   <li><a href="#">Suspendisse tincidunt ultricies neque. Phasellus ultricies cursus ligula. Nulla ullamcorper</a></li>
-    <li><a href="#">Suspendisse tincidunt ultricies neque. Phasellus ultricies cursus ligula. Nulla ullamcorper</a></li>
-     <li><a href="#">Suspendisse tincidunt ultricies neque. Phasellus ultricies cursus ligula. Nulla ullamcorper</a></li>
-
+<% @questions.each do |q| %>
+  <li>
+    <%= link_to q.quest, topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q)%>
+  </li>
+<% end %>
 </ul>
 
 
