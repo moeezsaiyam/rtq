@@ -62,6 +62,10 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
 
+    if params.include?("photo_name")
+      @topic.photo = nil
+      return render :text => "success"
+    end
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
         flash[:notice] = 'Topic was successfully updated.'

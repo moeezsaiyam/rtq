@@ -72,6 +72,11 @@ class SubTopicsController < ApplicationController
   def update
     @sub_topic = SubTopic.find(params[:id])
 
+    if params.include?("photo_name")
+      @sub_topic.photo = nil
+      return render :text => "success"
+    end
+
     respond_to do |format|
       if @sub_topic.update_attributes(params[:sub_topic])
         flash[:notice] = 'SubTopic was successfully updated.'

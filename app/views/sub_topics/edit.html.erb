@@ -1,3 +1,6 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'sub_topics' %>
+<% end %>
 <h1>Editing <%= @sub_topic.name unless @sub_topic.blank? %> subtopic</h1>
 
 <% form_for @sub_topic, :url => topic_sub_topic_path(@sub_topic.topic,@sub_topic), :html => {:multipart => true} do |f| %>
@@ -22,6 +25,10 @@
     <%= f.label :photo, "Photo" %>
     <%= f.file_field :photo %>
   <p>
+
+  <p>
+    <%= link_to 'Delete Image', "#", :class => "del_topic_image", :id => @sub_topic.id, :rel => @sub_topic.topic_id %>
+  </p>
 
   <p>
     <%= f.submit 'Update' %>
