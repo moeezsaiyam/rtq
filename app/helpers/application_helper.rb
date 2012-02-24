@@ -52,4 +52,8 @@ module ApplicationHelper
     return html
   end
 
+  def normargin_class(index)
+    return "nomargin" if index.odd?
+  end
+
 end
