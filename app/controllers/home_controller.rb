@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
 
+  def index
+    @sub_topics = SubTopic.popular
+  end
+
   def search
-    puts params.inspect
     if params[:search_terms][:search_topic].blank? && params[:search_terms][:search_sub_topic].blank?
       @topics = Topic.search params[:search_term]
       @sub_topics = SubTopic.search params[:search_term]

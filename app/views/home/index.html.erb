@@ -3,71 +3,17 @@
 
   <h1>Class aptent taciti sociosqu ad</h1>
 
+
   <div class="clear"></div>
-  <!--class-section -->
-  <div class="class-section">
+  <% @sub_topics.each_with_index do |s, i|%>
+    <!--class-section -->
+    <div class="class-section <%= normargin_class(i) %>">
 
-    <a href="#" class="class-img"><img src="images/class-img.png" width="100" height="80" alt=""></a>
-    <h3>Water cycle</h3>
-
-    <p>Nunc ullamcorper velit vel leo. Ut ut ligula fusce ullamcorper...</p>
-
-  </div> <!--/class-section --> 
-
-  <!--class-section -->
-  <div class="class-section nomargin">
-
-    <a href="#" class="class-img"><img src="images/class-img2.png" width="100" height="80" alt=""></a>
-    <h3>Mission of islamic Ummah</h3>
-
-    <p>Nunc ullamcorper velit vel leo. Ut ut ligula fusce</p>
-
-  </div> <!--/class-section --> 
-
-
-
-  <!--class-section -->
-<div class="class-section">
-
-<a href="#" class="class-img"><img src="images/class-img3.png" width="100" height="80" alt=""></a>
-<h3>Rights of Women</h3>
-
-<p>Nunc ullamcorper velit vel leo. Ut ut ligula fusce ullamcorper...</p>
-
-</div> <!--/class-section --> 
-
-  <!--class-section -->
-<div class="class-section nomargin">
-
-<a href="#" class="class-img"><img src="images/class-img4.png" width="100" height="80" alt=""></a>
-<h3>Hudood-Ullah</h3>
-
-<p>Nunc ullamcorper velit vel leo. Ut ut ligula fusce ullamcorper...</p>
-
-</div> <!--/class-section --> 
-
-
-
-  <!--class-section -->
-<div class="class-section">
-
-<a href="#" class="class-img"><img src="images/class-img5.png" width="100" height="80" alt=""></a>
-<h3>Biology</h3>
-
-<p>Nunc ullamcorper velit vel leo. Ut ut ligula fusce ullamcorper...</p>
-
-</div> <!--/class-section --> 
-
-  <!--class-section -->
-<div class="class-section nomargin">
-
-<a href="#" class="class-img"><img src="images/class-img6.png" width="100" height="80" alt=""></a>
-<h3>Marriage</h3>
-
-<p>Nunc ullamcorper velit vel leo. Ut ut ligula fusce ullamcorper...</p>
-
-</div> <!--/class-section --> 
-
+      <a class="class-img" href="<%= topic_sub_topic_url(s.topic, s) %>"><%= image_tag s.photo.url(:small)%></a>
+      <h3><%= s.name%></h3>
+      <p><%= truncate(s.description, :length => 75, :omission => '...') %></p>
+    </div>
+  <% end %>
 
 </div> <!--/class-container -->
 
