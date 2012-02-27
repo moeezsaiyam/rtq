@@ -10,6 +10,7 @@ class Question < ActiveRecord::Base
   end
 
   named_scope :most_viewed, :limit => 6, :order => 'view_count DESC'
+  named_scope :popular, :order => 'view_count DESC'
 
   def validate
     unless self.tags.blank?

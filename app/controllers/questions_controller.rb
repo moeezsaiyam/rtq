@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
 
-  before_filter :login_required, :except => [:index, :show]
+  before_filter :login_required, :except => [:index, :show,:popular]
 
   def index
     if (!params[:topic_id].blank?) && (!params[:sub_topic_id].blank?)
@@ -57,7 +57,10 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
-  # POST /questions
+  def popular
+    @questions = Question.popular
+  end
+# POST /questions
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])

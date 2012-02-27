@@ -1,0 +1,9 @@
+<div class="content-body">
+ <ol>
+<% @questions.each do|q| %>
+<li>
+  <%= link_to q.quest, question_slug_path(q.sub_topic.topic.name_slug,q.sub_topic.name_slug,q.quest_slug) %>
+</li>
+  <% end %>
+ </ol>
+</div>
