@@ -727,4 +727,46 @@ table.admin-view th{
 	background:url(/images/f-search.png) no-repeat right top;
 	width:31px;
 	height:28px;}
+.slides_container {
+    width:663px;
+    height:306px;
+  }
+  .slides_container div {
+    width:470px;
+    height:170px;
+    display:block;
+  }
+  #slideshowHolder a.next{
+    background: url("/images/arrow-next.png") no-repeat scroll 0 0 transparent;
+    color: transparent;
+    float: right;
+    height: 43px;
+    left: 32px;
+    position: relative;
+    top: -170px;
+    width: 24px;
+  }
+  #slideshowHolder a.prev {
+  background: url("/images/arrow-prev.png") no-repeat scroll 0 0 transparent;
+    color: transparent;
+    color: transparent;
+    float: left;
+    height: 43px;
+    position: relative;
+    right: 33px;
+    top: -170px;
+    width: 24px;
+}
+
+.pagination{
+  display: inline;
+  float: left;
+  margin-left: 267px;
+  text-align: center;
+  width: 300px;
+}
+.pagination li{
+  float:left;
+  padding:12px;
+}
 /* Footer CSS End */
