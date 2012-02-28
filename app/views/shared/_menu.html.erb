@@ -1,10 +1,10 @@
 <ul <%= "id='admin-menu'" if logged_in? %> >
-  <li><a href="#" class="active"><img class="home" src="/images/nav-home.png" width="19" height="16" alt=""></a></li>
-  <li><a href="login.html">About</a></li>
-  <li><a href="#">Duas</a></li>
-  <li><a href="#">Contact</a></li>
-  <li><a href="#">Credites</a></li>
-  <li><a href="#">FAQ's</a></li>
+  <li><a href="#"><img class="home" src="/images/nav-home.png" width="19" height="16" alt=""></a></li>
+  <li><%= link_to("About", :controller => "main", :action => "about")%></li>
+  <li><%= link_to("Duas", :controller => "main", :action => "duas")%></li>
+  <li><%= link_to("Contact", :controller => "main", :action => "contact")%></li>
+  <li><%= link_to("Credites", :controller => "main", :action => "credit")%></li>
+  <li><%= link_to("FAQ's", :controller => "main", :action => "faqs") %></li>
   <% if logged_in? %>
     <li><a href="/logout">Logout</a></li>
   <% end %>

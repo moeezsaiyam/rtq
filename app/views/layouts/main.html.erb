@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Refer to Quran</title>
     <link rel="shortcut icon" type="image/x-icon" href="/icon_Quran.ico">
-     <%= stylesheet_link_tag 'coin-slider-styles' %>
+    <%= stylesheet_link_tag 'coin-slider-styles' %>
     <%= stylesheet_link_tag 'style' %>
     <%= javascript_include_tag 'jquery' %>
     <%= javascript_include_tag 'jquery.watermarkinput' %>
@@ -14,7 +14,6 @@
     <%= yield :head %>
   </head>
 <body>
-
 <div id="wrapper">
 
   <!--header-->
@@ -43,22 +42,10 @@
     <!--col-2 -->
     <div id="col-2">
 
-      <!--search-container -->
-      <div class="search-container">
-        <%= render :partial => "shared/search" %>
-      </div> 
-      <!--/search-container -->
-
       <div class="clear"></div>
-
-      <% unless current_user %>
+        <% unless current_user %>
         <% if params[:controller]!="sessions" %>
-          <!--slider-->
-          <div id="slider">
-            <%= render :partial => "shared/slider" %>
-          </div>
-          <!--/slider-->
-        <% end %>
+         <% end %>
       <% end %>
 
       <% if !flash[:error].blank? %>
@@ -90,6 +77,6 @@
     <%= render :partial => "shared/footer" %>
   </div>
   <!--/footer-->
-  
+ 
 </body>
 </html>
