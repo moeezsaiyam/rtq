@@ -2,9 +2,7 @@
 <div id="class-container">
 
   <h1>Class aptent taciti sociosqu ad</h1>
-
-
-  <div class="clear"></div>
+<div class="clear"></div>
   <% @sub_topics.each_with_index do |s, i|%>
     <!--class-section -->
     <div class="class-section <%= normargin_class(i) %>">
@@ -16,10 +14,7 @@
   <% end %>
 
 </div> <!--/class-container -->
-
-
 <div class="clear"></div>
-
 <!--popular-Questions-->
 <div id="popular-Questions">
 
@@ -29,7 +24,6 @@
 Popular-Questions
 
 <%= link_to("Show more", {:controller => "questions", :action => "popular"}, { :class => 'show-more'}) %>
-
 
 </div> <!--/question-bar -->
 <div class="clear"></div>
@@ -43,7 +37,6 @@ Popular-Questions
   </li>
 <% end %>
 </ul>
-
 
 </div> <!--/question -->
 

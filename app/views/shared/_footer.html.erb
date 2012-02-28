@@ -17,8 +17,8 @@
 <!--search-box -->
 <div class="search-box"><h5>Quick Search</h5>
   <% form_tag("/home/search", :method => "get") do %>   
-    <input name="textbox" type="text" class="s-input watermarked" title="Search">
-    <a href="#" class="s-btn"></a>
+    <input name="quick_search_term" type="text" class="s-input watermarked" title="Search"/>
+        <%= submit_tag '', :class => "s-btn" %>
   <% end %>
 
 </div> 
