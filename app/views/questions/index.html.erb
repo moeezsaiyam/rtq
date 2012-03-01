@@ -1,5 +1,6 @@
-<h1>Listing <%= @sub_topic.name unless @sub_topic.blank? %> questions</h1>
 
+  <%if logged_in?%>
+<h1>Listing <%= @sub_topic.name unless @sub_topic.blank? %> questions</h1>
 <table class="admin-view">
   <tr>
     <th>Quest</th>
@@ -27,3 +28,16 @@
 <div class="dashboard">
   <%= link_to 'Add new Question', new_topic_sub_topic_question_path(@sub_topic.topic,@sub_topic) %>
 </div>
+
+  <%end %>
+    <%if !(logged_in?)%>
+    <div class="list-points">
+    <ol>
+       <% @questions.each do |q| %>
+        <li>
+          <%= link_to q.quest,topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q) %>
+           </li>
+        <% end %>
+     <%end%>
+     </ol>
+    </div>

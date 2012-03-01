@@ -24,5 +24,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.topic_slug ':topic_name_slug',   :controller => 'topics', :action => 'show'
   map.sub_topic_slug ':topic_name_slug/:sub_topic_name_slug',   :controller => 'sub_topics', :action => 'show'
-  map.question_slug ':topic_name_slug/:sub_topic_name_slug/:question_slug',   :controller => 'questions', :action => 'show'
+  map.sub_topic_questions ':topic_name_slug/:sub_topic_name_slug/questions',   :controller => 'questions', :action => 'index'
+  map.question_slug ':topic_name_slug/:sub_topic_name_slug/:question_slug',    :controller => 'questions', :action => 'show'
 end

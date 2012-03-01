@@ -146,7 +146,7 @@ h4{
   font-size:16px;
   line-height:20px;
   color:#666;
-  padding:20px 0 20px 0;
+  padding:10px 0 10px 0;
 }
 
 p{
@@ -331,6 +331,7 @@ body {
 	width: 680px;
 	float: right;
 	margin-right:10px;
+	position:relative;
 	
 	
 }
@@ -408,7 +409,7 @@ body {
 }
 
 .content-body{
-  padding-top:20px;
+  padding-top:10px;
 }	
 	
 #slider{
@@ -461,10 +462,56 @@ body {
 	-moz-border-radius: 5px;
 	border-radius: 5px;}
 	
+	.popular-q{
+	float:left;
+	background:#FFF;
+	width:100%;
+	margin-top:37px;
+	padding-bottom:10px;
+	position:relative;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;}
+
+	
+#latest-Questions{
+	float:left;
+	background:#FFF;
+	margin-top:4px;
+	padding-bottom:10px;
+	width:100%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;}
+	
 .font-9{
 	font-size:9px;}
 	
 .question-bar{
+	background:url(/images/question-bar.png) no-repeat left top;
+	width:661px;
+	height:42px;
+	font-size:16px;
+	color:#FFF;
+	padding: 10px 0 0 24px;
+	position:absolute;
+	float:left;
+	top:-4px;
+	left:9px;}
+	
+	.latest-bar{
+	background:url(/images/latest-q.png) no-repeat left top;
+	width:296px;
+	height:36px;
+	font-size:16px;
+  color:#FFF;
+	padding: 6px 0 0 16px;
+	position:absolute;
+	float:left;
+	top:-4px;
+	left:10px;}
+	
+	.question-bar_topic_sub_topic{
 	background:url(/images/question-bar.png) no-repeat left top;
 	width:661px;
 	height:42px;
@@ -484,16 +531,36 @@ body {
 	text-align:center;
 	font-size:11px;
 	color:#666;
-	margin-right:43px;
+	margin-right:49px;
 	background:url(/images/show-btn.png) repeat-x left top;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
+	margin-top:0px;
+	border-radius: 5px;}
+	
+	.browse-btn{
+	float:right;
+	width:76px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	font-size:11px;
+	color:#666;
+	margin-right:21px;
+	background:url(/images/show-btn.png) repeat-x left top;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	margin-top:15px;
 	border-radius: 5px;}
 	
 
 .question{
 	float:left;
 	padding: 55px 0 0 30px;}
+
+.question_latest_popular{
+	float:left;
+	padding: 42px 15px 0 0px;}
 	
 .question ul{
 	float:left;
@@ -502,11 +569,12 @@ body {
 .question ul li{
 	float:left;
 	border-bottom:1px solid #efefef;
-	width:580px;
 	padding-left:25px;
 	padding-bottom:10px;
-	margin-bottom:10px;
-	background:url(/images/normal-bullet.png) no-repeat 5px 3px;}
+	margin-bottom:5px;
+	background:url(/images/normal-bullet.png) no-repeat 5px 3px;
+	clear:both;
+	}
 	
 .question ul li a{
 	color:#666;}
@@ -625,22 +693,31 @@ table.admin-view th{
   line-height:28px;
   margin-right:10px;
 }
+.addthis_toolbox{
+ float: right;
+ }
 
+.list-points{
+ float:left;
+ padding-top:50px;
+}
 .list-points h1{
   padding:20px 0px 20px 0px;
+  
 }
 
 .list-points li{
-  font-size:16px;
+  font-size:14px;
 	padding-left:25px;
 	padding-bottom:10px;
-	margin-bottom:10px;
 	margin-left:20px;
+	margin-bottom:5px;
 	background:url(/images/normal-bullet.png) no-repeat 5px 7px;
 }
 
 .list-points li a{
   color:#333;
+  border-bottom:1px solid #EFEFEF
 }
 
 .context-of{
@@ -771,5 +848,7 @@ table.admin-view th{
   float:left;
   padding:12px;
 }
-
+.bread-crumb{
+  padding-top:10px;st
+}
 /* Footer CSS End */

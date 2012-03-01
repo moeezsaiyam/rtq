@@ -4,7 +4,6 @@
   <h4>
     <%=h @topic.meaning %>
   </h4>
-  <%= addthis_widget %>
   <div>
     <p>
       <%=h @topic.description %>
@@ -19,6 +18,11 @@
   <% end %>
 </div>
 <div class="clear"></div>
+<%= addthis_button %>
 <div>
   <%= render :partial => "sub_topics" %>
 </div>
+
+ <%= render :partial => "shared/popular_ques" %>
+ <%= render :partial => "shared/latest_ques" %>
+

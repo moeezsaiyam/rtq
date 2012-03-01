@@ -1,10 +1,11 @@
-<div class="list-points">
-  <h1>Sub Topics</h1>
-  <ol>
-    <% @topic.sub_topics.each do |sub_topic| %>
-      <li>
-        <%= link_to sub_topic.name, sub_topic_slug_path(sub_topic.topic.name_slug,sub_topic.name_slug) %>
-      </li>
-    <% end %>
-  </ol>
-</div>
+<h1>Sub Topics</h1>
+ <div class="clear"></div>
+  <% @topic.sub_topics.each_with_index do |s, i|%>
+    <!--class-section -->
+    <div class="class-section <%= nomargin_class(i) %>">
+
+      <a class="class-img" href="<%= topic_sub_topic_url(s.topic, s) %>"><%= image_tag s.photo.url(:small)%></a>
+      <h3><%= s.name%></h3>
+      <p><%= truncate(s.description, :length => 75, :omission => '...') %></p>
+    </div>
+  <% end %>

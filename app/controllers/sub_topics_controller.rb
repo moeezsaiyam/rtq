@@ -28,13 +28,15 @@ class SubTopicsController < ApplicationController
       return head(404) unless topic
       @sub_topic = SubTopic.find_by_name_slug_and_topic_id(params[:sub_topic_name_slug],topic.id)
     end
+      @popular_questions = @sub_topic.questions.find(:all,:order => 'view_count DESC')
+      @latest_questions = @sub_topic.questions.find(:all,:order => 'created_at DESC')
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @sub_topic }
     end
   end
-
-  # GET /sub_topics/new
+  
+   # GET /sub_topics/new
   # GET /sub_topics/new.xml
   def new
     @sub_topic = SubTopic.new

@@ -1,7 +1,6 @@
 <%= bread_crumb_question(@question) %>
 <div class="content-body">
   <h1><%=h @question.quest %></h1>
-  <%= addthis_widget %>
   <div>
     <h4><%=h @question.answer %></h4>
   </div>
@@ -13,6 +12,7 @@
   <% end %>
 </div>
 <div class="clear"></div>
+<%= addthis_button %>
 <div>
   <%= render :partial => "references" %>
 </div>

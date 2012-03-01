@@ -2,7 +2,6 @@
 <div class="content-body">
 
   <h1><%=h @sub_topic.name %></h1>
-  <%= addthis_widget %>
   <div class="content-body">
     <p><%=h @sub_topic.description %></p>
   </div>
@@ -17,6 +16,7 @@
 
 </div>
 <div class="clear"></div>
-<div>
-  <%= render :partial => "questions" %>
-</div>
+<%= addthis_button %>
+<%= render :partial => "shared/popular_ques" %>
+<%= render :partial => "shared/latest_ques" %><br><br>
+<%= link_to("Browse", sub_topic_questions_path(@sub_topic.topic.name_slug,@sub_topic.name_slug), { :class => 'browse-btn'}) %>

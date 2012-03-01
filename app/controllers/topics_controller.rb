@@ -16,12 +16,16 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.xml
   def show
+   
+    
     unless (params[:id].blank?)
       @topic = Topic.find(params[:id])
     end
     unless (params[:topic_name_slug].blank?)
       @topic = Topic.find_by_name_slug(params[:topic_name_slug])
     end
+     @popular_questions = @topic.sub_topics.collect{|s| s.questions.find(:all,:order => 'view_count DESC')}.flatten!
+     @latest_questions = @topic.sub_topics.collect{|s| s.questions.find(:all,:order => 'created_at DESC')}.flatten!
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @topic }

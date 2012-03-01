@@ -8,8 +8,11 @@ class QuestionsController < ApplicationController
     if (!params[:topic_id].blank?) && (!params[:sub_topic_id].blank?)
       @sub_topic = SubTopic.find params[:sub_topic_id]
       @questions = @sub_topic.questions unless @sub_topic.blank?
+    elsif params[:sub_topic_name_slug]
+       @sub_topic = SubTopic.find_by_name_slug(params[:sub_topic_name_slug])
+       @questions = @sub_topic.questions
     else
-      @questions = Question.all
+        @questions = Question.all
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -60,6 +63,7 @@ class QuestionsController < ApplicationController
   def popular
     @questions = Question.popular
   end
+  
 # POST /questions
   # POST /questions.xml
   def create

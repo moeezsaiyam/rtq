@@ -1,11 +1,28 @@
 <!--class-container -->
 <div id="class-container">
+ <!--search-container -->
+      <div class="search-container">
+        <%= render :partial => "shared/search" %>
+      </div> 
+      <!--/search-container -->
+
+      <div class="clear"></div>
+
+      <% unless current_user %>
+        <% if params[:controller]!="sessions" %>
+          <!--slider-->
+          <div id="slider">
+            <%= render :partial => "shared/slider" %>
+          </div>
+          <!--/slider-->
+        <% end %>
+      <% end %>
 
   <h1>Class aptent taciti sociosqu ad</h1>
 <div class="clear"></div>
   <% @sub_topics.each_with_index do |s, i|%>
     <!--class-section -->
-    <div class="class-section <%= normargin_class(i) %>">
+    <div class="class-section <%= nomargin_class(i) %>">
 
       <a class="class-img" href="<%= topic_sub_topic_url(s.topic, s) %>"><%= image_tag s.photo.url(:small)%></a>
       <h3><%= s.name%></h3>

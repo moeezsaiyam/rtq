@@ -43,24 +43,6 @@
     <!--col-2 -->
     <div id="col-2">
 
-      <!--search-container -->
-      <div class="search-container">
-        <%= render :partial => "shared/search" %>
-      </div> 
-      <!--/search-container -->
-
-      <div class="clear"></div>
-
-      <% unless current_user %>
-        <% if params[:controller]!="sessions" %>
-          <!--slider-->
-          <div id="slider">
-            <%= render :partial => "shared/slider" %>
-          </div>
-          <!--/slider-->
-        <% end %>
-      <% end %>
-
       <% if !flash[:error].blank? %>
         <div class="error-box">
           <%= flash[:error] %>
@@ -75,8 +57,7 @@
       <div class="clear"></div>
 
       <%= yield %>
-
-    </div>
+      </div>
     <!--/col-2 -->
 
     <div class="clear"></div>
