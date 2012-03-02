@@ -5,11 +5,13 @@
   Popular Questions</div>
     <div class="question_latest_popular">
       <ul>
+      <% unless @popular_questions.blank? %>
         <% @popular_questions.each do |q| %>
           <li>
             <%= link_to truncate(q.quest, :length => 50, :omission => '...'), topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q)%>
           </li>
-        <% end %>
+         <% end %>
+      <% end %>
       </ul>
    </div> 
   </div>
