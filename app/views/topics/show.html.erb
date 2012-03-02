@@ -22,7 +22,9 @@
 <div>
   <%= render :partial => "sub_topics" %>
 </div>
-
+<% unless @popular_questions.blank? %>
  <%= render :partial => "shared/popular_ques" %>
- <%= render :partial => "shared/latest_ques" %>
-
+<% end %>
+ <% unless @latest_questions.blank? %>
+  <%= render :partial => "shared/latest_ques" %>
+<% end %>

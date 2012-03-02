@@ -1,5 +1,5 @@
-
-  <%if logged_in?%>
+<%= bread_crumb_question(@questions.first) %>
+<%if logged_in?%>
 <h1>Listing <%= @sub_topic.name unless @sub_topic.blank? %> questions</h1>
 <table class="admin-view">
   <tr>
@@ -30,8 +30,10 @@
 </div>
 
   <%end %>
-    <%if !(logged_in?)%>
-    <div class="list-points">
+  <%if !(logged_in?)%>
+    <div class="content-body">
+    <h1>Questions in <%=h @sub_topic.name %></h1>
+    <div class="list-points-browse">
     <ol>
        <% @questions.each do |q| %>
         <li>
@@ -40,4 +42,5 @@
         <% end %>
      <%end%>
      </ol>
+    </div>
     </div>
