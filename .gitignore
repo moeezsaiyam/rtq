@@ -10,3 +10,4 @@ public/assets/
 public/assets/
 log/development.log
 db/sphinx/*
+config/*.sphinx.conf
