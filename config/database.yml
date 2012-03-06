@@ -6,8 +6,8 @@ development:
   password:
 
 production:
-adapter: mysql
-encoding: utf8
-database: rtq_production
-username: root
-password:
+  adapter: mysql
+  encoding: utf8
+  database: rtq_production
+  username: root
+  password:
