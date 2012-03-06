@@ -1,8 +1,8 @@
 <%= bread_crumb_question(@question) %>
 <div class="content-body">
-  <h1><%=h @question.quest %></h1>
+  <h1><%=h @question.quest %></h1><br>
   <div>
-    <h4><%=h @question.answer %></h4>
+    <%=h @question.answer %>
   </div>
   <% if logged_in? %>
     <div class = "actions">

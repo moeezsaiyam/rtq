@@ -12,21 +12,54 @@
   }
 </script>
 <div class="arabic-text">
-  <%= addthis_widget %>
-  <% unless params[:prev].blank? %>
-    <div id="prev-link">
-      <a href="<%= params[:prev] %>"> <h3> << back to question </h3> </a>
+<div class="arabic" dir="rtl">
+<div>Pre-Context</div><br>
+  <%= @verse.pre_previous_verse.text if @verse.pre_previous_verse %>
     </div>
-  <% end %>
-  <div class="arabic" id="arabic-verse" dir="rtl">
-    <div onclick="get_context();">Context</div>
+    <br>
+    <div class="verse-color">
+    <%= @verse.pre_previous_verse.translate_to("eng")[0].text if @verse.pre_previous_verse %>
+    </div
+    </div>
+     <div class="arabic" dir="rtl">
+   <%= @verse.previous_verse.text if @verse.previous_verse %>
+     </div>
+     <br>
+    <div class="verse-color">
+    <%= @verse.previous_verse.translate_to("eng")[0].text  if @verse.previous_verse %>
+    </div>
+    <div class="arabic-text">
+  <div class="arabic" dir="rtl">
+    <div>Context</div><br>
+   
     <%= @verse.text %>
+    </div><br>
+   <div class="verse-color">
+   <%= @verse.translate_to("eng")[0].text %>
   </div>
-  <div class="list-points">
   </div>
-  <% unless params[:prev].blank? %>
+  <div class="arabic-text">
+<div class="arabic" dir="rtl">
+<div>Post-Context</div><br>
+  <%= @verse.next_verse.text if @verse.next_verse %>
+    </div>
+    <br>
+    <div class="verse-color">
+    <%= @verse.next_verse.translate_to("eng")[0].text if @verse.next_verse %>
+    </div>
+    </div><br>
+     <div class="arabic" dir="rtl">
+     <%= @verse.nex_next_verse.text if @verse.nex_next_verse %>
+    </div>
+    <br>
+    <div class="verse-color">
+    <%= @verse.nex_next_verse.translate_to("eng")[0].text if @verse.nex_next_verse %>
+    </div>
+    </div>
+    <% unless params[:prev].blank? %>
+    <div class="list-points">
     <div id="prev-link">
       <a href="<%= params[:prev] %>"> <h3> << back to question </h3> </a>
     </div>
+    </div>
   <% end %>
-</div>

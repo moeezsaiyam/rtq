@@ -45,7 +45,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 .right{
-  float:right;
+  float:left;
 }
 
 input[type=password], input[type=text]{
@@ -278,7 +278,7 @@ body {
 	float:left;
 
 	width:273px;
-	height:771px;}
+	}
 	
 .side-nav ul{
 	float:left;
@@ -324,7 +324,7 @@ body {
 	background:url(/images/quranic-dua.gif) no-repeat left top;
 	width:260px;
 	height:158px;
-	margin-top:40px;
+	margin-top:20px;
 	}
 
 #col-2 {
@@ -701,6 +701,10 @@ table.admin-view th{
  float:left;
  padding-top:50px;
 }
+.list-points-verse{
+ float:left;
+ padding-top:50px;
+}
 
 .list-points-browse{
  float:left;
@@ -719,11 +723,27 @@ table.admin-view th{
 	margin-bottom:5px;
 	background:url(/images/normal-bullet.png) no-repeat 5px 7px;
 }
+.list-points-verse li{
+  font-size:14px;
+	padding-left:25px;
+	padding-bottom:10px;
+	margin-left:20px;
+	margin-bottom:5px;
+	}
 
 .list-points li a{
   color:#333;
   border-bottom:1px solid #EFEFEF
 }
+.list-points-verse li a{
+  color:#333;
+  border-bottom:1px solid #EFEFEF
+  }
+  
+  .verse-color {
+  color:#333;
+  font-size:14px;
+  }
 
 .list-points-browse h1{
   padding:20px 0px 20px 0px;

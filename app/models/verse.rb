@@ -24,4 +24,19 @@ class Verse < ActiveRecord::Base
     return ids
   end
 
+  def previous_verse
+    Verse.first :conditions => ["sura = ? AND aya = ?", self.sura, self.aya - 1]
+  end
+
+  def next_verse
+    Verse.first :conditions => ["sura = ? AND aya = ?", self.sura, self.aya + 1]
+  end
+  
+   def pre_previous_verse
+    Verse.first :conditions => ["sura = ? AND aya = ?", self.sura, self.aya - 2]
+  end
+  
+   def nex_next_verse
+    Verse.first :conditions => ["sura = ? AND aya = ?", self.sura, self.aya + 2]
+  end
 end
