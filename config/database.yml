@@ -4,3 +4,10 @@ development:
   database: rtq_development
   username: root
   password:
+
+production:
+adapter: mysql
+encoding: utf8
+database: rtq_production
+username: root
+password:
