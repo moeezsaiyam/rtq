@@ -1,8 +1,7 @@
 class Verse < ActiveRecord::Base
 
   set_table_name "quran_text"
-
-  def translate_to(lang)
+   def translate_to(lang)
     translation = Verse.find_by_sql("Select text from #{lang}1_quran where sura = #{self.sura} AND aya = #{self.aya}")
     return translation unless translation.blank?
   end
@@ -24,19 +23,11 @@ class Verse < ActiveRecord::Base
     return ids
   end
 
-  def previous_verse
-    Verse.first :conditions => ["sura = ? AND aya = ?", self.sura, self.aya - 1]
+  def previous_verses(limit)
+    Verse.find :all, :conditions => ["sura = ? AND aya < ?", self.sura, self.aya], :order => 'aya DESC', :limit => limit 
   end
 
-  def next_verse
-    Verse.first :conditions => ["sura = ? AND aya = ?", self.sura, self.aya + 1]
-  end
-  
-   def pre_previous_verse
-    Verse.first :conditions => ["sura = ? AND aya = ?", self.sura, self.aya - 2]
-  end
-  
-   def nex_next_verse
-    Verse.first :conditions => ["sura = ? AND aya = ?", self.sura, self.aya + 2]
+  def next_verses(limit)
+     Verse.find :all, :conditions => ["sura = ? AND aya > ?", self.sura, self.aya], :order => 'aya ASC', :limit => limit 
   end
 end

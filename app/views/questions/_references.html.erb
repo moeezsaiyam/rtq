@@ -3,7 +3,7 @@
     <ol>
       <% tags = parse_tags(@question).split(",") %>
       <% @verses.each_with_index do |verse,i| %>
-          <div class="arabic" dir="rtl">
+          <div class="arabic" dir="rtl"><br><br>
             <h3><%= tags[i] %></h3>
             <%=h verse.text %><br><br>
           </div>

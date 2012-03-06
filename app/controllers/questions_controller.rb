@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
       id = params[:question_slug].split("-").last
       @question = Question.find(id)
     end
-    return head(404) unless @question
+     return head(404) unless @question
     unless @question.verse_ids.blank?
       verse_ids = @question.verse_ids.split(",")
       @verses = Array.new

@@ -6,6 +6,8 @@ class VerseController < ApplicationController
     unless params[:language].blank?
       ##@translation = @verse.translate_to(params[:language][:name])
     end
+     @prev_verses = @verse.previous_verses(3).reverse!
+     @next_verses = @verse.next_verses(3)
 
   end
 

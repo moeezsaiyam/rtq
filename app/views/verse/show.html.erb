@@ -11,55 +11,38 @@
             });
   }
 </script>
-<div class="arabic-text">
-<div class="arabic" dir="rtl">
-<div>Pre-Context</div><br>
-  <%= @verse.pre_previous_verse.text if @verse.pre_previous_verse %>
-    </div>
-    <br>
-    <div class="verse-color">
-    <%= @verse.pre_previous_verse.translate_to("eng")[0].text if @verse.pre_previous_verse %>
-    </div
-    </div>
-     <div class="arabic" dir="rtl">
-   <%= @verse.previous_verse.text if @verse.previous_verse %>
-     </div>
-     <br>
-    <div class="verse-color">
-    <%= @verse.previous_verse.translate_to("eng")[0].text  if @verse.previous_verse %>
-    </div>
-    <div class="arabic-text">
+<div class="arabic" dir="rtl"><br>
+<div>Pre-Context</div><br></div>
+  <% @prev_verses.each do |v| %>
+  <div class="arabic" dir="rtl">
+      <%=h v.text %><br><br>
+      </div>
+      <div class="verse-color">
+      <%=h v.translate_to("eng")[0].text %><br><br>
+      </div>
+  <% end %>
   <div class="arabic" dir="rtl">
     <div>Context</div><br>
-   
-    <%= @verse.text %>
-    </div><br>
+   <%= @verse.text %>
+    </div><br><br>
    <div class="verse-color">
    <%= @verse.translate_to("eng")[0].text %>
   </div>
-  </div>
-  <div class="arabic-text">
-<div class="arabic" dir="rtl">
-<div>Post-Context</div><br>
-  <%= @verse.next_verse.text if @verse.next_verse %>
-    </div>
-    <br>
-    <div class="verse-color">
-    <%= @verse.next_verse.translate_to("eng")[0].text if @verse.next_verse %>
-    </div>
-    </div><br>
-     <div class="arabic" dir="rtl">
-     <%= @verse.nex_next_verse.text if @verse.nex_next_verse %>
-    </div>
-    <br>
-    <div class="verse-color">
-    <%= @verse.nex_next_verse.translate_to("eng")[0].text if @verse.nex_next_verse %>
-    </div>
-    </div>
-    <% unless params[:prev].blank? %>
+  <div class="arabic" dir="rtl"><br>
+  <div>Post-Context</div><br></div>
+  <% @next_verses.each do |v| %>
+  <div class="arabic" dir="rtl">
+      <%=h v.text %><br><br>
+      </div>
+      <div class="verse-color">
+      <%=h v.translate_to("eng")[0].text %><br><br>
+      </div>
+  <% end %>
+  <% unless params[:prev].blank? %>
     <div class="list-points">
     <div id="prev-link">
       <a href="<%= params[:prev] %>"> <h3> << back to question </h3> </a>
     </div>
     </div>
   <% end %>
+  <%= addthis_button %>
