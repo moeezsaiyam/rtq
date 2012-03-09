@@ -24,3 +24,5 @@
    <%= render :partial => "shared/latest_ques" %><br><br>
    <%= link_to("Browse", sub_topic_questions_path(@sub_topic.topic.name_slug,@sub_topic.name_slug), { :class => 'browse-btn'}) %>
  <% end %>
+ 
+<%= render :partial => "related_subject" %>

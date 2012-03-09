@@ -1,0 +1,17 @@
+<div class="list-points">
+<div style="float:left; margin-right:10px; width:329px;">
+<div class="popular-q">
+   <div class="latest-bar">
+   Related Subjects</div>
+    <div class="question_latest_popular">
+      <ul>
+      <% @related_subject.each do|s| %>
+      <li>
+      <%= link_totruncate(s.name, :length => 50, :omission => '...'), topic_sub_topic_url(s.topic,s)%>
+      </li>
+      <% end %>
+ </ul>
+ </div> 
+</div>
+</div>
+</div>

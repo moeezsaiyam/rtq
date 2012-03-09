@@ -30,6 +30,7 @@ class SubTopicsController < ApplicationController
     end
       @popular_questions = @sub_topic.questions.find(:all,:order => 'view_count DESC')
       @latest_questions = @sub_topic.questions.find(:all,:order => 'created_at DESC')
+      @related_subject = SubTopic.find(:all,:limit => 5, :conditions => ['id NOT IN(?) AND topic_id = ?',@sub_topic,@sub_topic.topic_id])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @sub_topic }

@@ -1,0 +1,17 @@
+<div class="list-points">
+<div style="float:left; margin-right:10px; width:329px;">
+<div class="popular-q">
+   <div class="latest-bar">
+   Related Questions</div>
+    <div class="question_latest_popular">
+      <ul>
+      <% @related_questions.each do |q| %>
+      <li>
+      <%= link_to truncate(q.quest, :length => 50, :omission => '...'), topic_sub_topic_question_url(q.sub_topic.topic,q.sub_topic,q)%>
+      </li>
+      <% end %>
+ </ul>
+ </div> 
+</div>
+</div>
+</div>

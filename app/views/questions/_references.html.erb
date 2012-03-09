@@ -4,9 +4,9 @@
       <% tags = parse_tags(@question).split(",") %>
       <% @verses.each_with_index do |verse,i| %>
           <div class="arabic" dir="rtl"><br><br>
-            <h3><%= tags[i] %></h3>
-            <%=h verse.text %><br><br>
-          </div>
+          <h3><%= tags[i] %></h3>
+        <%=h verse.text %><br><br>
+           </div>
           <div class="verse-color">
          <%= verse.translate_to("eng")[0].text %><br><br>
           </div>

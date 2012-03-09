@@ -13,10 +13,16 @@ class SubTopic < ActiveRecord::Base
   define_index do
     indexes name
     indexes description
+    has :topic_id, :as => :search_topic
+    has :id, :as => :search_sub_topic
   end
 
   def name_to_slug
     self.name_slug = self.name.to_slug
+  end
+
+  def self.perform_search(search_term, search_terms)
+    self.search(search_term, :with => search_terms)
   end
 
 end

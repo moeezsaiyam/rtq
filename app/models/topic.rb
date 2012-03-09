@@ -10,7 +10,12 @@ class Topic < ActiveRecord::Base
     indexes name
     indexes meaning
     indexes description
+    has :id, :as => :search_topic
     end
+
+  def self.perform_search(search_term, search_terms)
+    self.search(search_term, :with => search_terms)
+  end
 
   def name_to_slug
     self.name_slug = self.name.to_slug

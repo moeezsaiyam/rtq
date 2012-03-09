@@ -31,4 +31,8 @@ class Question < ActiveRecord::Base
     self.update_attributes(:quest_slug => [self.quest[0..50].to_slug,self.id].join("-"))
   end
 
+  def self.perform_search(search, search_terms)
+    
+  end
+
 end

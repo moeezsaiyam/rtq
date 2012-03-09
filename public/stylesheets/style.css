@@ -8,34 +8,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline;
 	background: transparent;
 }
-
 @font-face {
-    font-family: 'Square721Regular';
-    src: url('font/square721bt-roman-webfont.eot');
-    src: url('font/square721bt-roman-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/square721bt-roman-webfont.woff') format('woff'),
-         url('font/square721bt-roman-webfont.ttf') format('truetype'),
-         url('font/square721bt-roman-webfont.svg#Square721Regular') format('svg');
+    font-family: 'PDMSSaleemQuranFontRegular';
+    src: url('LateefRegOT.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
-@font-face {
-    font-family: 'Arabic712';
-    src: url('font/pdms_saleem_quranfont-signed-webfont.eot');
-    src: url('font/pdms_saleem_quranfont-signed-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/pdms_saleem_quranfont-signed-webfont.ttf') format('truetype'),
-         url('font/pdms_saleem_quranfont-signed-webfont.svg#Arabic712') format('svg');
-    font-weight: normal;width: 565, // width of slider panel
-02	height: 290,
-    font-style: normal;
-
+body {
+   font-family: 'PDMSSaleemQuranFontRegular' ;
 }
+
 .arabic{
-  font-family: 'Arabic712' !important;
+  font-family: 'PDMSSaleemQuranFontRegular' ;
   font-size:25px;
   padding-right:5px;
 }
+
 .arabic-text{
   padding-top:25px;
 }

@@ -38,6 +38,8 @@ class QuestionsController < ApplicationController
         @verses.push(Verse.find verse_id)
       end
     end
+     @related_subject = SubTopic.find(:all,:limit => 5, :conditions => ['id NOT IN(?) AND topic_id = ?',@question.sub_topic,@question.sub_topic.topic_id])
+     @related_questions = Question.find(:all,:limit => 5, :conditions => ['id NOT IN(?) AND sub_topic_id = ?',@question,@question.sub_topic_id])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @question }

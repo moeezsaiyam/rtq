@@ -26,6 +26,7 @@ class TopicsController < ApplicationController
     end
      @popular_questions = @topic.sub_topics.collect{|s| s.questions.find(:all,:order => 'view_count DESC')}.flatten!
      @latest_questions = @topic.sub_topics.collect{|s| s.questions.find(:all,:order => 'created_at DESC')}.flatten!
+     @related_subject = Topic.find(:all,:limit => 5, :conditions => ['id NOT IN(?)',@topic])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @topic }
