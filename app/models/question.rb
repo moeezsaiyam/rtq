@@ -3,6 +3,10 @@ class Question < ActiveRecord::Base
   belongs_to :sub_topic
 
   after_create :quest_to_slug
+  
+  has_many :alternate_phrases
+  
+  has_many :references
 
   define_index do
     indexes quest
@@ -11,6 +15,8 @@ class Question < ActiveRecord::Base
 
   named_scope :most_viewed, :limit => 6, :order => 'view_count DESC'
   named_scope :popular, :order => 'view_count DESC'
+
+  validates_presence_of :quest
 
   def validate
     unless self.tags.blank?
@@ -33,6 +39,18 @@ class Question < ActiveRecord::Base
 
   def self.perform_search(search, search_terms)
     
+  end
+
+  def alternate_phrase_attributes=(new_phrase_attributes)
+    new_phrase_attributes.each do |new_phrase_attribute|
+      self.alternate_phrases.build(new_phrase_attribute)
+    end
+  end
+  
+  def reference_attributes=(new_reference_attributes)
+    new_reference_attributes.each do |new_reference_attribute|
+      self.references.build(new_reference_attribute)
+    end
   end
 
 end

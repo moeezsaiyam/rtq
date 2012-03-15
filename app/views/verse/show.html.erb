@@ -11,38 +11,13 @@
             });
   }
 </script>
-<div class="arabic" dir="rtl"><br>
-<div>Pre-Context</div><br></div>
-  <% @prev_verses.each do |v| %>
-  <div class="arabic" dir="rtl">
-      <%=h v.text %><br><br>
+ <br>
+  <% @verses_range.each do|v| %>
+   <div class="arabic" dir="rtl"><br>
+       <%= v.text  %><br><br>
       </div>
       <div class="verse-color">
       <%=h v.translate_to("eng")[0].text %><br><br>
       </div>
-  <% end %>
-  <div class="arabic" dir="rtl">
-    <div>Context</div><br>
-   <%= @verse.text %>
-    </div><br><br>
-   <div class="verse-color">
-   <%= @verse.translate_to("eng")[0].text %>
-  </div>
-  <div class="arabic" dir="rtl"><br>
-  <div>Post-Context</div><br></div>
-  <% @next_verses.each do |v| %>
-  <div class="arabic" dir="rtl">
-      <%=h v.text %><br><br>
-      </div>
-      <div class="verse-color">
-      <%=h v.translate_to("eng")[0].text %><br><br>
-      </div>
-  <% end %>
-  <% unless params[:prev].blank? %>
-    <div class="list-points">
-    <div id="prev-link">
-      <a href="<%= params[:prev] %>"> <h3> << back to question </h3> </a>
-    </div>
-    </div>
   <% end %>
   <%= addthis_button %>

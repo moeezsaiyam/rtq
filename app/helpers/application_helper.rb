@@ -1,14 +1,18 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
-  def parse_tags(question)
-    unless question.verse_ids.blank?
+  def parse_tags(q_from,q_to,q)
+    unless q.verse_ids.blank?
       html = Array.new
-      verses_ids = question.verse_ids.split(",")
-      tags = question.tags.split(",")
-      verses_ids.each_with_index do |id,i|
-        html.push("<a href='/verse/#{id}?prev=#{request.fullpath}'>Sura # #{tags[i].split(':')[0]}: Aya # #{tags[i].split(':')[1]}</a>")
+      verses_ids = q.verse_ids.split(",")
+      verses_ids_to = q.verse_ids_to.split(",")
+      tags = q_from.split(":")
+      tags1 = q_to.split(":")
+      verses_ids_to.each_with_index do |id_to,ii|
+       verses_ids.each_with_index do |id,i|
+        html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> #{tags[0]} : #{tags[1]} - #{tags1[0]} : #{tags1[1]}</a>")
       end
+       end
       html = html.join(" , ")
     end
   end

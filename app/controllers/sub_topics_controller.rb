@@ -28,8 +28,8 @@ class SubTopicsController < ApplicationController
       return head(404) unless topic
       @sub_topic = SubTopic.find_by_name_slug_and_topic_id(params[:sub_topic_name_slug],topic.id)
     end
-      @popular_questions = @sub_topic.questions.find(:all,:order => 'view_count DESC')
-      @latest_questions = @sub_topic.questions.find(:all,:order => 'created_at DESC')
+      @popular_questions = @sub_topic.questions.find(:all,:limit => 5,:order => 'view_count DESC')
+      @latest_questions = @sub_topic.questions.find(:all,:limit => 5,:order => 'created_at DESC')
       @related_subject = SubTopic.find(:all,:limit => 5, :conditions => ['id NOT IN(?) AND topic_id = ?',@sub_topic,@sub_topic.topic_id])
     respond_to do |format|
       format.html # show.html.erb

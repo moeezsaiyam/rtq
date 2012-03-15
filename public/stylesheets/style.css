@@ -20,7 +20,7 @@ body {
 
 .arabic{
   font-family: 'PDMSSaleemQuranFontRegular' ;
-  font-size:25px;
+  font-size:16px;
   padding-right:5px;
 }
 
@@ -377,7 +377,9 @@ body {
 .list option{
   background:#FFF;
 }
-
+.arabic-rigt{
+  float: right;
+  }
 .search-btn{
 	float:left;
 	background:url(/images/srch.png) no-repeat left top;
@@ -459,7 +461,9 @@ body {
 	position:relative;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;}
+	border-radius: 5px;
+	min-height:202px;
+	}
 
 	
 #latest-Questions{
@@ -548,7 +552,9 @@ body {
 
 .question_latest_popular{
 	float:left;
-	padding: 42px 15px 0 0px;}
+	padding: 42px 15px 0 0px;
+	width:100%;
+	}
 	
 .question ul{
 	float:left;
@@ -562,6 +568,7 @@ body {
 	margin-bottom:5px;
 	background:url(/images/normal-bullet.png) no-repeat 5px 3px;
 	clear:both;
+	width:92%;
 	}
 	
 .question ul li a{
@@ -687,7 +694,6 @@ table.admin-view th{
 
 .list-points{
  float:left;
- padding-top:50px;
 }
 .list-points-verse{
  float:left;
@@ -704,12 +710,20 @@ table.admin-view th{
 }
 
 .list-points li{
-  font-size:14px;
-	padding-left:25px;
-	padding-bottom:10px;
-	margin-left:20px;
-	margin-bottom:5px;
-	background:url(/images/normal-bullet.png) no-repeat 5px 7px;
+   background: url("/images/normal-bullet.png") no-repeat scroll 5px 8px transparent;
+    border-bottom:1px solid #EFEFEF;
+    float: left;
+    font-size: 14px;
+    line-height: 24px;
+    list-style: none outside none;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    width:80%;    
+    padding-left: 25px;
+}
+.list-wrapper{
+    float:right;
+    width:689px;
 }
 .list-points-verse li{
   font-size:14px;
@@ -721,7 +735,6 @@ table.admin-view th{
 
 .list-points li a{
   color:#333;
-  border-bottom:1px solid #EFEFEF
 }
 .list-points-verse li a{
   color:#333;
@@ -882,5 +895,11 @@ table.admin-view th{
 }
 .bread-crumb{
   padding-top:10px;st
+}
+.issue_from_field{
+ width:73px;
+}
+.issue_to_field{
+ width:73px;
 }
 /* Footer CSS End */

@@ -30,4 +30,8 @@ class Verse < ActiveRecord::Base
   def next_verses(limit)
      Verse.find :all, :conditions => ["sura = ? AND aya > ?", self.sura, self.aya], :order => 'aya ASC', :limit => limit 
   end
+  
+  def self.from_to_verses(from,to)
+    Verse.find :all, :conditions => ["id >= ? AND id <= ?", from.to_i, to.to_i]
+  end
 end

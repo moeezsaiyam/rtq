@@ -24,8 +24,8 @@ class TopicsController < ApplicationController
     unless (params[:topic_name_slug].blank?)
       @topic = Topic.find_by_name_slug(params[:topic_name_slug])
     end
-     @popular_questions = @topic.sub_topics.collect{|s| s.questions.find(:all,:order => 'view_count DESC')}.flatten!
-     @latest_questions = @topic.sub_topics.collect{|s| s.questions.find(:all,:order => 'created_at DESC')}.flatten!
+     @popular_questions = @topic.sub_topics.collect{|s| s.questions.find(:all,:limit => 5,:order => 'view_count DESC')}.flatten!
+     @latest_questions = @topic.sub_topics.collect{|s| s.questions.find(:all,:limit => 5,:order => 'created_at DESC')}.flatten!
      @related_subject = Topic.find(:all,:limit => 5, :conditions => ['id NOT IN(?)',@topic])
     respond_to do |format|
       format.html # show.html.erb

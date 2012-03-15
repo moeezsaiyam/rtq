@@ -16,5 +16,16 @@
 <div>
   <%= render :partial => "references" %>
 </div>
+<% unless logged_in? %>
+<div class = "list-wrapper">
+<% unless @related_subject.blank? %>
   <%= render :partial => "related_subject" %>
+<%end%>
+<% unless @related_questions.blank? %>
   <%= render :partial => "related_questions" %>
+<%end%>
+<% unless @question.alternate_phrases.blank? %>
+  <%= render :partial => "alternate_phrases" %>
+<%end%>
+</div>
+<% end %>

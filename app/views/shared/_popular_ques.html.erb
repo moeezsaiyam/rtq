@@ -7,7 +7,7 @@
       <ul>
       <% @popular_questions.each do |q| %>
           <li>
-            <%= link_to truncate(q.quest, :length => 50, :omission => '...'), topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q)%>
+            <%= link_to truncate(q.quest, :length => 20, :omission => '...'), topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q)%>
           </li>
          <% end %>
       </ul>

@@ -1,15 +1,9 @@
 <h1>References</h1>
-  <% unless @verses.blank? %>
     <ol>
-      <% tags = parse_tags(@question).split(",") %>
-      <% @verses.each_with_index do |verse,i| %>
-          <div class="arabic" dir="rtl"><br><br>
-          <h3><%= tags[i] %></h3>
-        <%=h verse.text %><br><br>
-           </div>
-          <div class="verse-color">
-         <%= verse.translate_to("eng")[0].text %><br><br>
-          </div>
-        <% end %>
+      <% @question.references.each do|q| %>
+     <br><br> <%=h q.issue %><br><br>
+       <h3><%=  parse_tags(q.from,q.to,q) %></h3>
+         <% end %>
+         </div>
+         </div>
     </ol>
-  <% end %>

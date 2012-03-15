@@ -15,9 +15,43 @@
     <%= f.label :answer %><br />
     <%= f.text_area :answer %>
   </p>
+  <div id="alternate_phrases">
+    <% @question.alternate_phrases.each do |alternate_phrase| %>
+      <% fields_for "question[alternate_phrase_attributes][]", alternate_phrase do |phrase_form|%>
+      <p>
+      <%= phrase_form.label :content,"Alternate Phrase" %>
+      </p>
+      <p>
+        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
+      </p>
+        <%= phrase_form.hidden_field :question_id, :value=> @question_id %>
+      <% end %>
+    <% end %>
+  </div>
+   <p>
+    <%= link_to ('Add Another','#',{:id =>'add_button'}) %>
+  </p>
+  <div id="references">
+    <% @question.references.each do |reference| %>
+      <% fields_for "question[reference_attributes][]", reference do |reference_form|%>
+    <p>
+      <%= reference_form.label :issue, "Issue Addressed"%>
+    </p>
+    <p>
+        <%= reference_form.text_field :issue, :class => 'issue_field' %>
+    </p>
+     <p>
+      <p><%= reference_form.label :from, "From"%>
+      <%= reference_form.text_field :from, :class => 'issue_from_field' %>
+      <%= reference_form.label :to, "To"%>
+      <%= reference_form.text_field :to, :class => 'issue_to_field' %>
+    </p>
+      <%= reference_form.hidden_field :question_id, :value=> @question_id %>
+      <% end %>
+    <% end %>
+  </div>
   <p>
-    <%= f.label :tags, "Tags (Surah#:Ayat# i.e 1:1)"%><br />
-    <%= f.text_field :tags %>
+    <%= link_to ('Add Another','#',{:id =>'add_reference_button'}) %>
   </p>
   <p>
     <%= f.submit 'Create' %>

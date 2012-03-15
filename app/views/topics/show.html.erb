@@ -22,10 +22,14 @@
 <div>
   <%= render :partial => "sub_topics" %>
 </div>
+<% unless logged_in? %>
 <% unless @popular_questions.blank? %>
  <%= render :partial => "shared/popular_ques" %>
 <% end %>
  <% unless @latest_questions.blank? %>
   <%= render :partial => "shared/latest_ques" %>
 <% end %>
+<% unless @related_subject.blank? %>
  <%= render :partial => "related_subject" %>
+ <%end%>
+<% end %>

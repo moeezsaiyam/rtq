@@ -50,6 +50,8 @@ class QuestionsController < ApplicationController
   # GET /questions/new.xml
   def new
     @question = Question.new
+    @question.alternate_phrases.build
+    @question.references.build
 
     respond_to do |format|
       format.html # new.html.erb
