@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :topic_id %><br />
-    <%= select("sub_topic", "topic_id", Topic.all.collect {|t| [ t.name, t.id ] }, { :include_blank => true }) %>
+    <%= select("sub_topic", "topic_id", Topic.all.collect {|t| [ t.name, t.id ] }) %>
   </p>
   <p>
     <%= f.label :name %><br />

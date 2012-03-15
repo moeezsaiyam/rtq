@@ -1,9 +1,8 @@
-<h1>References</h1>
-    <ol>
-      <% @question.references.each do|q| %>
-     <br><br> <%=h q.issue %><br><br>
-       <h3><%=  parse_tags(q.from,q.to,q) %></h3>
-         <% end %>
-         </div>
-         </div>
-    </ol>
+<h1>List of related verses</h1>
+<ol>
+  <% @question.references.each do|r| %>
+ <br><br> <%=h r.issue %><br><br>
+   <h3><%=  parse_tags(r.from,r.to,r) %></h3>
+       <%= truncate(@verses[r.id.to_s].translate_to("eng")[0].text, :length => 20, :omission => '...') %><br><br>
+       <% end %>
+</ol>

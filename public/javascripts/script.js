@@ -15,7 +15,7 @@ $(document).ready(function()
   });
   
   $('#add_reference_button').click(function(){
-   var new_box = $('#references').clone().val('');
+   var new_box = $('#new_references div').clone();
    $('#references').append(new_box);
    return false;
    });

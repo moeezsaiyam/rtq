@@ -41,7 +41,7 @@ class SubTopicsController < ApplicationController
   # GET /sub_topics/new.xml
   def new
     @sub_topic = SubTopic.new
-
+    @sub_topic.topic_id = params[:topic_id]
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @sub_topic }

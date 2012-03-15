@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :sub_topic_id %><br />
-    <%= select("question", "sub_topic_id", SubTopic.find_all_by_topic_id(params[:topic_id]).collect {|t| [ t.name, t.id ] }, { :include_blank => true }) %>
+    <%= select("question", "sub_topic_id", SubTopic.find_all_by_topic_id(params[:topic_id]).collect {|t| [ t.name, t.id ] }) %>
   </p>
   <p>
     <%= f.label :quest %><br />
@@ -31,6 +31,8 @@
    <p>
     <%= link_to ('Add Another','#',{:id =>'add_button'}) %>
   </p>
+  <div id ="references_new">
+  </div>
   <div id="references">
     <% @question.references.each do |reference| %>
       <% fields_for "question[reference_attributes][]", reference do |reference_form|%>
@@ -59,3 +61,24 @@
 <% end %>
 
 <%= link_to 'Back', topic_sub_topic_questions_path(params[:topic_id],params[:sub_topic_id]) %>
+<div id="new_references" style="display:none;">
+  <div>
+    <% @question.references.each do |reference| %>
+      <% fields_for "question[reference_attributes][]", reference do |reference_form|%>
+    <p>
+      <%= reference_form.label :issue, "Issue Addressed"%>
+    </p>
+    <p>
+        <%= reference_form.text_field :issue, :class => 'issue_field' %>
+    </p>
+     <p>
+      <p><%= reference_form.label :from, "From"%>
+      <%= reference_form.text_field :from, :class => 'issue_from_field' %>
+      <%= reference_form.label :to, "To"%>
+      <%= reference_form.text_field :to, :class => 'issue_to_field' %>
+    </p>
+      <%= reference_form.hidden_field :question_id, :value=> @question_id %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

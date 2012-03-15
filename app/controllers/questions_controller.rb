@@ -30,14 +30,15 @@ class QuestionsController < ApplicationController
       id = params[:question_slug].split("-").last
       @question = Question.find(id)
     end
-     return head(404) unless @question
-    unless @question.verse_ids.blank?
-      verse_ids = @question.verse_ids.split(",")
-      @verses = Array.new
-      verse_ids.each do |verse_id|
-        @verses.push(Verse.find verse_id)
+    # return head(404) unless @question
+    #unless @question.verse_ids.blank?
+      #verse_ids = @question.verse_ids.split(",")
+      @verses = Hash.new
+      @question.references.each do |reference|
+       @verses[reference.id.to_s] = Verse.find_by_aya_and_sura(reference.from.split(":").last, reference.from.split(":").first)
       end
-    end
+      puts @verses.inspect
+    #end
      @related_subject = SubTopic.find(:all,:limit => 5, :conditions => ['id NOT IN(?) AND topic_id = ?',@question.sub_topic,@question.sub_topic.topic_id])
      @related_questions = Question.find(:all,:limit => 5, :conditions => ['id NOT IN(?) AND sub_topic_id = ?',@question,@question.sub_topic_id])
     respond_to do |format|
@@ -52,6 +53,7 @@ class QuestionsController < ApplicationController
     @question = Question.new
     @question.alternate_phrases.build
     @question.references.build
+    @question.sub_topic_id = params[:sub_topic_id]
 
     respond_to do |format|
       format.html # new.html.erb
