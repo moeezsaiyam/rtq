@@ -24,4 +24,5 @@ $(document).ready(function()
     if($("input.search-field").val() == "" || $("input.search-field").val() == "Search")
       return false;
   });
+  
 });

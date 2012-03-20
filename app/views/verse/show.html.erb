@@ -18,6 +18,9 @@
       </div>
       <div class="verse-color">
       <%=h v.translate_to("eng")[0].text %><br><br>
+      <%=(@trans_verses[v.id]) unless @trans_verses.blank? %><br>
       </div>
-  <% end %>
+      <% end %>
+       <div class="verse-color">
+      </div>
   <%= addthis_button %>

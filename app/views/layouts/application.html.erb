@@ -37,6 +37,17 @@
       <div class="clear"></div>
 
       <a href="/main/duas" class="quranic-dua"></a>
+      <% unless @verses_range.blank? %>
+      <div class="trans-select">
+   <form>  
+  <%= check_box_tag 'trans[]', 'sahih', ( params[:trans].include?("sahih") if params[:trans]) %><%='sahih' %><br><br>
+  <%= check_box_tag 'trans[]', 'maududi', ( params[:trans].include?("maududi") if params[:trans]) %><%='maududi' %><br><br>
+  <%= check_box_tag 'trans[]', 'daryabadi', ( params[:trans].include?("daryabadi") if params[:trans]) %><%='daryabadi' %><br><br>
+  <%= check_box_tag 'trans[]', 'asad', ( params[:trans].include?("asad") if params[:trans]) %><%='asad' %><br><br>
+  <input type="submit" value="Submit"/>
+  </div>
+  </form>
+  <%end%>
     </div>
     <!--/col-1-->
     
