@@ -1,12 +1,12 @@
-<% form_tag ('/admin_dashboard', :method => "get")do %>
+<% form_tag  do %>
 <%= label :select,"Plz Select a translation"  %><br><br>
 <% @translation.each do |t|%>
 <p>
-  <%= radio_button :id, t.id, :checked => true %><%= t.name%><br>
+  <%= radio_button_tag :id, t.id, :checked => true %><%= t.name%><br>
 </p>
 <% end %><br><br>
 <p>
-<%= submit_tag 'Submit',:controller => "verse",:action => "get_trans_setting" %>
+<%= submit_tag 'Submit' %>
 <% end %>
 </p><br><br>
 <%= link_to 'Back',admin_dashboard_path %>

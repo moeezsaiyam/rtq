@@ -16,7 +16,6 @@ class MainController < ApplicationController
   
   def trans_setting
   @translation = Translation.all
-  
   end
 
 end

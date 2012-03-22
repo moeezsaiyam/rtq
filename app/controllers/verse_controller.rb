@@ -13,11 +13,13 @@ class VerseController < ApplicationController
      end
      @trans_verses = Hash.new
       trans.each do|t|
+      @trans_name = Translation.find_by_table_nam(t)
+      name = @trans_name.name
         @verses_range.each do|v|
           if @trans_verses.has_key?(v.id)
-            @trans_verses[v.id] = [ @trans_verses[v.id],t.gsub("trans_","") +'<br>', v.translate_to_by(t)[0].text + '<br>']
+            @trans_verses[v.id] = [ @trans_verses[v.id],name + '<br>', v.translate_to_by(t)[0].text + '<br>']
           end
-          @trans_verses[v.id] = [t.gsub("trans_","") +'<br>',v.translate_to_by(t)[0].text + '<br>'] unless @trans_verses.has_key?(v.id)
+          @trans_verses[v.id] = [name + '<br>',v.translate_to_by(t)[0].text + '<br>'] unless @trans_verses.has_key?(v.id)
         end
       end 
      end
@@ -30,9 +32,4 @@ class VerseController < ApplicationController
        @verses.push(Verse.find id)
     end
   end
-  
-  def get_trans_setting
-  @translation = Translation.all
   end
-  
-end

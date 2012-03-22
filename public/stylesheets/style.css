@@ -55,6 +55,12 @@ blockquote:before, blockquote:after, q:before, q:after {
 :focus {
 	outline: 0;
 }
+#new_translation {
+width:420px;}
+#new_translation input[type-text]{
+ float:right;}
+ #new_translation label{float: left;
+    width: 105px;}
 ins {
 	text-decoration: none;
 }
