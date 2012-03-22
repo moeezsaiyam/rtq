@@ -665,6 +665,10 @@ div.dashboard{
   font-size:21px;
   margin-top:20px;
 }
+div.dashboard-trans{
+  font-size:15px;
+  margin-top:20px;
+}
 
 table.admin-view{
   width:100%;

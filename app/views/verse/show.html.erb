@@ -17,7 +17,6 @@
        <%= v.text  %><br><br>
       </div>
       <div class="verse-color">
-      <%=h v.translate_to("eng")[0].text %><br><br>
       <%=(@trans_verses[v.id]) unless @trans_verses.blank? %><br>
       </div>
       <% end %>

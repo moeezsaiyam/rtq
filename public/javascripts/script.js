@@ -24,5 +24,10 @@ $(document).ready(function()
     if($("input.search-field").val() == "" || $("input.search-field").val() == "Search")
       return false;
   });
-  
+    
+ $(".trans-select form input:checkbox").click(function(){ 
+  $('.trans-select form').submit(); 
+ });
+
+
 });

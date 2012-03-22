@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+ 
+  map.resources :translations
+
 
   map.root :controller => 'home'
 

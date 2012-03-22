@@ -6,7 +6,7 @@
   </h4>
   <div>
     <p>
-      <%=h @topic.description %>
+      <%= simple_format(@topic.description) %>
     </p>
   </div>
   <% if logged_in? %>
@@ -16,7 +16,7 @@
       <%= link_to 'Back', topics_path, :class => "action-button button rounded-borders" %>
     </div>
   <% end %>
-</div>
+  </div>
 <div class="clear"></div>
 <%= addthis_button %>
 <div>

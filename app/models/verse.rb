@@ -8,7 +8,7 @@ class Verse < ActiveRecord::Base
   end
   
   def translate_to_by(lang)
-    translation = Verse.find_by_sql("Select text from trans_#{lang} where sura = #{self.sura} AND aya = #{self.aya}")
+    translation = Verse.find_by_sql("Select text from #{lang} where sura = #{self.sura} AND aya = #{self.aya}")
     return translation unless translation.blank?
   end
 

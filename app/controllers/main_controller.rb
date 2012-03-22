@@ -13,5 +13,10 @@ class MainController < ApplicationController
 
   def faqs
   end
+  
+  def trans_setting
+  @translation = Translation.all
+  
+  end
 
 end
