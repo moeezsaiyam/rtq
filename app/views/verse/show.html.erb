@@ -1,3 +1,4 @@
+<%= bread_crumb_verse() %>
 <script>
   function get_context(){
 
@@ -16,10 +17,16 @@
    <div class="arabic" dir="rtl"><br>
        <%= v.text  %><br><br>
       </div>
+       <%= link_to ("Show Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-more'}) %>
       <div class="verse-color">
       <%=(@trans_verses[v.id]) unless @trans_verses.blank? %><br>
       </div>
-      <% end %>
-       <div class="verse-color">
+      <% end %><br>
+  <%= addthis_button %><br>
+    <% unless params[:prev].blank? %>
+      <div class="list-points">
+      <div id="prev-link">
+      <a href="<%= params[:prev] %>"> <h3> << Back to Question </h3> </a>
       </div>
-  <%= addthis_button %>
+     </div>
+   <% end %>

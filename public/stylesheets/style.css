@@ -18,6 +18,15 @@ body {
    font-family: 'PDMSSaleemQuranFontRegular' ;
 }
 
+ @font-face {
+   font-family: 'Square721Regular';
+    src: url('font/square721bt-roman-webfont.eot');
+    src: url('font/square721bt-roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/square721bt-roman-webfont.woff') format('woff'),
+         url('font/square721bt-roman-webfont.ttf') format('truetype'),
+         url('font/square721bt-roman-webfont.svg#Square721Regular') format('svg');
+         }
+
 .arabic{
   font-family: 'PDMSSaleemQuranFontRegular' ;
   font-size:16px;
@@ -120,6 +129,7 @@ h1{  font-family: 'Square721Regular';
 	 font-size:22px;
 	 line-height:22px;
 	 font-weight:normal;
+	 padding-bottom:10px;
 	 color:#4b6a15;}
 	 
 h2{  font-family: 'Square721Regular';
@@ -228,7 +238,7 @@ body {
 	font-weight:normal;
 	color:#FFF;
 	text-decoration:none;
-	padding:8px 20px 8px 20px
+	padding:6px 20px 6px 20px
 	}
 	
 #menu  ul li a:hover, #menu  ul li a.active{ 
@@ -326,8 +336,9 @@ body {
 	float: right;
 	margin-right:10px;
 	position:relative;
-	
-	
+}
+#col-2 p{
+  padding-bottom:18px;
 }
 
 .search-container{ 
@@ -458,6 +469,18 @@ body {
 	-moz-border-radius: 5px;
 	border-radius: 5px;}
 	
+	#popular-Questions .show-more {
+    background: url("/images/show-btn.png") repeat-x scroll left top transparent;
+    border-radius: 5px 5px 5px 5px;
+    color: #666666;
+    float: right;
+    font-size: 12px;
+    line-height: 24px;
+    margin-right: 49px;
+    margin-top: 0;
+    padding: 0 5px;
+    text-align: center;}
+	
 	.popular-q{
 	float:left;
 	background:#FFF;
@@ -522,34 +545,31 @@ body {
 	left:9px;}
 	
 .show-more{
-	float:right;
-	width:76px;
-	height:24px;
 	line-height:24px;
 	text-align:center;
-	font-size:11px;
 	color:#666;
 	margin-right:49px;
-	background:url(/images/show-btn.png) repeat-x left top;
+	background:url(/images/button-rep.png) repeat-x left top;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	margin-top:0px;
-	border-radius: 5px;}
+	border-radius: 5px;
+	color:#FFFFFF;
+	padding:4px 6px 4px 6px;}
 	
 	.browse-btn{
-	float:right;
-	width:76px;
-	height:24px;
 	line-height:24px;
 	text-align:center;
-	font-size:11px;
 	color:#666;
-	margin-right:21px;
-	background:url(/images/show-btn.png) repeat-x left top;
+	margin-right:49px;
+	background:url(/images/button-rep.png) repeat-x left top;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	margin-top:15px;
-	border-radius: 5px;}
+	margin-top:0px;
+	border-radius: 5px;
+	color:#FFFFFF;
+	padding:1px 6px 1px 6px;
+	float:right;}
 	
 
 .question{
@@ -795,6 +815,80 @@ table.admin-view th{
   border-bottom:1px solid #EFEFEF
 }
 
+.list-questions{
+ float:left;
+}
+.list-questions-verse{
+ float:left;
+ padding-top:50px;
+}
+
+.list-questions-browse{
+ float:left;
+ padding-top:20px;
+}
+.list-questions h1{
+  padding:20px 0px 20px 0px;
+  
+}
+
+.list-questions li{
+   background: url("/images/normal-bullet.png") no-repeat scroll 5px 8px transparent;
+    float: left;
+    font-size: 14px;
+    line-height: 24px;
+    list-style: none outside none;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    width:80%;    
+    padding-left: 25px;
+}
+.list-wrapper{
+    float:right;
+    width:689px;
+}
+.list-questions-verse li{
+  font-size:14px;
+	padding-left:25px;
+	padding-bottom:10px;
+	margin-left:20px;
+	margin-bottom:5px;
+	}
+
+.list-questions li a{
+  color:#333;
+}
+.list-questions-verse li a{
+  color:#333;
+  border-bottom:1px solid #EFEFEF
+  }
+  
+  .verse-color {
+  color:#333;
+  font-size:14px;
+  border-bottom:1px dotted #976d3b;
+  padding-top:10px;
+  }
+
+.list-questions-browse h1{
+  padding:20px 0px 20px 0px;
+  
+}
+
+.list-questions-browse li{
+  font-size:14px;
+	padding-left:25px;
+	padding-bottom:10px;
+	margin-left:20px;
+	margin-bottom:5px;
+	background:url(/images/normal-bullet.png) no-repeat 5px 7px;
+}
+
+.list-questions-browse li a{
+  color:#333;
+  border-bottom:1px solid #EFEFEF
+}
+
 .context-of{
   color:black;
 }
@@ -925,6 +1019,9 @@ table.admin-view th{
 }
 .bread-crumb{
   padding-top:10px;st
+}
+.p-r-container{
+  float:left;
 }
 .issue_from_field{
  width:73px;

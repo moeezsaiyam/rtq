@@ -1,9 +1,9 @@
-<div class="list-points">
+<div class="list-questions">
   <h1>List of Questions</h1>
   <ol>
-    <% @sub_topic.questions.each do |question| %>
+    <% @sub_topic_questions.each do |question| %>
       <li>
-        <%= link_to question.quest, question_slug_path(@sub_topic.topic.name_slug,@sub_topic.name_slug,question.quest_slug) %>
+        <%= link_to truncate(question.quest, :length => 50, :omission => '...'), question_slug_path(@sub_topic.topic.name_slug,@sub_topic.name_slug,question.quest_slug) %>
       </li>
     <% end %>
   </ol>

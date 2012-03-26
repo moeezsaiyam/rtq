@@ -1,0 +1,34 @@
+<%= bread_crumb_context() %>
+
+<div class="arabic" dir="rtl">
+<b>Pre Context</b></div>
+<% @prev_verses.each do |v| %>
+<div class="arabic" dir="rtl"><br>
+<%= v.text  %><br><br>
+</div>
+<div class="verse-color">
+<%= @trans_verses[v.id]  %><br><br></div>
+<% end %>
+<div class="arabic" dir="rtl"><br>
+<b>Context</b></div>
+<div class="arabic" dir="rtl"><br>
+<%= @verse.text %><br><br>
+</div>
+<div class="verse-color">
+<%=  @trans_verses[@verse.id] %><br><br>
+</div> 
+<div class="arabic" dir="rtl"><br>
+<b>Post Context</b></div>
+<% @next_verses.each do |v| %>
+<div class="arabic" dir="rtl"><br>
+<%= v.text  %><br><br>
+</div>
+<div class="verse-color">
+<%= @trans_verses[v.id] %><br><br></div>
+<% end %><br>
+<%= addthis_button %><br>
+<div class="list-points">
+<div id="prev-link">
+<a href="<%= params[:prev] %>"> <h3> << Back to Verses </h3> </a>
+</div>
+</div>

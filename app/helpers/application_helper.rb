@@ -42,6 +42,21 @@ module ApplicationHelper
      <div class="clear"></div>'
      return addthis_html
   end
+  
+  def addthis_medium_button
+     addthis_html='
+     <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+     <a class="addthis_button_preferred_1"></a>
+     <a class="addthis_button_preferred_2"></a>
+     <a class="addthis_button_preferred_3"></a>
+     <a class="addthis_button_preferred_4"></a>
+     <a class="addthis_button_compact"></a>
+     <a class="addthis_counter addthis_bubble_style"></a>
+     </div>
+     <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f6b31ce48f3b3db"></script>
+     <div class="clear"></div>'
+     return addthis_html
+  end
 
   def addthis_widget
     addthis_html='
@@ -71,9 +86,7 @@ module ApplicationHelper
     end
     return html
   end
-
   def nomargin_class(index)
     return "nomargin" if index.odd?
   end
-
 end
