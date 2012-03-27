@@ -252,9 +252,24 @@ body {
 	-moz-border-radius: 10px 10px 0px 0px;
 	border-radius: 10px 10px 0px 0px;
 	}	
-.home{ 
-	padding-top:3px;
-	float:left;}
+	
+
+#menu  ul li a.home{ 
+	
+	float:left;
+	background: url(/images/nav-home.png) no-repeat center;
+	width:19px;
+	height:16px;}
+#menu  ul li a.home:hover{ 
+
+	background: #fff url(/images/hover.png) no-repeat center;
+	width:19px;
+	height:16px;
+	float:left;
+	webkit-border-radius: 10px 10px 0px 0px;
+	-moz-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+	margin-top:1px;}
 /* Menu CSS End */
 
 
@@ -461,6 +476,7 @@ body {
 #popular-Questions{
 	float:left;
 	background:#FFF;
+
 	width:100%;
 	margin-top:37px;
 	padding-bottom:10px;

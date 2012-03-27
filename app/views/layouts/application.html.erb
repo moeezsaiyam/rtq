@@ -23,29 +23,26 @@
   </div>
   <!--/header-->
   <div class="clear"></div>
-
   <!--content-->
   <div id="content">
-  
     <!-- col-1-->
     <div id="col-1">
-
       <div class="side-nav">
         <%= render :partial => "shared/left_sidebar" %>
       </div>
-
-      <div class="clear"></div>
-
-      <a href="/main/duas" class="quranic-dua"></a>
       <% unless @verses_range.blank? %>
       <%= render :partial => "shared/translations" %>
       <%end%>
+      <% unless @prev_verses.blank? %>
+      <%= render :partial => "shared/translations" %>
+      <%end%>
+      <div class="clear"></div>
+      <a href="/main/duas" class="quranic-dua"></a>
     </div>
     <!--/col-1-->
     
     <!--col-2 -->
     <div id="col-2">
-
       <% if !flash[:error].blank? %>
         <div class="error-box">
           <%= flash[:error] %>
@@ -56,19 +53,14 @@
           <%= flash[:notice] %>
         </div>
       <% end %>
-
       <div class="clear"></div>
-
       <%= yield %>
       </div>
     <!--/col-2 -->
-
     <div class="clear"></div>
   </div>
   <!--/content-->
-
 </div>
-
   <!--footer-->
   <div id="footer">
     <%= render :partial => "shared/footer" %>

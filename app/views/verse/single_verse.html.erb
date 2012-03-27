@@ -27,8 +27,18 @@
 <%= @trans_verses[v.id] %><br><br></div>
 <% end %><br>
 <%= addthis_button %><br>
-<div class="list-points">
-<div id="prev-link">
-<a href="<%= params[:prev] %>"> <h3> << Back to Verses </h3> </a>
-</div>
-</div>
+<%= puts params[:token].inspect %>
+<% if !(params[:token].blank?) %>
+      <div class="list-points">
+      <div id="prev-link">
+      <a href="<%= params[:token] %>"> <h3> << Back to Verse </h3> </a>
+      </div>
+     </div>
+     <%end%>
+    <% if params[:prev] %>
+    <div class="list-points">
+      <div id="prev-link">
+      <a href="<%= params[:prev] %>"> <h3> << Back to Verses </h3> </a>
+      </div>
+     </div>
+     <% end %>

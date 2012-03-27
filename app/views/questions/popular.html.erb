@@ -1,10 +1,18 @@
+<%= bread_crumb_pop() %>
 <br><br>
+<h1>Popular Questions</h1><br>
 <div class="list-points">
  <ol>
 <% @questions.each do|q| %>
 <li>
-  <%= link_to q.quest, question_slug_path(q.sub_topic.topic.name_slug,q.sub_topic.name_slug,q.quest_slug) %>
+  <%= puts q.inspect %>
+  <%= link_to truncate(q.quest, :length => 50, :omission => '...'), topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q)%>
 </li>
   <% end %>
  </ol>
+</div>
+<div class="list-points">
+<div id="prev-link"><br><br>
+<a href="<%= '/' %>"> <h3> << Back  </h3> </a>
+</div>
 </div>
