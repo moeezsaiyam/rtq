@@ -1,4 +1,4 @@
-<%= bread_crumb_sub_topic(@sub_topic) %>
+<%= bread_crumb_sub_topic(@sub_topic) %><br>
 <div class="content-body">
 
   <h1><%=h @sub_topic.name %></h1>
@@ -19,7 +19,9 @@
 <%= addthis_button %>
 <% unless logged_in? %>
 <% unless @sub_topic_questions.blank? %>
+<div class = "questions-pr">
 <%= render :partial => "questions" %>
+</div>
  <%= link_to("BrowseAll", sub_topic_questions_path(@sub_topic.topic.name_slug,@sub_topic.name_slug), { :class => 'browse-btn'}) %>
  <% end %>
  <div class = p-r-container>

@@ -4,7 +4,7 @@ $(document).ready(function()
     $(this).Watermark($(this).attr('title'));
   });
 
-  $('#coin-slider').coinslider({ width: 663,height: 306, navigation: true });
+  $('#coin-slider').coinslider({ width: 700,height: 307, navigation: true });
 
   $('#add_button').click(function(){
     var new_box = $('.alternate_phrase_field:last').clone().val('');
