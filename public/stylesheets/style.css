@@ -759,6 +759,7 @@ table.admin-view th{
 }
 .addthis_toolbox{
  float: right;
+ width:245px;
  }
 
 .list-points{
