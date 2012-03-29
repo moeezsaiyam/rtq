@@ -45,6 +45,8 @@ class VerseController < ApplicationController
      end
      if trans.blank?
       trans = [@translation.table_nam]
+      puts "////////////////////////////////////"
+      @back = params[:prev]
      end
      @trans_verses = Hash.new
       trans.each do|t|

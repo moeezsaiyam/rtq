@@ -1,7 +1,6 @@
 <%= bread_crumb_context() %>
-
-<div class="arabic-post-pr-verse" dir="rtl">
-<b>Pre Context</b></div>
+<div class = "verse-wrapper">
+<div class = "verse-background-pr-post">
 <% @prev_verses.each do |v| %>
 <div class="arabic-post-pr-verse" dir="rtl"><br>
 <%= v.text  %><br><br>
@@ -9,23 +8,24 @@
 <div class="verse-color">
 <%= @trans_verses[v.id]  %><br><br></div>
 <% end %>
-<div class="arabic-current-verse" dir="rtl"><br>
-<b>Context</b></div>
+</div>
+<div class = "verse-background">
 <div class="arabic-current-verse" dir="rtl"><br>
 <%= @verse.text %><br><br>
 </div>
 <div class="verse-color">
 <%=  @trans_verses[@verse.id] %><br><br>
 </div> 
-<div class="arabic-post-pr-verse" dir="rtl"><br>
-<b>Post Context</b></div>
+</div>
+<div class = "verse-background-pr-post">
 <% @next_verses.each do |v| %>
 <div class="arabic-post-pr-verse" dir="rtl"><br>
 <%= v.text  %><br><br>
 </div>
 <div class="verse-color">
 <%= @trans_verses[v.id] %><br><br></div>
-<% end %><br>
+<% end %><br></div>
+</div>
 <%= addthis_button %><br>
 <%= puts params[:token].inspect %>
 <% if !(params[:token].blank?) %>

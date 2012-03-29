@@ -37,12 +37,14 @@ body {
   font-size:16px;
   padding-right:5px;
   color: #000000;
+   padding:0px 20px 0px 0px;
 }
 .arabic-post-pr-verse{
   font-family: 'PDMSSaleemQuranFontRegular' ;
   font-size:16px;
   padding-right:5px;
-  color: #B3B3B3;
+  color:#333333;
+   padding:0px 20px 0px 0px;
 }
 .arabic-text{
   padding-top:25px;
@@ -385,6 +387,7 @@ body {
 #col-2 p{
   padding-bottom:18px;
   text-align:justify;
+  font-size:14px;
 }
 
 .search-container{ 
@@ -539,7 +542,7 @@ body {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	min-height:202px;
+	min-height:230px;
 	}
 
 	
@@ -633,7 +636,7 @@ body {
 	
 .question ul{
 	float:left;
-	width:100%;}
+	width:646px;}
 	
 .question ul li{
 	float:left;
@@ -919,7 +922,9 @@ table.admin-view th{
   border-bottom:1px dotted #976d3b;
   padding-top:10px;
   padding-bottom:15px;
+   padding:0px 0px 20px 20px;
   }
+
 
 .list-questions-browse h1{
   padding:20px 0px 20px 0px;
@@ -1100,4 +1105,18 @@ table.admin-view th{
     border:0;
     display:block;
 }
+.verse-background{
+    background-color:#9ACD32;
+    margin:10px 0px 10px 0px;
+    
+    
+;}
+.verse-background-pr-post{
+    background-color:#FFFFFF;
+   
+;}
+.verse-wrapper{
+    padding-top:20px;
+    padding-bottom:20px;
+;}
 /* Footer CSS End */

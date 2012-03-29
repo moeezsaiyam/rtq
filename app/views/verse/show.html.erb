@@ -19,12 +19,10 @@
       </div>
       <div class="verse-color">
       <%=(@trans_verses[v.id]) unless @trans_verses.blank? %><br>
-       <%= link_to ("Show Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-more'}) %>
+       <%= link_to ("View Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-more'}) %>
       </div>
       <% end %><br><br>
   <%= addthis_button %><br>
-   <%= puts "////////////////////" %>
-   <%= puts @back.inspect %> 
   <% if !(params[:token].blank?) %>
       <div class="list-points">
       <div id="prev-link">

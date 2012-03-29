@@ -33,7 +33,7 @@
   <%if !(logged_in?)%>
     <div class="content-body">
     <h1>Questions in <%=h @sub_topic.name %></h1>
-    <div class="list-points-browse">
+   <div class="list-questions">
     <ol>
        <% @questions.each do |q| %>
         <li>
