@@ -22,7 +22,7 @@
 <div class = "questions-pr">
 <%= render :partial => "questions" %>
 </div>
- <%= link_to("BrowseAll", sub_topic_questions_path(@sub_topic.topic.name_slug,@sub_topic.name_slug), { :class => 'browse-btn'}) %>
+ <%= link_to("Browse All", sub_topic_questions_path(@sub_topic.topic.name_slug,@sub_topic.name_slug), { :class => 'browse-btn'}) %>
  <% end %>
  <div class = p-r-container>
  <% unless @popular_questions.blank? %>

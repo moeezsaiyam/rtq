@@ -2,7 +2,7 @@
  <h1>Translations</h1><br>
  <div class = "trans-line">
    <form>  
-   <%= hidden_field_tag 'token', params[:prev] %>
+    <%= hidden_field_tag 'token', params[:prev] %>
     <% Translation.all.each do |translation| %>
       <% if params[:trans] %>
         <%= check_box_tag 'trans[]', translation.table_nam, params[:trans].include?(translation.table_nam) %>

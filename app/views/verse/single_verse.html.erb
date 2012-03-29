@@ -1,26 +1,26 @@
 <%= bread_crumb_context() %>
 
-<div class="arabic" dir="rtl">
+<div class="arabic-post-pr-verse" dir="rtl">
 <b>Pre Context</b></div>
 <% @prev_verses.each do |v| %>
-<div class="arabic" dir="rtl"><br>
+<div class="arabic-post-pr-verse" dir="rtl"><br>
 <%= v.text  %><br><br>
 </div>
 <div class="verse-color">
 <%= @trans_verses[v.id]  %><br><br></div>
 <% end %>
-<div class="arabic" dir="rtl"><br>
+<div class="arabic-current-verse" dir="rtl"><br>
 <b>Context</b></div>
-<div class="arabic" dir="rtl"><br>
+<div class="arabic-current-verse" dir="rtl"><br>
 <%= @verse.text %><br><br>
 </div>
 <div class="verse-color">
 <%=  @trans_verses[@verse.id] %><br><br>
 </div> 
-<div class="arabic" dir="rtl"><br>
+<div class="arabic-post-pr-verse" dir="rtl"><br>
 <b>Post Context</b></div>
 <% @next_verses.each do |v| %>
-<div class="arabic" dir="rtl"><br>
+<div class="arabic-post-pr-verse" dir="rtl"><br>
 <%= v.text  %><br><br>
 </div>
 <div class="verse-color">

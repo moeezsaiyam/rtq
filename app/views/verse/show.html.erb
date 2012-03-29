@@ -17,23 +17,31 @@
    <div class="arabic" dir="rtl"><br>
        <%= v.text  %><br><br>
       </div>
-       <%= link_to ("Show Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-more'}) %><br><br>
       <div class="verse-color">
       <%=(@trans_verses[v.id]) unless @trans_verses.blank? %><br>
+       <%= link_to ("Show Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-more'}) %>
       </div>
       <% end %><br><br>
   <%= addthis_button %><br>
+   <%= puts "////////////////////" %>
+   <%= puts @back.inspect %> 
   <% if !(params[:token].blank?) %>
       <div class="list-points">
       <div id="prev-link">
       <a href="<%= params[:token] %>"> <h3> << Back to Question </h3> </a>
       </div>
      </div>
-     <%end%>
-    <% if params[:prev] %>
+    <% else if params[:prev] %>
     <div class="list-points">
       <div id="prev-link">
       <a href="<%= params[:prev] %>"> <h3> << Back to Question </h3> </a>
       </div>
      </div>
+     <% else %>
+      <div class="list-points">
+      <div id="prev-link">
+      <a href="<%= @back %>"> <h3> << Back to Question </h3> </a>
+      </div>
+     </div>
      <% end %>
+     <%end%>

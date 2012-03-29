@@ -22,7 +22,7 @@
     <div class="class-section <%= nomargin_class(i) %>">
 
       <a class="class-img" href="<%= topic_sub_topic_url(s.topic, s) %>"><%= image_tag s.photo.url(:small)%></a>
-      <h3><%=<%= truncate(s.name, :length => 30, :omission => '...')%></h3>
+      <h3> <%= link_to truncate(s.name, :length => 30, :omission => '...'), topic_sub_topic_url(s.topic,s)%></h3>
       <p><%= truncate(s.description, :length => 30, :omission => '...') %></p>
     </div>
   <% end %>

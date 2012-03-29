@@ -1,11 +1,11 @@
-<h1>Sub Topics</h1>
+<h5>Sub Topics</h5>
  <div class="clear"></div>
   <% @topic.sub_topics.each_with_index do |s, i|%>
     <!--class-section -->
     <div class="class-section <%= nomargin_class(i) %>">
 
       <a class="class-img" href="<%= topic_sub_topic_url(s.topic, s) %>"><%= image_tag s.photo.url(:small)%></a>
-      <h3><%= truncate(s.name, :length => 50, :omission => '...')%></h3>
+      <h3><%=link_to truncate(s.name, :length => 50, :omission => '...'), topic_sub_topic_url(s.topic, s) %></h3>
       <p><%= truncate(s.description, :length => 50, :omission => '...') %></p>
     </div>
   <% end %>

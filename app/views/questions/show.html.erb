@@ -15,7 +15,10 @@
 <%= addthis_button %>
 <div>
   <%= render :partial => "references" %>
-</div>
+</div><br>
+<% unless @question.alternate_phrases.blank? %>
+  <%= render :partial => "alternate_phrases" %>
+<%end%>
 <% unless logged_in? %>
 <div class = "list-wrapper">
 <% unless @related_subject.blank? %>
@@ -23,9 +26,6 @@
 <%end%>
 <% unless @related_questions.blank? %>
   <%= render :partial => "related_questions" %>
-<%end%>
-<% unless @question.alternate_phrases.blank? %>
-  <%= render :partial => "alternate_phrases" %>
 <%end%>
 </div>
 <% end %>
