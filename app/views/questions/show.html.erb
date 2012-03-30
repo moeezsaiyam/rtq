@@ -2,7 +2,7 @@
 <div class="content-body">
   <h7><%=h @question.quest %></h7>
   <div>
-   <p> <%=h @question.answer %><p>
+   <p> <%= simple_format(@question.answer)%><p>
   </div>
   <% if logged_in? %>
     <div class = "actions">
