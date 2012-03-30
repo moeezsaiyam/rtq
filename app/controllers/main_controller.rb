@@ -18,4 +18,10 @@ class MainController < ApplicationController
   @translation = Translation.all
   end
 
+  def get_subtopics
+    topic = Topic.find_by_id params[:id]
+    @subtopics = topic.blank?? SubTopic.all : topic.sub_topics
+    render :layout => false
+  end
+
 end

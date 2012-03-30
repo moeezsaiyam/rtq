@@ -1,4 +1,4 @@
-<%= bread_crumb_verse() %>
+<%= bread_crumb_verse(@question) %>
 <script>
   function get_context(){
 
@@ -12,34 +12,30 @@
             });
   }
 </script>
- <br>
-  <% @verses_range.each do|v| %>
-   <div class="arabic" dir="rtl"><br>
-       <%= v.text  %><br><br>
-      </div>
-      <div class="verse-color">
-      <%=(@trans_verses[v.id]) unless @trans_verses.blank? %><br>
-       <%= link_to ("View Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-more'}) %>
-      </div>
-      <% end %><br><br>
-  <%= addthis_button %><br>
-  <% if !(params[:token].blank?) %>
-      <div class="list-points">
-      <div id="prev-link">
-      <a href="<%= params[:token] %>"> <h3> << Back to Question </h3> </a>
-      </div>
-     </div>
-    <% else if params[:prev] %>
+ <br><br>
+  <% if params[:prev] %>
     <div class="list-points">
       <div id="prev-link">
       <a href="<%= params[:prev] %>"> <h3> << Back to Question </h3> </a>
       </div>
      </div>
-     <% else %>
-      <div class="list-points">
+     <%end%><br>
+     <div class = "verse-wrapper">
+    <div class = "verse-background-pr-post">
+  <% @verses_range.each do|v| %>
+   <div class="arabic-post-pr-verse" dir="rtl"><br>
+       <%= v.text  %>
+      </div><br><br>
+      <div class="verse-color">
+      <%=(@trans_verses[v.id]) unless @trans_verses.blank? %>
+       <%= link_to ("View Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-more'}) %></div>
+      <% end %>
+      </div>
+      </div>
+    <% if params[:prev] %>
+    <div class="list-points">
       <div id="prev-link">
-      <a href="<%= @back %>"> <h3> << Back to Question </h3> </a>
+      <a href="<%= params[:prev] %>"> <h3> << Back to Question </h3> </a>
       </div>
      </div>
-     <% end %>
      <%end%>

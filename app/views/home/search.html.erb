@@ -2,7 +2,7 @@
 <div class="content-body">
   <ul>
     <% unless @topics.blank? %>
-      <h1>Topics:</h1>
+      <h7>Topics:</h7><br><br>
       <% @topics.each do |topic| %>
         <li>
           <a href="/<%= topic.name_slug %>"><h3><%= h topic.name %></h3></a>
@@ -15,7 +15,7 @@
       <% end %>
     <% end %>
     <% unless @sub_topics.blank? %>
-      <h1>Sub Topics:</h1>
+      <h7>Sub Topics:</h7><br><br>
       <% @sub_topics.each do |sub_topic| %>
         <li>
           <a href="/<%= sub_topic.topic.name_slug %>/<%= sub_topic.name_slug %>"><h3><%= h sub_topic.name %></h3></a>
@@ -28,7 +28,7 @@
       <% end %>
     <% end %>
     <% unless @questions.blank? %>
-      <h1>Questions:</h1>
+      <h7>Questions:</h7><br><br>
       <% @questions.each do |question| %>
         <li>
           <a href="/<%= question.sub_topic.topic.name_slug %>/<%= question.sub_topic.name_slug %>/<%= question.quest_slug %>"><h3><%= h question.quest %></h3></a>
@@ -40,8 +40,13 @@
         </li>
       <% end %>
     <% end %>
+    <%= will_paginate @questions unless @questions.blank? %>
   </ul>
-</div><br><br>
+</div>
+<% if @topic.blank? && @sub_topics.blank? %>
+<h6>NOT FOUND!!</h6>
+<% end %>
+<br><br>
 <div class="list-points">
 <div id="prev-link">
 <a href="<%= '/' %>"> <h3> << Back  </h3> </a>

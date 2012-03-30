@@ -37,7 +37,6 @@ class QuestionsController < ApplicationController
       @question.references.each do |reference|
        @verses[reference.id.to_s] = Verse.find_by_aya_and_sura(reference.from.split(":").last, reference.from.split(":").first)
       end
-      puts @verses.inspect
     #end
      @related_subject = SubTopic.find(:all,:limit => 5, :conditions => ['id NOT IN(?) AND topic_id = ?',@question.sub_topic,@question.sub_topic.topic_id])
      @related_questions = Question.find(:all,:limit => 5, :conditions => ['id NOT IN(?) AND sub_topic_id = ?',@question,@question.sub_topic_id])

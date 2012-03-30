@@ -1,20 +1,27 @@
-<%= bread_crumb_context() %>
+<%= bread_crumb_context(@question) %><br>
+ <% if params[:prev] %>
+    <div class="list-points">
+      <div id="prev-link">
+      <a href="<%= params[:prev] %>"> <h3> << Back to Verses </h3> </a>
+      </div>
+     </div>
+     <% end %><br>
 <div class = "verse-wrapper">
 <div class = "verse-background-pr-post">
 <% @prev_verses.each do |v| %>
 <div class="arabic-post-pr-verse" dir="rtl"><br>
-<%= v.text  %><br><br>
-</div>
+<%= v.text  %>
+</div><br><br>
 <div class="verse-color">
-<%= @trans_verses[v.id]  %><br><br></div>
+<%= @trans_verses[v.id]  %></div>
 <% end %>
 </div>
 <div class = "verse-background">
 <div class="arabic-current-verse" dir="rtl"><br>
-<%= @verse.text %><br><br>
-</div>
-<div class="verse-color">
-<%=  @trans_verses[@verse.id] %><br><br>
+<%= @verse.text %>
+</div><br><br>
+<div class="verse-color-whit">
+<%=  @trans_verses[@verse.id] %>
 </div> 
 </div>
 <div class = "verse-background-pr-post">
@@ -23,18 +30,9 @@
 <%= v.text  %><br><br>
 </div>
 <div class="verse-color">
-<%= @trans_verses[v.id] %><br><br></div>
-<% end %><br></div>
+<%= @trans_verses[v.id] %></div>
+<% end %></div>
 </div>
-<%= addthis_button %><br>
-<%= puts params[:token].inspect %>
-<% if !(params[:token].blank?) %>
-      <div class="list-points">
-      <div id="prev-link">
-      <a href="<%= params[:token] %>"> <h3> << Back to Verse </h3> </a>
-      </div>
-     </div>
-     <%end%>
     <% if params[:prev] %>
     <div class="list-points">
       <div id="prev-link">

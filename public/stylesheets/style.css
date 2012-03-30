@@ -31,19 +31,20 @@ body {
   font-family: 'PDMSSaleemQuranFontRegular' ;
   font-size:16px;
   padding-right:5px;
+  color:black;
 }
 .arabic-current-verse{
   font-family: 'PDMSSaleemQuranFontRegular' ;
   font-size:16px;
   padding-right:5px;
-  color: #000000;
+  color: #FFFFFF;
    padding:0px 20px 0px 0px;
 }
 .arabic-post-pr-verse{
   font-family: 'PDMSSaleemQuranFontRegular' ;
   font-size:16px;
   padding-right:5px;
-  color:#333333;
+  color:#000000;
    padding:0px 20px 0px 0px;
 }
 .arabic-text{
@@ -143,7 +144,7 @@ h1{  font-family: 'Square721Regular';
 	 line-height:22px;
 	 font-weight:normal;
 	 padding-bottom:10px;
-	 color:#4b6a15;}
+	 color:#FFFFFF;}
 	 
 h2{  font-family: 'Square721Regular';
 	 font-size:22px;
@@ -157,6 +158,8 @@ h3{  font-family: 'Square721Regular';
 	 line-height:18px;
 	 padding-bottom:5px;
 	 font-weight:normal;
+	 color:#835a35;}
+h3 a{
 	 color:#835a35;}
 
 h4{
@@ -178,13 +181,21 @@ h6{  font-family: 'Square721Regular';
 	 font-weight:normal;
 	 padding-bottom:10px;
 	 color:#4b6a15;}
+h7{  font-family: 'Square721Regular';
+	 font-size:22px;
+	 line-height:22px;
+	 font-weight:normal;
+	 padding-bottom:10px;
+	 color:#4b6a15;}
 
 p{
 	font-size:12px;
 	text-align:left;
 	font-weight:normal;
 	line-height:18px;}
-
+.list-questions h5{
+  padding-left:20px;
+  }
 table { border-collapse: collapse; border-spacing: 0;}
 
 th, td, caption { font-weight: normal; vertical-align: top; text-align: left;}
@@ -270,7 +281,7 @@ body {
 	font-weight:normal;
 	color:#FFF;
 	text-decoration:none;
-	padding:6px 20px 6px 20px
+	padding:6px 20px 5px 20px
 	}
 	
 #menu  ul li a:hover, #menu  ul li a.active{ 
@@ -285,23 +296,15 @@ body {
 	border-radius: 10px 10px 0px 0px;
 	}	
 	
+	
 
 #menu  ul li a.home{ 
 	
 	float:left;
-	background: url(/images/nav-home.png) no-repeat center;
-	width:19px;
-	height:16px;}
-#menu  ul li a.home:hover{ 
-
-	background: #fff url(/images/hover.png) no-repeat center;
 	width:19px;
 	height:16px;
-	float:left;
-	webkit-border-radius: 10px 10px 0px 0px;
-	-moz-border-radius: 10px 10px 0px 0px;
-	border-radius: 10px 10px 0px 0px;
-	margin-top:1px;}
+	}
+
 /* Menu CSS End */
 
 
@@ -372,10 +375,12 @@ body {
 	
 .quranic-dua{
 	float:left;
-	background:url(/images/quranic-dua.gif) no-repeat left top;
+	background:url(/images/quranic-dua.gif) no-repeat;
 	width:260px;
 	height:158px;
 	margin-top:20px;
+	margin-left:8px;
+	
 	}
 
 #col-2 {
@@ -453,11 +458,24 @@ body {
 	height:63px;
 	font-size:14px;
 	color:white;
-	line-height:28px;
 	text-align:center;
 	margin:10px 0px 0px 20px;
-	padding-left:45px;
 	border:none;
+	cursor:pointer;
+	outline:none !important;
+	text-indent:-9999px;
+	}
+.search-btn:focus{
+	float:left;
+	width:110px;
+	height:63px;
+	font-size:14px;
+	color:white;
+	text-align:center;
+	border:none;
+	cursor:pointer;
+	margin:10px 0px 0px 21px;
+	outline:none !important;
 	}
 .search-terms{
   float:left;
@@ -465,7 +483,11 @@ body {
 }
 
 .content-body{
-  padding-top:10px;
+
+  background:white;
+  border-radius:10px;
+  padding:15px 20px 0px 20px;
+  
 }	
 	
 #slider{
@@ -844,10 +866,6 @@ table.admin-view th{
   border-bottom:1px solid #EFEFEF
   }
   
-  .verse-color {
-  color:#333;
-  font-size:14px;
-  }
 
 .list-points-browse h1{
   padding:20px 0px 20px 0px;
@@ -916,13 +934,41 @@ table.admin-view th{
   border-bottom:1px solid #EFEFEF
   }
   
-  .verse-color {
-  color:#333;
+  .current-verse-color {
+  color:#ffffff;
   font-size:14px;
-  border-bottom:1px dotted #976d3b;
   padding-top:10px;
   padding-bottom:15px;
    padding:0px 0px 20px 20px;
+  }
+  .verse-color {
+  color:#666666;
+  font-size:14px;
+  padding:0px 15px 20px 20px;
+  border-bottom:1px solid #f5f5f5;
+  }
+ .verse-brown {
+  color:#666666;
+  font-size:14px;
+  padding:0px 15px 20px 20px;
+  border-bottom:1px dotted #976D3B;
+ }
+  .verse-brown h1 {
+  color:#577818;
+  
+ 
+ 
+ }
+ 
+    .verse-color h1{ 
+   color:#577818
+    ;}
+    
+  .verse-color-whit {
+  color:#FFFFFF;
+  font-size:14px;
+  padding:0px 15px 20px 20px;
+  border-bottom:1px solid #f5f5f5;
   }
 
 
@@ -966,6 +1012,7 @@ table.admin-view th{
 	height:136px;
 	width:100%;
 	margin-top:95px;
+	min-width:1020px;
 	
 }
 
@@ -1013,7 +1060,7 @@ table.admin-view th{
 #footer .search-box{
 	float:left;
 	margin-left:204px;
-	width:215px;
+	width:218px;
 	}
 
 #footer .s-input{
@@ -1064,14 +1111,18 @@ table.admin-view th{
 
 .pagination{
   display: inline;
-  float: left;
-  margin-left: 267px;
+  margin:0 auto;
   text-align: center;
-  width: 300px;
+  width: 675px;
+  float:left;
+ 
 }
 .pagination li{
   float:left;
   padding:12px;
+}
+.pagination span.disabled {
+  display:none;
 }
 .bread-crumb{
   padding-top:10px;st
@@ -1079,6 +1130,8 @@ table.admin-view th{
 .p-r-container{
   float:left;
   clear:both;
+  margin-top:12px;
+  border-top:1px dotted #976D3B;
 }
 .issue_from_field{
  width:73px;
@@ -1106,17 +1159,28 @@ table.admin-view th{
     display:block;
 }
 .verse-background{
-    background-color:#9ACD32;
+    background-color:#8ba90c;
     margin:10px 0px 10px 0px;
-    
+    border-radius:10px;
     
 ;}
 .verse-background-pr-post{
     background-color:#FFFFFF;
+    border-radius:10px;
+    
    
 ;}
 .verse-wrapper{
     padding-top:20px;
     padding-bottom:20px;
+    
+    
 ;}
+.content-list-body{
+background-color:white;
+border-radius:10px;
+padding-top:10px;
+width:100%;
+
+}
 /* Footer CSS End */

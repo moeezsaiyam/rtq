@@ -31,7 +31,7 @@ class SubTopicsController < ApplicationController
       @popular_questions = @sub_topic.questions.find(:all,:limit => 5,:order => 'view_count DESC')
       @latest_questions = @sub_topic.questions.find(:all,:limit => 5,:order => 'created_at DESC')
       @related_subject = SubTopic.find(:all,:limit => 5, :conditions => ['id NOT IN(?) AND topic_id = ?',@sub_topic,@sub_topic.topic_id])
-      @sub_topic_questions = @sub_topic.questions.find(:all,:limit => 5)
+      @sub_topic_questions = @sub_topic.questions.paginate :per_page => 5, :page => params[:page]
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @sub_topic }

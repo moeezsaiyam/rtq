@@ -5,6 +5,7 @@ $(document).ready(function()
   });
 
   $('#coin-slider').coinslider({ width: 700,height: 307, navigation: true });
+  
 
   $('#add_button').click(function(){
     var new_box = $('.alternate_phrase_field:last').clone().val('');

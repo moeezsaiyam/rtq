@@ -1,3 +1,18 @@
+<script>
+$(document).ready(function()
+{
+  $("#search_terms_search_topic").change(function(){
+    $.ajax({
+      url: "/main/get_subtopics",
+      data: {id: $("#search_terms_search_topic").val()} ,
+      success: function( data ) {
+        $('#search_terms_search_sub_topic').html($(data).html());
+        }
+    });  
+  });
+   $("#search_terms_search_topic").change();
+});
+</script>
 <div href="#" class="search-topic">Search Keyword</div>
 <div id="search_form">
   <% form_tag("/home/search", :method => "get") do %>   

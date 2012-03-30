@@ -1,5 +1,5 @@
 <ul <%= "id='admin-menu'" if logged_in? %> >
-  <li><a class="home" href="/home/index"></a></li>
+  <li><a class="active" href="/home/index"> <%= image_tag "nav-home.png" %></a></li>
   <li><%= link_to("About", :controller => "main", :action => "about")%></li>
   <li><%= link_to("Duas", :controller => "main", :action => "duas")%></li>
   <li><%= link_to("Contact", :controller => "main", :action => "contact")%></li>

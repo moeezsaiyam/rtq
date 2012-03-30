@@ -1,3 +1,4 @@
+<div class = "list-questions content-list-body">
 <div class="list-questions">
   <h5>List of Questions</h5>
   <ol>
@@ -6,5 +7,7 @@
         <%= link_to question.quest, question_slug_path(@sub_topic.topic.name_slug,@sub_topic.name_slug,question.quest_slug) %>
       </li>
     <% end %>
+    <%= will_paginate @sub_topic_questions%>
   </ol>
+</div>
 </div>
