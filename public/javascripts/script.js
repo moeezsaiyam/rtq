@@ -1,5 +1,12 @@
 $(document).ready(function()
 {
+  className = $(location.pathname.split("/")).last()[0];
+  $("#menu ul li a").removeClass("active");
+  if(className == "")
+    $("#menu ul li a.home").addClass("active");
+  else
+    $("#menu ul li a." + className).addClass("active");
+
   $(".watermarked").each(function() {
     $(this).Watermark($(this).attr('title'));
   });
