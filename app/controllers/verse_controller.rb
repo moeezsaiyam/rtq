@@ -47,9 +47,8 @@ class VerseController < ApplicationController
      if params[:trans]
      trans = params[:trans]
      end
-     if trans.blank? && !(session[:default].blank?)
+     if trans.blank? 
       trans = [@translation.table_nam]
-      session[:default] = 0
      end
      @trans_verses = Hash.new
       trans.each do|t|

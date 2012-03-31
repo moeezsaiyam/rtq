@@ -1,5 +1,4 @@
-<%= bread_crumb_search() %><br>
-<div class="content-body">
+<br><div class="content-body">
   <ul>
     <% unless @topics.blank? %>
       <h7>Topics:</h7><br><br>
@@ -14,9 +13,9 @@
         </li>
       <% end %>
     <% end %>
-    <% unless @sub_topics.blank? %>
+    <% unless @sub_topics_search.blank? %>
       <h7>Sub Topics:</h7><br><br>
-      <% @sub_topics.each do |sub_topic| %>
+      <% @sub_topics_search.each do |sub_topic| %>
         <li>
           <a href="/<%= sub_topic.topic.name_slug %>/<%= sub_topic.name_slug %>"><h3><%= h sub_topic.name %></h3></a>
           <div>
@@ -27,9 +26,9 @@
         </li>
       <% end %>
     <% end %>
-    <% unless @questions.blank? %>
+    <% unless @questions_search.blank? %>
       <h7>Questions:</h7><br><br>
-      <% @questions.each do |question| %>
+      <% @questions_search.each do |question| %>
         <li>
           <a href="/<%= question.sub_topic.topic.name_slug %>/<%= question.sub_topic.name_slug %>/<%= question.quest_slug %>"><h3><%= h question.quest %></h3></a>
           <div>
@@ -40,12 +39,12 @@
         </li>
       <% end %>
     <% end %>
-    <%= will_paginate @questions unless @questions.blank? %>
+    <%= will_paginate @questions_search unless @questions_search.blank? %>
   </ul>
-</div>
-<% if @topic.blank? && @sub_topics.blank? %>
-<h6>NOT FOUND!!</h6>
+  <% if @topic.blank? && @sub_topics_search.blank? && @questions_search.blank? %>
+<h6>No Such request Found!!</h6>
 <% end %>
+</div>
 <br><br>
 <div class="list-points">
 <div id="prev-link">

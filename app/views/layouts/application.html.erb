@@ -23,13 +23,29 @@
   <div id="header">
     <%= render :partial => "shared/header" %>
   </div>
-  
-      <!--/search-container -->
   <!--/header-->
+  <!--search-container -->
+     
+      <% unless @sub_topics_search.blank? && @questions_search.blank? && @topics.blank? %>
+       <div class="search-container1">
+        <%= render :partial => "shared/search" %>
+      </div>
+      <%end%>
+      <!--/search-container -->
   <div class="clear"></div>
   <!--content-->
   <div id="content">
+    <% unless @questions_search.blank? && @sub_topics_search.blank? && @topics.blank?  %>
+  <div id="col1-1">
+  <div class="side1-nav">
+   <%= render :partial => "shared/left_sidebar" %>
+      </div>
+       <div class="clear"></div>
+      <a href="/main/duas" class="quranic-dua1"></a>
+    </div>
+    <%end%>
     <!-- col-1-->
+    <% if @topics.blank? && @questions_search.blank? && @sub_topics_search.blank?  %>
     <div id="col-1">
       <div class="side-nav">
         <%= render :partial => "shared/left_sidebar" %>
@@ -43,6 +59,7 @@
       <div class="clear"></div>
       <a href="/main/duas" class="quranic-dua"></a>
     </div>
+    <%end%>
     <!--/col-1-->
     
     <!--col-2 -->
