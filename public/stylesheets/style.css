@@ -354,7 +354,7 @@ body {
 	float:left;
 	font-size:14px;
 	color:#666;
-	padding:10px 0px 10px  41px;
+	padding:10px 0px 8px  41px;
 	background:url(/images/normal-bullet.png) no-repeat  19px 15px ;
   width:220px;
   display:inline-block;
@@ -745,6 +745,21 @@ body {
 	color:#FFFFFF;
 	padding:4px 6px 4px 6px;}
 	
+.show-search{
+	background: url("/images/button-rep.png") repeat-x scroll left top transparent;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    float: right;
+    line-height: 24px;
+    margin-right: 49px;
+    margin-top: 0;
+    padding: 4px 6px;
+    position: relative;
+    right: -58px;
+    text-align: center;
+    top: -19px;
+    width: 51px;
+	}
 	.browse-btn{
 	line-height:24px;
 	text-align:center;

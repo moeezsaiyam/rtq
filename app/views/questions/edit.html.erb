@@ -1,4 +1,4 @@
-<h1>Editing <%= @question.quest unless @question.blank? %> question</h1>
+<h7>Editing <%= @question.quest unless @question.blank? %> question</h7>
 
 <% form_for @question, :url => topic_sub_topic_question_path(params[:topic_id],@question.sub_topic,@question) do |f| %>
   <%= f.error_messages %>

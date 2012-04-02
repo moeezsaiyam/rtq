@@ -1,10 +1,9 @@
 <br><div class="content-body">
   <ul>
-    <% unless @topics.blank? %>
-      <h7>Topics:</h7><br><br>
-      <% @topics.each do |topic| %>
+    <% unless @topics_search.blank? %>
+      <% @topics_search.each do |topic| %>
         <li>
-          <a href="/<%= topic.name_slug %>"><h3><%= h topic.name %></h3></a>
+          <a href="/<%= topic.name_slug %>"><h3><%= h topic.name %></h3></a><div class = "show-search"> Topic </div>
           <div>
             <p>
               <%=h topic.description[0..100] %><%= "..." if topic.description.chars.count > 100 %>
@@ -14,10 +13,9 @@
       <% end %>
     <% end %>
     <% unless @sub_topics_search.blank? %>
-      <h7>Sub Topics:</h7><br><br>
       <% @sub_topics_search.each do |sub_topic| %>
         <li>
-          <a href="/<%= sub_topic.topic.name_slug %>/<%= sub_topic.name_slug %>"><h3><%= h sub_topic.name %></h3></a>
+          <a href="/<%= sub_topic.topic.name_slug %>/<%= sub_topic.name_slug %>"><h3><%= h sub_topic.name %></h3></a><div class = "show-search"> SubTopic </div>
           <div>
             <p>
               <%=h sub_topic.description[0..100] %><%= "..." if sub_topic.description.chars.count > 100 %>
@@ -27,10 +25,9 @@
       <% end %>
     <% end %>
     <% unless @questions_search.blank? %>
-      <h7>Questions:</h7><br><br>
       <% @questions_search.each do |question| %>
         <li>
-          <a href="/<%= question.sub_topic.topic.name_slug %>/<%= question.sub_topic.name_slug %>/<%= question.quest_slug %>"><h3><%= h question.quest %></h3></a>
+          <a href="/<%= question.sub_topic.topic.name_slug %>/<%= question.sub_topic.name_slug %>/<%= question.quest_slug %>"><h3><%= h question.quest %></h3></a><div class = "show-search"> Question </div>
           <div>
             <p>
               <%=h question.answer[0..100] %><%= "..." if question.answer.chars.count > 100 %>
@@ -41,9 +38,35 @@
     <% end %>
     <%= will_paginate @questions_search unless @questions_search.blank? %>
   </ul>
-  <% if @topic.blank? && @sub_topics_search.blank? && @questions_search.blank? %>
+  <% if @topics_search.blank? && @sub_topics_search.blank? && @questions_search.blank? && @search.blank? %>
 <h6>No Such request Found!!</h6>
 <% end %>
+  <% unless @search.blank? %>
+  <% @search.each do |s| %>
+    <% if s.class == Topic %>
+      <a href="/<%= s.name_slug %>"><h3><%= h s.name %></h3></a> <div class = "show-search"> Topic </div>
+       <div>
+            <p>
+              <%=h s.description[0..100] %><%= "..." if s.description.chars.count > 100 %>
+            </p>
+          </div>
+    <% elsif s.class == SubTopic %>
+       <a href="/<%= s.topic.name_slug %>/<%= s.name_slug %>"><h3><%= h s.name %></h3></a><div class = "show-search"> SubTopic </div>
+       <div>
+            <p>
+              <%=h s.description[0..100] %><%= "..." if s.description.chars.count > 100 %>
+            </p>
+          </div>
+      <% elsif s.class == Question %>
+    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Question </div>
+     <div>
+            <p>
+              <%=h s.answer[0..100] %><%= "..." if s.answer.chars.count > 100 %>
+            </p>
+          </div>
+  <% end %>
+  <% end %>
+ <% end %>
 </div>
 <br><br>
 <div class="list-points">

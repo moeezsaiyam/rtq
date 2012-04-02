@@ -1,6 +1,6 @@
 <%= bread_crumb_pop() %>
-<br><br>
-<h1>Popular Questions</h1><br>
+<br>
+<h7>Popular Questions</h7><br><br>
 <div class="list-questions">
  <ol>
 <% @questions.each do|q| %>
@@ -8,6 +8,7 @@
   <%= link_to truncate(q.quest, :length => 50, :omission => '...'), topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q)%>
 </li>
   <% end %>
+  <%= will_paginate @questions%>
  </ol>
 </div>
 <div class="list-points">

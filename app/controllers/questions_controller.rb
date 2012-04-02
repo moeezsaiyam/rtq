@@ -66,7 +66,7 @@ class QuestionsController < ApplicationController
   end
 
   def popular
-    @questions = Question.popular
+    @questions = Question.popular.paginate :per_page => 10, :page => params[:page]
   end
   
 # POST /questions
