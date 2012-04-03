@@ -46,16 +46,29 @@ module ApplicationHelper
      addthis_html='
    <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-h<a class="addthis_button_preferred_1"></a>
-<a class="addthis_button_preferred_2"></a>
-<a class="addthis_button_preferred_3"></a>
-<a class="addthis_button_preferred_4"></a>
 <a class="addthis_button_compact"></a>
 </div>
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f7585ba5a5d94d0"></script>
 <!-- AddThis Button END -->'
      return addthis_html
   end
+  
+  def twitter_adventure_sharer
+    title = "Show"
+    target_url = request.url
+    url = "https://twitter.com/intent/tweet?original_referer=#{request.url}&source=tweetbutton&text=#{title}&url=#{target_url}"
+    link_to(image_tag("twt.png", :width => "32", :height => "32"), {:onclick => ['window.open("', url,'"', ",'TwitterSharer',","'menubar=1,resizable=1,width=500,height=400');"].join})
+     end
+  
+   def popup_window_sharer
+    target_url = request.url
+    link_to(image_tag("fb.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank")
+    end
+    
+   def rss_window_sharer
+    target_url = request.url
+    link_to(image_tag("rss.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank")
+    end
 
   def addthis_widget
     addthis_html='

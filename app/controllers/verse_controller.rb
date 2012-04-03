@@ -3,6 +3,7 @@ class VerseController < ApplicationController
   def single_verse
    question_id = params[:prev].split("/").last
    @question = Question.find(:first, :conditions => ['id = ? OR quest_slug = ?', question_id, question_id])
+   puts @question.inspect
    @verse = Verse.find(params[:id])
    @prev_verses = @verse.previous_verses(3).reverse!
    @next_verses = @verse.next_verses(3)

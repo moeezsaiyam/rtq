@@ -1,7 +1,7 @@
 <div class="trans-select">
  <h7>Translations</h7><br><br>
  <div class = "trans-line">
-   <form>  
+   <form method = "post">  
     <%= hidden_field_tag 'prev', params[:prev] %>
     <% Translation.all.each do |translation| %>
       <% if params[:trans] %>
