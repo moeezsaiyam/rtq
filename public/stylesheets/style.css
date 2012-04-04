@@ -191,6 +191,10 @@ p{
 .list-questions h5{
   padding-left:20px;
   }
+.list-questions-popular h5{
+  padding-left:20px;
+  font-size:22px;
+  }
 table { border-collapse: collapse; border-spacing: 0;}
 
 th, td, caption { font-weight: normal; vertical-align: top; text-align: left;}
@@ -606,47 +610,28 @@ background:url(/images/srch-hover.png) no-repeat left top;
   background:white;
   border-radius:10px;
   padding:15px 20px 0px 20px;
-  	behavior: url(../javascripts/ie-css3.htc);
-  
 }	
-.content-body1{
-
-  border-radius:10px;
-  padding:15px 20px 0px -1px;
-  	behavior: url(../javascripts/ie-css3.htc);
-  
-}	
-
-.content-body2{
-
-  border-radius:10px;
-  padding:15px 20px 0px -1px;
-  	behavior: url(../javascripts/ie-css3.htc);
-  
-}	
-.content-body h6{  font-family: 'Square721Regular';
+.content-body h6{  
+   font-family: 'Square721Regular';
 	 font-size:22px;
 	 line-height:22px;
 	 font-weight:normal;
 	 padding-bottom:10px;
 	 color:#4b6a15;}
 	 
-	 .content-body1 h6{  font-family: 'Square721Regular';
+.index-subtopic{
+  border-radius:10px;
+  padding:15px 20px 0px 0px;
+}
+.index-subtopic h1{
+   font-family: 'Square721Regular';
 	 font-size:22px;
 	 line-height:22px;
 	 font-weight:normal;
 	 padding-bottom:10px;
 	 color:#4b6a15;}
-	 
-	  .content-body2 h6{  font-family: 'Square721Regular';
-	 font-size:22px;
-	 line-height:22px;
-	 font-weight:normal;
-	 padding-bottom:10px;
-	 color:#4b6a15;
-	 padding-left:20px;
-	 }
-	
+
+
 #slider{
 	background:url(/images/slider-bg.png) no-repeat left top;
 	width:660px;
@@ -1068,6 +1053,9 @@ table.admin-view th{
 }
 
 .list-questions{
+ float:left;
+}
+.list-questions-popular{
  float:left;
 }
 .list-questions-verse{
