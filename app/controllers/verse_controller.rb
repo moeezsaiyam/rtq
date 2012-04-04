@@ -11,8 +11,6 @@ class VerseController < ApplicationController
      trans = params[:trans] if params[:trans]
      trans = [@translation.table_nam] if trans.blank?
      @trans_verses = Hash.new
-     puts"///////////////////////////"
-     puts trans.inspect
        trans.each do|t|
        @trans_name = Translation.find_by_table_nam(t)
        name = @trans_name.name
