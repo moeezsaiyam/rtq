@@ -290,6 +290,7 @@ body {
 	webkit-border-radius: 10px 10px 0px 0px;
 	-moz-border-radius: 10px 10px 0px 0px;
 	border-radius: 10px 10px 0px 0px;
+	
 	}	
 	
 	
@@ -608,7 +609,21 @@ background:url(/images/srch-hover.png) no-repeat left top;
   	behavior: url(../javascripts/ie-css3.htc);
   
 }	
+.content-body1{
+
+  border-radius:10px;
+  padding:15px 20px 0px -1px;
+  	behavior: url(../javascripts/ie-css3.htc);
+  
+}	
 .content-body h6{  font-family: 'Square721Regular';
+	 font-size:22px;
+	 line-height:22px;
+	 font-weight:normal;
+	 padding-bottom:10px;
+	 color:#4b6a15;}
+	 
+	 .content-body1 h6{  font-family: 'Square721Regular';
 	 font-size:22px;
 	 line-height:22px;
 	 font-weight:normal;
