@@ -1,7 +1,8 @@
 <% content_for :head do %>
   <%= javascript_include_tag 'topics' %>
 <% end %>
-<h7>Editing <%= @topic.name unless @topic.blank? %> topic</h7>
+<div class = "content-body1">
+<h6>Editing <%= @topic.name unless @topic.blank? %> topic</h6></div>
 
 <% form_for(@topic, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
