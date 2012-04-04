@@ -1,7 +1,8 @@
 <%= bread_crumb_pop() %>
 <br>
-<div class = "content-body1">
-<h6>Popular Questions</h6></div><br><br>
+<div class = "list-questions content-list-body">
+<div class = "content-body2">
+<h6>Popular Questions</h6></div><br>
 <div class="list-questions">
  <ol>
 <% @questions.each do|q| %>
@@ -11,6 +12,7 @@
   <% end %>
   <%= will_paginate @questions%>
  </ol>
+</div>
 </div>
 <div class="list-points">
 <div id="prev-link"><br><br>
