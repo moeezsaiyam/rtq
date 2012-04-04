@@ -63,6 +63,7 @@ input[type=password], input[type=text]{
 	border:1px solid #f3df95;
 	background:#FFF;
 	color:#666;
+	
 	}
 
 ol, ul {
@@ -181,12 +182,6 @@ h6{  font-family: 'Square721Regular';
 	 font-weight:normal;
 	 padding-bottom:10px;
 	 color:#4b6a15;}
-h7{  font-family: 'Square721Regular';
-	 font-size:22px;
-	 line-height:22px;
-	 font-weight:normal;
-	 padding-bottom:10px;
-	 color:#4b6a15;}
 
 p{
 	font-size:12px;
@@ -228,7 +223,6 @@ body {
 }
 #header .addthis_toolbox{
  float: right;
- width:196px;
  }
 
 #logo{
@@ -240,6 +234,7 @@ body {
 #social-container{
 	float:right;
 	padding-top:21px;
+	width:147px;
 	
 	}
 	
@@ -551,7 +546,8 @@ body {
 	margin: 16px 0 0 153px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;}
+	border-radius: 5px;
+		behavior: url(../javascripts/ie-css3.htc);}
 	
 .list{
 	float:left;
@@ -575,7 +571,7 @@ body {
 	background:url(/images/srch.png) no-repeat left top;
 	width:110px;
 	height:63px;
-	font-size:14px;
+	font-size:0px;
 	color:white;
 	text-align:center;
 	margin:10px 0px 0px 20px;
@@ -583,8 +579,12 @@ body {
 	cursor:pointer;
 	outline:none !important;
 	text-indent:-9999px;
+	line-height:0;
+	text-transform:capitalize;
+	
 	}
-.search-btn:focus{
+.search-btn:hover{
+background:url(/images/srch-hover.png) no-repeat left top;
 	float:left;
 	width:110px;
 	height:63px;
@@ -593,7 +593,6 @@ body {
 	text-align:center;
 	border:none;
 	cursor:pointer;
-	margin:10px 0px 0px 21px;
 	outline:none !important;
 	}
 .search-terms{
@@ -606,8 +605,15 @@ body {
   background:white;
   border-radius:10px;
   padding:15px 20px 0px 20px;
+  	behavior: url(../javascripts/ie-css3.htc);
   
 }	
+.content-body h6{  font-family: 'Square721Regular';
+	 font-size:22px;
+	 line-height:22px;
+	 font-weight:normal;
+	 padding-bottom:10px;
+	 color:#4b6a15;}
 	
 #slider{
 	background:url(/images/slider-bg.png) no-repeat left top;
@@ -652,30 +658,34 @@ body {
 .nomargin{	margin-right:0px !important;}
 
 #coin-slider{
-  margin-bottom:15px;}
+  margin-bottom:15px;
+  }
 #popular-Questions{
 	float:left;
 	background:#FFF;
-
 	width:100%;
 	margin-top:37px;
 	padding-bottom:10px;
 	position:relative;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;}
+	border-radius: 5px;
+	behavior: url(../javascripts/ie-css3.htc);
+	}
 	
 	#popular-Questions .show-more {
-    background: url("/images/show-btn.png") repeat-x scroll left top transparent;
+    background: url("/images/show-btn.png") repeat-x;
     border-radius: 5px 5px 5px 5px;
     color: #666666;
     float: right;
     font-size: 12px;
     line-height: 24px;
-    margin-right: 49px;
-    margin-top: 0;
+    display:block;
     padding: 0 5px;
-    text-align: center;}
+    #position:relative;
+    #bottom:20px;
+    text-align: center;
+    }
 	
 	.popular-q{
 	float:left;
@@ -1052,6 +1062,8 @@ table.admin-view th{
     margin-left: 20px;
     width:80%;    
     padding-left: 25px;
+    display:inline;
+    #width:600px;
 }
 .list-wrapper{
     float:right;
