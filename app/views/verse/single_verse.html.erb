@@ -13,7 +13,7 @@
 <%= v.text  %>
 </div><br><br>
 <div class="verse-color">
-<%= @trans_verses[v.id]  %></div>
+<%= @trans_verses[v.id] unless @trans_verses.blank?  %></div>
 <% end %>
 </div>
 <div class = "verse-background">
@@ -21,7 +21,7 @@
 <%= @verse.text %>
 </div><br><br>
 <div class="verse-color-whit">
-<%=  @trans_verses[@verse.id] %>
+<%=  @trans_verses[@verse.id] unless @trans_verses.blank? %>
 </div> 
 </div>
 <div class = "verse-background-pr-post">
@@ -30,7 +30,7 @@
 <%= v.text  %><br><br>
 </div>
 <div class="verse-color">
-<%= @trans_verses[v.id] %></div>
+<%= @trans_verses[v.id] unless @trans_verses.blank? %></div>
 <% end %></div>
 </div>
     <% if params[:prev] %>
