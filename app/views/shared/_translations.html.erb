@@ -7,8 +7,10 @@
     <% Translation.all.each do |translation| %>
       <% if params[:trans] %>
         <%= check_box_tag 'trans[]', translation.table_nam, params[:trans].include?(translation.table_nam) %>
-      <% else %>
+      <% elsif !@translation.blank? %>
         <%= check_box_tag 'trans[]', translation.table_nam, @translation.id == translation.id %>
+      <% else %>
+        <%= check_box_tag 'trans[]', translation.table_nam %>
       <% end %>
       <%= translation.name %><br><br>
     <% end %>
