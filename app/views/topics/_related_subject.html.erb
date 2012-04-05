@@ -1,13 +1,13 @@
 <div class="list-points">
 <div style="float:left; margin-right:10px; width:329px;">
-<div class="popular-q">
+<div class="topic-popular-q">
   <div class="latest-bar">
   Related Subjects</div>
     <div class="question_latest_popular">
       <ul>
-      <% @related_subject.each do|t| %>
-      <li>
-      <%= link_to truncate(t.name, :length => 50, :omission => '...'),topic_url(t)%>
+      <% @related_subject.each_with_index do|t,i| %>
+      <li class="<%= questions_subject_class(i+1, @related_subject.count) %>">
+      <%= link_to truncate(t.name, :length => 71, :omission => '...'),topic_url(t)%>
       </li>
       <% end %>
  </ul>

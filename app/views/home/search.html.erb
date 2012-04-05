@@ -39,7 +39,7 @@
     <%= will_paginate @questions_search unless @questions_search.blank? %>
   </ul>
   <% if @topics_search.blank? && @sub_topics_search.blank? && @questions_search.blank? && @search.blank? %>
-<h6>No Such request Found!!</h6>
+<h6>No search result found!</h6>
 <% end %>
   <% unless @search.blank? %>
   <% @search.each do |s| %>

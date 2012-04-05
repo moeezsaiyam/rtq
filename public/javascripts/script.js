@@ -30,7 +30,18 @@ $(document).ready(function()
 
   $("#search_form form").submit(function(){
     if($("input.search-field").val() == "" || $("input.search-field").val() == "Search")
+    {
+      $("input.search-field").addClass('error');
       return false;
+    }
+  });
+  
+  $(".search-box form").submit(function(){
+    if($("input.s-input").val() == "" || $("input.s-input").val() == "Search")
+    {
+      $("input.s-input").addClass('error');
+      return false;
+    }
   });
     
  $(".trans-select form input:checkbox").click(function(){ 

@@ -35,7 +35,7 @@
 <!--question-bar -->
 <div class="question-bar">
 
-Popular-Questions
+Popular Questions
 
 <%= link_to("Show more", {:controller => "questions", :action => "popular"}, { :class => 'show-more'}) %>
 
@@ -45,8 +45,8 @@ Popular-Questions
 <div class="question">
 
 <ul>
-<% @questions.each do |q| %>
-  <li>
+<% @questions.each_with_index do |q,i| %>
+ <li class="<%= questions_list_class(i+1, @questions.count) %>">
     <%= link_to q.quest, topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q)%>
   </li>
 <% end %>

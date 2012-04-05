@@ -13,8 +13,8 @@ class Question < ActiveRecord::Base
     indexes answer
   end
 
-  named_scope :most_viewed, :limit => 6, :order => 'view_count DESC'
   named_scope :popular, :order => 'view_count DESC'
+  named_scope :limited, :limit => 6
 
   validates_presence_of :quest
 

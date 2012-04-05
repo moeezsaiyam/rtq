@@ -5,7 +5,7 @@ module SubTopicsHelper
     return html
   end
   def bread_crumb_pop()
-    html ="<div class='bread-crumb'> <a href='/'> Home </a> > Popular Questions</div>"
+    html ="<div class='bread-crumb'> <a href='/'> Home </a></div>"
     return html
   end
 end

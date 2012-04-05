@@ -54,12 +54,11 @@ module ApplicationHelper
   end
   
   def twitter_adventure_sharer
-    title = "Show"
     target_url = request.url
-    url = "https://twitter.com/intent/tweet?original_referer=#{request.url}&source=tweetbutton&text=#{title}&url=#{target_url}"
-    link_to(image_tag("twt.png", :width => "32", :height => "32"), {:onclick => ['window.open("', url,'"', ",'TwitterSharer',","'menubar=1,resizable=1,width=500,height=400');"].join})
+    url = "https://twitter.com/intent/tweet?original_referer=#{request.url}&source=tweetbutton&url=#{target_url}"
+    link_to(image_tag("twt.png", :width => "32", :height => "32"), "#",:onclick => ['window.open("', url,'"', ",'TwitterSharer',","'menubar=1,resizable=1,width=500,height=400');"].join)
      end
-  
+     
    def popup_window_sharer
     target_url = request.url
     link_to(image_tag("fb.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank")
@@ -85,14 +84,14 @@ module ApplicationHelper
     html = ""
     topics.each do |topic|
       unless params[:topic_name_slug].blank?
-        html = html + "<li><a href='/#{topic.name_slug}' class='slected'>#{truncate(topic.name, :length => 20, :omission => '...')}</a></li>" if params[:topic_name_slug] == topic.name_slug
-        html = html + "<li><a href='/#{topic.name_slug}'>#{truncate(topic.name, :length => 20, :omission => '...')}</a></li>" unless params[:topic_name_slug] == topic.name_slug
+        html = html + "<li><a href='/#{topic.name_slug}' class='slected'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>" if params[:topic_name_slug] == topic.name_slug
+        html = html + "<li><a href='/#{topic.name_slug}'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>" unless params[:topic_name_slug] == topic.name_slug
       else
         unless params[:topic_id].blank?
-          html = html + "<li><a href='/#{topic.name_slug}' class='slected'>#{truncate(topic.name, :length => 20, :omission => '...')}</a></li>" if params[:topic_id].to_i == topic.id
-          html = html + "<li><a href='/#{topic.name_slug}'>#{truncate(topic.name, :length => 20, :omission => '...')}</a></li>" unless params[:topic_id].to_i == topic.id
+          html = html + "<li><a href='/#{topic.name_slug}' class='slected'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>" if params[:topic_id].to_i == topic.id
+          html = html + "<li><a href='/#{topic.name_slug}'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>" unless params[:topic_id].to_i == topic.id
         else
-          html = html + "<li><a href='/#{topic.name_slug}'>#{truncate(topic.name, :length => 20, :omission => '...')}</a></li>"
+          html = html + "<li><a href='/#{topic.name_slug}'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>"
         end
       end
     end

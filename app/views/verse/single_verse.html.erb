@@ -8,8 +8,8 @@
      <% end %><br>
 <div class = "verse-wrapper">
 <div class = "verse-background-pr-post">
-<% @prev_verses.each do |v| %>
-<div class="arabic-post-pr-verse" dir="rtl"><br>
+<% @prev_verses.each_with_index do |v,i| %>
+<div class="arabic-post-pr-verse" "<%= verse_list_class(i+1,@prev_verses.count) %>" dir="rtl" ><br>
 <%= v.text  %>
 </div><br><br>
 <div class="verse-color">

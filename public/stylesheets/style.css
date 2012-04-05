@@ -189,10 +189,10 @@ p{
 	font-weight:normal;
 	line-height:18px;}
 .list-questions h5{
-  padding-left:20px;
+  padding-left:24px;
   }
 .list-questions-popular h5{
-  padding-left:20px;
+  padding-left:24px;
   font-size:22px;
   }
 table { border-collapse: collapse; border-spacing: 0;}
@@ -237,8 +237,10 @@ body {
 	
 #social-container{
 	float:right;
-	padding-top:21px;
-	width:147px;
+	padding-top:0px;
+	width:148px;
+	position:relative;
+	top:14px;
 	
 	}
 	
@@ -256,7 +258,7 @@ body {
 
 	float:right;
 	width:640px;
-	padding-top:20px;
+	padding-top:40px;
 	
 }
 
@@ -589,7 +591,7 @@ body {
 	
 	}
 .search-btn:hover{
-background:url(/images/srch-hover.png) no-repeat left top;
+background:url(/images/srch.png) no-repeat left top;
 	float:left;
 	width:110px;
 	height:63px;
@@ -597,6 +599,7 @@ background:url(/images/srch-hover.png) no-repeat left top;
 	color:white;
 	text-align:center;
 	border:none;
+	margin:10px 0px 0px 21px;
 	cursor:pointer;
 	outline:none !important;
 	}
@@ -614,6 +617,14 @@ background:url(/images/srch-hover.png) no-repeat left top;
 .content-body h6{  
    font-family: 'Square721Regular';
 	 font-size:22px;
+	 line-height:22px;
+	 font-weight:normal;
+	 padding-bottom:10px;
+	 color:#4b6a15;}
+	 
+.content-body h1{  
+   font-family: 'Square721Regular';
+	 font-size:17px;
 	 line-height:22px;
 	 font-weight:normal;
 	 padding-bottom:10px;
@@ -715,9 +726,48 @@ background:url(/images/srch-hover.png) no-repeat left top;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	min-height:230px;
+	left:10px;
+	}
+	
+	.related-q
+	{
+	float:left;
+	background:#FFF;
+	width:100%;
+	margin-top:37px;
+	padding-bottom:10px;
+	position:relative;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	min-height:230px;
+	left:22px;
+	}
+	.sb-topic-popular-q{
+	float:left;
+	background:#FFF;
+	width:100%;
+	margin-top:37px;
+	padding-bottom:10px;
+	position:relative;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	min-height:230px;
 	}
 
-	
+	.topic-popular-q{
+	float:left;
+	background:#FFF;
+	width:100%;
+	margin-top:37px;
+	padding-bottom:10px;
+	position:relative;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	min-height:230px;
+	}
 #latest-Questions{
 	float:left;
 	background:#FFF;
@@ -781,16 +831,15 @@ background:url(/images/srch-hover.png) no-repeat left top;
 	padding:4px 6px 4px 6px;}
 	
 .show-search{
-	background: url("/images/button-rep.png") repeat-x scroll left top transparent;
-    border-radius: 5px 5px 5px 5px;
-    color: #FFFFFF;
+	  background: none repeat scroll 0 0 #F5F5F5;
+    color: #000000;
     float: right;
     line-height: 24px;
     margin-right: 49px;
     margin-top: 0;
     padding: 2px 10px;
     position: relative;
-    right: -65px;
+    right: -56px;
     text-align: center;
     top: -1px;
     width: 51px;
@@ -835,6 +884,9 @@ background:url(/images/srch-hover.png) no-repeat left top;
 	clear:both;
 	width:92%;
 	}
+.question ul li.last{
+border-bottom:none;}	
+	
 .trans-select{
     border: 1px solid #EEEEEE;
     border-radius: 8px 8px 8px 8px;
@@ -979,7 +1031,7 @@ table.admin-view th{
   margin-right:10px;
 }
 .addthis_toolbox{
-  float: left;
+  float: right;
   width: 40px;
  }
 
@@ -1113,7 +1165,7 @@ table.admin-view th{
    padding:0px 0px 20px 20px;
   }
   .verse-color {
-  color:#666666;
+  color:#000000;
   font-size:14px;
   padding:0px 15px 20px 20px;
   border-bottom:1px solid #f5f5f5;
@@ -1248,7 +1300,8 @@ table.admin-view th{
 	background:url(/images/f-search.png) no-repeat right top;
 	width:31px;
 	height:28px;
-	border: none;}
+	border: none;
+	cursor:pointer;}
 .slides_container {
     width:663px;
     height:306px;
@@ -1361,8 +1414,8 @@ width:100%;
   right:-157px;
 }
 .footer {
-  float: left;
-  margin-left: 19px;
+
+  margin-left: 27px;
 }
 .my_custom_googleplusone{
 background: url("/images/google.png") no-repeat scroll;
@@ -1397,5 +1450,17 @@ position: absolute;
 #___plusone_1{
   opacity:0;
   width:30px !important; 
+}
+.search-field.error, .s-input.error{
+  border:1px solid red !important
+}
+
+.trans{
+    color: #4B6A15;
+    font-family: 'Square721Regular';
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 22px;
+    padding-bottom: 10px;
 }
 /* Footer CSS End */

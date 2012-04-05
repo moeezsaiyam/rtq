@@ -26,7 +26,7 @@
   <!--/header-->
   <!--search-container -->
      
-      <% unless @sub_topics_search.blank? && @questions_search.blank? && @topics_search.blank? && @search.blank? %>
+      <% unless @sub_topics_search.blank? && @questions_search.blank? && @topics_search.blank? && @search.blank? && @empty_search.blank?%>
        <div class="search-container1">
         <%= render :partial => "shared/search" %>
       </div>
@@ -35,7 +35,7 @@
   <div class="clear"></div>
   <!--content-->
   <div id="content">
-    <% unless @questions_search.blank? && @sub_topics_search.blank? && @topics_search.blank? && @search.blank?  %>
+    <% unless @questions_search.blank? && @sub_topics_search.blank? && @topics_search.blank? && @search.blank? && @empty_search.blank? %>
   <div id="col1-1">
   <div class="side1-nav">
    <%= render :partial => "shared/left_sidebar" %>
@@ -45,15 +45,12 @@
     </div>
     <%end%>
     <!-- col-1-->
-    <% if @topics_search.blank? && @questions_search.blank? && @sub_topics_search.blank? && @search.blank?  %>
+    <% if @topics_search.blank? && @questions_search.blank? && @sub_topics_search.blank? && @search.blank? && @empty_search.blank?  %>
     <div id="col-1">
       <div class="side-nav">
         <%= render :partial => "shared/left_sidebar" %>
       </div>
-      <% unless @verses_range.blank? %>
-      <%= render :partial => "shared/translations" %>
-      <%end%>
-      <% unless @prev_verses.blank? %>
+     <% unless @verses_range.blank? && @next_verses.blank? && @prev_verses.blank? %>
       <%= render :partial => "shared/translations" %>
       <%end%>
       <div class="clear"></div>
