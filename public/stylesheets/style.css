@@ -44,8 +44,7 @@ body {
   font-family: 'PDMSSaleemQuranFontRegular' ;
   font-size:16px;
   padding-right:5px;
-  color:#000000;
-   padding:0px 20px 0px 0px;
+  padding:0px 20px 0px 0px;
 }
 .arabic-text{
   padding-top:25px;
@@ -240,7 +239,7 @@ body {
 	padding-top:0px;
 	width:148px;
 	position:relative;
-	top:14px;
+	top:17px;
 	
 	}
 	
@@ -725,7 +724,7 @@ background:url(/images/srch.png) no-repeat left top;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	min-height:230px;
+	min-height:287px;
 	left:10px;
 	}
 	
@@ -740,7 +739,7 @@ background:url(/images/srch.png) no-repeat left top;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	min-height:230px;
+	min-height:287px;
 	left:22px;
 	}
 	.sb-topic-popular-q{
@@ -753,7 +752,7 @@ background:url(/images/srch.png) no-repeat left top;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	min-height:230px;
+	min-height:287px;
 	}
 
 	.topic-popular-q{
@@ -766,7 +765,7 @@ background:url(/images/srch.png) no-repeat left top;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	min-height:230px;
+	min-height:287px;
 	}
 #latest-Questions{
 	float:left;
@@ -886,6 +885,16 @@ background:url(/images/srch.png) no-repeat left top;
 	}
 .question ul li.last{
 border-bottom:none;}	
+
+
+.verse-last{
+ font-size:14px;
+ padding:0px 15px 20px 20px;}
+ 
+ .verse-current-last{
+ color:#FFFFFF;
+ font-size:14px;
+ padding:0px 15px 20px 20px;}
 	
 .trans-select{
     border: 1px solid #EEEEEE;
@@ -1165,7 +1174,6 @@ table.admin-view th{
    padding:0px 0px 20px 20px;
   }
   .verse-color {
-  color:#000000;
   font-size:14px;
   padding:0px 15px 20px 20px;
   border-bottom:1px solid #f5f5f5;
@@ -1192,6 +1200,11 @@ table.admin-view th{
   font-size:14px;
   padding:0px 15px 20px 20px;
   border-bottom:1px solid #f5f5f5;
+  }
+  .verse-whit-last{
+  color:#FFFFFF;
+  font-size:14px;
+  padding:0px 15px 20px 20px;
   }
 
 
@@ -1402,7 +1415,6 @@ table.admin-view th{
 .content-list-body{
 background-color:white;
 border-radius:10px;
-padding-top:10px;
 width:100%;
 }
 

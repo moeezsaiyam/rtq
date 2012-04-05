@@ -9,10 +9,10 @@
 <div class = "verse-wrapper">
 <div class = "verse-background-pr-post">
 <% @prev_verses.each_with_index do |v,i| %>
-<div class="arabic-post-pr-verse" "<%= verse_list_class(i+1,@prev_verses.count) %>" dir="rtl" ><br>
+<div class="arabic-post-pr-verse" dir="rtl" ><br>
 <%= v.text  %>
 </div><br><br>
-<div class="verse-color">
+<div class="<%= verse_list_class(i+1,@prev_verses.count)%>">
 <%= @trans_verses[v.id] unless @trans_verses.blank?  %></div>
 <% end %>
 </div>
@@ -20,16 +20,16 @@
 <div class="arabic-current-verse" dir="rtl"><br>
 <%= @verse.text %>
 </div><br><br>
-<div class="verse-color-whit">
+<div class="verse-current-last">
 <%=  @trans_verses[@verse.id] unless @trans_verses.blank? %>
 </div> 
 </div>
 <div class = "verse-background-pr-post">
-<% @next_verses.each do |v| %>
+<% @next_verses.each_with_index do |v,i| %>
 <div class="arabic-post-pr-verse" dir="rtl"><br>
 <%= v.text  %><br><br>
 </div>
-<div class="verse-color">
+<div class="<%= verse_list_class(i+1,@prev_verses.count)%>">
 <%= @trans_verses[v.id] unless @trans_verses.blank? %></div>
 <% end %></div>
 </div>

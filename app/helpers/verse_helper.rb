@@ -10,6 +10,7 @@ module VerseHelper
   puts "/////////////////////"
   puts index.inspect
   puts count.inspect
-    return "last" if index == count
+    return "verse-last" if index == count
+    "verse-color"
   end
 end
