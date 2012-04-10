@@ -56,17 +56,17 @@ module ApplicationHelper
   def twitter_adventure_sharer
     target_url = request.url
     url = "https://twitter.com/intent/tweet?original_referer=#{request.url}&source=tweetbutton&url=#{target_url}"
-    link_to(image_tag("twt.png", :width => "32", :height => "32"), "#",:onclick => ['window.open("', url,'"', ",'TwitterSharer',","'menubar=1,resizable=1,width=500,height=400');"].join)
+    link_to(image_tag("twt.png", :width => "32", :height => "32"), "#",:class => "social",:onclick => ['window.open("', url,'"', ",'TwitterSharer',","'menubar=1,resizable=1,width=500,height=400');"].join)
      end
      
    def popup_window_sharer
     target_url = request.url
-    link_to(image_tag("fb.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank")
+    link_to(image_tag("fb.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank",:class => "social")
     end
     
    def rss_window_sharer
     target_url = request.url
-    link_to(image_tag("rss.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank")
+    link_to(image_tag("rss.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank",:class => "social")
     end
 
   def addthis_widget

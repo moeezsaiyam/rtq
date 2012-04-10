@@ -57,7 +57,16 @@ body {
 .right{
   float:left;
 }
-
+.alternate{
+  font-family: 'Square721Regular';
+	 font-size:18px;
+	 line-height:22px;
+  font-weight:normal;
+	 padding-bottom:10px;
+	 color:#4b6a15;
+  padding-left:24px;
+  
+  }
 input[type=password], input[type=text]{
 	border:1px solid #f3df95;
 	background:#FFF;
@@ -163,10 +172,12 @@ h3 a{
 	 color:#835a35;}
 
 h4{
-  font-size:16px;
-  line-height:20px;
-  color:#666;
-  padding:10px 0 10px 0;
+  font-family: 'Square721Regular';
+	 font-size:18px;
+	 line-height:22px;
+	 font-weight:normal;
+	 padding-bottom:10px;
+	 color:#4b6a15;
 }
 h5{  font-family: 'Square721Regular';
 	 font-size:18px;
@@ -195,6 +206,10 @@ p{
   padding-left:24px;
   font-size:22px;
   }
+  .list-questions-alt h4{
+  padding-left:24px;
+  }
+  
 table { border-collapse: collapse; border-spacing: 0;}
 
 th, td, caption { font-weight: normal; vertical-align: top; text-align: left;}
@@ -238,11 +253,14 @@ body {
 #social-container{
 	float:right;
 	padding-top:0px;
-	width:148px;
+	width:154px;
 	position:relative;
 	top:17px;
-	
 	}
+#social-container a{
+  float:left;
+  padding-right:5px;
+}
 	
 .s-network{ 
 	float:left;
@@ -259,6 +277,7 @@ body {
 	float:right;
 	width:640px;
 	padding-top:40px;
+	*padding-top:44px;
 	
 }
 
@@ -590,7 +609,7 @@ body {
 	text-transform:capitalize;
 	
 	}
-.search-btn:hover{
+.search-btn:focus{
 background:url(/images/srch.png) no-repeat left top;
 	float:left;
 	width:110px;
@@ -1041,8 +1060,9 @@ table.admin-view th{
   margin-right:10px;
 }
 .addthis_toolbox{
-  float: right;
-  width: 40px;
+  float: right !important;
+  position:absolute:
+  bottom:10px;
  }
 
 .list-points{
@@ -1241,8 +1261,6 @@ table.admin-view th{
 }
 
 /* Content CSS End */
-
-
 /* Footer CSS Start */
 #footer {
 	background:url(/images/footer-bg.png) repeat-x;
@@ -1260,8 +1278,7 @@ table.admin-view th{
 	
 #footer .connect-with{
 	float:left;
-	width:175px;
-	
+	width:178px;
 	}
 	
 #footer h6{
@@ -1316,6 +1333,11 @@ table.admin-view th{
 	height:28px;
 	border: none;
 	cursor:pointer;}
+	
+.footer a.social{
+  float:left;
+  padding-right:5px
+}
 .slides_container {
     width:663px;
     height:306px;
