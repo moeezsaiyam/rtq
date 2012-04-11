@@ -41,6 +41,7 @@ class VerseController < ApplicationController
     @translation = Translation.find_by_default(1) unless request.referrer.split("/").include?("verse")
     return head(404) unless @verse
     @verses_range = Verse.from_to_verses(params[:id],params[:range])
+    puts @verses_range.inspect
     unless @translation.blank? && params[:trans].blank?
       trans = params[:trans] if params[:trans]
       trans = [@translation.table_nam] if trans.blank?

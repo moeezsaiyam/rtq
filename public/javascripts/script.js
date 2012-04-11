@@ -10,9 +10,13 @@ $(document).ready(function()
   $(".watermarked").each(function() {
     $(this).Watermark($(this).attr('title'));
   });
-
-  $('#coin-slider').coinslider({ width: 700,height: 307, navigation: true });
   
+  $('#carousel').infiniteCarousel({
+	transitionSpeed : 800,
+	displayTime : 5000,
+	textholderHeight : .30,
+	displayProgressBar : 0
+  });
 
   $('#add_button').click(function(){
     var new_box = $('.alternate_phrase_field:last').clone().val('');
@@ -28,21 +32,7 @@ $(document).ready(function()
    return false;
    });
 
-  $("#search_form form").submit(function(){
-    if($("input.search-field").val() == "" || $("input.search-field").val() == "Search")
-    {
-      $("input.search-field").addClass('error');
-      return false;
-    }
-  });
-  
-  $(".search-box form").submit(function(){
-    if($("input.s-input").val() == "" || $("input.s-input").val() == "Search")
-    {
-      $("input.s-input").addClass('error');
-      return false;
-    }
-  });
+ 
     
  $(".trans-select form input:checkbox").click(function(){ 
   $('.trans-select form').submit(); 

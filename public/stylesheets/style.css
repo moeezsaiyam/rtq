@@ -691,7 +691,6 @@ background:url(/images/srch.png) no-repeat left top;
 	padding-top:18px;
 }
 .class-section p {
-  text-align:left !important;
 }
 	
 .class-img{
@@ -863,6 +862,32 @@ background:url(/images/srch.png) no-repeat left top;
     top: -1px;
     width: 51px;
 	}
+	.show-verse-number{
+	background: none repeat scroll 0 0 #F5F5F5;
+    color: #000000;
+    float: right;
+    line-height: 24px;
+    margin-left: -3px;
+    margin-top: 0;
+    padding: 2px 10px;
+    position: relative;
+    top: -1px;
+    width: 51px;
+    text-align: center;
+    }
+	.show-verse-search {
+    background: none repeat scroll 0 0 #F5F5F5;
+    color:#000000;
+    float:left;
+    line-height:24px;
+    margin-right: 49px;
+    padding: 2px 10px;
+    text-align: center;
+    top: -1px;
+    width: 91px;
+    border-radius:5px;
+    }
+	
 	.browse-btn{
 	line-height:24px;
 	text-align:center;
@@ -1186,7 +1211,10 @@ table.admin-view th{
   color:#333;
   border-bottom:1px solid #EFEFEF
   }
-  
+  .verse-color1 {
+  font-size:14px;
+  padding:0px 15px 20px 20px;
+  }
   .current-verse-color {
   color:#ffffff;
   font-size:14px;
@@ -1194,11 +1222,10 @@ table.admin-view th{
   padding-bottom:15px;
    padding:0px 0px 20px 20px;
   }
-  .verse-color {
+.verse-color {
   font-size:14px;
   padding:0px 15px 20px 20px;
-  border-bottom:1px solid #f5f5f5;
-  }
+}
  .verse-brown {
   color:#666666;
   font-size:14px;
@@ -1207,15 +1234,11 @@ table.admin-view th{
  }
   .verse-brown h1 {
   color:#577818;
-  
- 
- 
  }
- 
-    .verse-color h1{ 
-   color:#577818
-    ;}
-    
+  .verse-color h1{ 
+   color:#577818;
+   font-size:18px;
+   }
   .verse-color-whit {
   color:#FFFFFF;
   font-size:14px;
@@ -1227,8 +1250,12 @@ table.admin-view th{
   font-size:14px;
   padding:0px 15px 20px 20px;
   }
-
-
+.verse-white-color {
+  color:#FFFFFF;
+  font-size:15px;
+  padding:0px 15px 20px 20px;
+}
+  
 .list-questions-browse h1{
   padding:20px 0px 20px 0px;
   
@@ -1245,7 +1272,7 @@ table.admin-view th{
 
 .list-questions-browse li a{
   color:#333;
-  border-bottom:1px solid #EFEFEF
+  border-bottom:1px solid #EFEFEF;
 }
 
 .context-of{
@@ -1258,6 +1285,12 @@ table.admin-view th{
 
 .context-of li{
   font-size:19px;
+}
+
+.verse-context-color {
+  border-bottom:1px solid #CCCCCC;
+  width:643px;
+  margin-left:20px;
 }
 
 /* Content CSS End */
@@ -1368,13 +1401,26 @@ table.admin-view th{
     top: -170px;
     width: 24px;
 }
+ .search-pag .pagination{
+    display: inline;
+    margin:0 auto;
+    width: 675px;
+    margin-left:300px; 
+ }
 
-.pagination{
+ .simple-page .pagination{
   display: inline;
   margin:0 auto;
-  text-align: center;
   width: 675px;
   float:left;
+  text-align:center;
+ 
+}
+pagination{
+  display: inline;
+  margin:0 auto;
+  width: 675px;
+  margin-left:300px;
  
 }
 .pagination li{
@@ -1497,5 +1543,76 @@ position: absolute;
     font-weight: normal;
     line-height: 22px;
     padding-bottom: 10px;
+}
+.separator-width{
+    border-bottom: 1px solid #CCCCCC;
+    float: left;
+    margin-left: 20px;
+    width: 643px;
+}
+
+.separator-issue-width{
+    border-bottom: 1px solid #CCCCCC;
+    float: left;
+    margin-left: -1px;
+    width: 643px;
+}
+
+.separator-search-width{
+    border-bottom:1px solid #CCCCCC;
+    float:left;
+    margin-left:-1px;
+    width:647px;
+}
+.verses-last{
+border-bottom:none;
+}
+.search-keyword{
+  text-align:center;
+}
+.search-verse-keyword{
+    padding-left: 17px;
+    padding-top: 10px;
+    text-align: left;
+    }
+ #carousel ul {
+	list-style: none;
+	width:1600px;
+	margin: 0;
+	padding: 0;
+	position:relative;
+}
+#carousel li {
+	display:inline;
+	float:left;
+}
+#slider div.navigation {
+  display: block;
+  float: left;
+  margin: 10px 0;
+  text-align: center;
+  width: 660px;
+}
+.carousal-des{
+  background-color:#000000;
+}
+.numbered-verse{
+  float:left;
+  margin-left: 24px;
+  margin-top: 9px;
+}
+#slider .textholder{
+  background-color: #0F0F0F !important;
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: 7px 4px 0 #000000;
+  color: #4b6a15;
+  font-size: 17px;
+  height: 166.1px !important;
+  margin-bottom: 31px !important;
+  opacity: 0.9 !important;
+  padding: 11px;
+  width: 336px !important;
+}
+.white-color{
 }
 /* Footer CSS End */

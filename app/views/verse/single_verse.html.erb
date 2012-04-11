@@ -7,31 +7,47 @@
      </div>
      <% end %><br>
 <div class = "verse-wrapper">
-<div class = "verse-background-pr-post">
-<% @prev_verses.each_with_index do |v,i| %>
-<div class="arabic-post-pr-verse" dir="rtl" ><br>
-<%= v.text  %>
-</div><br><br>
-<div class="<%= verse_list_class(i+1,@prev_verses.count)%>">
-<%= @trans_verses[v.id] unless @trans_verses.blank?  %></div>
-<% end %>
+  <div class = "verse-background-pr-post">
+  <% unless @prev_verses.blank? %>
+  <div class = "search-verse-keyword">
+  <h5> Pre Context </h5><br>
+  </div>
+  <%end%>
+  <end>
+    <% @prev_verses.each_with_index do |v,i| %>
+      <div class="arabic-post-pr-verse" dir="rtl" ><br>
+        <%= v.text  %>
+      </div><br><br>
+      <div class="verse-color">
+        <%= @trans_verses[v.id] unless @trans_verses.blank?  %>
+      </div>
+      <div class="<%= verse_list_class(i+1,@prev_verses.count)%>"></div>
+    <% end %>
+  </div>
+  <div class = "verse-background">
+  <div class="arabic-current-verse" dir="rtl"><br>
+    <%= @verse.text %>
+  </div><br><br>
+  <div class="verse-current-last">
+    <%=  @trans_verses[@verse.id] unless @trans_verses.blank? %>
+  </div> 
 </div>
-<div class = "verse-background">
-<div class="arabic-current-verse" dir="rtl"><br>
-<%= @verse.text %>
-</div><br><br>
-<div class="verse-current-last">
-<%=  @trans_verses[@verse.id] unless @trans_verses.blank? %>
-</div> 
-</div>
 <div class = "verse-background-pr-post">
+<% unless @prev_verses.blank? %>
+<div class = "search-verse-keyword">
+<h5> Post Context </h5><br>
+ </div>
+ <%end%>
 <% @next_verses.each_with_index do |v,i| %>
 <div class="arabic-post-pr-verse" dir="rtl"><br>
 <%= v.text  %><br><br>
 </div>
-<div class="<%= verse_list_class(i+1,@prev_verses.count)%>">
-<%= @trans_verses[v.id] unless @trans_verses.blank? %></div>
-<% end %></div>
+<div class="verse-color">
+<%= @trans_verses[v.id] unless @trans_verses.blank? %>
+</div>
+<div class="<%= verse_list_class(i+1,@prev_verses.count)%>"></div>
+<% end %>
+</div>
 </div>
     <% if params[:prev] %>
     <div class="list-points">

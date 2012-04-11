@@ -22,13 +22,18 @@
      <%end%><br>
      <div class = "verse-wrapper">
     <div class = "verse-background-pr-post">
-  <% @verses_range.each do|v| %>
-   <div class="arabic-post-pr-verse" dir="rtl"><br>
+  <% @verses_range.each_with_index do|v,i| %>
+  <div class = "numbered-verse">
+      <div class = "show-verse-number"><%= v.sura %> : <%= v.aya %></div>
+      </div><br>
+   <div class="arabic-post-pr-verse" dir="rtl"><br><br>
        <%= v.text  %>
       </div><br><br>
       <div class="verse-color">
       <%=(@trans_verses[v.id]) unless @trans_verses.blank? %>
-       <%= link_to ("View Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-more'}) %></div>
+       <%= link_to ("View Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-verse-search'}) %><br>
+       </div>
+       <div class = "separator-width <%= verses_list_class(i+1,@verses_range.count)%>"></div>
       <% end %>
       </div>
       </div>

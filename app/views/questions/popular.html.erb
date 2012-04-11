@@ -10,7 +10,9 @@
   <%= link_to truncate(q.quest, :length => 147, :omission => '...'), topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q)%>
 </li>
   <% end %>
+  <div class="simple-page">
   <%= will_paginate @questions%>
+  </div>
  </ol>
 </div>
 </div>

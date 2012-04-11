@@ -7,10 +7,15 @@ module VerseHelper
     html = "<div class='bread-crumb'> <a href='/'> Home </a> > <a href='/#{question.sub_topic.topic.name_slug}'> #{question.sub_topic.topic.name} </a> > <a href='/#{question.sub_topic.topic.name_slug}/#{question.sub_topic.name_slug}'> #{question.sub_topic.name} </a> </div>"
  end
   def verse_list_class(index,count)
-  puts "/////////////////////"
-  puts index.inspect
-  puts count.inspect
     return "verse-last" if index == count
-    "verse-color"
+    "verse-context-color"
   end
+  
+   def verses_list_class(index,count)
+   return "verses-last" if index == count || index == 10
+   end
+   
+   def sub_topic_list_class(question)
+   return "verses-last" if question.blank?
+   end
 end

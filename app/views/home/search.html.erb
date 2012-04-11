@@ -1,7 +1,17 @@
 <br><div class="content-body">
+  <% unless params[:search_term] == 'Search' %>
+ <div class = "search-keyword">
+<h6>Search results for <%= params[:search_term] %></h6><br>
+ </div>
+ <%end%>
+ <% if params[:search_term] == 'Search' %>
+ <div class = "search-keyword">
+<h6>Search results </h6><br>
+ </div>
+   <% end %>
   <ul>
     <% unless @topics_search.blank? %>
-      <% @topics_search.each do |topic| %>
+      <% @topics_search.each_with_index do |topic,i| %>
         <li>
           <a href="/<%= topic.name_slug %>"><h3><%= h topic.name %></h3></a><div class = "show-search"> Topic </div>
           <div>
@@ -9,6 +19,7 @@
               <%=h topic.description[0..100] %><%= "..." if topic.description.chars.count > 100 %>
             </p>
           </div>
+          <div class = "separator-search-width"></div><br>
         </li>
       <% end %>
     <% end %>
@@ -21,11 +32,12 @@
               <%=h sub_topic.description[0..100] %><%= "..." if sub_topic.description.chars.count > 100 %>
             </p>
           </div>
+          <div class = "separator-search-width <%= sub_topic_list_class(@questions_search)%>"></div><br>
         </li>
       <% end %>
     <% end %>
     <% unless @questions_search.blank? %>
-      <% @questions_search.each do |question| %>
+      <% @questions_search.each_with_index do |question,i| %>
         <li>
           <a href="/<%= question.sub_topic.topic.name_slug %>/<%= question.sub_topic.name_slug %>/<%= question.quest_slug %>"><h3><%= h question.quest %></h3></a><div class = "show-search"> Question </div>
           <div>
@@ -33,16 +45,16 @@
               <%=h question.answer[0..100] %><%= "..." if question.answer.chars.count > 100 %>
             </p>
           </div>
+           <div class = "separator-search-width <%= verses_list_class(i+1,@questions_search.count)%>"></div><br>
         </li>
       <% end %>
     <% end %>
-    <%= will_paginate @questions_search unless @questions_search.blank? %>
   </ul>
-  <% if @topics_search.blank? && @sub_topics_search.blank? && @questions_search.blank? && @search.blank? %>
+  <% if @topics_search.blank? && @sub_topics_search.blank? && @questions_search.blank? && @search.blank? && @blank_search.blank? %>
 <h6>No search result found!</h6>
 <% end %>
   <% unless @search.blank? %>
-  <% @search.each do |s| %>
+  <% @search.each_with_index do |s,i| %>
     <% if s.class == Topic %>
       <a href="/<%= s.name_slug %>"><h3><%= h s.name %></h3></a> <div class = "show-search"> Topic </div>
        <div>
@@ -50,6 +62,7 @@
               <%=h s.description[0..100] %><%= "..." if s.description.chars.count > 100 %>
             </p>
           </div>
+           <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
     <% elsif s.class == SubTopic %>
        <a href="/<%= s.topic.name_slug %>/<%= s.name_slug %>"><h3><%= h s.name %></h3></a><div class = "show-search"> SubTopic </div>
        <div>
@@ -57,6 +70,7 @@
               <%=h s.description[0..100] %><%= "..." if s.description.chars.count > 100 %>
             </p>
           </div>
+            <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
       <% elsif s.class == Question %>
     <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Question </div>
      <div>
@@ -64,8 +78,44 @@
               <%=h s.answer[0..100] %><%= "..." if s.answer.chars.count > 100 %>
             </p>
           </div>
+            <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
   <% end %>
   <% end %>
+   <div class = "search-pag">
+    <%= will_paginate @search unless  @search.blank?%>
+    </div>
+ <% end %>
+ <% unless @blank_search.blank? %>
+  <% @blank_search.each_with_index do |s,i| %>
+    <% if s.class == Topic %>
+      <a href="/<%= s.name_slug %>"><h3><%= h s.name %></h3></a> <div class = "show-search"> Topic </div>
+       <div>
+            <p>
+              <%=h s.description[0..100] %><%= "..." if s.description.chars.count > 100 %>
+            </p>
+          </div>
+           <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
+    <% elsif s.class == SubTopic %>
+       <a href="/<%= s.topic.name_slug %>/<%= s.name_slug %>"><h3><%= h s.name %></h3></a><div class = "show-search"> SubTopic </div>
+       <div>
+            <p>
+              <%=h s.description[0..100] %><%= "..." if s.description.chars.count > 100 %>
+            </p>
+          </div>
+            <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
+      <% elsif s.class == Question %>
+    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Question </div>
+     <div>
+            <p>
+              <%=h s.answer[0..100] %><%= "..." if s.answer.chars.count > 100 %>
+            </p>
+          </div>
+            <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
+  <% end %>
+  <% end %>
+  <div class = "search-pag">
+  <%= will_paginate @blank_search unless  @blank_search.blank?%>
+  </div>
  <% end %>
 </div>
 <br><br>

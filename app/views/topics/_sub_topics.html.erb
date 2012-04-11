@@ -4,8 +4,8 @@
     <!--class-section -->
     <div class="class-section <%= nomargin_class(i) %>">
 
-      <a class="class-img" href="<%= topic_sub_topic_url(s.topic, s) %>"><%= image_tag s.photo.url(:small)%></a>
-      <h3><%=link_to truncate(s.name, :length => 50, :omission => '...'), topic_sub_topic_url(s.topic, s) %></h3>
-      <p><%= truncate(s.description, :length => 48, :omission => '...') %></p>
+      <a class="class-img" href="<%= sub_topic_slug_path(s.topic.name_slug, s.name_slug) %>"><%= image_tag s.photo.url(:small)%></a>
+      <h3><%=link_to truncate(s.name, :length => 50, :omission => '...'), sub_topic_slug_path(s.topic.name_slug, s.name_slug) %></h3>
+      <p><%= truncate(s.description, :length => 88, :omission => '...') %></p>
     </div>
   <% end %>

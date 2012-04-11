@@ -6,11 +6,11 @@ module ApplicationHelper
       html = Array.new
       verses_ids = q.verse_ids.split(",")
       verses_ids_to = q.verse_ids_to.split(",")
-      tags = q_from.split(":")
-      tags1 = q_to.split(":")
+      @tags = q_from.split(":")
+      @tags1 = q_to.split(":")
       verses_ids_to.each_with_index do |id_to,ii|
        verses_ids.each_with_index do |id,i|
-        html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> #{tags[0]} : #{tags[1]} - #{tags1[0]} : #{tags1[1]}</a>")
+        html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> #{@tags[0]} : #{@tags[1]} - #{@tags1[0]} : #{@tags1[1]}</a>")
       end
        end
       html = html.join(" , ")
