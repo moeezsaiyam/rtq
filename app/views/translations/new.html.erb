@@ -1,21 +1,22 @@
-<br><h7>New translation</h7><br><br><br>
+<br><div class ="admin-page"> 
+  <h1>New translation</h7></div></h1>
 <% form_for(@translation) do |f| %>
   <%= f.error_messages %>
  
   <p>
-    <%= f.label :name %>
-    <%= f.text_field:name %><br><br>
+    <%= f.label :name %><br>
+    <%= f.text_field:name %><br>
   </p>
   <p>
-    <%= f.label:table,'Table Name' %>
-    <%= f.text_field:table_nam %><br><br>
+    <%= f.label:table,'Table Name' %><br>
+    <%= f.text_field:table_nam %><br>
   </p>
   <p>
-  <%= f.check_box :default%>Default<br><br>
+  <%= f.check_box :default%>Default<br>
   </p>
    <p>
-    <%= f.submit 'Create' %><br><br>
+    <%= f.submit 'Create' %><br>
   </p>
 <% end %>
 
-<%= link_to 'Back', admin_dashboard_path %>
+<%= link_to 'Back',  translations_path %>

@@ -1,6 +1,8 @@
 <div class = "list-questions content-list-body">
 <div class="list-questions-alt">
-<br><h4>Alternate Phrases</h4>
+<div class="question-bar-alternate">
+Alternate Phrases</div>
+ <div class="question">
  <ol>
     <% @question.alternate_phrases.each do |phrase| %>
     <li>
@@ -8,5 +10,6 @@
     </li>
     <% end %>
  </ol>
+ </div>
  </div>
  </div>

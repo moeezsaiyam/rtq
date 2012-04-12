@@ -2,16 +2,13 @@
  <% if params[:prev] %>
     <div class="list-points">
       <div id="prev-link">
-      <a href="<%= params[:prev] %>"> <h3> << Back to Verses </h3> </a>
+      <a href="<%= params[:prev] %>"> << Back to Verses </a>
       </div>
      </div>
      <% end %><br>
 <div class = "verse-wrapper">
   <div class = "verse-background-pr-post">
   <% unless @prev_verses.blank? %>
-  <div class = "search-verse-keyword">
-  <h5> Pre Context </h5><br>
-  </div>
   <%end%>
   <end>
     <% @prev_verses.each_with_index do |v,i| %>
@@ -34,9 +31,6 @@
 </div>
 <div class = "verse-background-pr-post">
 <% unless @prev_verses.blank? %>
-<div class = "search-verse-keyword">
-<h5> Post Context </h5><br>
- </div>
  <%end%>
 <% @next_verses.each_with_index do |v,i| %>
 <div class="arabic-post-pr-verse" dir="rtl"><br>
@@ -52,7 +46,7 @@
     <% if params[:prev] %>
     <div class="list-points">
       <div id="prev-link">
-      <a href="<%= params[:prev] %>"> <h3> << Back to Verses </h3> </a>
+      <a href="<%= params[:prev] %>"> << Back to Verses </a>
       </div>
      </div>
      <% end %>

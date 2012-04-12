@@ -1,7 +1,11 @@
-<br><h7>Listing translations</h7>
+<br><div class ="admin-page"> 
+  <h1>Listing translations</div></h1>
 
-<table>
+<table class="admin-view">
   <tr>
+  <th>Name</th>
+  <th>Table Name</th>
+  <th colspan="3">Actions</th>
   </tr>
 
 <% @translations.each do |translation| %>
@@ -16,6 +20,6 @@
 </table>
 
 <br />
-
-<%= link_to 'New translation', new_translation_path %><br><br>
+<div class="dashboard">
+<%= link_to 'New translation', new_translation_path %></div><br>
 <%= link_to 'Back', admin_dashboard_path %>

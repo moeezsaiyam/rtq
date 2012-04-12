@@ -1,8 +1,9 @@
 <% content_for :head do %>
   <%= javascript_include_tag 'sub_topics' %>
 <% end %>
+<br>
 <div class = "content-body1">
-<h6>Editing <%= @sub_topic.name unless @sub_topic.blank? %> subtopic</h6></div>
+<div class ="admin-page"> <h1>Editing <%= @sub_topic.name unless @sub_topic.blank? %> subtopic</div></h1></div>
 
 <% form_for @sub_topic, :url => topic_sub_topic_path(@sub_topic.topic,@sub_topic), :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>

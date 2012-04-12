@@ -34,4 +34,17 @@ class HomeController < ApplicationController
     search_terms.delete_if{|h,i| i.blank? }
     search_terms.symbolize_keys!.merge(search_terms){|k, val| val.to_i }
   end
+  
+  def auto_search
+    @search = ThinkingSphinx.search
+    puts @search
+    object = Array.new
+    @search.each do |s|
+    object = s.name if s.class == Topic && s.class == SubTopic
+    object = s.quest if s.class == Question
+    end
+    
+  end
+  
 end
+

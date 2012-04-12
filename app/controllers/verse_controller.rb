@@ -15,9 +15,9 @@ class VerseController < ApplicationController
        @trans_name = Translation.find_by_table_nam(t)
        name = @trans_name.name
         if @trans_verses.has_key?(@verse.id)
-          @trans_verses[@verse.id] = [ @trans_verses[@verse.id],'<h1>'+name + '<br>'+'</h1>', @verse.translate_to_by(t)[0].text+'<br><br>']
+          @trans_verses[@verse.id] = [ @trans_verses[@verse.id],'<h1 a>'+name + '<br>'+'</h1 a>', @verse.translate_to_by(t)[0].text+'<br><br>']
         end
-        @trans_verses[@verse.id] = ['<h1>'+name + '<br>'+'</h1>',@verse.translate_to_by(t)[0].text+'<br><br>'] unless @trans_verses.has_key?(@verse.id)
+        @trans_verses[@verse.id] = ['<h1 a>'+name + '<br>'+'</h1 a>',@verse.translate_to_by(t)[0].text+'<br><br>'] unless @trans_verses.has_key?(@verse.id)
           @prev_verses.each do|v|
             if @trans_verses.has_key?(v.id)
             @trans_verses[v.id] = [ @trans_verses[v.id],'<h1>'+name + '<br>'+'</h1>', v.translate_to_by(t)[0].text + '<br><br>']

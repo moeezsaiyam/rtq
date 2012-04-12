@@ -12,6 +12,19 @@ $(document).ready(function()
   });
    $("#search_terms_search_topic").change();
 });
+
+  $("input.search-field").autocomplete({
+  source: function( request, response ){
+    $.ajax({
+      url: "/home/auto_search",
+      data: {id:$("input.search-field").val()},
+      dataType: "json",
+      success: function( data ) {
+        response( $.map( data, function( item ) { return { value: (item.name), id: item.id  }}));
+      }
+    });
+  }
+});
 </script>
 <div href="#" class="search-topic">Search Keyword</div>
 <div id="search_form">

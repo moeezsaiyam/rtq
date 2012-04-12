@@ -16,7 +16,7 @@
   <% if params[:prev] %>
     <div class="list-points">
       <div id="prev-link">
-      <a href="<%= params[:prev] %>"> <h3> << Back to Question </h3> </a>
+      <a href="<%= params[:prev] %>">  << Back to Question </a>
       </div>
      </div>
      <%end%><br>
@@ -24,7 +24,7 @@
     <div class = "verse-background-pr-post">
   <% @verses_range.each_with_index do|v,i| %>
   <div class = "numbered-verse">
-      <div class = "show-verse-number"><%= v.sura %> : <%= v.aya %></div>
+      <div class = "show-verse-number-verspage"><%= v.sura %> : <%= v.aya %></div>
       </div><br>
    <div class="arabic-post-pr-verse" dir="rtl"><br><br>
        <%= v.text  %>
@@ -40,7 +40,7 @@
     <% if params[:prev] %>
     <div class="list-points">
       <div id="prev-link">
-      <a href="<%= params[:prev] %>"> <h3> << Back to Question </h3> </a>
+      <a href="<%= params[:prev] %>"> << Back to Question </a>
       </div>
      </div>
      <%end%>

@@ -155,6 +155,10 @@ h1{  font-family: 'Square721Regular';
 	 padding-bottom:10px;
 	 color:#FFFFFF;}
 	 
+	 h1 a{  font-family: 'Square721Regular';
+	 font-size:18px;
+	}
+	 
 h2{  font-family: 'Square721Regular';
 	 font-size:22px;
 	 line-height:18px;
@@ -216,6 +220,9 @@ th, td, caption { font-weight: normal; vertical-align: top; text-align: left;}
 	
 a{ text-decoration:none;
    color:#4B6A15;
+}
+button a{ text-decoration:none;
+   color:#000000;
 }
 /* Main CSS Start */
 body {
@@ -786,6 +793,19 @@ background:url(/images/srch.png) no-repeat left top;
 	border-radius: 5px;
 	min-height:287px;
 	}
+	
+	.topic-rel-subject{
+	float:left;
+	background:#FFF;
+	width:208%;
+	margin-top:37px;
+	padding-bottom:10px;
+	position:relative;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	min-height:287px;
+	}
 #latest-Questions{
 	float:left;
 	background:#FFF;
@@ -809,6 +829,18 @@ background:url(/images/srch.png) no-repeat left top;
 	position:absolute;
 	float:left;
 	top:-4px;
+	left:9px;}
+	
+	.question-bar-alternate{
+	background:url(/images/question-bar.png) no-repeat left top;
+	width:661px;
+	height:42px;
+	font-size:16px;
+	color:#FFF;
+	padding: 10px 0 0 24px;
+	position:absolute;
+	float:left;
+	top:584px;
 	left:9px;}
 	
 	.latest-bar{
@@ -862,10 +894,9 @@ background:url(/images/srch.png) no-repeat left top;
     top: -1px;
     width: 51px;
 	}
-	.show-verse-number{
+	.show-verse-number-verspage{
 	background: none repeat scroll 0 0 #F5F5F5;
-    color: #000000;
-    float: right;
+  color:#4b6a15;
     line-height: 24px;
     margin-left: -3px;
     margin-top: 0;
@@ -875,9 +906,23 @@ background:url(/images/srch.png) no-repeat left top;
     width: 51px;
     text-align: center;
     }
+  .show-verse-number-questionpage{
+	  background: none repeat scroll 0 0 #F5F5F5;
+    color: #000000;
+    line-height: 24px;
+    margin-left: -3px;
+    margin-top: 0;
+    padding: 2px 10px;
+    position: relative;
+    top: -1px;
+    border-radius: 5px 5px 5px 5px;
+    width: 75px;
+    text-align: center;
+    }
+        
 	.show-verse-search {
     background: none repeat scroll 0 0 #F5F5F5;
-    color:#000000;
+   color:#4b6a15;
     float:left;
     line-height:24px;
     margin-right: 49px;
@@ -940,7 +985,9 @@ border-bottom:none;}
  color:#FFFFFF;
  font-size:14px;
  padding:0px 15px 20px 20px;}
-	
+	.verse-current-last h1{
+	font-size:18px;
+	}
 .trans-select{
     border: 1px solid #EEEEEE;
     border-radius: 8px 8px 8px 8px;
@@ -1186,6 +1233,19 @@ table.admin-view th{
     line-height: 24px;
     list-style: none outside none;
     margin-bottom: 5px;
+    margin-left: -5px;
+    width:80%;    
+    padding-left: 25px;
+    display:inline;
+    #width:600px;
+}
+.list-questions-subtop li{
+   background: url("/images/normal-bullet.png") no-repeat scroll 5px 8px transparent;
+    float: left;
+    font-size: 14px;
+    line-height: 24px;
+    list-style: none outside none;
+    margin-bottom: 5px;
     margin-left: 20px;
     width:80%;    
     padding-left: 25px;
@@ -1288,7 +1348,7 @@ table.admin-view th{
 }
 
 .verse-context-color {
-  border-bottom:1px solid #CCCCCC;
+   border-bottom: 1px dashed #EBEBEB;
   width:643px;
   margin-left:20px;
 }
@@ -1348,6 +1408,7 @@ table.admin-view th{
 	float:left;
 	margin-left:204px;
 	width:218px;
+
 	}
 
 #footer .s-input{
@@ -1371,6 +1432,7 @@ table.admin-view th{
   float:left;
   padding-right:5px
 }
+/* Footer CSS End */
 .slides_container {
     width:663px;
     height:306px;
@@ -1410,10 +1472,10 @@ table.admin-view th{
 
  .simple-page .pagination{
   display: inline;
-  margin:0 auto;
   width: 675px;
   float:left;
   text-align:center;
+  margin-bottom:15px;
  
 }
 pagination{
@@ -1545,21 +1607,21 @@ position: absolute;
     padding-bottom: 10px;
 }
 .separator-width{
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px dashed #EBEBEB;
     float: left;
     margin-left: 20px;
     width: 643px;
 }
 
 .separator-issue-width{
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px dashed #EBEBEB;
     float: left;
     margin-left: -1px;
     width: 643px;
 }
 
 .separator-search-width{
-    border-bottom:1px solid #CCCCCC;
+   border-bottom: 1px dashed #EBEBEB;
     float:left;
     margin-left:-1px;
     width:647px;
@@ -1615,4 +1677,27 @@ border-bottom:none;
 }
 .white-color{
 }
-/* Footer CSS End */
+#carousel .textholder{
+  float:left;
+  font-weight:bold;
+ color:#4b6a15;
+  font-size:18px;
+}
+#carousel .textholder b{
+  float:left;
+  clear:both;
+  font-weight:normal;
+  font-size:14px;
+  padding:10px 0;
+  text-align:justify;
+  color:#fff;
+}
+#carousel .textholder a{
+  float: right;
+  font-size: 13px;
+ margin: -25px 1px 11px 11px;
+ color:#FFB90F;
+}
+.admin-page h1{
+  color:#4b6a15;
+}

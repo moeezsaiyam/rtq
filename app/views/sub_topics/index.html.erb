@@ -1,8 +1,9 @@
 <% if @topic.blank? %>
 <div class = "content-body1">
-<h6>Listing sub topics</h6></div>
+<div class ="admin-page"> <h1>Listing sub topics</div></h1></div>
 <% else %>
-  <h1>Listing <%= @topic.name %> sub topics</h1>
+<br>
+  <div class ="admin-page"> <h1>Listing <%= @topic.name %> sub topics</div></h1>
 <% end %>
 <table class="admin-view">
   <tr>
@@ -19,10 +20,8 @@
   </tr>
 <% end %>
 </table>
-
-<div class="dashboard">
-  <%= link_to 'Back', @topic %>
-</div>
 <div class="dashboard">
   <%= link_to 'Add new Sub topic', new_topic_sub_topic_path(@topic) %>
-</div>
+</div><br>
+  <%= link_to 'Back', @topic %>
+

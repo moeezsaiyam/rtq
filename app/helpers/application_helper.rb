@@ -16,6 +16,22 @@ module ApplicationHelper
       html = html.join(" , ")
     end
   end
+  
+  def parse_tags_detail(q_from,q_to,q)
+    unless q.verse_ids.blank?
+      html = Array.new
+      verses_ids = q.verse_ids.split(",")
+      verses_ids_to = q.verse_ids_to.split(",")
+      @tags = q_from.split(":")
+      @tags1 = q_to.split(":")
+      verses_ids_to.each_with_index do |id_to,ii|
+       verses_ids.each_with_index do |id,i|
+        html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> View Detail</a>")
+      end
+       end
+      html = html.join(" , ")
+    end
+  end
 
   def prev_aya(verse)
     id = verse.id-1

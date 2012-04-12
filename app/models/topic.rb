@@ -6,6 +6,8 @@ class Topic < ActiveRecord::Base
 
   has_attached_file :photo,:styles => { :small => "100x80#", :normal => "400x320>" }, :url => "/assets/topics/:attachment/:id/:style/:basename.:extension", :default_url => '/images/class-img.png'
   
+  validates_presence_of :name,:description,:meaning
+  
   define_index do
     indexes name
     indexes meaning

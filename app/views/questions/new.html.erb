@@ -1,5 +1,5 @@
 <div class = "content-body1">
-<br><h6>New question</h6></div>
+<br><div class ="admin-page"> <h1>New question</div></h1></div>
 
 <% form_for @question,:url => topic_sub_topic_questions_path(params[:topic_id],params[:sub_topic_id]), :method => :post do |f| %>
   <%= f.error_messages %>
@@ -27,6 +27,7 @@
       <% end %>
     <% end %>
   </div>
+  <br>
    <p>
     <%= link_to ('Add Another','#',{:id =>'add_button'}) %>
   </p>
@@ -39,9 +40,10 @@
       <%= reference_form.label :issue, "Issue Addressed"%>
     </p>
     <p>
-        <%= reference_form.text_field :issue, :class => 'issue_field' %>
+        <%= reference_form.text_area  :issue, :class => 'issue_field' %>
     </p>
      <p>
+        Enter Sura and Aya number like From "1:1" To "1:7" 
       <p><%= reference_form.label :from, "From"%>
       <%= reference_form.text_field :from, :class => 'issue_from_field' %>
       <%= reference_form.label :to, "To"%>

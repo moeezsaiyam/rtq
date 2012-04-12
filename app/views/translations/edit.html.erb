@@ -1,12 +1,24 @@
-<br><h7>Editing translation</h7>
-
+<br><div class ="admin-page"> 
+  <h1>Editing translation</h7></div></h1>
 <% form_for(@translation) do |f| %>
   <%= f.error_messages %>
-
+ 
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.label :name %><br>
+    <%= f.text_field:name %><br>
+  </p>
+  <p>
+    <%= f.label:table,'Table Name' %><br>
+    <%= f.text_field:table_nam %><br>
+  </p>
+  <p>
+  <%= f.check_box :default%>Default<br>
+  </p>
+   <p>
+    <%= f.submit 'Create' %><br>
   </p>
 <% end %>
+
 
 <%= link_to 'Show', @translation %> |
 <%= link_to 'Back', translations_path %>
