@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
 
   def index
-    @sub_topics = SubTopic.popular
+    @sub_topics = SubTopic.featured
+    puts "///////////////"
+    puts @sub_topics.inspect
     @questions = Question.popular.limited.all
   end
 

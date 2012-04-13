@@ -5,10 +5,10 @@
     <title>Refer to Quran</title>
     <link rel="shortcut icon" type="image/x-icon" href="/icon_Quran.ico">
       <%= stylesheet_link_tag 'jquery-ui-1.8.18.custom' %>
-      <%= stylesheet_link_tag 'coin-slider-styles' %>
-      <%= stylesheet_link_tag 'nivo-slider' %>
+      <%= stylesheet_link_tag 'menu' %>
       <%= stylesheet_link_tag 'style' %>
       <%= javascript_include_tag 'jquery-ui-1.8.18.custom.min' %>
+       <%= javascript_include_tag 'menu' %>
       <%= javascript_include_tag 'jquery.ui.autocomplete' %>
       <%= javascript_include_tag 'jquery.ui.core' %>
       <%= javascript_include_tag 'jquery.ui.position' %>
@@ -16,8 +16,6 @@
       <%= javascript_include_tag 'jquery' %>
       <%= javascript_include_tag 'jquery.watermarkinput' %>
       <%= javascript_include_tag 'jquery.autocomplete' %>
-      <%= javascript_include_tag "coin-slider" %>
-      <%= javascript_include_tag "jquery.nivo.slider.pack" %>
       <%= javascript_include_tag "jquery.infinitecarousel" %>
       <%= javascript_include_tag 'script' %>
       <%= yield :head %>
@@ -30,7 +28,8 @@
   <div id="header">
     <%= render :partial => "shared/header" %>
   </div>
-  <!--/header-->
+ <!--/header-->
+  <div class="clear"></div>
   <!--search-container -->
      
       <% unless @sub_topics_search.blank? && @questions_search.blank? && @topics_search.blank? && @search.blank? && @empty_search.blank?%>

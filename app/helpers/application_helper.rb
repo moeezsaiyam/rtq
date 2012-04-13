@@ -94,6 +94,23 @@ module ApplicationHelper
     <div class="clear"></div>'
     return addthis_html
   end
+  
+  def twitter_adventure_sharer_footer
+  target_url = request.url
+    url = "https://twitter.com"
+    link_to(image_tag("twt.png", :width => "32", :height => "32"),  "http://www.twitter.com", :target => "_blank",:class => "social")
+     end
+     
+   def popup_window_sharer_footer
+    target_url = request.url
+    link_to(image_tag("fb.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com", :target => "_blank",:class => "social")
+   end
+   
+   def rss_window_sharer_footer
+   target_url = request.url
+    link_to(image_tag("rss.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank",:class => "social")
+   end
+ 
 
   def list_topics
     topics = Topic.all
@@ -115,5 +132,8 @@ module ApplicationHelper
   end
   def nomargin_class(index)
     return "nomargin" if index.odd?
+  end
+  def menu_class()
+  return 'last'
   end
 end

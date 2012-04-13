@@ -1,12 +1,67 @@
-<ul <%= "id='admin-menu'" if logged_in? %> class='.admin_menu' >
-  <li><a class="active home" href="/"> <%= image_tag "nav-home.png" %></a></li>
-  <li><%= link_to("About", { :controller => "main", :action => "about"}, {:class => 'about' })%></li>
-  <li><%= link_to("Duas", { :controller => "main", :action => "duas"}, {:class => 'duas' })%></li>
-  <li><%= link_to("Contact", { :controller => "main", :action => "contact"}, {:class => 'contact' } )%></li>
-  <li><%= link_to("Credits", { :controller => "main", :action => "credit" }, {:class => 'credit' })%></li>
-  <li><%= link_to("FAQ's", { :controller => "main", :action => "faqs" }, {:class => 'faqs' }) %></li>
-  <% if logged_in? %>
-    <li><a href="/logout">Logout</a></li>
-  <% end %>
-</ul>
+<div id="menu"> 
+		<ul class="menu"> 
+			<li><span><a class="active home" href="/"> <%= image_tag "nav-home.png" %></a></span></a> 
+				<div><ul> 
+					<li><a href="#" class="parent"><span>Sub Item 1</span></a> 
+						<div><ul> 
+							<li><a href="#" class="parent"><span>Sub Item 1.1</span></a> 
+								<div><ul> 
+								<li><a href="#"><span>Sub Item 1.1.1</span></a></li> 
+								<li><a href="#"><span>Sub Item 1.1.2</span></a></li> 
+								</ul></div> 
+							</li> 
+							<li><a href="#"><span>Sub Item 1.2</span></a></li> 
+							<li><a href="#"><span>Sub Item 1.3</span></a></li> 
+							<li><a href="#"><span>Sub Item 1.4</span></a></li> 
+							<li><a href="#"><span>Sub Item 1.5</span></a></li> 
+							<li><a href="#"><span>Sub Item 1.6</span></a></li> 
+							<li><a href="#" class="parent"><span>Sub Item 1.7</span></a> 
+								<div><ul> 
+								<li><a href="#"><span>Sub Item 1.7.1</span></a></li> 
+								<li><a href="#"><span>Sub Item 1.7.2</span></a></li> 
+								</ul></div> 
+							</li> 
+						</ul></div> 
+					</li> 
+					<li><a href="#"><span>Sub Item 2</span></a></li> 
+					<li><a href="#"><span>Sub Item 3</span></a></li> 
+				</ul></div> 
+			</li> 
+			<li><span><%= link_to("About", { :controller => "main", :action => "about"}, {:class => 'about' })%></span>
+				<div><ul> 
+					<li><a href="#" class="parent"><span>Sub Item 1</span></a> 
+						<div><ul> 
+						<li><a href="#"><span>Sub Item 1.1</span></a></li> 
+						<li><a href="#"><span>Sub Item 1.2</span></a></li> 
+						</ul></div> 
+					</li> 
+					<li><a href="#" class="parent"><span>Sub Item 2</span></a> 
+						<div><ul> 
+						<li><a href="#"><span>Sub Item 2.1</span></a></li> 
+						<li><a href="#"><span>Sub Item 2.2</span></a></li> 
+						</ul></div> 
+					</li> 
+					<li><a href="#"><span>Sub Item 3</span></a></li> 
+					<li><a href="#"><span>Sub Item 4</span></a></li> 
+					<li><a href="#"><span>Sub Item 5</span></a></li> 
+					<li><a href="#"><span>Sub Item 6</span></a></li> 
+					<li><a href="#"><span>Sub Item 7</span></a></li> 
+				</ul></div> 
+			</li> 
+		<li><span><%= link_to("Duas", { :controller => "main", :action => "duas"}, {:class => 'duas' })%></span>
+		<li><span><%= link_to("Contact", { :controller => "main", :action => "contact"}, {:class => 'contact' } )%></span>
+		<% if logged_in? %>
+		<li class="<%= menu_class() %>"><span><%= link_to("Credits", { :controller => "main", :action => "credit" }, {:class => 'credit' })%></span>
+		<%else%>
+		<li><span><%= link_to("Credits", { :controller => "main", :action => "credit" }, {:class => 'credit' })%></span>
+		<%end%>
+		<li><span><%= link_to("FAQ's", { :controller => "main", :action => "faqs" }, {:class => 'faqs' }) %></span>
+		<% if logged_in? %>
+    <li class="<%= menu_class() %>"><span><a href="/logout">Logout</a></span></li>
+    <% end %>
+		</ul> 
+	</div> 
+
+ 
+
 

@@ -1,9 +1,7 @@
-<div class="list-points">
-<div style="float:left; margin-right:10px; width:329px;">
-<div class="topic-rel-subject">
+  <div id="popular-Questions">
   <div class="question-bar">
   Related Subjects</div>
-    <div class="question">
+    <div class = "question-index">
       <ul>
       <% @related_subject.each_with_index do|t,i| %>
       <li class="<%= questions_subject_class(i+1, @related_subject.count) %>">
@@ -12,6 +10,4 @@
       <% end %>
  </ul>
  </div> 
-</div>
-</div>
-</div>
+ </div>

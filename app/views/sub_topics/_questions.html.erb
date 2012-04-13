@@ -1,15 +1,16 @@
-<div class = "list-questions content-list-body">
-<div class="list-questions-subtop ">
-  <h5>List of Questions</h5>
-  <ol>
-    <% @sub_topic_questions.each do |question| %>
-      <li>
+<div id="popular-Questions">
+<div class="question-bar-listquest">
+  List of Questions</div>
+  <div class="question-index">
+  <ul>
+    <% @sub_topic_questions.each_with_index do |question,i| %>
+      <li class="<%= questions_subject_class(i+1, @sub_topic_questions.count) %>">
         <%= link_to question.quest, question_slug_path(@sub_topic.topic.name_slug,@sub_topic.name_slug,question.quest_slug) %>
       </li>
     <% end %>
     <div class ="simple-page">
     <%= will_paginate @sub_topic_questions%>
     </div>
-  </ol>
+  </ul>
 </div>
 </div>

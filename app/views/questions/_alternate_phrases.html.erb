@@ -1,15 +1,13 @@
-<div class = "list-questions content-list-body">
-<div class="list-questions-alt">
+ <div id="popular-Questions">
 <div class="question-bar-alternate">
 Alternate Phrases</div>
- <div class="question">
- <ol>
-    <% @question.alternate_phrases.each do |phrase| %>
-    <li>
+ <div class="question-index">
+ <ul>
+    <% @question.alternate_phrases.each_with_index do |phrase,i| %>
+    <li class="<%= questions_subject_class(i+1,@question.alternate_phrases.count) %>">
           <%= phrase.content %>
     </li>
     <% end %>
- </ol>
- </div>
+ </ul>
  </div>
  </div>
