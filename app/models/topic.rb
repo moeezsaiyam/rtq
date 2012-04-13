@@ -13,7 +13,8 @@ class Topic < ActiveRecord::Base
     indexes meaning
     indexes description
     has :id, :as => :search_topic
-    end
+
+  end
 
   def self.perform_search(search_term, search_terms)
     self.search(search_term, :with => search_terms)

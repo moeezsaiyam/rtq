@@ -16,8 +16,6 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.xml
   def show
-   
-    
     unless (params[:id].blank?)
       @topic = Topic.find(params[:id])
     end
