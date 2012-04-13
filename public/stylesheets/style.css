@@ -282,7 +282,7 @@ body {
 #menu-bar {
   padding-top:22px;
 	float:right;
-	width:640px;
+	width:666px;
 	*padding-top:44px;
 	
 }
@@ -300,7 +300,6 @@ body {
 	#menu-bar  ul li.last{ 
 	float:left;
 	list-style:none;
-	padding:1px 0px 0px 15px;
 	margin-left:-16px;	
 	}
 	
@@ -314,7 +313,7 @@ body {
     font-size: 14px;
     font-weight: normal;
     line-height: 19px;
-    padding: 6px 20px 5px;
+    padding: 6px 14px 5px;
     text-decoration: none;
 	
 	}

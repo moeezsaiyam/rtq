@@ -50,11 +50,7 @@
 			</li> 
 		<li><span><%= link_to("Duas", { :controller => "main", :action => "duas"}, {:class => 'duas' })%></span>
 		<li><span><%= link_to("Contact", { :controller => "main", :action => "contact"}, {:class => 'contact' } )%></span>
-		<% if logged_in? %>
-		<li class="<%= menu_class() %>"><span><%= link_to("Credits", { :controller => "main", :action => "credit" }, {:class => 'credit' })%></span>
-		<%else%>
 		<li><span><%= link_to("Credits", { :controller => "main", :action => "credit" }, {:class => 'credit' })%></span>
-		<%end%>
 		<li><span><%= link_to("FAQ's", { :controller => "main", :action => "faqs" }, {:class => 'faqs' }) %></span>
 		<% if logged_in? %>
     <li class="<%= menu_class() %>"><span><a href="/logout">Logout</a></span></li>
