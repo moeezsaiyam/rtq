@@ -136,4 +136,7 @@ module ApplicationHelper
   def menu_class()
   return 'last'
   end
+  def sub_item_lastitem()
+  return 'lastitem'
+  end
 end

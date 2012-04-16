@@ -1,5 +1,7 @@
 $(document).ready(function()
 {
+   $(document).pngFix(); 
+    
   className = $(location.pathname.split("/")).last()[0];
   $("#menu ul li a").removeClass("active");
   if(className == "")
@@ -32,11 +34,9 @@ $(document).ready(function()
    return false;
    });
 
- 
     
  $(".trans-select form input:checkbox").click(function(){ 
   $('.trans-select form').submit(); 
  });
-
 
 });

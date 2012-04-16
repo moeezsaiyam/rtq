@@ -147,6 +147,9 @@ div#menu ul ul li {
     width: 100%;
     border-bottom: 1px solid #FFFFFF;
 }
+div#menu ul ul li.lastitem {
+    border-bottom: none;
+}
 
 /* menu::level3 */
 div#menu ul ul div {

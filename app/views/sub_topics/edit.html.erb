@@ -31,6 +31,9 @@
   <p>
     <%= link_to 'Delete Image', "#", :class => "del_topic_image", :id => @sub_topic.id, :rel => @sub_topic.topic_id %>
   </p>
+  <p>
+    <%= f.check_box :featured %>Click here to feature this sub_topic on Main page.
+  </p>
 
   <p>
     <%= f.submit 'Update' %>
