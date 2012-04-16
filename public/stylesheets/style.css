@@ -188,7 +188,7 @@ h5{  font-family: 'Square721Regular';
 	 line-height:22px;
 	 font-weight:normal;
 	 padding-bottom:10px;
-	 color:#4b6a15;}
+	 color:#000;}
 	 
 h6{  font-family: 'Square721Regular';
 	 font-size:15px;
@@ -1769,3 +1769,10 @@ border-bottom:none;
 .bread-size{
   float:left;
 }
+ .sub_topic-color{
+    color: #4b6a15;
+    font-family: 'Square721Regular';
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 22px;
+    padding-bottom: 10px;}
