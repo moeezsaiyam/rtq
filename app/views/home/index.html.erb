@@ -47,7 +47,7 @@ Popular Questions
 <ul>
 <% @questions.each_with_index do |q,i| %>
  <li class="<%= questions_list_class(i+1, @questions.count) %>">
-    <%= link_to q.quest, topic_sub_topic_question_url(q.sub_topic.topic, q.sub_topic, q)%>
+    <%= link_to q.quest, question_slug_path(q.sub_topic.topic.name_slug,q.sub_topic.name_slug,q.quest_slug) %>
   </li>
 <% end %>
 </ul>

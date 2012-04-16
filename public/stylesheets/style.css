@@ -835,7 +835,8 @@ background:url(/images/srch.png) no-repeat left top;
 	padding: 10px 0 0 24px;
 	float:left;
 	top:-4px;
-	left:9px;}
+	left:9px;
+	margin-left:10px;}
 	
 	.question-bar-alternate{
 	background:url(/images/question-bar.png) no-repeat left top;
@@ -845,6 +846,7 @@ background:url(/images/srch.png) no-repeat left top;
 	color:#FFF;
 	padding: 10px 0 0 24px;
 	top:357px;
+	margin-left:10px;
 	left:9px;}
 	
 	.question-bar-listquest{
@@ -856,6 +858,7 @@ background:url(/images/srch.png) no-repeat left top;
 	padding: 10px 0 0 24px;
 	float:left;
 	top:246px;
+	margin-left:10px;
 	left:9px;}
 	
 	.latest-bar{
@@ -1004,7 +1007,7 @@ border-bottom:none;}
 	background:url(/images/normal-bullet.png) no-repeat 5px 3px;
 	clear:both;
 	width:92%;
-	margin-left:-1px;
+	margin-left:-6px;
 	line-height:15px;
 	}
 .question-index ul li.last{
@@ -1205,7 +1208,7 @@ table.admin-view th{
     line-height: 24px;
     list-style: none outside none;
     margin-bottom: 5px;
-    margin-left: 20px;
+    margin-left: 11px;
     width:80%;    
     padding-left: 25px;
 }
