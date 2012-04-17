@@ -6,7 +6,7 @@
   <% @question.references.each_with_index do|r,i| %>
  <br><h1> <%=truncate(r.issue, :length => 50, :omission => '...') %></h1>
   <div class = "show-verse-number-questionpage"><%=  parse_tags_detail(r.from,r.to,r) %></div><br>
-   <div class = "show-verse-number-questionpage"><%=  parse_tags(r.from,r.to,r) %></div>
+   <div class = "show-verse-number-questionpage"><%=  parse_tags(r.from,r.to,r) %></div><br>
       <p> <%= truncate(@verses[r.id.to_s].translate_to("eng")[0].text, :length => 300, :omission => '...') %></p>
       <div class = "separator-issue-width <%= verses_list_class(i+1,@question.references.count)%>"></div>
        <% end %>

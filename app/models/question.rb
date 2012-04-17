@@ -16,7 +16,7 @@ class Question < ActiveRecord::Base
   named_scope :popular, :order => 'view_count DESC'
   named_scope :limited, :limit => 6
 
-  validates_presence_of :quest
+  validates_presence_of :quest,:answer
 
   def validate
     unless self.tags.blank?

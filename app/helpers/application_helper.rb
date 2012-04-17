@@ -139,4 +139,11 @@ module ApplicationHelper
   def sub_item_lastitem()
   return 'lastitem'
   end
+  def home_class()
+  return 'home_padding'
+  end
+  def sub_items_class()
+  return 'sub_items'
+  end
+  
 end

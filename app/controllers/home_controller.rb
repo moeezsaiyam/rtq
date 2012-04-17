@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
   def suggestions
     results = Array.new
-    @search = ThinkingSphinx.search params[:search_terms], :min_infix_len => 1
+    @search = ThinkingSphinx.search params[:search_terms], :min_infix_len => 1,:limit => 10
     return if @search.blank?
     @search.each do |s|
       name = s.name unless s.class == Question

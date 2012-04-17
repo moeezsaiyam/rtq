@@ -281,10 +281,11 @@ body {
 
 /* Menu CSS Start */
 #menu-bar {
-  padding-top:22px;
-	float:right;
-	width:666px;
-	*padding-top:44px;
+ float: right;
+ margin-right: 98px;
+ margin-top: -34px;
+ width: 666px;
+*padding-top:44px;
 	
 }
 
@@ -292,13 +293,13 @@ body {
 	float:right;
 	}
 	
-#menu-bar  ul li{ 
+#menu-bar ul li:hover { 
+  background:#9ACD32;
 	float:left;
 	list-style:none;
-	padding:1px 0px 0px 15px;	
-	}
+}
 	
-	#menu-bar  ul li.last{ 
+#menu-bar  ul li.last{ 
 	float:left;
 	list-style:none;
 	margin-left:-16px;	
@@ -308,32 +309,27 @@ body {
   padding-left:5px !important;
 }
 
-#menu-bar  ul li a{ 
-	color: #FFFFFF;
+#menu-bar ul li a{ 
+	  color:#fff;
     float: left;
     font-size: 14px;
     font-weight: normal;
     line-height: 19px;
     padding: 6px 14px 5px;
     text-decoration: none;
-	
 	}
-	
-#menu-bar  ul li a:hover, #menu  ul li a.active{ 
+ #menu ul li a.active{ 
+	width:100px;
 	float:left;
 	font-size:14px;
 	font-weight:normal;
 	color:#496714;
 	text-decoration:none;
-	background:#FFF;
+	background:#000;
 	webkit-border-radius: 10px 10px 0px 0px;
 	-moz-border-radius: 10px 10px 0px 0px;
 	border-radius: 10px 10px 0px 0px;
-	
-	}	
-	
-	
-
+}
 #menu-bar  ul li a.home{ 
 	
 	float:left;
@@ -367,7 +363,7 @@ body {
 .side-nav{
 	float:left;
 	position:relative;
-	top:-6px;
+	top:-1px;
 	width:273px;
 	}
 	
@@ -473,6 +469,7 @@ body {
 	
 	.bread-crumb span{
 	font-size:7px;
+	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
 	}
 	
 .quranic-dua{
@@ -1012,7 +1009,8 @@ border-bottom:none;}
 	line-height:15px;
 	}
 .question-index ul li.last{
-border-bottom:none;}	
+  border-bottom:none;
+  font-size:12px;}	
 
 .question_latest_popular{
 	float:left;
@@ -1555,7 +1553,8 @@ pagination{
   display:none;
 }
 .bread-crumb{
-  padding-top:-5px;
+  padding-top:12px;
+  font-size:12px;
 }
 bread-crumb .breadfont{
   font-size:10px;
@@ -1591,7 +1590,7 @@ bread-crumb .breadfont{
     display:block;
 }
 .verse-background{
-    background-color:#8ba90c;
+    background-color:#B0B0B0;
     margin:10px 0px 10px 0px;
     border-radius:10px;
     
@@ -1747,7 +1746,7 @@ border-bottom:none;
   font-weight:bold;
   color:#4b6a15;
   font-size:18px;
-  margin-left:14px;
+  margin-left:23px;
 }
 #carousel .textholder b{
   float:left;
@@ -1777,3 +1776,107 @@ border-bottom:none;
     font-weight: normal;
     line-height: 22px;
     padding-bottom: 10px;}
+    
+ body {font-family:arial; font-size:11px;}
+.clear {clear:both}
+/* remove the list style */
+#nav {
+    margin:0;
+    padding:0;
+    list-style:none;
+}  
+     
+    /* make the LI display inline */
+    /* it's position relative so that position absolute */
+    /* can be used in submenu */
+    #nav li{
+        float:left;
+        display:block;
+        width:77px;
+        background:#8ba90c;
+        position:relative;
+        z-index:500;
+        margin:0 1px;
+        border-radius:4px;
+    }
+    
+     #nav li.home_padding{
+        float:left;
+        padding-top:4px;
+        display:block;
+        width:51px;
+        background:#8ba90c;
+        position:relative;
+        z-index:500;
+        margin:0 1px;
+    }
+    
+    #nav li.sub_items{
+        float:left;
+        display:block;
+        width:77px;
+        background:#8ba90c;
+        position:relative;
+        z-index:500;
+        margin:0 1px;
+        border-radius:none;
+    }
+         
+    /* this is the parent menu */
+    #nav li a {
+        display:block;
+        padding:8px 5px 0 5px;
+        font-weight:700; 
+        height:23px;
+        text-decoration:none;
+        color:#fff;
+        text-align:center;
+        color:#333;
+    }
+ 
+    #nav li:hover a, #nav li.hover a {
+        color:#fff;
+    }
+     
+    /* you can make a different style for default selected value */
+    #nav a.selected {
+        color:#f00;
+    }
+     
+        /* submenu, it's hidden by default */
+        #nav ul {
+            position:absolute;
+            left:0;
+            display:none;
+            margin:0 0 0 -1px;
+            padding:0;
+            list-style:none;
+            margin-top:34px;
+        }
+         
+        #nav ul li {
+            width:79px;
+            float:left;
+            border-bottom: 1px solid #FFFFFF;
+            border-radius:0px;
+        }
+         
+        /* display block will make the link fill the whole area of LI */
+        #nav ul a {
+            display:block; 
+            height:15px;
+            padding: 8px 5px;
+            color:#666;
+        }
+         
+        #nav ul a:hover {
+            text-decoration:underline; 
+        }
+ 
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+*html #nav ul {
+    margin:0 0 0 -2px;
+}
+    

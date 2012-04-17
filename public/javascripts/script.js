@@ -3,11 +3,11 @@ $(document).ready(function()
    $(document).pngFix(); 
     
   className = $(location.pathname.split("/")).last()[0];
-  $("#menu ul li a").removeClass("active");
+  $("#menu-bar ul li a").removeClass("active");
   if(className == "")
-    $("#menu ul li a.home").addClass("active");
+    $("#menu-bar ul li a").addClass("active");
   else
-    $("#menu ul li a." + className).addClass("active");
+    $("#menu-bar ul li a." + className).addClass("active");
 
   $(".watermarked").each(function() {
     $(this).Watermark($(this).attr('title'));
@@ -19,6 +19,17 @@ $(document).ready(function()
 	textholderHeight : .30,
 	displayProgressBar : 0
   });
+  
+   $('#nav li').hover(
+        function () {
+            //show its submenu
+            $('ul', this).slideDown(100);
+ 
+        },
+        function () {
+            //hide its submenu
+            $('ul', this).slideUp(100);        
+        });
 
   $('#add_button').click(function(){
     var new_box = $('.alternate_phrase_field:last').clone().val('');
@@ -29,7 +40,7 @@ $(document).ready(function()
   });
   
   $('#add_reference_button').click(function(){
-   var new_box = $('#new_references div').clone();
+   var new_box = $('#new_references div').clone().val('');
    $('#references').append(new_box);
    return false;
    });
