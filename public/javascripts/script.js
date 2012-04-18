@@ -5,9 +5,13 @@ $(document).ready(function()
   className = $(location.pathname.split("/")).last()[0];
   $("#menu-bar ul li a").removeClass("active");
   if(className == "")
-    $("#menu-bar ul li a").addClass("active");
+  {
+    $("#menu-bar ul li a").removeClass("active");
+    $("#menu-bar ul li a.home").addClass("active");
+  }
   else
     $("#menu-bar ul li a." + className).addClass("active");
+    
 
   $(".watermarked").each(function() {
     $(this).Watermark($(this).attr('title'));

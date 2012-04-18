@@ -2,18 +2,18 @@
     <li class="<%= home_class() %>"><a class="active home" href="/"> <%= image_tag "nav-home.png" %></a></li>
     <li><%= link_to("About", { :controller => "main", :action => "about"}, {:class => 'about' })%>
         <ul>
-            <li><a href="#">Item 01</a></li>
-            <li><a href="#">Item 02</a></li>
-            <li><a href="#">Item 03</a></li>
+            <li><a class="<%= sub_items_class() %>" href="#">Item 01</a></li>
+            <li><a class="<%= sub_items_class() %>" href="#">Item 02</a></li>
+            <li><a class="<%= sub_items_class() %>" href="#">Item 03</a></li>
         </ul>
         <div class="clear"></div>
     </li>
     <li><%= link_to("Duas", { :controller => "main", :action => "duas"}, {:class => 'duas' })%>
     <ul>
-       <li class="<%= sub_items_class() %>"><a href="#">Item 04</a></li>
-        <li class="<%= sub_items_class() %>"><a href="#">Item 05</a></li>
-        <li class="<%= sub_items_class() %>"><a href="#">Item 06</a></li>
-        <li class="<%= sub_items_class() %>"><a href="#">Item 07</a></li>
+       <li><a class="<%= sub_items_class() %>" href="#">Item 04</a></li>
+        <li><a class="<%= sub_items_class() %>" href="#">Item 05</a></li>
+        <li><a class="<%= sub_items_class() %>" href="#">Item 06</a></li>
+        <li><a class="<%= sub_items_class() %>" href="#">Item 07</a></li>
     </ul>        
         <div class="clear"></div>
     </li>

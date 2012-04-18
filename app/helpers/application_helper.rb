@@ -143,7 +143,7 @@ module ApplicationHelper
   return 'home_padding'
   end
   def sub_items_class()
-  return 'sub_items'
+  return 'sub_item'
   end
   
 end
