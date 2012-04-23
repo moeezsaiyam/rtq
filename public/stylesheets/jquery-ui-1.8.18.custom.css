@@ -338,6 +338,7 @@
     padding-top: 4px;
     text-align: justify;
     text-decoration: none;
+    width:498px;
 }
 .ui-menu .ui-menu-item a.ui-state,
 .ui-menu .ui-menu-item a.ui-state-active {

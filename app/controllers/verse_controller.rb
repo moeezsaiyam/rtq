@@ -43,7 +43,8 @@ class VerseController < ApplicationController
     return head(404) unless @verse
     @verses_range = Verse.from_to_verses(params[:id],params[:range])
     unless @translation.blank? && params[:trans].blank?
-      trans = params[:trans] if params[:trans]
+      
+      trans = Translation.all.collect(&:table_nam).select {|t| cookies[t] == 'true'}
       trans = [@translation.table_nam] if trans.blank?
       @trans_verses = Hash.new
       trans.each do|t|

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   helper :all # include all helpers, all the time
   #protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  before_filter :set_translation_cookie
   
   before_filter :set_locale 
   def set_locale 
@@ -20,4 +21,11 @@ class ApplicationController < ActionController::Base
     redirect_to("/login") unless logged_in?
   end
 
+
+  def set_translation_cookie
+    if Translation.all.collect(&:table_nam).select {|t| cookies[t] == 'true'}.empty?
+      default = Translation.find_by_default(1).table_nam
+      cookies[default] = {:value => "true", :path => "/"}
+    end
+  end
 end

@@ -25,10 +25,6 @@ $(document).ready(function()
   });
   
   
-  $.cookie('the_cookie', 'the_value');
-  
-  
-  
    $('#nav li').hover(
         function () {
             //show its submenu
@@ -52,10 +48,10 @@ $(document).ready(function()
    });
 
     
- $('.trans-select form input:checkbox').change(function() {
-  $('.trans-select form').submit(); 
+ $('.trans-select form input').click(function() {
+  $.cookies.set($(this).val(), this.checked, {path:'/'});
+  $('.trans-select form').submit();
  });
-
 }); 
 
 
