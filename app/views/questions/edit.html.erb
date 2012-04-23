@@ -1,30 +1,105 @@
+<br><div class = "content-body-admin">
 <div class = "content-body1">
 <br>
-<div class ="admin-page"> <h1>Editing <%= @question.quest unless @question.blank? %> question</div></h1></div>
+<div class ="admin-page"> <h1>Editing <%= @question.quest unless @question.blank? %> Question</div></h1></div>
 
-<% form_for @question, :url => topic_sub_topic_question_path(params[:topic_id],@question.sub_topic,@question) do |f| %>
+<% form_for @question do |f| %>
+
   <%= f.error_messages %>
 
   <p>
     <%= f.label :sub_topic_id %><br />
-    <%= select("question", "sub_topic_id", SubTopic.find_all_by_topic_id(params[:topic_id]).collect {|t| [ t.name, t.id ] }, { :include_blank => true }) %>
+    <%= select("question", "sub_topic_id", SubTopic.find_all_by_topic_id(params[:topic_id]).collect {|t| [ t.name, t.id ] }) %>
   </p>
   <p>
-    <%= f.label :quest %><br />
+    <%= f.label :Question %><br />
     <%= f.text_field :quest %>
   </p>
   <p>
-    <%= f.label :answer %><br />
-    <%= f.text_field :answer %>
+    <%= f.label :Answer %><br />
+    <%= f.text_area :answer %>
   </p>
-  <p>
-    <%= f.label :tags %><br />
-    <%= f.text_field :tags %>
+  <div id="alternate_phrases">
+    <% @question.alternate_phrases.each do |alternate_phrase| %>
+      <% fields_for "question[alternate_phrase_attributes][]", alternate_phrase do |phrase_form|%>
+      <p>
+      <%= phrase_form.label :content,"Alternate Phrase" %>
+      </p>
+        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field', :name => 'question[alternate_phrase_attributes][][content]' %><br>
+        <%= phrase_form.hidden_field :question_id, :value=> @question_id, :name => 'question[alternate_phrase_attributes][][question_id]' %>
+        <% unless alternate_phrase.new_record?  %>
+        <%= phrase_form.hidden_field :id, :name => 'question[alternate_phrase_attributes][][id]' %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <br>
+   <p>
+    <%= link_to ('Add Another','#',{:id =>'add_button'}) %>
   </p>
+  <div id="references">
+    <% @question.references.each do |reference| %>
+      <% fields_for "question[reference_attributes][]", reference do |reference_form|%>
+    <p>
+      <%= reference_form.label :issue, "Issue Addressed" %>
+    </p>
+    <p>
+        <%= reference_form.text_area :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
+    </p>
+     <p>
+        Enter Sura and Aya number like From 1:1 To 1:7 
+      <p><%= reference_form.label :from, "From"%>
+      <%= reference_form.text_field :from, :class => 'issue_from_field', :name => 'question[reference_attributes][][from]' %>
+      <%= reference_form.label :to, "To"%>
+      <%= reference_form.text_field :to, :class => 'issue_to_field', :name => 'question[reference_attributes][][to]' %>
+    </p>
+      <%= reference_form.hidden_field :question_id, :value=> @question_id, :name => 'question[reference_attributes][][question_id]' %>
+      <% unless reference.new_record?  %>
+      <%= reference_form.hidden_field :id, :name => 'question[reference_attributes][][id]' %>
+      <% end %>
+      <% end %>
+    <% end %>
+     </div>
+  <p> 
+    <%= link_to ('Add Another','#',{:id =>'add_reference_button'}) %>
+  </p><br>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'update' %>
   </p>
 <% end %>
-
+</div><br>
 <%= link_to 'Show', topic_sub_topic_question_path(params[:topic_id],@question.sub_topic,@question) %> |
 <%= link_to 'Back', topic_sub_topic_questions_path(params[:topic_id],@question.sub_topic) %>
+
+
+<div id="new_alternate_phrases" style="display:none;">
+    <div>
+      <% fields_for "question[alternate_phrase_attributes][]", @question.alternate_phrases.new do |phrase_form|%>
+      <p>
+      <%= phrase_form.label :content,"Alternate Phrase" %>
+      </p>
+        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
+      <% end %>
+   </div>
+</div>
+
+<div id="new_references" style="display:none;">
+  <div>
+      <% fields_for "question[reference_attributes][]", @question.references.new do |reference_form|%>
+    <p>
+      <%= reference_form.label :issue, "Issue Addressed" %>
+    </p>
+    <p>
+        <%= reference_form.text_area :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
+    </p>
+     <p>
+      <p><%= reference_form.label :from, "From"%>
+      <%= reference_form.text_field :from, :class => 'issue_from_field', :name => 'question[reference_attributes][][from]' %>
+      <%= reference_form.label :to, "To"%>
+      <%= reference_form.text_field :to, :class => 'issue_to_field', :name => 'question[reference_attributes][][to]' %>
+    </p>
+      <%= reference_form.hidden_field :question_id, :value=> @question_id, :name => 'question[reference_attributes][][question_id]' %>
+      <% end %>
+  </div>
+</div>
+

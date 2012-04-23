@@ -21,7 +21,7 @@ class Topic < ActiveRecord::Base
   end
 
   def name_to_slug
-    self.name_slug = self.name.to_slug
+    self.name_slug = self.name.to_slug.downcase
   end
 
 end

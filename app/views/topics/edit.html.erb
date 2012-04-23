@@ -1,3 +1,4 @@
+<br><div class = "content-body-admin">
 <% content_for :head do %>
   <%= javascript_include_tag 'topics' %>
 <% end %>
@@ -36,6 +37,7 @@
     <%= f.submit 'Update' %>
   </p>
 <% end %>
+</div><br>
 
 <%= link_to 'Show', @topic %> |
 <%= link_to 'Back', topics_path %>

@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.resources :users
+  map.resources :questions
 
   map.resources :topics do |topic|
     topic.resources :sub_topics do |sub_topic|

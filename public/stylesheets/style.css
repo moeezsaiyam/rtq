@@ -285,8 +285,6 @@ body {
  margin-right: 98px;
  margin-top: -34px;
  width: 666px;
-*padding-top:44px;
-	
 }
 
 #menu-bar  ul{ 
@@ -309,13 +307,6 @@ body {
 #menu-bar ul li a.home:hover,#menu-bar ul li a.home.active { 
   background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 6px 3px 0 0;
-    color: #9ACD32;
-    float: left;
-    list-style: none outside none;
-    width:22px;
-	  height:20px;
-	  margin-top: -3px;
-    padding-bottom: 7px;
 }
 	
 #menu-bar  ul li.last{ 
@@ -351,9 +342,12 @@ body {
 	border-radius: 10px 10px 0px 0px;
 }
 #menu-bar  ul li a.home{ 
-	float:left;
-	width:19px;
-	height:19px;
+	  float: left;
+    height: 23px;
+    margin-bottom: 0;
+    margin-top: -3px;
+    padding-bottom: 4px;
+    width: 22px;
 	}
 
 /* Menu CSS End */
@@ -445,7 +439,7 @@ body {
 	float:left;
 	width:273px;
 	position:relative;
-	top:-152px;
+	top:-148px;
 	}
 	
 .side1-nav ul{
@@ -664,6 +658,12 @@ background:url(/images/srch.png) no-repeat left top;
   border-radius:10px;
   padding:15px 20px 0px 20px;
 }	
+.content-body-admin{
+   background: none repeat scroll 0 0 white;
+   border-radius: 10px 10px 10px 10px;
+   padding: 8px 28px 0;
+   width: 374px;
+  }
 .content-body h6{  
    font-family: 'Square721Regular';
 	 font-size:22px;
@@ -951,7 +951,7 @@ background:url(/images/srch.png) no-repeat left top;
     position: relative;
     top: -1px;
     border-radius: 5px 5px 5px 5px;
-    width: 75px;
+    width: 83px;
     text-align: center;
     }
         
@@ -1898,4 +1898,5 @@ border-bottom:none;
 *html #nav ul {
     margin:0 0 0 -2px;
 }
+
     

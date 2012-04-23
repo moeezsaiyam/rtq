@@ -19,7 +19,7 @@ class SubTopic < ActiveRecord::Base
   end
 
   def name_to_slug
-    self.name_slug = self.name.to_slug
+    self.name_slug = self.name.to_slug.downcase
   end
 
   def self.perform_search(search_term, search_terms)

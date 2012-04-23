@@ -35,13 +35,13 @@ class VerseController < ApplicationController
  end
 
   def show
-    question_id = params[:prev].split("/").last
+    puts session.inspect
+   question_id = params[:prev].split("/").last
     @question = Question.find(:first, :conditions => ['id = ? OR quest_slug = ?', question_id, question_id])
     @verse = Verse.find(params[:range])
-    @translation = Translation.find_by_default(1) unless request.referrer.split("/").include?("verse")
+    @translation = Translation.find_by_default(1)
     return head(404) unless @verse
     @verses_range = Verse.from_to_verses(params[:id],params[:range])
-    puts @verses_range.inspect
     unless @translation.blank? && params[:trans].blank?
       trans = params[:trans] if params[:trans]
       trans = [@translation.table_nam] if trans.blank?

@@ -1,3 +1,4 @@
+<br><div class = "content-body-admin">
 <div class = "content-body1">
 <br><div class ="admin-page"> <h1>New question</div></h1></div>
 
@@ -9,11 +10,11 @@
     <%= select("question", "sub_topic_id", SubTopic.find_all_by_topic_id(params[:topic_id]).collect {|t| [ t.name, t.id ] }) %>
   </p>
   <p>
-    <%= f.label :quest %><br />
+    <%= f.label :Question %><br />
     <%= f.text_field :quest %>
   </p>
   <p>
-    <%= f.label :answer %><br />
+    <%= f.label :Answer %><br />
     <%= f.text_area :answer %>
   </p>
   <div id="alternate_phrases">
@@ -22,8 +23,7 @@
       <p>
       <%= phrase_form.label :content,"Alternate Phrase" %>
       </p>
-        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
-        <%= phrase_form.hidden_field :question_id, :value=> @question_id %><br>
+        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %><br>
       <% end %>
     <% end %>
   </div>
@@ -31,8 +31,6 @@
    <p>
     <%= link_to ('Add Another','#',{:id =>'add_button'}) %>
   </p>
-  <div id ="references_new">
-  </div>
   <div id="references">
     <% @question.references.each do |reference| %>
       <% fields_for "question[reference_attributes][]", reference do |reference_form|%>
@@ -49,7 +47,6 @@
       <%= reference_form.label :to, "To"%>
       <%= reference_form.text_field :to, :class => 'issue_to_field' %>
     </p>
-      <%= reference_form.hidden_field :question_id, :value=> @question_id %>
       <% end %>
     <% end %>
   </div>
@@ -60,12 +57,24 @@
     <%= f.submit 'Create' %>
   </p>
 <% end %>
+</div><br>
 
 <%= link_to 'Back', topic_sub_topic_questions_path(params[:topic_id],params[:sub_topic_id]) %>
+
+<div id="new_alternate_phrases" style="display:none;">
+    <div>
+      <% fields_for "question[alternate_phrase_attributes][]", @question.alternate_phrases.new do |phrase_form|%>
+      <p>
+      <%= phrase_form.label :content,"Alternate Phrase" %>
+      </p>
+        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
+      <% end %>
+   </div>
+</div>
+
 <div id="new_references" style="display:none;">
   <div>
-    <% @question.references.each do |reference| %>
-      <% fields_for "question[reference_attributes][]", reference do |reference_form|%>
+      <% fields_for "question[reference_attributes][]", @question.references.new do |reference_form|%>
     <p>
       <%= reference_form.label :issue, "Issue Addressed"%>
     </p>
@@ -80,6 +89,5 @@
     </p>
       <%= reference_form.hidden_field :question_id, :value=> @question_id %>
       <% end %>
-    <% end %>
   </div>
 </div>

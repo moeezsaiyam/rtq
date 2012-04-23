@@ -1,3 +1,4 @@
+<br><div class = "content-body-admin">
 <div class = "content-body1">
 <br><div class ="admin-page"> <h1>New sub_topic</div></h6></div>
 
@@ -22,11 +23,12 @@
     <%= f.file_field :photo %>
   </p>
   <p>
-    <%= f.check_box :featured %>Click here to feature this sub_topic on Main page.
+    <%= f.check_box :featured %>Click here to feature this sub topic on main page.
   </p>
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
+</div><br>
 
 <%= link_to 'Back', topic_sub_topics_path(@sub_topic.topic) %>

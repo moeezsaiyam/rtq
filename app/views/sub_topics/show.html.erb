@@ -16,7 +16,6 @@
   <% end %>
 
 <div class="clear"></div><br>
-<% unless logged_in? %>
 <% unless @sub_topic_questions.blank? %>
 <div class = "questions-pr">
 <%= render :partial => "questions" %>
@@ -29,5 +28,4 @@
   <% unless @related_subject.blank? %>
 <%= render :partial => "related_subject" %>
 <%end%>
-<% end %>
 </div>

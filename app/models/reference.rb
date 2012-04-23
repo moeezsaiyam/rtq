@@ -1,7 +1,7 @@
 class Reference < ActiveRecord::Base
 belongs_to :question
 
-validates_presence_of:issue,:from,:to
+validates_presence_of :issue, :from, :to
 
   def validate
     

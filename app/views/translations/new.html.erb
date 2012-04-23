@@ -1,3 +1,4 @@
+<br><div class = "content-body-admin">
 <br><div class ="admin-page"> 
   <h1>New translation</h7></div></h1>
 <% form_for(@translation) do |f| %>
@@ -5,18 +6,19 @@
  
   <p>
     <%= f.label :name %><br>
-    <%= f.text_field:name %><br>
+    <%= f.text_field :name, :value => ((session[:translation] && session[:translation][:name]) || "")%><br>
   </p>
   <p>
     <%= f.label:table,'Table Name' %><br>
-    <%= f.text_field:table_nam %><br>
+    <%= f.text_field :table_nam  ,:value => ((session[:translation] && session[:translation][:table_nam]) || "") %><br>
   </p>
   <p>
-  <%= f.check_box :default%>Default<br>
+  <%= f.check_box :default ,:value => ((session[:translation] && session[:translation][:default]) || "")%>Default<br>
   </p>
    <p>
     <%= f.submit 'Create' %><br>
   </p>
 <% end %>
+</div><br>
 
 <%= link_to 'Back',  translations_path %>
