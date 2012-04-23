@@ -8,7 +8,7 @@ class VerseController < ApplicationController
    @next_verses = @verse.next_verses(3)
    @translation = Translation.find_by_default(1) unless request.referrer.split("/").include?("verse_context")
     unless @translation.blank? && params[:trans].blank?
-     trans = params[:trans] if params[:trans]
+     trans = Translation.all.collect(&:table_nam).select {|t| cookies[t] == 'true'}
      trans = [@translation.table_nam] if trans.blank?
      @trans_verses = Hash.new
        trans.each do|t|
