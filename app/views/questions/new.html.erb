@@ -18,12 +18,10 @@
     <%= f.text_area :answer %>
   </p>
   <div id="alternate_phrases">
+      <label for="question_sub_topic_id">Alternate Phrases</label><br />
     <% @question.alternate_phrases.each do |alternate_phrase| %>
       <% fields_for "question[alternate_phrase_attributes][]", alternate_phrase do |phrase_form|%>
-      <p>
-      <%= phrase_form.label :content,"Alternate Phrase" %>
-      </p>
-        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %><br>
+        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %><br />
       <% end %>
     <% end %>
   </div>
@@ -64,9 +62,6 @@
 <div id="new_alternate_phrases" style="display:none;">
     <div>
       <% fields_for "question[alternate_phrase_attributes][]", @question.alternate_phrases.new do |phrase_form|%>
-      <p>
-      <%= phrase_form.label :content,"Alternate Phrase" %>
-      </p>
         <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
       <% end %>
    </div>

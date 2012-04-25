@@ -1,9 +1,9 @@
 <%= bread_crumb(@topic) %><br>
 <div class="content-body">
-  <h6><%=h @topic.name %></h6>
-  <h4>
+  <h1><%=h @topic.name %></h1>
+  <h2>
     <%=h @topic.meaning %>
-  </h4>
+  </h2>
   <div>
     <p>
       <%= simple_format(@topic.description) %>

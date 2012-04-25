@@ -12,16 +12,24 @@
   <%end%>
   <end>
     <% @prev_verses.each_with_index do |v,i| %>
-      <div class="arabic-post-pr-verse" dir="rtl" ><br>
+      <div class = "numbered-verse">
+      <div class="show-verse-number-questionpage"><%= v.sura %> : <%= v.aya %></div>
+      </div>
+      <div class="arabic-post-pr-verse" dir="rtl" >
         <%= v.text  %>
-      </div><br><br>
+      </div><br>
       <div class="verse-color">
         <%= @trans_verses[v.id] unless @trans_verses.blank?  %>
       </div>
-      <div class="<%= verse_list_class(i+1,@prev_verses.count)%>"></div>
+      <% if @prev_verses.count-1 > i%>
+         <div class="separator-width "></div>
+      <% end %>
     <% end %>
   </div>
   <div class = "verse-background">
+     <div class = "numbered-verse">
+      <div class="show-verse-number-questionpage"><%= @verse.sura %> : <%= @verse.aya %></div>
+      </div>
   <div class="arabic-current-verse" dir="rtl"><br>
     <%= @verse.text %>
   </div><br><br>
@@ -33,13 +41,18 @@
 <% unless @prev_verses.blank? %>
  <%end%>
 <% @next_verses.each_with_index do |v,i| %>
-<div class="arabic-post-pr-verse" dir="rtl"><br>
+  <div class = "numbered-verse">
+      <div class="show-verse-number-questionpage"><%= v.sura %> : <%= v.aya %></div>
+      </div>
+<div class="arabic-post-pr-verse" dir="rtl">
 <%= v.text  %><br><br>
 </div>
 <div class="verse-color">
 <%= @trans_verses[v.id] unless @trans_verses.blank? %>
 </div>
-<div class="<%= verse_list_class(i+1,@prev_verses.count)%>"></div>
+      <% if @next_verses.count-1 > i%>
+         <div class="separator-width "></div>
+      <% end %>
 <% end %>
 </div>
 </div>

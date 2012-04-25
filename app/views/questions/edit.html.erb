@@ -20,12 +20,10 @@
     <%= f.text_area :answer %>
   </p>
   <div id="alternate_phrases">
+    <label for="question_sub_topic_id">Alternate Phrases</label><br />
     <% @question.alternate_phrases.each do |alternate_phrase| %>
       <% fields_for "question[alternate_phrase_attributes][]", alternate_phrase do |phrase_form|%>
-      <p>
-      <%= phrase_form.label :content,"Alternate Phrase" %>
-      </p>
-        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field', :name => 'question[alternate_phrase_attributes][][content]' %><br>
+        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field', :name => 'question[alternate_phrase_attributes][][content]' %><br /><br />
         <%= phrase_form.hidden_field :question_id, :value=> @question_id, :name => 'question[alternate_phrase_attributes][][question_id]' %>
         <% unless alternate_phrase.new_record?  %>
         <%= phrase_form.hidden_field :id, :name => 'question[alternate_phrase_attributes][][id]' %>
@@ -64,7 +62,7 @@
     <%= link_to ('Add Another','#',{:id =>'add_reference_button'}) %>
   </p><br>
   <p>
-    <%= f.submit 'update' %>
+    <%= f.submit 'Update' %>
   </p>
 <% end %>
 </div><br>
@@ -75,9 +73,6 @@
 <div id="new_alternate_phrases" style="display:none;">
     <div>
       <% fields_for "question[alternate_phrase_attributes][]", @question.alternate_phrases.new do |phrase_form|%>
-      <p>
-      <%= phrase_form.label :content,"Alternate Phrase" %>
-      </p>
         <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
       <% end %>
    </div>

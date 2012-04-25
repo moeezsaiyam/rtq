@@ -117,14 +117,14 @@ module ApplicationHelper
     html = ""
     topics.each do |topic|
       unless params[:topic_name_slug].blank?
-        html = html + "<li><a href='/#{topic.name_slug}' class='slected'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>" if params[:topic_name_slug] == topic.name_slug
-        html = html + "<li><a href='/#{topic.name_slug}'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>" unless params[:topic_name_slug] == topic.name_slug
+        html = html + "<li><a href='/#{topic.name_slug}' class='slected'>#{topic.name}</a><div class='triangle-right'></div></li>" if params[:topic_name_slug] == topic.name_slug
+        html = html + "<li><a href='/#{topic.name_slug}'>#{topic.name}</a></li>" unless params[:topic_name_slug] == topic.name_slug
       else
         unless params[:topic_id].blank?
-          html = html + "<li><a href='/#{topic.name_slug}' class='slected'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>" if params[:topic_id].to_i == topic.id
-          html = html + "<li><a href='/#{topic.name_slug}'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>" unless params[:topic_id].to_i == topic.id
+          html = html + "<li><a href='/#{topic.name_slug}' class='slected'>#{topic.name}</a></li>" if params[:topic_id].to_i == topic.id
+          html = html + "<li><a href='/#{topic.name_slug}'>#{topic.name}</a></li>" unless params[:topic_id].to_i == topic.id
         else
-          html = html + "<li><a href='/#{topic.name_slug}'>#{truncate(topic.name, :length => 25, :omission => '...')}</a></li>"
+          html = html + "<li><a href='/#{topic.name_slug}'>#{topic.name}</a></li>"
         end
       end
     end

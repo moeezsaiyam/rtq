@@ -18,10 +18,11 @@ $(document).ready(function()
   });
   
   $('#carousel').infiniteCarousel({
-	transitionSpeed : 800,
-	displayTime : 5000,
-	textholderHeight : .30,
-	displayProgressBar : 0
+   transitionSpeed : 800,
+   displayTime : 5000,
+   textholderHeight : .30,
+   displayProgressBar : 0,
+   displayThumbnails :false
   });
   
   
