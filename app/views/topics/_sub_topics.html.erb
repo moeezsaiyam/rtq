@@ -1,13 +1,13 @@
 <br><div class = "sub_topic-color">Sub Topics</div>
- <div class="clear"></div>
- <form method = "post">  
+<div class="clear"></div>
+<form method = "post">  
   <% @topic.sub_topics.each_with_index do |s, i|%>
     <!--class-section -->
     <div class="class-section <%= nomargin_class(i) %>">
       <a class="class-img" href="<%= sub_topic_slug_path(s.topic.name_slug, s.name_slug) %>"><%= image_tag s.photo.url(:small)%></a>
       <h3><%=link_to truncate(s.name, :length => 50, :omission => '...'), sub_topic_slug_path(s.topic.name_slug, s.name_slug) %></h3>
       <p class="subdesc"><%=link_to truncate(s.description, :length => 85, :omission => '...'), sub_topic_slug_path(s.topic.name_slug, s.name_slug) %></p>
-    </form>
     </div>
   <% end %>
+</form>
   
