@@ -1893,8 +1893,8 @@ border-bottom:none;
 .view-details a {
 	text-decoration: underline;
 }
-p.subdesc {font-size:12px !important;
-height:60px;
+p.subdesc {font-size:11px !important;
+height:40px;
 overflow:hidden;}
 #question_quest {width:90%;}
 #alternate_phrases label {font-size: 14px; clear: both;}
