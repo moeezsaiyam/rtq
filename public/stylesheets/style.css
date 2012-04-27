@@ -308,8 +308,8 @@ body {
     width:51px;
 }
 
-#menu-bar ul li a.home:hover,#menu-bar ul li a.home.active { 
-  background: none repeat scroll 0 0 #FFFFFF;
+#menu-bar ul li a.home:hover,#menu-bar ul li a.home.active {  
+    background:url(/images/nav-home.png) no-repeat 16px 6px #FFFFFF;
     border-radius: 6px 3px 0 0;
 }
 	
@@ -352,8 +352,9 @@ body {
     margin-top: -3px;
     padding-bottom: 4px;
     width: 22px;
+    background:url(/images/nav-home-white.png) no-repeat 16px 6px;}
 	}
-
+#
 /* Menu CSS End */
 
 
