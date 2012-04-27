@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
+  map.popular '/questions/popular', :controller => 'questions', :action => 'popular'
   map.resources :users
   map.resources :questions
 
@@ -33,5 +34,5 @@ ActionController::Routing::Routes.draw do |map|
   map.sub_topic_slug ':topic_name_slug/:sub_topic_name_slug',   :controller => 'sub_topics', :action => 'show'
   map.sub_topic_questions ':topic_name_slug/:sub_topic_name_slug/questions',   :controller => 'questions', :action => 'index'
   map.question_slug ':topic_name_slug/:sub_topic_name_slug/:question_slug',    :controller => 'questions', :action => 'show'
-  
+
 end

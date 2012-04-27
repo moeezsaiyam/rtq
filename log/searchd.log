@@ -3,3 +3,7 @@
 [Wed Feb 15 19:55:44.865 2012] [12365] shutdown complete
 [Thu Feb 16 10:25:01.554 2012] [ 2659] accepting connections
 [Fri Feb 17 10:35:36.083 2012] [ 2325] accepting connections
+[Thu Apr 26 14:56:54.348 2012] [ 3556] accepting connections
+[Thu Apr 26 15:01:30.746 2012] [ 3556] caught SIGTERM, shutting down
+[Thu Apr 26 15:01:30.746 2012] [ 3556] shutdown complete
+[Fri Apr 27 04:13:56.400 2012] [ 4964] accepting connections
