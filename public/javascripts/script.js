@@ -40,11 +40,19 @@ $(document).ready(function()
    $('#add_button').click(function(){
     $('#alternate_phrases').append('<br/>');
     $('#alternate_phrases').append($('#new_alternate_phrases div').clone().val(''));
+      $('#remove_button').click(function(){
+        $(this).parent().remove();
+        return false;
+      });
     return false;
    });
   
   $('#add_reference_button').click(function(){
   $('#references').append($('#new_references div').clone().val(''));
+  $('#remove_button').click(function(){
+      $(this).parent().remove();
+      return false;
+    });
    return false;
    });
 
