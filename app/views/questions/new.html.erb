@@ -64,7 +64,7 @@
       <% fields_for "question[alternate_phrase_attributes][]", @question.alternate_phrases.new do |phrase_form|%>
         <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
       <% end %>
-      <%= link_to ('Remove','#',{:id =>'remove_button'}) %>
+      <%= link_to 'Remove','#', :onclick => 'remove_alternate(this); return false;' %>
    </div>
 </div>
 
@@ -86,6 +86,6 @@
     </p>
       <%= reference_form.hidden_field :question_id, :value=> @question_id %>
       <% end %>
-    <%= link_to ('Remove','#',{:id =>'remove_reference_button'}) %>
+    <%= link_to ('Remove','#', :onclick => 'remove_alternate(this); return false;') %>
   </div>
 </div>
