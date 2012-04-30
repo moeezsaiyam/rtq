@@ -48,11 +48,11 @@ $(document).ready(function()
    });
   
   $('#add_reference_button').click(function(){
-  $('#references').append($('#new_references div').clone().val(''));
-  $('#remove_button').click(function(){
-      $(this).parent().remove();
-      return false;
-    });
+    $('#references').append($('#new_references div').clone().val(''));
+    $('#remove_reference_button').click(function(){
+        $(this).parent().remove();
+        return false;
+      });
    return false;
    });
 

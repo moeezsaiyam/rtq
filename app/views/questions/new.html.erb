@@ -78,6 +78,7 @@
         <%= reference_form.text_area:issue, :class => 'issue_field' %>
     </p>
      <p>
+      Enter Sura and Aya number like From 1:1 To 1:7 
       <p><%= reference_form.label :from, "From"%>
       <%= reference_form.text_field :from, :class => 'issue_from_field' %>
       <%= reference_form.label :to, "To"%>
@@ -85,6 +86,6 @@
     </p>
       <%= reference_form.hidden_field :question_id, :value=> @question_id %>
       <% end %>
-    <%= link_to ('Remove','#',{:id =>'remove_button'}) %>
+    <%= link_to ('Remove','#',{:id =>'remove_reference_button'}) %>
   </div>
 </div>
