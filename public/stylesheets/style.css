@@ -413,7 +413,7 @@ body {
 .side-nav ul li a{
 	float:left;
 	font-size:14px;
-	color:#666;
+	color:#333;
 	padding:10px 9px 10px 41px;
 	background:url(/images/normal-bullet.png) no-repeat  19px 15px ;
   width:210px;
@@ -474,7 +474,7 @@ body {
 .side1-nav ul li a{
 	float:left;
 	font-size:14px;
-	color:#666;
+	color:#333;
 	padding:10px 0px 10px  41px;
 	background:url(/images/normal-bullet.png) no-repeat  19px 15px ;
   width:220px;
@@ -748,7 +748,7 @@ background:url(/images/srch.png) no-repeat left top;
 	#popular-Questions .show-more {
     background: url("/images/show-btn.png") repeat-x;
     border-radius: 5px 5px 5px 5px;
-    color: #666666;
+    color: #333;
     float: right;
     font-size: 12px;
     line-height: 24px;
@@ -900,7 +900,7 @@ background:url(/images/srch.png) no-repeat left top;
 .show-more{
 	line-height:24px;
 	text-align:center;
-	color:#666;
+	color:#333;
 	margin-right:49px;
 	background:url(/images/button-rep.png) repeat-x left top;
 	-webkit-border-radius: 5px;
@@ -959,7 +959,7 @@ background:url(/images/srch.png) no-repeat left top;
 	.browse-btn{
 	line-height:24px;
 	text-align:center;
-	color:#666;
+	color:#333;
 	margin-right:49px;
 	background:url(/images/button-rep.png) repeat-x left top;
 	-webkit-border-radius: 5px;
@@ -1057,11 +1057,11 @@ border-bottom:none;}
  }
 	
 .question ul li a{
-	color:#666;
+	color:#333;
 	font-size:14px;}
 	
 	.question-index ul li a{
-	color:#666;
+	color:#333;
 	font-size:14px;}
 	
 #log{
@@ -1230,7 +1230,7 @@ table.admin-view th{
 	}
 
 .list-points li a{
- color: #666666;
+ color: #333;
  font-size: 14px;
 }
 .list-points-verse li a{
@@ -1352,7 +1352,7 @@ table.admin-view th{
   padding:0px 15px 20px 20px;
 }
  .verse-brown {
-  color:#666666;
+  color:#333;
   font-size:14px;
   padding:0px 15px 20px 20px;
   border-bottom:1px dotted #976D3B;
@@ -1869,7 +1869,7 @@ border-bottom:none;
             display:block; 
             height:15px;
             padding: 8px 5px;
-            color:#666;
+            color:#333;
         }
          
         #nav ul a:hover {
