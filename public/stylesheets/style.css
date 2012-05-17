@@ -12,6 +12,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font-family: "me_quran";
 	src: local("me_quran"), url("font/me_quran.ttf");/* format ("truetype"); */
 }
+@font-face {
+	font-family: "me_urdu";
+	src: local("me_quran"), url("font/me_urdu.ttf");/* format ("truetype"); */
+}
 
  @font-face {
    font-family: 'Square721Regular';
@@ -24,6 +28,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
          
 textarea {
 	width:90%;
+}
+.Urdu{
+  font-family: "me_urdu";
+  font-size:20px;
+  text-align:right;
 }
 .arabic{
 	font-size: 30px;

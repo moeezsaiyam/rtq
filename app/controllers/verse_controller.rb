@@ -15,20 +15,20 @@ class VerseController < ApplicationController
        @trans_name = Translation.find_by_table_nam(t)
        name = @trans_name.name
         if @trans_verses.has_key?(@verse.id)
-          @trans_verses[@verse.id] = [ @trans_verses[@verse.id],'<h4 a>'+name + '<br>'+'</h4 a>', @verse.translate_to_by(t)[0].text+'<br><br>']
+          @trans_verses[@verse.id] = [ @trans_verses[@verse.id],'<h4>'+name + '<br>'+"</h4><div class='#{name}'>", @verse.translate_to_by(t)[0].text+'</div><br><br>']
         end
-        @trans_verses[@verse.id] = ['<h4 a>'+name + '<br>'+'</h4 a>',@verse.translate_to_by(t)[0].text+'<br><br>'] unless @trans_verses.has_key?(@verse.id)
+        @trans_verses[@verse.id] = ['<h4>'+name + '<br>'+'</h4><div class="#{name}">',@verse.translate_to_by(t)[0].text+'</div><br><br>'] unless @trans_verses.has_key?(@verse.id)
           @prev_verses.each do|v|
             if @trans_verses.has_key?(v.id)
-            @trans_verses[v.id] = [ @trans_verses[v.id],'<h4>'+name + '<br>'+'</h4>', v.translate_to_by(t)[0].text + '<br><br>']
+            @trans_verses[v.id] = [ @trans_verses[v.id],'<h4>'+name + '<br>'+"</h4><div class='#{name}'>", v.translate_to_by(t)[0].text + '</div><br><br>']
             end
-          @trans_verses[v.id] = ['<h4>'+name + '<br>'+'</h4>',v.translate_to_by(t)[0].text+ '<br><br>'] unless @trans_verses.has_key?(v.id)
+          @trans_verses[v.id] = ['<h4>'+name + '<br>'+"</h4><div class='#{name}'>",v.translate_to_by(t)[0].text+ '</div><br><br>'] unless @trans_verses.has_key?(v.id)
           end
           @next_verses.each do|v|
             if @trans_verses.has_key?(v.id)
-              @trans_verses[v.id] = [ @trans_verses[v.id],'<h4>'+ name + '<br>'+'</h4>', v.translate_to_by(t)[0].text + '<br><br>']
+              @trans_verses[v.id] = [ @trans_verses[v.id],'<h4>'+ name + '<br>'+"</h4><div class='#{name}'>", v.translate_to_by(t)[0].text + '</div><br><br>']
             end
-            @trans_verses[v.id] = ['<h4>'+ name + '<br>'+'</h4>',v.translate_to_by(t)[0].text+'<br><br>'] unless @trans_verses.has_key?(v.id)
+            @trans_verses[v.id] = ['<h4>'+ name + '<br>'+"</h4><div class='#{name}'>",v.translate_to_by(t)[0].text+'</div><br><br>'] unless @trans_verses.has_key?(v.id)
           end
       end
    end    
@@ -51,8 +51,8 @@ class VerseController < ApplicationController
         @trans_name = Translation.find_by_table_nam(t)
         name = @trans_name.name
         @verses_range.each do|v|
-          @trans_verses[v.id] = [ @trans_verses[v.id],'<h4>'+name + '<br>'+'</h4>', v.translate_to_by(t)[0].text + '<br><br>'] if @trans_verses.has_key?(v.id)
-          @trans_verses[v.id] = ['<h4>'+name + '<br>'+'</h4>',v.translate_to_by(t)[0].text + '<br><br>'] unless @trans_verses.has_key?(v.id)
+            @trans_verses[v.id] = [ @trans_verses[v.id],'<h4>'+name + '<br>'+"</h4><div class='#{name}'>", v.translate_to_by(t)[0].text + '</div><br><br>'] if @trans_verses.has_key?(v.id)
+            @trans_verses[v.id] = ['<h4>'+name + '<br>'+"</h4><div class='#{name}'>",v.translate_to_by(t)[0].text + '</div><br><br>'] unless @trans_verses.has_key?(v.id)
         end
       end
     end
