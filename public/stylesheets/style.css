@@ -423,7 +423,7 @@ body {
 #col1-1 {
 	float: left;
 	position:relative;
-	top:-146;
+	top:147px;
 	
 }
 
@@ -533,7 +533,6 @@ body {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	position:relative;
-	right:-311px;
 	}
 	
 .search-topic{
@@ -699,7 +698,7 @@ background:url(/images/srch.png) no-repeat left top;
 #class-container{ 
 	float:left;
 	padding-top:5px;
-	padding:0px 10px 0px 10px;}
+}
 
 .class-section{
 	float:left;

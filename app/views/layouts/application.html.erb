@@ -34,15 +34,6 @@
   </div>
  <!--/header-->
   <div class="clear"></div>
-  <!--search-container -->
-     
-      <% unless @sub_topics_search.blank? && @questions_search.blank? && @topics_search.blank? && @search.blank? && @empty_search.blank?%>
-       <div class="search-container1">
-        <%= render :partial => "shared/search" %>
-      </div>
-      <%end%>
-      <!--/search-container -->
-  <div class="clear"></div>
   <!--content-->
   <div id="content">
     <% unless @questions_search.blank? && @sub_topics_search.blank? && @topics_search.blank? && @search.blank? && @empty_search.blank? %>
@@ -71,6 +62,9 @@
     
     <!--col-2 -->
     <div id="col-2">
+      <div class="search-container1">
+        <%= render :partial => "shared/search" %>
+      </div>
       <% if !flash[:error].blank? %>
         <div class="error-box">
           <%= flash[:error] %>
