@@ -6,17 +6,19 @@
     <li><%= link_to("Duas", { :controller => "main", :action => "duas"}, {:class => 'duas' })%>
       <div class="clear"></div>
     </li>
+
+    <li><%= link_to("FAQ's", { :controller => "main", :action => "faqs" }, {:class => 'faqs' }) %>
+      <div class="clear"></div>
+    </li>
+
+    <li><%= link_to("Credits", { :controller => "main", :action => "credit" }, {:class => 'credit' })%>
+      <div class="clear"></div>
+    </li>
+
     <li><%= link_to("Contact", { :controller => "main", :action => "contact"}, {:class => 'contact' } )%>
       <div class="clear"></div>
     </li>
 
-<li><%= link_to("Credits", { :controller => "main", :action => "credit" }, {:class => 'credit' })%>
-
- <div class="clear"></div></li>
-
-<li><%= link_to("FAQ's", { :controller => "main", :action => "faqs" }, {:class => 'faqs' }) %>
-<div class="clear"></div>
-</li>
 
 <% if logged_in? %>
  <li><a href="/logout">Logout</a></li>
