@@ -5,7 +5,7 @@
    <form method = "post">  
     <%= hidden_field_tag 'prev', params[:prev] %>
     <% Translation.all.each do |translation| %>
-        <%= check_box_tag 'trans[]', translation.table_nam, cookies[translation.table_nam] == 'true' %>
+        <%= radio_button_tag 'translation_name', translation.table_nam, cookies[translation.table_nam] == 1 %>
       <%= translation.name %><br><br>
     <% end %>
    </form>
