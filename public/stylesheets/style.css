@@ -1906,3 +1906,8 @@ height:40px;
 overflow:hidden;}
 #question_quest {width:90%;}
 #alternate_phrases label {font-size: 14px; clear: both;}
+
+.sort-handle {
+  cursor:move;
+}
+

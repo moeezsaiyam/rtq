@@ -15,3 +15,7 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function() { 
+  $('table.table-topics tbody').sortable({handle : '.sort-handle'});
+});   
+
