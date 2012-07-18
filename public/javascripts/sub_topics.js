@@ -16,3 +16,7 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function() {
+  $('table.table-subtopics tbody').sortable({handle : '.sort-handle'});
+});
+

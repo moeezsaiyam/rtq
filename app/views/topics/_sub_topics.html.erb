@@ -1,7 +1,7 @@
 <br><div class = "sub_topic-color">Sub Topics</div>
 <div class="clear"></div>
 <form method = "post">  
-  <% @topic.sub_topics.each_with_index do |s, i|%>
+  <% @topic.sub_topics.ordered.each_with_index do |s, i|%>
     <!--class-section -->
     <div class="class-section <%= nomargin_class(i) %>">
       <a class="class-img" href="<%= sub_topic_slug_path(s.topic.name_slug, s.name_slug) %>"><%= image_tag s.photo.url(:small)%></a>

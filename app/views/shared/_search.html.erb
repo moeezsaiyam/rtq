@@ -30,8 +30,8 @@ $(document).ready(function()
   <% form_tag("/home/search", :method => "get") do %>   
     <input name="search_term" type="text" class="search-field watermarked" title="Search" value="<%= params[:search_term]%>"/>
     <div class="search-terms">
-      <%= select("search_terms", "search_topic", Topic.ordered.all.collect {|t| [ t.name, t.id ] }, { :include_blank => "All Topics" } ,:class => "list") %>
-      <%= select("search_terms", "search_sub_topic", SubTopic.all.collect {|t| [ t.name, t.id ] }, { :include_blank => "All Sub Topics" } ,:class => "list") %>
+       <%= display_topics %>
+      <%= display_subtopics %>
     </div>
     <%= submit_tag 'Search', :class => "search-btn" %>
   <% end %>

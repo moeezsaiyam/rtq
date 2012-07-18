@@ -8,7 +8,7 @@
     <tr>
       <th>Order</th>
       <th>Name</th>
-      <th colspan="3">Actions</th>
+      <th colspan="4">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -19,16 +19,17 @@
         <%= image_tag("arrow.png", :class => 'sort-handle') %>
       </td>
       <td><%=h topic.name %></td>
+      <td><%= link_to 'Sub Topics', topic_sub_topics_path(topic) %></td>
       <td><%= link_to 'Show', topic_slug_path(topic.name_slug) %></td>
       <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
       <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+   </tr>
   <% end %>
   </tbody>
 </table>
 <%= submit_tag "Update Order" , :class => "action-button button rounded-borders" %>
 <% end %>
-
+</br>
 <div class="dashboard">
   <%= link_to 'New topic', new_topic_path %>
 </div>

@@ -145,5 +145,21 @@ module ApplicationHelper
   def sub_items_class()
   return 'sub_item'
   end
-  
+
+  def display_topics
+    search_select("search_topic", Topic.ordered.all, "All Topics")
+  end
+
+ def display_subtopics
+    search_select("search_sub_topic", SubTopic.all, "All Sub Topics")
+  end
+
+  def display_subtopics_in_searchbar
+    search_select("search_sub_topic", @subtopics.ordered, "All Sub Topics")
+  end
+
+  def search_select(name, collection, blank_message)
+    select("search_terms", name, collection.collect {|t| [ t.name, t.id ] }, { :include_blank => blank_message } ,:class => "list")
+  end
+
 end

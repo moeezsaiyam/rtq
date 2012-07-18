@@ -1,1 +1,1 @@
-<%= select("search_terms", "search_sub_topic", @subtopics.collect {|t| [ t.name, t.id ] }, { :include_blank => "All Sub Topics" } ,:class => "list") %>
+<%= display_subtopics_in_searchbar %>

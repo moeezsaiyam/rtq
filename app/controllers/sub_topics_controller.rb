@@ -7,9 +7,9 @@ class SubTopicsController < ApplicationController
   def index
     unless params[:topic_id].blank?
       @topic = Topic.find params[:topic_id]
-      @sub_topics = @topic.sub_topics unless @topic.blank?
+      @sub_topics = @topic.sub_topics.ordered unless @topic.blank?
     else
-      @sub_topics = SubTopic.all
+      @sub_topics = SubTopic.ordered.all
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -103,5 +103,14 @@ class SubTopicsController < ApplicationController
       format.html { redirect_to(topic_sub_topics_path(@sub_topic.topic)) }
       format.xml  { head :ok }
     end
+  end
+
+   def save_order
+     params[:subpositions].each_with_index do |sub_topic_id, index|
+      sub_topic = SubTopic.find(sub_topic_id)
+      sub_topic.update_attributes(:position => index + 1)
+    end
+
+    redirect_to :back
   end
 end

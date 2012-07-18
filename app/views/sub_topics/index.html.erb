@@ -5,21 +5,34 @@
 <br>
   <div class ="admin-page"> <h1>Listing <%= @topic.name %> Sub Topics</div></h1>
 <% end %>
-<table class="admin-view">
-  <tr>
-    <th>Name</th>
-    <th colspan="3">Actions</th>
-  </tr>
 
-<% @sub_topics.each do |sub_topic| %>
-  <tr>
-    <td><%=h sub_topic.name %></td>
-    <td><%= link_to 'Show', topic_sub_topic_path(@topic,sub_topic) %></td>
-    <td><%= link_to 'Edit', edit_topic_sub_topic_path(@topic,sub_topic) %></td>
-    <td><%= link_to 'Destroy', topic_sub_topic_path(@topic,sub_topic), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<% form_tag(save_order_topic_sub_topics_path) do %>
+  <table class="admin-view table-subtopics">
+    <thead>
+      <tr>
+        <th>Order</th>
+        <th>Name</th>
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @sub_topics.each do |sub_topic| %>
+      <tr>
+        <td>
+          <%= hidden_field_tag 'subpositions[]', sub_topic.id %>
+          <%= image_tag("arrow.png", :class => 'sort-handle') %>
+        </td>
+        <td><%=h sub_topic.name %></td>
+        <td><%= link_to 'Show', topic_sub_topic_path(@topic,sub_topic) %></td>
+        <td><%= link_to 'Edit', edit_topic_sub_topic_path(@topic,sub_topic) %></td>
+        <td><%= link_to 'Destroy', topic_sub_topic_path(@topic,sub_topic), :confirm => 'Are you  sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<%= submit_tag "Update Order" , :class => "action-button button rounded-borders" %>
+<%end%>
+</br>
 <div class="dashboard">
   <%= link_to 'Add new Sub topic', new_topic_sub_topic_path(@topic) %>
 </div><br>
