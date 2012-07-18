@@ -5,16 +5,9 @@ class TopicsController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
 
   def index
-    @topics = Topic.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @topics }
-    end
+    @topics = Topic.ordered.all
   end
 
-  # GET /topics/1
-  # GET /topics/1.xml
   def show
     unless (params[:id].blank?)
       @topic = Topic.find(params[:id])
@@ -31,20 +24,15 @@ class TopicsController < ApplicationController
     end
   end
 
-  # GET /topics/new
-  # GET /topics/new.xml
   def new
     @topic = Topic.new
     return head(404) unless @topic
   end
 
-  # GET /topics/1/edit
   def edit
     @topic = Topic.find(params[:id])
   end
 
-  # POST /topics
-  # POST /topics.xml
   def create
     @topic = Topic.new(params[:topic])
 
@@ -60,8 +48,6 @@ class TopicsController < ApplicationController
     end
   end
 
-  # PUT /topics/1
-  # PUT /topics/1.xml
   def update
     @topic = Topic.find(params[:id])
 
@@ -81,8 +67,6 @@ class TopicsController < ApplicationController
     end
   end
 
-  # DELETE /topics/1
-  # DELETE /topics/1.xml
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy
@@ -92,4 +76,14 @@ class TopicsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def save_order
+     params[:positions].each_with_index do |topic_id, index|
+      topic = Topic.find(topic_id)
+      topic.update_attributes(:position => index + 1)
+    end
+
+    redirect_to :back
+  end
 end
+

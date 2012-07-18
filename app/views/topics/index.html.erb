@@ -1,6 +1,8 @@
 <div class = "content-body1">
 <br><div class ="admin-page"> <h1>Listing Topics</div></h1></div>
 
+
+<% form_tag( save_order_topics_path ) do %>
 <table class="admin-view table-topics">
   <thead>
     <tr>
@@ -8,24 +10,28 @@
       <th>Name</th>
       <th colspan="3">Actions</th>
     </tr>
-   </thead>
+  </thead>
   <tbody>
-<% @topics.each do |topic| %>
-  <tr>
-    <td>
-      <%= hidden_field_tag 'positions[]', topic.id %>
-      <%= image_tag("arrow.png", :class => 'sort-handle') %>
-    </td>
-    <td><%=h topic.name %></td>
-    <td><%= link_to 'Show', topic_slug_path(topic.name_slug) %></td>
-    <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-    <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @topics.each do |topic| %>
+    <tr>
+      <td>
+        <%= hidden_field_tag 'positions[]', topic.id %>
+        <%= image_tag("arrow.png", :class => 'sort-handle') %>
+      </td>
+      <td><%=h topic.name %></td>
+      <td><%= link_to 'Show', topic_slug_path(topic.name_slug) %></td>
+      <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+      <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
+<%= submit_tag "Update Order" , :class => "action-button button rounded-borders" %>
+<% end %>
+
 <div class="dashboard">
   <%= link_to 'New topic', new_topic_path %>
 </div>
 <br>
 <%= link_to 'Back',admin_dashboard_path %>
+

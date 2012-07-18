@@ -113,7 +113,7 @@ module ApplicationHelper
  
 
   def list_topics
-    topics = Topic.all
+    topics = Topic.ordered.all
     html = ""
     topics.each do |topic|
       unless params[:topic_name_slug].blank?

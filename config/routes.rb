@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resources :questions
 
-  map.resources :topics do |topic|
+  map.resources :topics, :collection => ["save_order"]  do |topic|
     topic.resources :sub_topics do |sub_topic|
       sub_topic.resources :questions
     end
