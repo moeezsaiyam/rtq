@@ -303,25 +303,35 @@ body {
 #menu-bar  ul{ 
 	float:right;
 	}
-	
-#menu-bar ul li a:hover,#menu-bar ul li a.active { 
+
+#menu-bar ul li a:hover{
   background: none repeat scroll 0 0 #FFFFFF;
-    border-radius: 6px 3px 0 0;
+    border-radius: 6px 6px 0 0;
     color: #9ACD32;
 }
 
-#menu-bar ul li a.sub_item:hover { 
+#menu-bar ul li a.active {
+  background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 6px 6px 0 0;
+    color:#496719;
+}
+#menu-bar ul li a.sub_item:hover {
   background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 1px 1px 0 0;
     color: #9ACD32;
     width:51px;
 }
 
-#menu-bar ul li a.home:hover,#menu-bar ul li a.home.active {  
+#menu-bar ul li a.home:hover {
     background:url(/images/nav-home.png) no-repeat 16px 6px #FFFFFF;
-    border-radius: 6px 3px 0 0;
+    border-radius: 6px 6px 0 0;
 }
-	
+
+#menu-bar ul li a.home.active {  
+ background:url(/images/hover.png) no-repeat 16px 6px #FFFFFF;
+    border-radius: 6px 6px 0 0;
+}
+
 #menu-bar  ul li.last{ 
 	float:left;
 	list-style:none;
@@ -332,7 +342,7 @@ body {
   padding-left:5px !important;
 }
 
-#menu-bar ul li a{ 
+#menu-bar ul li a{
 	  color:#fff;
     float: left;
     font-size: 14px;
@@ -342,19 +352,19 @@ body {
     text-decoration: none;
     width:48px;
 	}
- #menu ul li a.active{ 
+ #menu ul li a.active{
 	width:100px;
 	float:left;
 	font-size:14px;
 	font-weight:normal;
-	color:#496714;
+	color:#496719;
 	text-decoration:none;
 	background:#000;
 	webkit-border-radius: 10px 10px 0px 0px;
 	-moz-border-radius: 10px 10px 0px 0px;
 	border-radius: 10px 10px 0px 0px;
 }
-#menu-bar  ul li a.home{ 
+#menu-bar  ul li a.home{
 	  float: left;
     height: 23px;
     margin-bottom: 0;
