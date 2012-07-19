@@ -1921,3 +1921,6 @@ overflow:hidden;}
   cursor:move;
 }
 
+.translation-margin {
+ margin: 15px;
+}

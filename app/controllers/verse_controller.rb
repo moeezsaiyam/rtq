@@ -44,8 +44,9 @@ class VerseController < ApplicationController
     unless @translation.blank? && params[:translation_name].blank?
 
       Translation.all.each{|tr| cookies[tr.table_nam] = nil}
-      cookies[params[:translation_name]] = 1
       trans = params[:translation_name]
+      @translation = Translation.find_by_table_nam(params[:translation_name]) unless params[:translation_name].blank?
+      cookies[params[:translation_name]] = 1
       trans = @translation.table_nam if params[:translation_name].blank?
       @trans_verses = Hash.new
       @trans_name = Translation.find_by_table_nam(trans)
