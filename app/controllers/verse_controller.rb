@@ -16,7 +16,7 @@ class VerseController < ApplicationController
         trans = @translation.table_nam if params[:translation_name].blank?
         @trans_verses = Hash.new
         @trans_name = Translation.find_by_table_nam(trans)
-        name = @trans_name.name
+        name = @trans_name.language
 
 
        if @trans_verses.has_key?(@verse.id)
@@ -54,7 +54,7 @@ class VerseController < ApplicationController
       trans = @translation.table_nam if params[:translation_name].blank?
       @trans_verses = Hash.new
       @trans_name = Translation.find_by_table_nam(trans)
-      name = @trans_name.name
+      name = @trans_name.language
 
       @verses_range.each do|v|
         @trans_verses[v.id] = [ @trans_verses[v.id],'<h4>'+name + '<br>'+"</h4><div class='#{name}'>", v.translate_to_by(trans)[0].text + '</div><br><br>'] if @trans_verses.has_key?(v.id)
