@@ -1,65 +1,20 @@
-<%= bread_crumb_context(@question) %><br>
- <% if params[:prev] %>
-    <div class="list-points">
-      <div id="prev-link">
-      <a href="<%= params[:prev] %>"> << Back to Verses </a>
+<%= bread_crumb_context(@question) %>
+
+<div class="clear translation-margin"></div>
+
+<%= previous_link("Verses") %>
+
+  <div class = "verse-wrapper">
+    <%= formatted_verses(@prev_verses, @trans_verses ) %>
+    <div class="verse-background">
+      <%= numbered_verse_content(@verse) %>
+      <%= verse_text(@verse) %>
+      <div class="verse-current-last">
+        <%= translated_verse_name(@trans_verses[@verse.id][:name]) %>
+        <%= translated_verse_translation(@trans_verses[@verse.id][:name], @trans_verses[@verse.id][:translation]) %>
       </div>
-     </div>
-     <% end %><br>
-<div class = "verse-wrapper">
-  <div class = "verse-background-pr-post">
-  <% unless @prev_verses.blank? %>
-  <%end%>
-  <end>
-    <% @prev_verses.each_with_index do |v,i| %>
-      <div class = "numbered-verse">
-      <div class="show-verse-number-questionpage"><%= v.sura %> : <%= v.aya %></div>
-      </div>
-      <div class="arabic-post-pr-verse" dir="rtl" >
-        <%= v.text  %>
-      </div><br>
-      <div class="verse-color">
-        <%= @trans_verses[v.id] unless @trans_verses.blank?  %>
-      </div>
-      <% if @prev_verses.count-1 > i%>
-         <div class="separator-width "></div>
-      <% end %>
-    <% end %>
+    </div>
+    <%= formatted_verses(@next_verses, @trans_verses ) %>
   </div>
-  <div class = "verse-background">
-     <div class = "numbered-verse">
-      <div class="show-verse-number-questionpage"><%= @verse.sura %> : <%= @verse.aya %></div>
-      </div>
-  <div class="arabic-current-verse" dir="rtl"><br>
-    <%= @verse.text %>
-  </div><br><br>
-  <div class="verse-current-last">
-    <%=  @trans_verses[@verse.id] unless @trans_verses.blank? %>
-  </div> 
-</div>
-<div class = "verse-background-pr-post">
-<% unless @prev_verses.blank? %>
- <%end%>
-<% @next_verses.each_with_index do |v,i| %>
-  <div class = "numbered-verse">
-      <div class="show-verse-number-questionpage"><%= v.sura %> : <%= v.aya %></div>
-      </div>
-<div class="arabic-post-pr-verse" dir="rtl">
-<%= v.text  %><br><br>
-</div>
-<div class="verse-color">
-<%= @trans_verses[v.id] unless @trans_verses.blank? %>
-</div>
-      <% if @next_verses.count-1 > i%>
-         <div class="separator-width "></div>
-      <% end %>
-<% end %>
-</div>
-</div>
-    <% if params[:prev] %>
-    <div class="list-points">
-      <div id="prev-link">
-      <a href="<%= params[:prev] %>"> << Back to Verses </a>
-      </div>
-     </div>
-     <% end %>
+
+<%= previous_link("Verses") %>

@@ -16,7 +16,14 @@ module ApplicationHelper
       html = html.join(" , ")
     end
   end
-  
+
+  def previous_link(name)
+    return unless params[:prev]
+    content_tag :div, :class => "prev-link" do
+      link_to("&lt;&lt; Back to #{name}", params[:prev])
+    end
+  end
+
   def parse_tags_detail(q_from,q_to,q)
     unless q.verse_ids.blank?
       html = Array.new

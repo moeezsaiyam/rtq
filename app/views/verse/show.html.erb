@@ -1,47 +1,21 @@
 <%= bread_crumb_verse(@question) %>
 <script>
   function get_context(){
-
     $.ajax({
-              url: "/verse/get_context",
-              data: {verse_id:<%= params[:id] %>} ,
-              success: function( data ) {
-                $('.list-points').html($(data).find('ol'));
-                $('#arabic-verse').html("");
-                }
-            });
+      url: "/verse/get_context",
+      data: {verse_id:<%= params[:id] %>} ,
+      success: function( data ) {
+        $('.list-points').html($(data).find('ol'));
+        $('#arabic-verse').html("");
+        }
+    });
   }
 </script>
- <br><br>
-  <% if params[:prev] %>
-    <div class="list-points">
-      <div id="prev-link">
-      <a href="<%= params[:prev] %>">  << Back to Question </a>
-      </div>
-     </div>
-     <%end%><br>
-     <div class = "verse-wrapper">
-    <div class = "verse-background-pr-post">
-  <% @verses_range.each_with_index do|v,i| %>
-  <div class = "numbered-verse">
-      <div class="show-verse-number-questionpage"><%= v.sura %> : <%= v.aya %></div>
-      </div>
-  <div class="clear"></div>
-   <div class="arabic-post-pr-verse" dir="rtl">
-       <%= v.text  %>
-      </div><br><br>
-      <div class="verse-color">
-      <%=(@trans_verses[v.id]) unless @trans_verses.blank? %>
-       <%= link_to ("View Context", {:controller => "verse", :action => "single_verse", :id => v.id, :prev => request.url} , { :class => 'show-verse-search'}) %><br>
-       </div>
-       <div class="separator-width <%= verses_list_class(i+1,@verses_range.count)%>"></div>
-      <% end %>
-      </div>
-      </div>
-    <% if params[:prev] %>
-    <div class="list-points">
-      <div id="prev-link">
-      <a href="<%= params[:prev] %>"> << Back to Question </a>
-      </div>
-     </div>
-     <%end%>
+
+<div class="clear translation-margin"></div>
+
+<%= previous_link("Question") %>
+<div class = "verse-wrapper">
+  <%= formatted_verses_with_link(@verses_range, @trans_verses) %>
+</div>
+<%= previous_link("Question") %>
