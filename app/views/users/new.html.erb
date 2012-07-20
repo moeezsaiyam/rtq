@@ -1,8 +1,21 @@
 <h1>Sign up as a new user</h1>
+<% if logged_in? %>
 <% @user.password = @user.password_confirmation = nil %>
 
-<%= error_messages_for :user %>
-<% form_for :user, :url => users_path do |f| -%>
+<% form_for @user  do |f| -%>
+
+<% if @user.errors.any? %>
+    <%= stylesheet_link_tag 'conditional' %>
+   <% end %>
+  <div class = "error-box">
+    <% if @user.errors.any? %>
+      <h1 class = "error-heading"> <%= @user.errors.count %> Errors has been occured: </h1>
+      <h2 class = "error-heading">Unable to sign-up.</h2>
+      <% @user.errors.full_messages.each do |message| %>
+        <li class = "error"><%= message %> </li>
+      <% end %>
+    <% end %>
+  </div>
 <p><%= f.label :login %><br/>
 <%= f.text_field :login %></p>
 
@@ -17,3 +30,5 @@
 
 <p><%= submit_tag 'Sign up' %></p>
 <% end -%>
+<% end %>
+

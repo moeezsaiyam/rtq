@@ -1,3 +1,11 @@
+div.error-box{
+ visibility:visible;
+}
+
+h1.error-heading,h2.error-heading {
+ color:red;
+}
+
 .topics-left-bar , .quranic-dua {
  display: none
 }

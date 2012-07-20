@@ -2,8 +2,19 @@
 <br><div class ="admin-page"> 
   <h1>New translation</h7></div></h1>
 <% form_for(@translation) do |f| %>
-  <%= f.error_messages %>
- 
+  <% if @translation.errors.any? %>
+    <%= stylesheet_link_tag 'conditional' %>
+   <% end %>
+  <div class = "error-box">
+    <% if @translation.errors.any? %>
+      <h1 class = "error-heading"> <%= @translation.errors.count %> Errors has been occured: </h1>
+      <h2 class = "error-heading">Unable to add new question.</h2>
+      <% @translation.errors.full_messages.each do |message| %>
+        <li class = "error"><%= message %> </li>
+      <% end %>
+    <% end %>
+  </div>
+
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name, :value => ((session[:translation] && session[:translation][:name]) || "")%><br>

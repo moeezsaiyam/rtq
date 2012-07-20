@@ -7,7 +7,19 @@
 <div class ="admin-page"> <h1>Editing <%= @sub_topic.name unless @sub_topic.blank? %> subtopic</div></h1></div>
 
 <% form_for @sub_topic, :url => topic_sub_topic_path(@sub_topic.topic,@sub_topic), :html => {:multipart => true} do |f| %>
-  <%= f.error_messages %>
+
+  <% if @sub_topic.errors.any? %>
+    <%= stylesheet_link_tag 'conditional' %>
+  <% end %>
+  <div class = "error-box">
+    <% if @sub_topic.errors.any? %>
+      <h1 class = "error-heading"> <%= @sub_topic.errors.count %> Error: </h1>
+      <h2 class = "error-heading">Unable to update sub topic.</h2>
+      <% @sub_topic.errors.full_messages.each do |message| %>
+        <li class = "error"><%= message %> </li>
+      <% end %>
+    <% end %>
+  </div>
 
   <p>
     <%= f.label :topic_id %><br />

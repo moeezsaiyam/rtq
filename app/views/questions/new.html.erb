@@ -3,7 +3,18 @@
 <br><div class ="admin-page"> <h1>New question</div></h1></div>
 
 <% form_for @question,:url => topic_sub_topic_questions_path(params[:topic_id],params[:sub_topic_id]), :method => :post do |f| %>
-  <%= f.error_messages %>
+  <% if @question.errors.any? %>
+    <%= stylesheet_link_tag 'conditional' %>
+   <% end %>
+  <div class = "error-box">
+    <% if @question.errors.any? %>
+      <h1 class = "error-heading"> <%= @question.errors.count %> Errors has been occured: </h1>
+      <h2 class = "error-heading">Unable to add new question.</h2>
+      <% @question.errors.full_messages.each do |message| %>
+        <li class = "error"><%= message %> </li>
+      <% end %>
+    <% end %>
+  </div>
 
   <p>
     <%= f.label :sub_topic_id %><br />

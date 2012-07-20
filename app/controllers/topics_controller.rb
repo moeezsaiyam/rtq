@@ -68,13 +68,13 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic = Topic.find(params[:id])
-    @topic.destroy
+      @topic = Topic.find(params[:id])
+      @topic.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(topics_url) }
-      format.xml  { head :ok }
-    end
+      respond_to do |format|
+        format.html { redirect_to(topics_url) }
+        format.xml  { head :ok }
+      end
   end
 
   def save_order

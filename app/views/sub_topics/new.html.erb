@@ -3,11 +3,23 @@
 <br><div class ="admin-page"> <h1>New sub_topic</div></h6></div>
 
 <% form_for @sub_topic, :url => topic_sub_topics_path(params[:topic_id]), :method => :post, :html => {:multipart => true} do |f| %>
-  <%= f.error_messages %>
+
+  <% if @sub_topic.errors.any? %>
+    <%= stylesheet_link_tag 'conditional' %>
+  <% end %>
+  <div class = "error-box">
+    <% if @sub_topic.errors.any? %>
+      <h1 class = "error-heading"> <%= @sub_topic.errors.count %> Error: </h1>
+      <h2 class = "error-heading">Unable to add new sub topic.</h2>
+      <% @sub_topic.errors.full_messages.each do |message| %>
+        <li class = "error"><%= message %> </li>
+      <% end %>
+    <% end %>
+  </div>
 
   <p>
     <%= f.label :topic_id %><br />
-    <%= select("sub_topic", "topic_id", Topic.all.collect {|t| [ t.name, t.id ] }) %>
+    <%= select("sub_topic", "topic_id", Topic.ordered.all.collect {|t| [ t.name, t.id ] }) %>
   </p>
   <p>
     <%= f.label :name %><br />
