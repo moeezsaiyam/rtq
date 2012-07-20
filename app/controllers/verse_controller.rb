@@ -7,27 +7,19 @@ class VerseController < ApplicationController
     @verse = Verse.find(params[:id])
     @prev_verses = @verse.previous_verses(3).reverse!
     @next_verses = @verse.next_verses(3)
-    @translation = Translation.find_by_default(1) unless request.referrer.split("/").include?("verse_context")
-    unless @translation.blank? && params[:translation_name].blank?
+    @translation = Translation.get_translation(cookies, params)
+    cookies['translation_name'] = @translation.table_nam
+    return if @translation.blank?
 
-      Translation.all.each{|tr| cookies[tr.table_nam] = nil}
-      trans = params[:translation_name]
-      @translation = Translation.find_by_table_nam(trans) unless trans.blank?
-      cookies[params[:translation_name]] = 1
-      trans = @translation.table_nam if params[:translation_name].blank?
-      @trans_verses = Hash.new
-      @trans_name = Translation.find_by_table_nam(trans)
-      name = @trans_name.language
+    @trans_verses = Hash.new
+    @trans_verses[@verse.id] = {:name => @translation.language, :translation => @verse.translate_to_by(@translation.table_nam)[0].text }
 
-      @trans_verses[@verse.id] = {:name => name, :translation => @verse.translate_to_by(trans)[0].text }
+    @prev_verses.each do|v|
+      @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text }
+    end
 
-      @prev_verses.each do|v|
-        @trans_verses[v.id] = {:name => name, :translation => v.translate_to_by(trans)[0].text }
-      end
-
-      @next_verses.each do|v|
-        @trans_verses[v.id] = {:name => name, :translation => v.translate_to_by(trans)[0].text }
-      end
+    @next_verses.each do|v|
+      @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text }
     end
   end
 
@@ -38,20 +30,13 @@ class VerseController < ApplicationController
     @translation = Translation.find_by_default(1)
     return head(404) unless @verse
     @verses_range = Verse.from_to_verses(params[:id],params[:range])
-    unless @translation.blank? && params[:translation_name].blank?
-      Translation.all.each{|tr| cookies[tr.table_nam] = nil}
-      trans = params[:translation_name]
-      @translation = Translation.find_by_table_nam(trans) unless trans.blank?
-      cookies[params[:translation_name]] = 1
-      trans = params[:translation_name] || @translation.table_nam 
-      @trans_verses = Hash.new
-      @trans_name = Translation.find_by_table_nam(trans)
-      name = @trans_name.language
+    @translation=Translation.get_translation(cookies, params)
+    cookies['translation_name'] = @translation.table_nam
 
-      @verses_range.each do|v|
-        @trans_verses[v.id] = {:name => name, :translation => v.translate_to_by(trans)[0].text }
+    @trans_verses = Hash.new
+    @verses_range.each do|v|
+      @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text }
       end
-    end
   end
 
   def get_context

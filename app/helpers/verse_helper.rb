@@ -26,13 +26,12 @@ module VerseHelper
   end
 
   def formatted_verses(verses, translated_verses)
-    content_tag :div, :class => "verse-background-pr-post" do
+    content_tag :div, :class => "verse-background-pr-post " do
       get_content(verses, translated_verses)
     end
   end
 
   def get_content(verses, translated_verses, opts = {})
-    puts opts.inspect
     content = []
     verses.each_with_index do |v,i|
       content << numbered_verse_content(v)
@@ -57,13 +56,13 @@ module VerseHelper
   end
 
   def verse_text(verse)
-    content_tag :div, :class => "arabic-post-pr-verse", :dir => "rtl" do
+    content_tag :div, :class => "arabic-post-pr-verse verse-margin",:dir => "rtl" do
       verse.text
     end
   end
 
   def verse_translation(verse, translated_verses)
-    content_tag :div, :class => "verse-color" do
+    content_tag :div, :class => "verse-color " do
       [translated_verse_name(translated_verses[verse.id][:name]), translated_verse_translation(translated_verses[verse.id][:name], translated_verses[verse.id][:translation])].join
     end
   end
