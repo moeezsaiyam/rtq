@@ -25,7 +25,7 @@
         <td><%=h sub_topic.name %></td>
         <td><%= link_to 'Show', topic_sub_topic_path(@topic,sub_topic) %></td>
         <td><%= link_to 'Edit', edit_topic_sub_topic_path(@topic,sub_topic) %></td>
-        <td><%= link_to 'Destroy', topic_sub_topic_path(@topic,sub_topic), :confirm => 'Are you  sure?', :method => :delete %></td>
+        <td><%= link_to 'Destroy', topic_sub_topic_path(@topic,sub_topic), :confirm => 'Are you sure to delete?', :method => :delete %></td>
       </tr>
     <% end %>
     </tbody>
