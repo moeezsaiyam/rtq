@@ -1,11 +1,17 @@
 <%= bread_crumb_context(@question) %>
 
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'conditional' %>
+<% end %>
+
 <div class="clear translation-margin"></div>
 
 <%= previous_link("Verses") %>
 
   <div class = "verse-wrapper">
+
     <%= formatted_verses(@prev_verses, @trans_verses ) %>
+
     <div class="verse-background">
       <%= numbered_verse_content(@verse) %>
       <%= verse_text(@verse) %>
@@ -14,7 +20,10 @@
         <%= translated_verse_translation(@trans_verses[@verse.id][:name], @trans_verses[@verse.id][:translation]) %>
       </div>
     </div>
+
     <%= formatted_verses(@next_verses, @trans_verses ) %>
+
   </div>
 
 <%= previous_link("Verses") %>
+
