@@ -13,7 +13,7 @@
   <% end %>
   <div class = "error-box">
     <% if @sub_topic.errors.any? %>
-      <h1 class = "error-heading"> <%= @sub_topic.errors.count %> Error: </h1>
+      <h1 class = "error-heading"> <%=@sub_topic.errors.count %>  <%=display_errors(@sub_topic) %>  has been occured: </h1>
       <h2 class = "error-heading">Unable to update sub topic.</h2>
       <% @sub_topic.errors.full_messages.each do |message| %>
         <li class = "error"><%= message %> </li>

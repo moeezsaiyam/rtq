@@ -8,7 +8,7 @@
    <% end %>
   <div class = "error-box">
     <% if @question.errors.any? %>
-      <h1 class = "error-heading"> <%= @question.errors.count %> Errors has been occured: </h1>
+      <h1 class = "error-heading"> <%=@question.errors.count %>  <%=display_errors(@question) %>  has been occured: has been occured: </h1>
       <h2 class = "error-heading">Unable to add new question.</h2>
       <% @question.errors.full_messages.each do |message| %>
         <li class = "error"><%= message %> </li>
