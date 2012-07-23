@@ -4,8 +4,12 @@ div.error-box{
 
 h1.error-heading,h2.error-heading {
  color:red;
+ margin-left:30px;
 }
 
+li.error {
+ margin-left:30px;
+}
 .topics-left-bar , .quranic-dua {
  display: none
 }

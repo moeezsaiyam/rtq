@@ -1,0 +1,32 @@
+<div>
+<br><div class ="admin-page"> <h1>Listing Topics</div></h1></div>
+
+
+
+<table class="admin-view table-topics">
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>Login</th>
+      <th colspan="4">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%=h user.roles.first.name %></td>
+        <td><%=h user.login %></td>
+        <td><%= link_to 'Show', user_path(user) %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, :confirm => 'Are you sure to delete?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</br>
+<div class="dashboard">
+  <%= link_to 'New User', new_user_path %>
+</div>
+<div class = "clear" ></div>
+<%= link_to 'Back',admin_dashboard_path %>
+

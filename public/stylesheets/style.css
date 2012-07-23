@@ -1932,10 +1932,14 @@ overflow:hidden;}
 div.error-box {
  width:535px;
  padding:10px;
- border:5px solid red;
+ border:1px solid red;
  color: red;
  margin:0px; 
  font-size:14px;
  visibility:hidden;
+}
+
+.admin-menu {
+ padding-left: 425px;
 }
 

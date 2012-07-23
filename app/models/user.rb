@@ -1,7 +1,7 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
-  has_many :roles
+  has_many :roles, :order => 'created_at DESC'
 
   include Authentication
   include Authentication::ByPassword
@@ -25,8 +25,8 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
-
+  attr_accessible :login, :email, :name, :password, :password_confirmation,:role
+  attr_accessor :role
 
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
@@ -47,6 +47,10 @@ class User < ActiveRecord::Base
 
   def email=(value)
     write_attribute :email, (value ? value.downcase : nil)
+  end
+
+  def role=(value)
+    self.roles << Role.new(:name => value, :user_id => self.id)
   end
 
   
