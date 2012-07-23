@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120210052342) do
+ActiveRecord::Schema.define(:version => 20120723060926) do
+
+  create_table "alternate_phrases", :force => true do |t|
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "question_id"
+  end
 
   create_table "eng1_quran", :force => true do |t|
     t.integer "sura", :default => 0, :null => false
@@ -33,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20120210052342) do
     t.string   "verse_ids"
     t.text     "answer"
     t.string   "quest_slug"
+    t.integer  "view_count",   :default => 0
   end
 
   create_table "quran_text", :force => true do |t|
@@ -41,6 +49,26 @@ ActiveRecord::Schema.define(:version => 20120210052342) do
     t.text    "text",                :null => false
   end
 
+  create_table "references", :force => true do |t|
+    t.integer  "question_id"
+    t.string   "issue"
+    t.string   "from"
+    t.string   "to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "verse_ids"
+    t.string   "verse_ids_to"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "roles", ["user_id"], :name => "index_roles_on_user_id"
+
   create_table "sub_topics", :force => true do |t|
     t.string   "name"
     t.integer  "topic_id"
@@ -48,6 +76,12 @@ ActiveRecord::Schema.define(:version => 20120210052342) do
     t.datetime "updated_at"
     t.text     "description"
     t.string   "name_slug"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.boolean  "featured"
+    t.integer  "position",           :default => 0
   end
 
   create_table "topics", :force => true do |t|
@@ -57,6 +91,38 @@ ActiveRecord::Schema.define(:version => 20120210052342) do
     t.text     "description"
     t.string   "name_slug"
     t.string   "meaning"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "position",           :default => 0
+  end
+
+  create_table "trans_hilali", :primary_key => "Id", :force => true do |t|
+    t.integer "sura", :default => 0, :null => false
+    t.integer "aya",  :default => 0, :null => false
+    t.text    "text",                :null => false
+  end
+
+  create_table "trans_sahih", :primary_key => "index", :force => true do |t|
+    t.integer "sura", :default => 0, :null => false
+    t.integer "aya",  :default => 0, :null => false
+    t.text    "text",                :null => false
+  end
+
+  create_table "trans_urdu", :force => true do |t|
+    t.integer "sura", :default => 0, :null => false
+    t.integer "aya",  :default => 0, :null => false
+    t.text    "text",                :null => false
+  end
+
+  create_table "translations", :force => true do |t|
+    t.string   "name"
+    t.string   "table_nam"
+    t.boolean  "default",    :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "language",   :default => "English"
   end
 
   create_table "users", :force => true do |t|
