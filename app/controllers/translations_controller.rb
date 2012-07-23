@@ -42,8 +42,6 @@ class TranslationsController < ApplicationController
   def create
     @translation = Translation.new(params[:translation])
     session[:translation] = params[:translation]
-    puts "////////"
-    puts session[:translation].inspect
 
     respond_to do |format|
       if @translation.save
