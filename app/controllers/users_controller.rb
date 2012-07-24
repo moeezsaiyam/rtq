@@ -50,7 +50,8 @@ class UsersController < ApplicationController
         format.html { redirect_to(logout_url) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "edit" } unless params[:action_page] == "edit_password"
+           format.html { render :action => "change_password" }
       end
     end
   end
@@ -67,6 +68,7 @@ class UsersController < ApplicationController
 
   def change_password
    @user = User.find(params[:id])
+
   end
 
 end
