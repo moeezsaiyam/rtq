@@ -4,7 +4,7 @@ Alternate Phrases</div>
  <div class="question-index">
  <ul>
     <% @question.alternate_phrases.each_with_index do |phrase,i| %>
-    <li class="<%= questions_subject_class(i+1,@question.alternate_phrases.count) %>">
+    <li class = "universal-font">
           <%= phrase.content %>
     </li>
     <% end %>
