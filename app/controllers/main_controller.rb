@@ -15,12 +15,12 @@ class MainController < ApplicationController
   end
   
   def trans_setting
-  @translation = Translation.all
+    @translation = Translation.all
   end
 
   def get_subtopics
     topic = Topic.find_by_id params[:id]
-    @subtopics = topic.blank?? SubTopic.all : topic.sub_topics
+    @subtopics = topic.blank?? SubTopic.all : topic.sub_topics.ordered
     render :layout => false
   end
 

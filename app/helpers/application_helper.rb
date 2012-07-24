@@ -162,7 +162,7 @@ module ApplicationHelper
   end
 
   def display_subtopics_in_searchbar
-    search_select("search_sub_topic", @subtopics.ordered, "All Sub Topics")
+    search_select("search_sub_topic", @subtopics, "All Sub Topics")
   end
 
   def search_select(name, collection, blank_message)
