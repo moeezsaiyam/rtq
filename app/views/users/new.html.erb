@@ -1,5 +1,6 @@
+<% if logged_in? && current_user.roles.first.name == "Admin" %>
 <h1>Sign up as a new user</h1>
-<% if logged_in? %>
+
 <% @user.password = @user.password_confirmation = nil %>
 
  <% form_for @user  do |f| -%>
@@ -37,5 +38,11 @@
 
     <p><%= submit_tag 'Sign up' %></p>
   <% end -%>
+<% else %>
+     <%= stylesheet_link_tag 'conditional' %>
+    <div class = "error-box">
+    <h1 class = "error-heading">Your are not allowed to add new user.</h1>
+    <h2 class = "error-heading">login as admin click here.</h2>
+    <%= link_to "login here", login_path %>
 <% end %>
 
