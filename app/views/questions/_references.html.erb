@@ -7,8 +7,8 @@
  <br><h3> <%=truncate(r.issue, :length => 50, :omission => '...') %></h3>
    <div class = "show-verse-number-questionpage"><%=  parse_tags(r.from,r.to,r) %></div>
     <div class="clear"></div><br />
-      <p> <%= truncate(@verses[r.id.to_s].translate_to("eng")[0].text, :length => 300, :omission => '...') %></p>
-      <div class="view-details"><%=  parse_tags_detail(r.from,r.to,r) %></div>
+      <p> <%= truncate(@verses[r.id.to_s].translate_to("eng")[0].text, :length => 100, :omission => '...') %>
+     <%=  parse_tags_detail(r.from,r.to,r) %> </p>
       <div class = "separator-issue-width <%= verses_list_class(i+1,@question.references.count)%>"></div>
   <% end %>
        

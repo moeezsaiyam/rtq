@@ -32,10 +32,10 @@ module ApplicationHelper
       @tags = q_from.split(":")
       @tags1 = q_to.split(":")
       verses_ids_to.each_with_index do |id_to,ii|
-       verses_ids.each_with_index do |id,i|
-        html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> View Detail</a>")
+        verses_ids.each_with_index do |id,i|
+          html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> see more</a>")
+        end
       end
-       end
       html = html.join(" , ")
     end
   end
