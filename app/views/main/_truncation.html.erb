@@ -1,0 +1,8 @@
+<% content_for(:head) do %>
+  <%= javascript_include_tag 'jtruncate' %>
+  <script type="text/javascript" language="javascript" charset="utf-8">
+    $(document).ready(function() {
+      $('.jtruncate').jTruncate();
+    });
+  </script>
+<% end %>

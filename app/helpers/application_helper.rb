@@ -174,4 +174,8 @@ module ApplicationHelper
    return "Errors"
   end
 
+  def display_description(description)
+     simple_format(description).gsub('<p>','').gsub('</p>','<br /><br />')
+  end
+
 end

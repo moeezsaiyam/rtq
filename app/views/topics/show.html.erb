@@ -1,13 +1,12 @@
+<%= render :partial => "main/truncation" %>
 <%= bread_crumb(@topic) %><br>
 <div class="content-body">
   <h1><%=h @topic.name %></h1>
   <h2>
     <%=h @topic.meaning %>
   </h2>
-  <div>
-    <p>
-      <%= simple_format(@topic.description) %>
-    </p>
+  <div class="jtruncate">
+    <%= display_description(@topic.description) %>
   </div>
   <% if logged_in? %>
     <div class = "actions">

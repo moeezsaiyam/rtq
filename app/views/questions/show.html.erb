@@ -1,8 +1,9 @@
 <%= bread_crumb_question(@question) %><br>
+<%= render :partial => "main/truncation" %>
 <div class="content-body">
   <h1><%=h @question.quest %></h1>
-  <div>
-    <%= simple_format(@question.answer)%>
+ <div class="jtruncate">
+    <%= display_description(@question.answer) %>
   </div>
   <% if logged_in? %>
     <div class = "actions">
