@@ -1432,7 +1432,7 @@ table.admin-view th{
 /* Content CSS End */
 /* Footer CSS Start */
 #footer {
-
+  background:url(/images/footer-bg.png) repeat-x;
 	height:136px;
 	width:100%;
 	margin-top:95px;

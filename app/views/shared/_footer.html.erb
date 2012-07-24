@@ -1,28 +1,28 @@
 <!--inner -->
 <div class="inner">
 
-<!--connect-with -->
-<div class="connect-with">
-<h6> Connect with us</h6>
-<div class = "footer">
-  <%= twitter_adventure_sharer_footer %>
-  <%= popup_window_sharer_footer %>
-  <%= rss_window_sharer_footer %>
-</div> 
-</div> 
-<!--/connect-with -->
+  <!--connect-with -->
+  <div class="connect-with">
+    <h6> Connect with us</h6>
+    <div class = "footer">
+      <%= twitter_adventure_sharer_footer %>
+      <%= popup_window_sharer_footer %>
+      <%= rss_window_sharer_footer %>
+    </div>
+  </div>
+  <!--/connect-with -->
 
-<!--search-box -->
-<div class="search-box"><h5>Quick Search</h5>
-  <% form_tag("/home/search", :method => "get") do %>   
-    <input name="search_term" type="text" class="s-input watermarked" title="Search"/>
-        <%= submit_tag '', :class => "s-btn" %>
-  <% end %>
+  <!--search-box -->
+  <div class="search-box"><h5>Quick Search</h5>
+    <% form_tag("/home/search", :method => "get") do %>
+      <input name="search_term" type="text" class="s-input watermarked" title="Search"/>
+      <%= submit_tag '', :class => "s-btn" %>
+    <% end %>
 
-</div> 
-<!--/search-box -->
+  </div>
+  <!--/search-box -->
 
-<a href="/" class="logo"></a>
+  <a href="/" class="logo"></a>
 
 
 </div> <!--/inner -->

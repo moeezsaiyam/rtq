@@ -14,17 +14,19 @@
     </div>
   <% end %>
 
-<div class="clear"></div><br>
-<% unless @sub_topic_questions.blank? %>
-<div class = "questions-pr">
-<%= render :partial => "questions" %>
-</div>
- <% end %>
- <div class = p-r-container>
- <% unless @popular_questions.blank? %>
-  <%= render :partial => "shared/popular_ques" %>
- <% end %>
-  <% unless @related_subject.blank? %>
-<%= render :partial => "related_subject" %>
-<%end%>
+  <div class="clear"></div><br>
+  <% unless @sub_topic_questions.blank? %>
+    <div class = "questions-pr">
+      <%= render :partial => "questions" %>
+    </div>
+  <% end %>
+  <div class = p-r-container>
+    <% unless @popular_questions.blank? %>
+      <%= render :partial => "shared/popular_ques" %>
+    <% end %>
+    <% unless @related_subject.blank? %>
+      <%= render :partial => "related_subject" %>
+    <%end%>
+
+  </div>
 </div>
