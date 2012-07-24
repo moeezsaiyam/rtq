@@ -1948,3 +1948,8 @@ div.error-box {
  line-height: 18px;
 }
 
+ .universal-font {
+ font-size:14px;
+ line-height: 18px;
+ text-align: justify;
+ }
