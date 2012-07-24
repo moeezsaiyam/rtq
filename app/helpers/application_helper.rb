@@ -169,4 +169,9 @@ module ApplicationHelper
     select("search_terms", name, collection.collect {|t| [ t.name, t.id ] }, { :include_blank => blank_message } ,:class => "list")
   end
 
+  def display_errors(object)
+   return "Error" unless object.errors.count > 1
+   return "Errors"
+  end
+
 end
