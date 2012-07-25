@@ -2,7 +2,6 @@
 <div class = "content-body1">
 <br>
 <div class ="admin-page"> <h1>Editing <%= @question.quest unless @question.blank? %> Question</div></h1></div>
-
 <% form_for @question do |f| %>
 
   <% if @question.errors.any? %>
@@ -27,8 +26,9 @@
     <%= f.text_field :quest %>
   </p>
   <p>
-    <%= f.label :Answer %><br />
-    <%= f.text_area :answer %>
+    <%= f.label :Answer %>
+    <%= hidden_field_tag 'question[id]', @question.id %>
+    <textarea id="editor" name="question[answer]"></textarea>
   </p>
   <div id="alternate_phrases">
     <label for="question_sub_topic_id">Alternate Phrases</label><br />

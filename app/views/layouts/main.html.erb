@@ -19,6 +19,7 @@
       <%= javascript_include_tag 'jquery.watermarkinput' %>
       <%= javascript_include_tag "jquery.infinitecarousel" %>
       <%= javascript_include_tag 'script' %>
+      <%= javascript_include_tag 'main' %>
       <%= yield :head %>
   </head>
 <body>
@@ -49,7 +50,6 @@
     
     <!--col-2 -->
     <div id="col-2">
-
       <div class="clear"></div>
         <% unless current_user %>
         <% if params[:controller]!="sessions" %>

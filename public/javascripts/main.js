@@ -1,4 +1,5 @@
 $(document).ready(function() {
-  CKEDITOR.replace( 'editor' );
+  if($('#editor').length > 0)
+    CKEDITOR.replace('editor');
 });
 

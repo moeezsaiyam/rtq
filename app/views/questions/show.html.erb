@@ -2,9 +2,19 @@
 <%= render :partial => "main/truncation" %>
 <div class="content-body">
   <h1><%=h @question.quest %></h1>
- <div class="jtruncate">
-    <%= display_description(@question.answer) %>
-  </div>
+ <% unless logged_in? %>
+    <div class="jtruncate">
+      <%= display_description(@question.answer) %>
+    </div>
+  <% else %>
+    <% form_for(@question) do |f| %>
+      <%= hidden_field_tag 'question[id]', @question.id %>
+      <textarea id="editor" name="question[answer]"><%=simple_format(@question.answer)%></textarea>
+      <p>
+        <%= f.submit 'Save', :class => "action-button button rounded-borders"%>
+      </p>
+    <% end %>
+  <% end %>
   <% if logged_in? %>
     <div class = "actions">
       <%= link_to 'Edit', edit_topic_sub_topic_question_path(@question.sub_topic.topic,@question.sub_topic,@question), :class => "action-button button rounded-borders" %>
