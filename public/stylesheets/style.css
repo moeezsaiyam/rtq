@@ -1948,8 +1948,14 @@ div.error-box {
  line-height: 18px;
 }
 
- .universal-font {
+.universal-font {
  font-size:14px;
  line-height: 18px;
  text-align: justify;
  }
+
+.editlink-margin {
+ margin-left:580px;
+ font-size:14px;  
+}
+

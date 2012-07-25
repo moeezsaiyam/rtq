@@ -1,10 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
- 
+
   map.resources :translations
 
 
   map.root :controller => 'home'
-
   map.admin_dashboard '/admin_dashboard', :controller => 'admin'
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
@@ -36,3 +35,4 @@ ActionController::Routing::Routes.draw do |map|
   map.question_slug ':topic_name_slug/:sub_topic_name_slug/:question_slug',    :controller => 'questions', :action => 'show'
 
 end
+

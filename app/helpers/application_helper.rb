@@ -178,4 +178,8 @@ module ApplicationHelper
      simple_format(description).gsub('<p>','').gsub('</p>','<br /><br />')
   end
 
+  def edit_link(name)
+    link_to('Edit', :controller => 'main', :action => 'edit_content', :name => name)
+  end
 end
+

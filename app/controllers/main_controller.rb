@@ -1,4 +1,7 @@
 class MainController < ApplicationController
+
+  before_filter :get_static_content, :only => [:about, :duas, :contact, :credit, :faqs, :edit_content]
+
   def about
   end
 
@@ -13,7 +16,10 @@ class MainController < ApplicationController
 
   def faqs
   end
-  
+
+  def edit_content
+  end
+
   def trans_setting
     @translation = Translation.all
   end
@@ -24,4 +30,19 @@ class MainController < ApplicationController
     render :layout => false
   end
 
+  def update_content
+    @static_content = StaticContent.first
+    params[:static_contents].each do |key, value|
+      @static_content.update_attribute(key, value)
+    end
+    @static_content.save
+    redirect_to :back
+  end
+
+  private
+
+  def get_static_content
+    @content = StaticContent.get_static_content
+  end
 end
+
