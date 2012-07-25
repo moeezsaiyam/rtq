@@ -18,6 +18,7 @@ class MainController < ApplicationController
   end
 
   def edit_content
+    session[:location] = request.referer
   end
 
   def trans_setting
@@ -36,7 +37,9 @@ class MainController < ApplicationController
       @static_content.update_attribute(key, value)
     end
     @static_content.save
-    redirect_to :back
+    path = session[:location]
+    session[:location] = nil
+    redirect_to path
   end
 
   private

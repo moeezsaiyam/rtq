@@ -1,4 +1,5 @@
 <% form_tag(:controller => 'main', :action => 'update_content') do %>
+
   <textarea id="editor" name="static_contents[<%= params[:name] %>]"><%= @content.send(params[:name]) %> </textarea>
   <%= submit_tag "save" , :class => "action-button button rounded-borders" %>
 <% end %>
