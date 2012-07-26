@@ -52,7 +52,8 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
 
     if params.include?("photo_name")
-      @topic.photo = nil
+      @topic.photo.destroy
+      @topic.save
       return render :text => "success"
     end
     respond_to do |format|

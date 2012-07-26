@@ -77,7 +77,8 @@ class SubTopicsController < ApplicationController
     @sub_topic = SubTopic.find(params[:id])
 
     if params.include?("photo_name")
-      @sub_topic.photo = nil
+      @sub_topic.photo.destroy
+      @sub_topic.save
       return render :text => "success"
     end
 
