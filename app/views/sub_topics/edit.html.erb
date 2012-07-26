@@ -34,7 +34,7 @@
     <%= f.label :description %>
     <div class="clear"></div>
     <%= hidden_field_tag 'sub_topic[id]', @sub_topic.id %>
-    <textarea id="editor" name="sub_topic[description]"></textarea>
+    <textarea id="editor" name="sub_topic[description]"> <%= @sub_topic.description %></textarea>
   </p>
 
   <%= image_tag @sub_topic.photo.url(:normal) %>

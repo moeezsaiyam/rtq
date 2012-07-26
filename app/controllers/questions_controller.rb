@@ -92,6 +92,8 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     respond_to do |format|
       if @question.update_attributes(params[:question])
+        @question.last_updated_by = current_user.login
+        @question.save
         flash[:notice] = 'Question was successfully updated.'
         format.html { redirect_to(topic_sub_topic_question_path(@question.sub_topic.topic,@question.sub_topic,@question)) }
         format.xml  { head :ok }

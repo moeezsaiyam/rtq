@@ -33,7 +33,7 @@
     <%= f.label :description %>
     <div class="clear"></div>
     <%= hidden_field_tag 'topci[id]', @topic.id %>
-    <textarea id="editor" name="topic[description]"></textarea>
+    <textarea id="editor" name="topic[description]"><%= @topic.description%></textarea>
   </p>
 
   <%= image_tag @topic.photo.url(:normal) %>

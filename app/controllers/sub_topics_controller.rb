@@ -83,6 +83,8 @@ class SubTopicsController < ApplicationController
 
     respond_to do |format|
       if @sub_topic.update_attributes(params[:sub_topic])
+        @sub_topic.last_updated_by = current_user.login
+        @sub_topic.save
         flash[:notice] = 'SubTopic was successfully updated.'
         format.html { redirect_to(topic_sub_topic_path(@sub_topic.topic,@sub_topic)) }
         format.xml  { head :ok }

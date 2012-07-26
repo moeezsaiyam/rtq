@@ -10,6 +10,12 @@
   </h1>
   <% if logged_in? %>
     <%= simple_format(@sub_topic.description)%>
+    <% if admin? %>
+       <span class="last-updated-by">
+         <strong>Last updated by:</strong>
+         <%= @sub_topic.last_updated_by %>
+       </span>
+    <% end %>
   <% else %>
     <div class="jtruncate">
       <%= display_description(@sub_topic.description) %>
