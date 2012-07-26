@@ -35,6 +35,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(params[:topic])
+    set_author_and_last_updated_by(@topic)
 
     respond_to do |format|
       if @topic.save
@@ -50,7 +51,6 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
-
     if params.include?("photo_name")
       @topic.photo.destroy
       @topic.save
@@ -87,10 +87,6 @@ class TopicsController < ApplicationController
   end
 
     redirect_to :back
-  end
-
-  def edit_description
-    @topic = Topic.find(params[:id])
   end
 end
 

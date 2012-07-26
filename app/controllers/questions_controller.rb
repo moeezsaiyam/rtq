@@ -73,6 +73,7 @@ class QuestionsController < ApplicationController
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])
+    set_author_and_last_updated_by(@question)
 
     respond_to do |format|
       if @question.save
@@ -116,7 +117,4 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit_answer
-    @question = Question.find(params[:id])
-  end
 end

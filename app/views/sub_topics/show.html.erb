@@ -3,17 +3,18 @@
 <%= javascript_include_tag 'main' %>
 <div class="content-body">
 
-  <h1><%=h @sub_topic.name %>
-      <% if logged_in? %>
-        <%= link_to('Edit', edit_description_topic_sub_topic_path(@sub_topic.topic,@sub_topic), :class => "editlink-margin")%>
-        <% end %>
-  </h1>
+  <h1><%=h @sub_topic.name %></h1>
   <% if logged_in? %>
     <%= simple_format(@sub_topic.description)%>
     <% if admin? %>
        <span class="last-updated-by">
          <strong>Last updated by:</strong>
          <%= @sub_topic.last_updated_by %>
+       </span>
+        <div class = "clear"></div>
+       <span class="last-updated-by">
+         <strong>Created by:</strong>
+         <%= @sub_topic.created_by %>
        </span>
     <% end %>
   <% else %>

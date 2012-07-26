@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   #protect_from_forgery # See ActionController::RequestForgeryProtection for details
   before_filter :set_translation_cookie
-  
+
   before_filter :set_locale 
   def set_locale 
   # if params[:locale] is nil then 
@@ -28,4 +28,10 @@ class ApplicationController < ActionController::Base
       cookies[default] = {:value => "true", :path => "/"}
     end
   end
+
+  def set_author_and_last_updated_by(item)
+    item.created_by = current_user.login
+    item.last_updated_by = current_user.login
+  end
+
 end

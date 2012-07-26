@@ -2,11 +2,7 @@
 <%= render :partial => "main/truncation" %>
 <div class="content-body">
   <div>
-    <h1><%=h @question.quest %>
-      <% if logged_in? %>
-        <%= link_to('Edit', edit_answer_question_path(@question),:class => "editlink-margin")%>
-      <% end %>
-    </h1>
+    <h1><%=h @question.quest %></h1>
   </div>
 
   <% if logged_in? %>
@@ -15,6 +11,11 @@
        <span class="last-updated-by">
          <strong>Last updated by:</strong>
          <%= @question.last_updated_by %>
+       </span>
+       <div class = "clear"></div>
+       <span class="last-updated-by">
+         <strong>Created by:</strong>
+         <%= @question.created_by %>
        </span>
     <% end %>
   <% else %>

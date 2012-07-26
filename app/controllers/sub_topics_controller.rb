@@ -17,8 +17,7 @@ class SubTopicsController < ApplicationController
     end
   end
 
-  # GET /sub_topics/1
-  # GET /sub_topics/1.xml
+
   def show
     unless (params[:id].blank?)
       @sub_topic = SubTopic.find(params[:id])
@@ -38,8 +37,7 @@ class SubTopicsController < ApplicationController
     end
   end
   
-   # GET /sub_topics/new
-  # GET /sub_topics/new.xml
+
   def new
     @sub_topic = SubTopic.new
     @sub_topic.topic_id = params[:topic_id]
@@ -49,16 +47,15 @@ class SubTopicsController < ApplicationController
     end
   end
 
-  # GET /sub_topics/1/edit
+
   def edit
     @sub_topic = SubTopic.find(params[:id])
   end
 
-  # POST /sub_topics
-  # POST /sub_topics.xml
+
   def create
     @sub_topic = SubTopic.new(params[:sub_topic])
-
+    set_author_and_last_updated_by(@sub_topic)
     respond_to do |format|
       if @sub_topic.save
         flash[:notice] = 'SubTopic was successfully created.'
@@ -71,10 +68,10 @@ class SubTopicsController < ApplicationController
     end
   end
 
-  # PUT /sub_topics/1
-  # PUT /sub_topics/1.xml
+
   def update
     @sub_topic = SubTopic.find(params[:id])
+    @sub_topic.last_updated_by = current_user.login
 
     if params.include?("photo_name")
       @sub_topic.photo.destroy
@@ -96,8 +93,7 @@ class SubTopicsController < ApplicationController
     end
   end
 
-  # DELETE /sub_topics/1
-  # DELETE /sub_topics/1.xml
+
   def destroy
     @sub_topic = SubTopic.find(params[:id])
     @sub_topic.destroy
@@ -115,10 +111,6 @@ class SubTopicsController < ApplicationController
     end
 
     redirect_to :back
-  end
-
-  def edit_description
-    @sub_topic = SubTopic.find(params[:id])
   end
 
 end

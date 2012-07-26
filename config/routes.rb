@@ -12,10 +12,10 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.popular '/questions/popular', :controller => 'questions', :action => 'popular'
   map.resources :users, :collection => ["change_password"], :member => ["change_password"]
-  map.resources :questions,:member => ["edit_answer"]
+  map.resources :questions
 
-  map.resources :topics, :collection => ["save_order", "edit_description"], :member => ["edit_description"]  do |topic|
-    topic.resources :sub_topics, :collection => ["save_order"], :member => ["edit_description"] do |sub_topic|
+  map.resources :topics, :collection => ["save_order"]  do |topic|
+    topic.resources :sub_topics, :collection => ["save_order"] do |sub_topic|
       sub_topic.resources :questions
     end
   end
