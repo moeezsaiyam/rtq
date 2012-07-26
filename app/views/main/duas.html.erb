@@ -1,16 +1,19 @@
 <div class="content-body">
-<h1>DUAS</h1>
-<div class="clear"></div>
-  <div>
+<h1>DUAS
    <% if logged_in?  %>
      <% if admin? %>
-        <div class="editlink-margin">
-          <%= edit_link("duas") %>
-        </div>
-       <%= simple_format(@content.duas)%>
-      <% end %>
+       <span class="editlink-margin">
+         <%= edit_link("duas") %>
+       </span>
+     <% end %>
+      <span class="static-text">
+        <%= simple_format(@content.duas)%>
+      </span>
    <% else %>
-     <%= simple_format(@content.duas)%>
+      <span class="static-text">
+        <%= simple_format(@content.duas)%>
+      </span>
    <%end%>
-  </div>
+  </h1>
 </div>
+

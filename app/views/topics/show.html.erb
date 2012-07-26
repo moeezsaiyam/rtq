@@ -2,15 +2,17 @@
 
 <%= bread_crumb(@topic) %><br>
 <div class="content-body">
-  <h1><%=h @topic.name %></h1>
+  <h1><%=h @topic.name %>
+    <% if logged_in? %>
+       <%= description_edit_link("description",@topic.id) %>
+    <% end %>
+  </h1>
+  <div class ="clear"></div>
   <h2>
     <%=h @topic.meaning %>
   </h2>
 
   <% if logged_in? %>
-    <div class="editlink-margin">
-        <%= description_edit_link("description",@topic.id) %>
-    </div>
     <%= simple_format(@topic.description)%>
   <% else %>
     <div class="jtruncate">

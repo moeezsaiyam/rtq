@@ -1,16 +1,18 @@
 <div class="content-body">
-  <h1>ABOUT</h1>
-  <div class="clear"></div>
-  <div>
-   <% if logged_in?  %>
-     <% if admin? %>
-        <div class="editlink-margin">
+  <h1>ABOUT
+    <% if logged_in?  %>
+      <% if admin? %>
+        <span class="editlink-margin">
           <%= edit_link("about") %>
-        </div>
-       <%= simple_format(@content.about)%>
+        </span>
       <% end %>
-   <% else %>
-     <%= simple_format(@content.about)%>
-   <%end%>
-  </div>
+        <span class="static-text">
+          <%= simple_format(@content.about)%>
+        </span>
+    <% else %>
+       <span class="static-text">
+          <%= simple_format(@content.about)%>
+        </span>
+    <%end%>
+  </h1>
 </div>

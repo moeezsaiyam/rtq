@@ -3,17 +3,18 @@
 <%= javascript_include_tag 'main' %>
 <div class="content-body">
 
-  <h1><%=h @sub_topic.name %></h1>
-    <% if logged_in? %>
-      <div class="editlink-margin">
-       <%= link_to('Edit', edit_description_topic_sub_topic_path(@sub_topic.topic,@sub_topic))%>
-      </div>
-      <%= simple_format(@sub_topic.description)%>
-    <% else %>
-      <div class="jtruncate">
-        <%= display_description(@sub_topic.description) %>
-      </div>
-    <% end %>
+  <h1><%=h @sub_topic.name %>
+      <% if logged_in? %>
+        <%= link_to('Edit', edit_description_topic_sub_topic_path(@sub_topic.topic,@sub_topic), :class => "editlink-margin")%>
+        <% end %>
+  </h1>
+  <% if logged_in? %>
+    <%= simple_format(@sub_topic.description)%>
+  <% else %>
+    <div class="jtruncate">
+      <%= display_description(@sub_topic.description) %>
+    </div>
+  <% end %>
   <% if logged_in? %>
     <div class = "actions">
       <%= link_to 'Edit', edit_topic_sub_topic_path(@sub_topic.topic,@sub_topic), :class => "action-button button rounded-borders" %>

@@ -1,16 +1,18 @@
 <div class="content-body">
-<h1>CREDITS</h1>
-<div class="clear"></div>
-<div>
+ <h1>CREDITS
    <% if logged_in?  %>
      <% if admin? %>
-        <div class="editlink-margin">
-          <%= edit_link("credits") %>
-        </div>
-       <%= simple_format(@content.credits)%>
-      <% end %>
+       <span class="editlink-margin">
+         <%= edit_link("credits") %>
+       </span>
+     <% end %>
+      <span class="static-text">
+          <%= simple_format(@content.credits)%>
+      </span>
    <% else %>
-     <%= simple_format(@content.credits)%>
+      <span class="static-text">
+          <%= simple_format(@content.credits)%>
+      </span>
    <%end%>
-  </div>
+ </h1>
 </div>

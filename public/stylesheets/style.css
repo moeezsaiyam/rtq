@@ -533,6 +533,7 @@ body {
 	width: 680px;
 	float: right;
 	margin-right:10px;
+	margin-top:20px;
 	position:relative;
 }
 #col-2 p{
@@ -1955,7 +1956,10 @@ div.error-box {
  }
 
 .editlink-margin {
- margin-left:580px;
- font-size:14px;  
+ float:right;
+}
+
+.static-text {
+ color:black;
 }
 

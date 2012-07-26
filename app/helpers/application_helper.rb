@@ -179,11 +179,11 @@ module ApplicationHelper
   end
 
   def edit_link(name)
-    link_to('Edit', :controller => 'main', :action => 'edit_content', :name => name)
+    link_to('Edit',:class => "editlink-margin", :controller => 'main', :action => 'edit_content', :name => name)
   end
 
   def description_edit_link(name,id)
-    link_to('Edit', edit_description_topic_path(Topic.find(id)))
+    link_to('Edit', edit_description_topic_path(Topic.find(id)),:class => "editlink-margin")
   end
 end
 
