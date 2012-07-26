@@ -57,6 +57,8 @@ class TopicsController < ApplicationController
     end
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
+        @topic.last_updated_by = current_user.login
+        @topic.save
         flash[:notice] = 'Topic was successfully updated.'
         format.html { redirect_to(@topic) }
         format.xml  { head :ok }
@@ -81,9 +83,13 @@ class TopicsController < ApplicationController
      params[:positions].each_with_index do |topic_id, index|
       topic = Topic.find(topic_id)
       topic.update_attributes(:position => index + 1)
-    end
+     end
 
     redirect_to :back
+  end
+
+  def edit_description
+    @topic = Topic.find(params[:id])
   end
 end
 

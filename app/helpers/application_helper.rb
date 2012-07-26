@@ -181,5 +181,9 @@ module ApplicationHelper
   def edit_link(name)
     link_to('Edit', :controller => 'main', :action => 'edit_content', :name => name)
   end
+
+  def description_edit_link(name,id)
+    link_to('Edit', edit_description_topic_path(Topic.find(id)))
+  end
 end
 

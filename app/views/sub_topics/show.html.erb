@@ -4,18 +4,15 @@
 <div class="content-body">
 
   <h1><%=h @sub_topic.name %></h1>
-    <% if !logged_in? %>
+    <% if logged_in? %>
+      <div class="editlink-margin">
+       <%= link_to('Edit', edit_description_topic_sub_topic_path(@sub_topic.topic,@sub_topic))%>
+      </div>
+      <%= simple_format(@sub_topic.description)%>
+    <% else %>
       <div class="jtruncate">
         <%= display_description(@sub_topic.description) %>
       </div>
-    <% else %>
-      <% form_for(@sub_topic, :url => topic_sub_topic_path(@sub_topic.topic,@sub_topic)) do |f| %>
-        <%= hidden_field_tag 'sub_topic[id]', @sub_topic.id %>
-        <textarea id="editor" name="sub_topic[description]"><%=simple_format(@sub_topic.description)%></textarea>
-        <p>
-          <%= f.submit 'Save', :class => "action-button button rounded-borders"%>
-        </p>
-      <% end %>
     <% end %>
   <% if logged_in? %>
     <div class = "actions">

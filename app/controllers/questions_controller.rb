@@ -113,4 +113,8 @@ class QuestionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def edit_answer
+    @question = Question.find(params[:id])
+  end
 end

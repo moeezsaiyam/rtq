@@ -114,5 +114,9 @@ class SubTopicsController < ApplicationController
     redirect_to :back
   end
 
+  def edit_description
+    @sub_topic = SubTopic.find(params[:id])
+  end
+
 end
 
