@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   # render new.rhtml
   def new
     @user = User.new
- 
   end
 
    def edit
@@ -30,11 +29,9 @@ class UsersController < ApplicationController
       # protection if visitor resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
       # reset session
-      self.current_user = @user # !! now logged in
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      flash[:notice] = "New user has been created."
     else
-
       render :controller => 'user', :action => 'new'
     end
   end
@@ -59,7 +56,6 @@ class UsersController < ApplicationController
   def destroy
       @user = User.find(params[:id])
       @user.destroy
-
       respond_to do |format|
         format.html { redirect_to(users_url) }
         format.xml  { head :ok }
