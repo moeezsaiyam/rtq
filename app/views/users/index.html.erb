@@ -1,7 +1,6 @@
+<% if logged_in? && admin? %>
 <div>
 <br><div class ="admin-page"> <h1>Listing Topics</div></h1></div>
-
-
 
 <table class="admin-view table-topics">
   <thead>
@@ -29,4 +28,7 @@
 </div>
 <div class = "clear" ></div>
 <%= link_to 'Back',admin_dashboard_path %>
+<% else %>
+  <h1>you don't have permissions for this task.</h1>
+<%end%>
 
