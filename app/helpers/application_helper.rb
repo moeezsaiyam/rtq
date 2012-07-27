@@ -68,10 +68,10 @@ module ApplicationHelper
   def addthis_medium_button
      addthis_html='
    <!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<div class="addthis_toolbox addthis_default_style">
 <a class="addthis_button_compact"></a>
 </div>
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f7585ba5a5d94d0"></script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50123bf83fd71cc8"></script>
 <!-- AddThis Button END -->'
      return addthis_html
   end

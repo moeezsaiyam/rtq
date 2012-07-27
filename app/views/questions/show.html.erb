@@ -16,11 +16,13 @@
        <span class="last-updated-by">
          <strong>Created by:</strong>
          <%= @question.created_by %>
+         <%= addthis_medium_button %>
        </span>
     <% end %>
   <% else %>
     <div class="jtruncate">
       <%= display_description(@question.answer) %>
+      <%= addthis_medium_button %>
     </div>
   <% end %>
 </div>
