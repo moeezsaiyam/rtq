@@ -8,7 +8,7 @@
     <%=h @topic.meaning %>
   </h2>
 
-  <% if logged_in? %>
+  <% if admin_role? %>
     <%= @topic.description %>
     <% if admin? %>
        <span class="last-updated-by">
@@ -26,14 +26,15 @@
       <%= display_description(@topic.description) %>
     </div>
 	<% end %>
-  <% if logged_in? %>
-    <div class = "actions">
+</div>
+  <% if admin_role?%>
+    <div class = "actions" >
       <%= link_to 'Edit', edit_topic_path(@topic), :class => "action-button button rounded-borders" %>
       <%= link_to 'Add Sub Topic', new_topic_sub_topic_path(@topic), :class => "action-button button rounded-borders" %>
       <%= link_to 'Back', topics_path, :class => "action-button button rounded-borders" %>
     </div>
   <% end %>
-  </div>
+
 <div class="clear"></div>
 <div>
   <%= render :partial => "sub_topics" %>

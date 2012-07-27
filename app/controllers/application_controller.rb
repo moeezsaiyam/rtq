@@ -3,8 +3,8 @@
 
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
-  helper :all # include all helpers, all the time
-  #protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  helper :all
+  helper_method :admin_role?
   before_filter :set_translation_cookie
 
   before_filter :set_locale 
@@ -21,6 +21,9 @@ class ApplicationController < ActionController::Base
     redirect_to("/login") unless logged_in?
   end
 
+  def admin_role?
+   current_user && current_user.admin_role?
+  end
 
   def set_translation_cookie
     if Translation.all.collect(&:table_nam).select {|t| cookies[t] == 'true'}.empty?

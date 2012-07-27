@@ -5,7 +5,7 @@
     <h1><%=h @question.quest %></h1>
   </div>
 
-  <% if logged_in? %>
+  <% if admin_role? %>
     <%= simple_format(@question.answer)%>
     <% if admin? %>
        <span class="last-updated-by">
@@ -23,27 +23,29 @@
       <%= display_description(@question.answer) %>
     </div>
   <% end %>
-  <% if logged_in? %>
-    <div class = "actions">
-      <%= link_to 'Edit', edit_topic_sub_topic_question_path(@question.sub_topic.topic,@question.sub_topic,@question), :class => "action-button button rounded-borders" %>
-      <%= link_to 'Back', topic_sub_topic_questions_path(@question.sub_topic.topic,@question.sub_topic), :class => "action-button button rounded-borders" %>
-    </div>
+</div>
+<% if admin_role? %>
+  <div class = "actions">
+    <%= link_to 'Edit', edit_topic_sub_topic_question_path(@question.sub_topic.topic,@question.sub_topic,@question), :class => "action-button button rounded-borders" %>
+    <%= link_to 'Back', topic_sub_topic_questions_path(@question.sub_topic.topic,@question.sub_topic), :class => "action-button button rounded-borders" %>
+  </div>
+<% end %>
+
+<div class="clear"></div>
+  <div>
+    <%= render :partial => "references" %>
+  </div><br>
+  <% unless @question.alternate_phrases.blank? %>
+    <%= render :partial => "alternate_phrases" %>
+  <%end%>
+  <% unless admin_role? %>
+    <div class = "list-wrapper">
+    <% unless @related_subject.blank? %>
+      <%= render :partial => "related_subject" %>
+    <%end%>
+    <% unless @related_questions.blank? %>
+      <%= render :partial => "related_questions" %>
+    <%end%>
   <% end %>
 </div>
-<div class="clear"></div>
-<div>
-  <%= render :partial => "references" %>
-</div><br>
-<% unless @question.alternate_phrases.blank? %>
-  <%= render :partial => "alternate_phrases" %>
-<%end%>
-<% unless logged_in? %>
-<div class = "list-wrapper">
-<% unless @related_subject.blank? %>
-  <%= render :partial => "related_subject" %>
-<%end%>
-<% unless @related_questions.blank? %>
-  <%= render :partial => "related_questions" %>
-<%end%>
-</div>
-<% end %>
+

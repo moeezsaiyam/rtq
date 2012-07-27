@@ -53,5 +53,8 @@ class User < ActiveRecord::Base
     self.roles << Role.new(:name => value, :user_id => self.id)
   end
 
+  def admin_role?
+    self.roles.collect(&:name).include?("Admin") || self.roles.collect(&:name).include?("SubAdmin")
+  end
   
 end

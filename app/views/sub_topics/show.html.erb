@@ -4,7 +4,7 @@
 <div class="content-body">
 
   <h1><%=h @sub_topic.name %></h1>
-  <% if logged_in? %>
+  <% if admin_role? %>
     <%= simple_format(@sub_topic.description)%>
     <% if admin? %>
        <span class="last-updated-by">
@@ -22,7 +22,8 @@
       <%= display_description(@sub_topic.description) %>
     </div>
   <% end %>
-  <% if logged_in? %>
+</div>
+  <% if admin_role? %>
     <div class = "actions">
       <%= link_to 'Edit', edit_topic_sub_topic_path(@sub_topic.topic,@sub_topic), :class => "action-button button rounded-borders" %>
       <%= link_to 'Add New Question', new_topic_sub_topic_question_path(@sub_topic.topic,@sub_topic), :class => "action-button button rounded-borders" %>
@@ -45,4 +46,4 @@
     <%end%>
 
   </div>
-</div>
+
