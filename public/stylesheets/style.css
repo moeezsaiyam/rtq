@@ -1806,14 +1806,14 @@ border-bottom:none;
     #nav li{
         float:left;
         display:block;
-        width:77px;
         background:0;
         position:relative;
         z-index:500;
         margin:0 1px;
         border-radius:4px;
     }
-    
+
+
      #nav li.home_padding{
         float:left;
         padding-top:4px;
@@ -1941,7 +1941,7 @@ div.error-box {
 }
 
 .admin-menu {
- padding-left: 425px;
+ padding-left: 448px;
 }
 
 .jtruncate {
