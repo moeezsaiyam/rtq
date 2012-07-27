@@ -102,7 +102,7 @@ module ApplicationHelper
     return addthis_html
   end
   
-  def twitter_adventure_sharer_footer
+  def twitter_sharer_footer
   target_url = request.url
     url = "https://twitter.com"
     link_to(image_tag("twt.png", :width => "32", :height => "32"),  "http://www.twitter.com", :target => "_blank",:class => "social")
@@ -185,5 +185,6 @@ module ApplicationHelper
   def description_edit_link(name,id)
     link_to('Edit', edit_description_topic_path(Topic.find(id)),:class => "editlink-margin")
   end
+
 end
 
