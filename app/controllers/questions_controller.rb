@@ -46,8 +46,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # GET /questions/new
-  # GET /questions/new.xml
+
   def new
     @question = Question.new
     @question.alternate_phrases.build
@@ -60,7 +59,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # GET /questions/1/edit
   def edit
     @question = Question.find(params[:id])
   end
@@ -69,8 +67,6 @@ class QuestionsController < ApplicationController
     @questions = Question.popular.paginate :per_page => 10, :page => params[:page]
   end
   
-# POST /questions
-  # POST /questions.xml
   def create
     @question = Question.new(params[:question])
     set_author_and_last_updated_by(@question)
@@ -87,8 +83,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # PUT /questions/1
-  # PUT /questions/1.xml
   def update
     @question = Question.find(params[:id])
     respond_to do |format|
@@ -115,6 +109,12 @@ class QuestionsController < ApplicationController
       format.html { redirect_to(topic_sub_topic_questions_path(@question.sub_topic.topic,@question.sub_topic)) }
       format.xml  { head :ok }
     end
+  end
+
+  def remove_issue
+    reference = Reference.find(params[:reference_id])
+    reference.destroy
+    redirect_to :back
   end
 
 end

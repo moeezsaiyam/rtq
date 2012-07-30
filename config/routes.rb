@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.popular '/questions/popular', :controller => 'questions', :action => 'popular'
   map.resources :users, :collection => ["change_password"], :member => ["change_password"]
-  map.resources :questions
+  map.resources :questions, :member => ['remove_issue']
 
   map.resources :topics, :collection => ["save_order"]  do |topic|
     topic.resources :sub_topics, :collection => ["save_order"] do |sub_topic|
