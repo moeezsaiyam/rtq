@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723060926) do
+ActiveRecord::Schema.define(:version => 20120730120950) do
 
   create_table "alternate_phrases", :force => true do |t|
     t.string   "content"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20120723060926) do
     t.integer "sura", :default => 0, :null => false
     t.integer "aya",  :default => 0, :null => false
     t.text    "text",                :null => false
+  end
+
+  create_table "keywords", :force => true do |t|
+    t.text     "words"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "url"
   end
 
   create_table "languages", :force => true do |t|
@@ -40,7 +47,9 @@ ActiveRecord::Schema.define(:version => 20120723060926) do
     t.string   "verse_ids"
     t.text     "answer"
     t.string   "quest_slug"
-    t.integer  "view_count",   :default => 0
+    t.integer  "view_count",      :default => 0
+    t.string   "last_updated_by"
+    t.string   "created_by"
   end
 
   create_table "quran_text", :force => true do |t|
@@ -69,6 +78,16 @@ ActiveRecord::Schema.define(:version => 20120723060926) do
 
   add_index "roles", ["user_id"], :name => "index_roles_on_user_id"
 
+  create_table "static_contents", :force => true do |t|
+    t.text     "about"
+    t.text     "duas"
+    t.text     "faqs"
+    t.text     "credits"
+    t.text     "contact"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sub_topics", :force => true do |t|
     t.string   "name"
     t.integer  "topic_id"
@@ -82,6 +101,8 @@ ActiveRecord::Schema.define(:version => 20120723060926) do
     t.datetime "photo_updated_at"
     t.boolean  "featured"
     t.integer  "position",           :default => 0
+    t.string   "last_updated_by"
+    t.string   "created_by"
   end
 
   create_table "topics", :force => true do |t|
@@ -96,6 +117,8 @@ ActiveRecord::Schema.define(:version => 20120723060926) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "position",           :default => 0
+    t.string   "last_updated_by"
+    t.string   "created_by"
   end
 
   create_table "trans_hilali", :primary_key => "Id", :force => true do |t|

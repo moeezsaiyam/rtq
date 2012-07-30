@@ -1,3 +1,6 @@
+<% content_for :html_title, @topic.name %>
+<% content_for :html_keywords, @words %>
+<% content_for :html_description, @topic.description %>
 <br><div class = "content-body-admin">
 <%= javascript_include_tag 'main' %>
 <% content_for :head do %>
@@ -33,7 +36,7 @@
     <%= f.label :description %>
     <div class="clear"></div>
     <%= hidden_field_tag 'topci[id]', @topic.id %>
-    <textarea id="editor" name="topic[description]"><%= @topic.description%></textarea>
+    <textarea id="editor" name="topic[description]"><%= @topic.description %></textarea>
   </p>
 
   <%= image_tag @topic.photo.url(:normal) %>

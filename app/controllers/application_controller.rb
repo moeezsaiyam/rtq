@@ -6,8 +6,9 @@ class ApplicationController < ActionController::Base
   helper :all
   helper_method :admin_role?
   before_filter :set_translation_cookie
+  before_filter :get_keywords
+  before_filter :set_locale
 
-  before_filter :set_locale 
   def set_locale 
   # if params[:locale] is nil then 
   #I18n.default_locale will be used 
@@ -36,5 +37,23 @@ class ApplicationController < ActionController::Base
     item.created_by = current_user.login
     item.last_updated_by = current_user.login
   end
+ private
 
+  def get_keywords
+    if(Keyword.find_by_url(request.url))
+      cache = Keyword.find_by_url(request.url)
+      @words = cache.words
+    else
+      alchemyObj = AlchemyAPI.new()
+      alchemyObj.loadAPIKey("#{RAILS_ROOT}/api-key.txt")
+      result = alchemyObj.URLGetRankedKeywords(request.url, AlchemyAPI::OutputMode::JSON)
+      results  = JSON.parse(result)
+      @keywords = results['keywords'].collect{|k| k['text']}
+      @words = "Quran"
+      @keywords.each do |val|
+        @words = [val,@words].join(',')
+      end
+      Keyword.create(:url => request.url , :words => @words)
+    end
+  end
 end

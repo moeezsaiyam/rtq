@@ -1,4 +1,5 @@
 <% if logged_in? && admin? %>
+<% content_for :html_title, @user.login %>
 <br><div class = "content-body-admin">
 <br>
 <div>
