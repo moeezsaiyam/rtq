@@ -1,7 +1,0 @@
-<% form_for(@question) do |f| %>
-  <%= hidden_field_tag 'question[id]', @question.id %>
-  <textarea id="editor" name="question[answer]"><%=simple_format(@question.answer)%></textarea>
-  <p>
-    <%= f.submit 'Save', :class => "action-button button rounded-borders"%>
-  </p>
-<% end %>

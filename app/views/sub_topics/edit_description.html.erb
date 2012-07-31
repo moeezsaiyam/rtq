@@ -1,6 +1,0 @@
-<% form_for(@sub_topic, :url => topic_sub_topic_path(@sub_topic.topic,@sub_topic)) do |f| %>
-  <%= hidden_field_tag 'sub_topic[id]',@sub_topic.id %>
-  <textarea id="editor" name="sub_topic[description]"><%= @sub_topic.description %> </textarea>
-  <%= f.submit "save" , :class => "action-button button rounded-borders" %>
-<% end %>
-sdsd

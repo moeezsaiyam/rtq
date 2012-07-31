@@ -8,7 +8,9 @@ class Topic < ActiveRecord::Base
 
   has_attached_file :photo,:styles => { :small => "100x80#", :normal => "400x320>" }, :url => "/assets/topics/:attachment/:id/:style/:basename.:extension", :default_url => '/images/class-img.png'
   
-  validates_presence_of :name,:description,:meaning
+  validates_presence_of :name, :message => "You didn't entered topic name.please enter topic name."
+  validates_presence_of :description, :message => "You didn't provide description of topic."
+  validates_presence_of :meaning, :message => "of topic has not been given."
   
   define_index do
     indexes name

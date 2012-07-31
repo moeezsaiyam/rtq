@@ -66,12 +66,14 @@ module ApplicationHelper
   end
   
   def addthis_medium_button
-     addthis_html='
-   <!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style">
-<a class="addthis_button_compact"></a>
-</div>
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50123bf83fd71cc8"></script>
+    addthis_html='
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style ">
+    <a class="addthis_button_compact"></a>
+    <a class="addthis_counter addthis_bubble_style"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50126ae459310b80"></script>
+
 <!-- AddThis Button END -->'
      return addthis_html
   end
@@ -105,7 +107,7 @@ module ApplicationHelper
   def twitter_sharer_footer
   target_url = request.url
     url = "https://twitter.com"
-    link_to(image_tag("twt.png", :width => "32", :height => "32"),  "http://www.twitter.com", :target => "_blank",:class => "social")
+    link_to(image_tag("twt.png", :width => "32", :height => "32", :alt=>"Twiter"),  "http://www.twitter.com", :target => "_blank",:class => "social")
      end
      
    def popup_window_sharer_footer
