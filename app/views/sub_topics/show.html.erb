@@ -1,7 +1,7 @@
 <% get_keywords(@sub_topic.description) %>
 <% content_for :html_title, @sub_topic.name %>
 <% content_for :html_keywords, @words %>
-<% content_for :html_description, @sub_topic.description %>
+<% content_for :html_description, @sub_topic.description[1..100] %>
 <%= bread_crumb_sub_topic(@sub_topic) %><br>
 <%= render :partial => "main/truncation" %>
 <%= javascript_include_tag 'main' %>
