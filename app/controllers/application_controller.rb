@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   helper :all
   helper_method :admin_role?
   before_filter :set_translation_cookie
-  before_filter :get_keywords
   before_filter :set_locale
 
   def set_locale 
@@ -36,10 +35,5 @@ class ApplicationController < ActionController::Base
   def set_author_and_last_updated_by(item)
     item.created_by = current_user.login
     item.last_updated_by = current_user.login
-  end
- private
-
-  def get_keywords
-    @words = Keyword.build(request.url)
   end
 end

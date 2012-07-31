@@ -190,5 +190,11 @@ module ApplicationHelper
     link_to('Edit', edit_description_topic_path(Topic.find(id)),:class => "editlink-margin")
   end
 
+  def get_keywords(description)
+    description = strip_tags description
+    words = English.extract_keywords description
+    @words = words.join(',')
+  end
+
 end
 
