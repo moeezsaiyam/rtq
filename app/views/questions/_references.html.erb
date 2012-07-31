@@ -4,14 +4,18 @@
 <h2>List of Related Verses</h2>
 <ol>
   <% @question.references.each_with_index do|r,i| %>
- <br><h3> <%=truncate(r.issue, :length => 50, :omission => '...') %></h3>
-   <div class = "show-verse-number-questionpage"><%=  parse_tags(r.from,r.to,r) %></div>
-    <div class="clear"></div><br />
+    <% unless r.issue.blank? %>
+      <h3> <%=truncate(r.issue, :length => 50, :omission => '...') %></h3>
+      <div class = "show-verse-number-questionpage"><%=  parse_tags(r.from,r.to,r) %></div>
+      <div class="clear"></div>
+    <% end %>
+    <% unless (r.to && r.from ).blank? %>
       <p> <%= truncate(@verses[r.id.to_s].translate_to("eng")[0].text, :length => 100, :omission => '...') %>
-     <%=  parse_tags_detail(r.from,r.to,r) %> </p>
+      <%=  parse_tags_detail(r.from,r.to,r) %> </p>
       <div class = "separator-issue-width <%= verses_list_class(i+1,@question.references.count)%>"></div>
+    <% end %>
   <% end %>
-       
+
 </ol>
 </div>
 <% end %>

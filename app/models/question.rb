@@ -58,11 +58,14 @@ class Question < ActiveRecord::Base
 
   def reference_attributes=(new_reference_attributes)
     new_reference_attributes.each do |new_reference_attribute|
+     valid = !(new_reference_attribute[:issue] && new_reference_attribute[:to] && new_reference_attribute[:from]).blank?
      if new_reference_attribute[:id].blank?
-      self.references.build(new_reference_attribute)
+         self.references.build(new_reference_attribute) if valid
      else
-       reference = self.references.detect{ |t| t.id.to_s == new_reference_attribute['id']}
-       reference.update_attributes(new_reference_attribute)
+       if valid
+         reference = self.references.detect{ |t| t.id.to_s == new_reference_attribute['id']}
+         reference.update_attributes(new_reference_attribute)
+       end
      end
     end
   end
