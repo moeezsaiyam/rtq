@@ -40,20 +40,6 @@ class ApplicationController < ActionController::Base
  private
 
   def get_keywords
-    if(Keyword.find_by_url(request.url))
-      cache = Keyword.find_by_url(request.url)
-      @words = cache.words
-    else
-      alchemyObj = AlchemyAPI.new()
-      alchemyObj.loadAPIKey("#{RAILS_ROOT}/api-key.txt")
-      result = alchemyObj.URLGetRankedKeywords(request.url, AlchemyAPI::OutputMode::JSON)
-      results  = JSON.parse(result)
-      @keywords = results['keywords'].collect{|k| k['text']}
-      @words = "Quran"
-      @keywords.each do |val|
-        @words = [val,@words].join(',')
-      end
-      Keyword.create(:url => request.url , :words => @words)
-    end
+    @words = Keyword.build(request.url)
   end
 end
