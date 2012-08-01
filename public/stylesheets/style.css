@@ -1197,6 +1197,7 @@ table.admin-view th{
   float: right !important;
   position:absolute:
   bottom:10px;
+  width:90px
  }
 
 .list-points{
