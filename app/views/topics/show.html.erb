@@ -5,7 +5,7 @@
 <%= render :partial => "main/truncation" %>
 
 <%= bread_crumb(@topic) %><br>
-<div class="content-body">
+<div class="content-body text-body">
   <h1><%=h @topic.name %> <%= addthis_medium_button %></h1>
   <div class ="clear">   </div>
   <h2>
@@ -26,7 +26,7 @@
     <% end %>
   <% else %>
     <div class="jtruncate">
-      <%= display_description(@topic.description) %>
+      <%= @topic.description %>
     </div>
 	<% end %>
 </div>

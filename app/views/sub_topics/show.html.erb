@@ -9,7 +9,7 @@
 
   <h1><%=h @sub_topic.name %>  <%= addthis_medium_button %></h1>
   <% if admin_role? %>
-    <%= simple_format(@sub_topic.description)%>
+    <%= @sub_topic.description%>
     <% if admin? %>
        <span class="last-updated-by">
          <strong>Last updated by:</strong>
@@ -23,7 +23,7 @@
     <% end %>
   <% else %>
     <div class="jtruncate">
-      <%= display_description(@sub_topic.description) %>
+      <%= @sub_topic.description%>
     </div>
   <% end %>
 </div>

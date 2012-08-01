@@ -1970,3 +1970,13 @@ div.error-box {
  font-size:12px;
 }
 
+.text-body ul{
+ list-style-type:disc;
+ margin:15px;
+}
+
+.text-body ol{
+  list-style-type:decimal;
+  margin:20px;
+}
+
