@@ -2,7 +2,7 @@
 	$.fn.jTruncate = function(options) {
 		var defaults = {
 			length: 300,
-			minTrail: 20,
+			minTrail: 300,
 			moreText: "more",
 			lessText: "less",
 			ellipsisText: "...",
