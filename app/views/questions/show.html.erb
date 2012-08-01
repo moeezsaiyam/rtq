@@ -4,7 +4,7 @@
 <% content_for :html_description, @description[1..255] %>
 <%= bread_crumb_question(@question) %><br>
 <%= render :partial => "main/truncation" %>
-<div class="content-body">
+<div class="content-body text-body">
   <div>
     <h1><%=h @question.quest %> <%= addthis_medium_button %></h1>
   </div>

@@ -5,7 +5,7 @@
 <%= bread_crumb_sub_topic(@sub_topic) %><br>
 <%= render :partial => "main/truncation" %>
 <%= javascript_include_tag 'main' %>
-<div class="content-body">
+<div class="content-body text-body">
 
   <h1><%=h @sub_topic.name %>  <%= addthis_medium_button %></h1>
   <% if admin_role? %>
