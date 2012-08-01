@@ -2,9 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title><%= (html_title = yield :html_title) ? html_title : 'Refer to Quran' %> - Refer to Quran</title>
-    <meta name="keywords" content="<%=(html_keywords = yield :html_keywords) ? html_keywords: 'Quran,Islam,Allah,Muhammad,Muslim,faith' %>" />
-    <meta name="description" content="<%= (html_description = yield :html_description) ? html_description : 'Find your answers on different topics of islam.' %>"/>
+    <%= render :partial => "layouts/meta" %>
     <link rel="shortcut icon" type="image/x-icon" href="/icon_Quran.ico">
       <%= stylesheet_link_tag 'jquery-ui-1.8.18.custom' %>
       <%= stylesheet_link_tag 'superfish' %>

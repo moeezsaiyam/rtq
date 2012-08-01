@@ -1,3 +1,7 @@
+<% get_keywords(@content.faqs) %>
+<% content_for :html_title, "FAQ'S'" %>
+<% content_for :html_keywords, @words %>
+<% content_for :html_description, @content.faqs[0..255] %>
 <div class="content-body">
  <h1>FAQ'S
    <% if logged_in?  %>
