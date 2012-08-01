@@ -1,7 +1,7 @@
 <% get_keywords(@topic.description) %>
 <% content_for :html_title, @topic.name %>
 <% content_for :html_keywords, @words %>
-<% content_for :html_description, @topic.description[0..255] %>
+<% content_for :html_description, @description[0..255] %>
 <%= render :partial => "main/truncation" %>
 
 <%= bread_crumb(@topic) %><br>

@@ -190,8 +190,8 @@ module ApplicationHelper
   end
 
   def get_keywords(description)
-    description = strip_tags description
-    words = English.extract_keywords description
+    @description = strip_tags description
+    words = English.extract_keywords @description
     @words = words.join(',')
   end
 

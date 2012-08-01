@@ -1,7 +1,7 @@
 <% get_keywords(@content.credits) %>
 <% content_for :html_title, "Credits" %>
 <% content_for :html_keywords, @words %>
-<% content_for :html_description, @content.credits[0..255] %>
+<% content_for :html_description, @description[0..255]%>
 <div class="content-body">
  <h1>CREDITS
    <% if logged_in?  %>
