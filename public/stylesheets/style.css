@@ -1913,9 +1913,10 @@ border-bottom:none;
 .view-details a {
 	text-decoration: underline;
 }
-p.subdesc {font-size:11px !important;
-height:40px;
-overflow:hidden;}
+p.subdesc {
+ font-size:11px !important;
+ overflow:hidden;
+}
 #question_quest {width:90%;}
 #alternate_phrases label {font-size: 14px; clear: both;}
 
