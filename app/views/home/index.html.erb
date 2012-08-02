@@ -17,8 +17,8 @@
 
         <a class="class-img" href="<%=sub_topic_slug_path(s.topic.name_slug, s.name_slug) %>"><%= image_tag s.photo.url(:small), :alt => "image"%></a>
         <h3> <%= link_to truncate(s.name, :length => 30, :omission => '...'), sub_topic_slug_path(s.topic.name_slug, s.name_slug)%></h3>
-       <%= truncate(s.description, :length => 72, :omission => '...') %>
-      </div>
+       <p><%= truncate(strip_tags(s.description), :length => 50, :omission => '...') %></p>
+     </div>
       <!--/class-section -->
     <% end %>
   </div>
