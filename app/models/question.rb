@@ -1,13 +1,13 @@
 class Question < ActiveRecord::Base
 
   belongs_to :sub_topic
-  
+
   before_save :save_tasks
 
   after_create :quest_to_slug
-  
+
   has_many :alternate_phrases
-  
+
   has_many :references
 
   define_index do
@@ -30,7 +30,7 @@ class Question < ActiveRecord::Base
         sura=tag.split(":")[0]
         aya=tag.split(":")[1]
         verse = Verse.find_by_sura_and_aya(sura,aya)
-        return errors.add("","No Such reference exist") if verse.blank?
+        return errors.add("tags","No Such reference exist") if verse.blank?
         record_tags.push(verse.id)
       end
       self.verse_ids = record_tags.join(",")
@@ -42,7 +42,7 @@ class Question < ActiveRecord::Base
   end
 
   def self.perform_search(search, search_terms)
-    
+
   end
 
   def alternate_phrase_attributes=(new_phrase_attributes)
@@ -69,16 +69,20 @@ class Question < ActiveRecord::Base
      end
     end
   end
-  
+
   def save_tasks
-   alternate_phrases.each do|phrase|
-   phrase.save(false)
-   end
-   self.references.each do|reference|
-    unless reference.save
-     errors.add(" ","No Such reference exist")
-     return false
+    alternate_phrases.each do|phrase|
+      phrase.save(false)
     end
-   end
- end
+    self.references.each do|reference|
+      unless reference.save
+        errors.add(" ","No Such reference exist")
+        return false
+      else
+        reference.question_id = self.id
+        reference.save
+      end
+    end
+  end
 end
+

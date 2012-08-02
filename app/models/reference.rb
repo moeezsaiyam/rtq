@@ -1,10 +1,7 @@
 class Reference < ActiveRecord::Base
 belongs_to :question
 
-
-
   def validate
-
     unless self.from.blank?
       record_tags = Array.new
       tags = self.from.split(",")

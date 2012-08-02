@@ -49,7 +49,7 @@
       <%= reference_form.label :issue, "Issue Addressed"%>
     </p>
     <p>
-        <%= reference_form.text_area  :issue, :class => 'issue_field' %>
+        <%= reference_form.text_area  :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
     </p>
      <p>
         Enter Sura and Aya number like From 1:1 To 1:7 
@@ -57,6 +57,8 @@
       <%= reference_form.text_field :from, :class => 'issue_from_field' %>
       <%= reference_form.label :to, "To"%>
       <%= reference_form.text_field :to, :class => 'issue_to_field' %>
+        <%= reference_form.hidden_field :question_id, :value=> @question.id, :name => 'question[reference_attributes][][question_id]' %>
+
     </p>
       <% end %>
     <% end %>
@@ -97,7 +99,7 @@
       <%= reference_form.label :to, "To"%>
       <%= reference_form.text_field :to, :class => 'issue_to_field' %>
     </p>
-      <%= reference_form.hidden_field :question_id, :value=> @question_id %>
+      <%= reference_form.hidden_field :question_id, :value=> @question_id, :name => 'question[reference_attributes][][question_id]' %>
       <% end %>
     <%= link_to ('Remove','#', :onclick => 'remove_alternate(this); return false;') %>
   </div>
