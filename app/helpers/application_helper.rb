@@ -105,13 +105,13 @@ module ApplicationHelper
     return addthis_html
   end
   
-  def twitter_sharer_footer
+  def twitter_sharer
   target_url = request.url
     url = "https://twitter.com"
     link_to(image_tag("twt.png", :width => "32", :height => "32", :alt=>"Twiter"),  "http://www.twitter.com", :target => "_blank",:class => "social")
      end
      
-   def popup_window_sharer_footer
+   def popup_window_sharer
     target_url = request.url
     link_to(image_tag("fb.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com", :target => "_blank",:class => "social")
    end
