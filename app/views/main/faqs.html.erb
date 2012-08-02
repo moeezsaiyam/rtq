@@ -2,7 +2,7 @@
 <% content_for :html_title, "FAQ'S'" %>
 <% content_for :html_keywords, @words %>
 <% content_for :html_description, @description[0..255] %>
-<div class="content-body">
+<div class="content-body text-body">
  <h1>FAQ'S
    <% if logged_in?  %>
      <% if admin? %>
@@ -11,11 +11,11 @@
           </span>
      <% end %>
      <span class="static-text">
-       <%= simple_format(@content.faqs)%>
+       <p><%= display_full_text(@content.faqs) %></p>
      </span>
    <% else %>
      <span class="static-text">
-       <%= simple_format(@content.faqs)%>
+       <p><%= display_full_text(@content.faqs) %></p>
      </span>
    <%end%>
  </h1>

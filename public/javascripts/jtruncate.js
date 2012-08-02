@@ -1,8 +1,8 @@
 (function($){
 	$.fn.jTruncate = function(options) {
 		var defaults = {
-			length: 300,
-			minTrail: 300,
+			length: 200,
+			minTrail: 200,
 			moreText: "more",
 			lessText: "less",
 			ellipsisText: "...",
@@ -26,13 +26,6 @@
 					obj.html(str1 + '<span class="truncate_ellipsis">' + options.ellipsisText +
 						'</span>' + '<span class="truncate_more">' + str2 + '</span>');
 					obj.find('.truncate_more').css("display", "none");
-
-					// insert more link
-					obj.append(
-						'<div class="clearboth">' +
-							'<a href="#" class="truncate_more_link">' + options.moreText + '</a>' +
-						'</div>'
-					);
 
 					// set onclick event for more/less link
 					var moreLink = $('.truncate_more_link', obj);

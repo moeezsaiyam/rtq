@@ -178,7 +178,7 @@ module ApplicationHelper
   end
 
   def display_description(description)
-     simple_format(description).gsub('<p>','').gsub('</p>','<br /><br />')
+    simple_format(strip_tags(description)).gsub('<p>','').gsub('</p>','<br /><br />')
   end
 
   def edit_link(name)
@@ -195,5 +195,16 @@ module ApplicationHelper
     @words = words.join(',')
   end
 
+  def more_link
+    link_to 'More', '#', :id => 'more', :onclick => "return toggleMe('full-text','truncated','more','less')"
+  end
+
+  def less_link
+    link_to 'Less', '#', :id => 'less', :onclick => "return toggleMe('full-text','truncated','more','less')"
+  end
+
+  def display_full_text(description)
+    description.gsub('<p>','').gsub('</p>','<br /><br />')
+  end
 end
 

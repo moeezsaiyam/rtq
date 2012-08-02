@@ -9,7 +9,7 @@
 
   <h1><%=h @sub_topic.name %>  <%= addthis_medium_button %></h1>
   <% if admin_role? %>
-    <%= @sub_topic.description%>
+    <p><%=  display_full_text(@sub_topic.description) %></p>
     <% if admin? %>
        <span class="last-updated-by">
          <strong>Last updated by:</strong>
@@ -22,9 +22,14 @@
        </span>
     <% end %>
   <% else %>
-    <div class="jtruncate">
-      <%= @sub_topic.description%>
-    </div>
+   <div   id="truncated"  class="jtruncate">
+     <%= display_description(@sub_topic.description) %>
+   </div>
+   <%= more_link %>
+   <div id="full-text" style="display:none">
+     <p><%=  display_full_text(@sub_topic.description) %></p>
+     <%= less_link %>
+   </div>
   <% end %>
 </div>
   <% if admin_role? %>
