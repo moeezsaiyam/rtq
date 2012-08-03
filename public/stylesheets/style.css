@@ -334,6 +334,7 @@ body {
 
 #menu-bar ul li a.home:hover {
     background:url(/images/nav-home.png) no-repeat 16px 6px #FFFFFF;
+    background-position:center; 
     border-radius: 6px 6px 0 0;
 }
 
@@ -382,9 +383,9 @@ body {
     margin-top: -4px;
     padding-bottom: 4px;
     width: 22px;
-    background:url(/images/nav-home-white.png) no-repeat 16px 6px;}
-	}
-#
+    background:url(/images/nav-home-white.png) no-repeat 16px 6px;
+    background-position:center; 
+    }
 /* Menu CSS End */
 
 
