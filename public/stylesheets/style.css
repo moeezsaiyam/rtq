@@ -362,7 +362,7 @@ body {
     line-height: 25px;
     padding: 6px 14px 5px;
     text-decoration: none;
-    width:48px;
+    width:52px;
 	}
  #menu ul li a.active{
 	width:100px;
@@ -2047,6 +2047,7 @@ div.error-box {
 
 .static-text {
  font-family: 'Square721Regular';
+ padding-top:29px;
  color:black;
 }
 
@@ -2076,5 +2077,10 @@ div.error-box {
 
 span p {
  font-family: 'Square721Regular';
+}
+
+.static-text p {
+ font-family: 'Square721Regular';
+ margin-top:20px;
 }
 

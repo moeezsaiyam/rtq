@@ -4,6 +4,7 @@
 <% content_for :html_description, @description[0..255] %>
 <div class="content-body text-body">
   <h1>ABOUT
+
     <% if logged_in?  %>
       <% if admin? %>
         <span class="editlink-margin">
