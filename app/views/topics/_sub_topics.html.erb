@@ -5,7 +5,7 @@
     <div class="class-section <%= nomargin_class(i) %>">
       <a class="class-img" href="<%= sub_topic_slug_path(s.topic.name_slug, s.name_slug) %>"><%= image_tag s.photo.url(:small)%></a>
       <h3><%=link_to truncate(s.name, :length => 50, :omission => '...'), sub_topic_slug_path(s.topic.name_slug, s.name_slug) %></h3>
-      <p> <%= truncate(strip_tags(s.description), :length => 72, :omission => '...') %> </p>
+      <p class="description"> <%= truncate(strip_tags(s.description), :length => 72, :omission => '...') %> </p>
     </div>
   <% end %>
   <div class="clear"></div>
