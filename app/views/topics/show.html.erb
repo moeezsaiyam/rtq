@@ -26,12 +26,11 @@
     <% end %>
   <% else %>
    <div id="truncated"  class="jtruncate">
-     <%= display_description(@topic.description) %>
+     <p><%= display_description(@topic.description) %>kjbj</p>
    </div>
-   <%= more_link %>
    <div id="full-text" style="display:none">
-     <p><%= display_full_text(@topic.description) %></p>
-     <%= less_link %>
+     <p><%= display_full_text(@topic.description) %></p> 
+     <a href = "#" id = "less" ,class= "lesslink""> Less </a>
    </div>
 	<% end %>
 </div>

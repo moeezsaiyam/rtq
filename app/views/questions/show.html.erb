@@ -26,10 +26,9 @@
     <div id="truncated"  class="jtruncate">
      <%= display_description(@question.answer) %>
    </div>
-   <%= more_link %>
    <div id="full-text" style="display:none">
      <p><%= display_full_text(@question.answer) %></p>
-     <%= less_link %>
+     <a href = "#" id = "less" ,class= "lesslink""> Less </a>
    </div>
   <% end %>
 </div>
