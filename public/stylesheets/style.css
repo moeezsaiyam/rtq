@@ -211,20 +211,24 @@ h6{  font-family: 'Square721Regular';
 	 color:#4b6a15;}
 
 p{
+  font-family: 'Square721Regular';
 	font-size:12px;
 	text-align:left;
 	font-weight:normal;
 	line-height:18px;}
 .list-questions h5{
+  font-family: 'Square721Regular';
   padding-left:24px;
   padding-top:15px;
   }
 .list-questions-popular h5{
+  font-family: 'Square721Regular';
   padding-left:24px;
   font-size:22px;
    color:#4b6a15;
   }
   .list-questions-alt h4{
+  font-family: 'Square721Regular';
   padding-left:24px;
   }
   
@@ -232,8 +236,10 @@ table { border-collapse: collapse; border-spacing: 0;}
 
 th, td, caption { font-weight: normal; vertical-align: top; text-align: left;}
 	
-a{ text-decoration:none;
-   color:#4B6A15;
+a {
+  font-family: 'Square721Regular'; 
+  text-decoration:none;
+  color:#4B6A15;
 }
 button a{ text-decoration:none;
    color:#000000;
@@ -247,6 +253,7 @@ body {
 	font-weight:normal;
 	}
 #wrapper {
+  font-family: 'Square721Regular';
 	width:1000px;
 	margin: 0 auto;
 }
@@ -311,11 +318,13 @@ body {
 }
 
 #menu-bar ul li a.active {
-  background: none repeat scroll 0 0 #FFFFFF;
+    font-family: 'Square721Regular'; 
+    background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 6px 6px 0 0;
     color:#496719;
 }
 #menu-bar ul li a.sub_item:hover {
+  font-family: 'Square721Regular';
   background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 1px 1px 0 0;
     color: #9ACD32;
@@ -421,6 +430,7 @@ body {
 	}
 	
 .side-nav ul li a{
+  font-family: 'Square721Regular';
 	float:left;
 	font-size:14px;
 	color:#333;
@@ -431,6 +441,7 @@ body {
 	}
 	
 .side-nav ul li a:hover, .side-nav ul li a.slected{
+  font-family: 'Square721Regular';
 	float:left;
 	font-size:14px;
 	color:#FFF;
@@ -503,6 +514,7 @@ body {
 	
 	
 	.bread-crumb span{
+	font-family: 'Square721Regular';
 	font-size:9px;
 	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
 	}
@@ -530,6 +542,7 @@ body {
 	}
 
 #col-2 {
+  font-family: 'Square721Regular';
 	width: 680px;
 	float: right;
 	margin-right:10px;
@@ -537,6 +550,7 @@ body {
 	position:relative;
 }
 #col-2 p{
+  font-family: 'Square721Regular';
   padding-bottom:18px;
   text-align:justify;
   font-size:14px;
@@ -563,6 +577,7 @@ body {
 	position:absolute;
 	top: 30px;
 	left: -2px;
+	font-family: 'Square721Regular';
 	font-size:14px;
 	text-align:left;
 	color:white;
@@ -675,12 +690,13 @@ background:url(/images/srch.png) no-repeat left top;
 }
 
 .content-body{
-
+  font-family: 'Square721Regular';
   background:white;
   border-radius:10px;
   padding:15px 20px 20px;
 }	
 .content-body-admin{
+   font-family: 'Square721Regular';
    background: none repeat scroll 0 0 white;
    border-radius: 10px 10px 10px 10px;
    padding: 8px 28px 0;
@@ -759,6 +775,7 @@ background:url(/images/srch.png) no-repeat left top;
 	#popular-Questions .show-more {
     background: url("/images/show-btn.png") repeat-x;
     border-radius: 5px 5px 5px 5px;
+    font-family: 'Square721Regular';
     color: #333;
     float: right;
     font-size: 12px;
@@ -847,10 +864,13 @@ background:url(/images/srch.png) no-repeat left top;
 	border-radius: 5px;}
 	
 .font-9{
-	font-size:9px;}
+	font-size:9px;
+	font-family: 'Square721Regular';
+	}
 	
 .question-bar{
 	background:url(/images/question-bar.png) no-repeat left top;
+	font-family: 'Square721Regular';
 	width:661px;
 	height:42px;
 	font-size:16px;
@@ -862,6 +882,7 @@ background:url(/images/srch.png) no-repeat left top;
 	margin-left:10px;}
 	
 	.question-bar-alternate{
+	font-family: 'Square721Regular';
 	background:url(/images/question-bar.png) no-repeat left top;
 	width:661px;
 	height:42px;
@@ -873,6 +894,7 @@ background:url(/images/srch.png) no-repeat left top;
 	left:9px;}
 	
 	.question-bar-listquest{
+	font-family: 'Square721Regular';
 	background:url(/images/question-bar.png) no-repeat left top;
 	width:661px;
 	height:42px;
@@ -1027,25 +1049,30 @@ border-bottom:none;}
 	line-height:15px;
 	}
 .question-index ul li.last{
+  font-family: 'Square721Regular';
   border-bottom:none;
   font-size:12px;}	
 
 .question_latest_popular{
+  font-family: 'Square721Regular';
 	float:left;
 	padding: 42px 15px 0 0px;
 	width:100%;
 	}
 .verse-last{
+ font-family: 'Square721Regular';
  font-size:14px;
  padding:0px 15px 20px 20px;}
  
  .verse-current-last{
+ font-family: 'Square721Regular';
  font-size:14px;
  padding:0px 15px 20px 20px;}
 	.verse-current-last h1{
 	font-size:18px;
 	}
 .trans-select{
+    font-family: 'Square721Regular';
     border: 1px solid #EEEEEE;
     border-radius: 8px 8px 8px 8px;
     float: left;
@@ -1068,10 +1095,12 @@ border-bottom:none;}
  }
 	
 .question ul li a{
+  font-family: 'Square721Regular';
 	color:#333;
 	font-size:14px;}
 	
 	.question-index ul li a{
+	font-family: 'Square721Regular';
 	color:#333;
 	font-size:14px;}
 	
@@ -1101,6 +1130,7 @@ border-bottom:none;}
 	height:31px;
 	left:8px;
 	top:-5px;
+	font-family: 'Square721Regular';
 	font-size:16px;
 	padding:4px 0px 0px 15px;
 	color:#FFF;}
@@ -1136,6 +1166,7 @@ border-bottom:none;}
 	height:41px;
 	text-align:center;
 	color:#FFF;
+	font-family: 'Square721Regular';
 	font-size:16px;
 	border:none;
 	margin-top:25px;
@@ -1147,6 +1178,7 @@ div.dashboard{
   margin-top:20px;
 }
 div.dashboard-trans{
+font-family: 'Square721Regular';
   font-size:15px;
   margin-top:20px;
 }
@@ -1154,6 +1186,7 @@ div.dashboard-trans{
 table.admin-view{
   width:100%;
   border:1px solid;
+  font-family: 'Square721Regular';
   font-size:15px;
   margin-top:20px;
 }
@@ -1164,6 +1197,7 @@ table.admin-view td{
 table.admin-view th{
   border:1px solid;
   text-align:center;
+  font-family: 'Square721Regular';
   font-weight:bold;
   padding:10px;
   font-size:18px;
@@ -1189,6 +1223,7 @@ table.admin-view th{
   width:150px;
   text-align:center;
   color:white;
+  font-family: 'Square721Regular';
   font-size:14px;
   line-height:28px;
   margin-right:10px;
@@ -1221,6 +1256,7 @@ table.admin-view th{
    background: url("/images/normal-bullet.png") no-repeat scroll 5px 8px transparent;
     border-bottom:1px solid #EFEFEF;
     float: left;
+    font-family: 'Square721Regular';
     font-size: 14px;
     line-height: 24px;
     list-style: none outside none;
@@ -1234,6 +1270,7 @@ table.admin-view th{
     width:689px;
 }
 .list-points-verse li{
+  font-family: 'Square721Regular';
   font-size:14px;
 	padding-left:25px;
 	padding-bottom:10px;
@@ -1257,6 +1294,7 @@ table.admin-view th{
 }
 
 .list-points-browse li{
+  font-family: 'Square721Regular';
   font-size:14px;
 	padding-left:25px;
 	padding-bottom:10px;
@@ -1293,6 +1331,7 @@ table.admin-view th{
 .list-questions li{
    background: url("/images/normal-bullet.png") no-repeat scroll 5px 8px transparent;
     float: left;
+    font-family: 'Square721Regular';
     font-size: 14px;
     line-height: 24px;
     list-style: none outside none;
@@ -1307,6 +1346,7 @@ table.admin-view th{
    background: url("/images/normal-bullet.png") no-repeat scroll 5px 8px transparent;
     float: left;
     font-size: 14px;
+    font-family: 'Square721Regular';
     line-height: 24px;
     list-style: none outside none;
     margin-bottom: 5px;
@@ -1319,6 +1359,7 @@ table.admin-view th{
 .list-questions-subtop li{
    background: url("/images/normal-bullet.png") no-repeat scroll 5px 8px transparent;
     float: left;
+    font-family: 'Square721Regular';
     font-size: 14px;
     line-height: 24px;
     list-style: none outside none;
@@ -1334,6 +1375,7 @@ table.admin-view th{
     width:689px;
 }
 .list-questions-verse li{
+  font-family: 'Square721Regular';
   font-size:14px;
 	padding-left:25px;
 	padding-bottom:10px;
@@ -1349,22 +1391,26 @@ table.admin-view th{
   border-bottom:1px solid #EFEFEF
   }
   .verse-color1 {
+  font-family: 'Square721Regular';
   font-size:14px;
   padding:0px 15px 20px 20px;
   }
   .current-verse-color {
   color:#ffffff;
+  font-family: 'Square721Regular';
   font-size:14px;
   padding-top:10px;
   padding-bottom:15px;
-   padding:0px 0px 20px 20px;
+  padding:0px 0px 20px 20px;
   }
 .verse-color {
+  font-family: 'Square721Regular';
   font-size:14px;
   padding:0px 15px 20px 20px;
 }
  .verse-brown {
   color:#333;
+  font-family: 'Square721Regular';
   font-size:14px;
   padding:0px 15px 20px 20px;
   border-bottom:1px dotted #976D3B;
@@ -1374,21 +1420,25 @@ table.admin-view th{
  }
   .verse-color h1{ 
    color:#577818;
+   font-family: 'Square721Regular';
    font-size:18px;
    }
   .verse-color-whit {
   color:#FFFFFF;
   font-size:14px;
+  font-family: 'Square721Regular';
   padding:0px 15px 20px 20px;
   border-bottom:1px solid #f5f5f5;
   }
   .verse-whit-last{
   color:#FFFFFF;
+  font-family: 'Square721Regular';
   font-size:14px;
   padding:0px 15px 20px 20px;
   }
 .verse-white-color {
   color:#FFFFFF;
+  font-family: 'Square721Regular';
   font-size:15px;
   padding:0px 15px 20px 20px;
 }
@@ -1399,6 +1449,7 @@ table.admin-view th{
 }
 
 .list-questions-browse li{
+  font-family: 'Square721Regular';
   font-size:14px;
 	padding-left:25px;
 	padding-bottom:10px;
@@ -1417,10 +1468,12 @@ table.admin-view th{
 }
 
 .context-of .arabic{
+  font-family: 'Square721Regular';
   font-size:28px;
 }
 
 .context-of li{
+  font-family: 'Square721Regular';
   font-size:19px;
 }
 
@@ -1453,6 +1506,7 @@ table.admin-view th{
 	}
 	
 #footer h6{
+  font-family: 'Square721Regular';
 	font-size:14px;
 	color:#FFF;
 	text-align:center;
@@ -1461,6 +1515,7 @@ table.admin-view th{
 	}
 	
 #footer h5{
+  font-family: 'Square721Regular';
 	font-size:14px;
 	color:#FFF;
 	text-align:left;
@@ -1549,6 +1604,7 @@ table.admin-view th{
  }
 
  .simple-page .pagination{
+  font-family: 'Square721Regular';
   display: inline;
   width: 675px;
   float:left;
@@ -1571,10 +1627,12 @@ pagination{
   display:none;
 }
 .bread-crumb{
+ font-family: 'Square721Regular';
   padding-top:12px;
   font-size:12px;
 }
 bread-crumb .breadfont{
+ font-family: 'Square721Regular';
   font-size:10px;
 }
 .p-r-container{
@@ -1712,6 +1770,7 @@ position: absolute;
 border-bottom:none;
 }
 .search-verse-keyword{
+    font-family: 'Square721Regular';
     padding-left: 17px;
     padding-top: 10px;
     text-align: left;
@@ -1731,6 +1790,7 @@ border-bottom:none;
   display: block;
   float: left;
   margin: 10px 0;
+  font-family: 'Square721Regular'; 
   text-align: center;
   width: 660px;
 }
@@ -1747,6 +1807,7 @@ border-bottom:none;
   border-radius: 12px 12px 12px 12px;
   box-shadow: 7px 4px 0 #000000;
   color: #4b6a15;
+  font-family: 'Square721Regular';
   font-size: 17px;
   height: 166.1px !important;
   margin-bottom: 31px !important;
@@ -1760,6 +1821,7 @@ border-bottom:none;
   float:left;
   font-weight:bold;
   color:#4b6a15;
+  font-family: 'Square721Regular'; 
   font-size:18px;
   margin-left:23px;
 }
@@ -1767,6 +1829,7 @@ border-bottom:none;
   float:left;
   clear:both;
   font-weight:normal;
+  font-family: 'Square721Regular';
   font-size:14px;
   padding:10px 0;
   text-align:justify;
@@ -1775,6 +1838,7 @@ border-bottom:none;
 #carousel .textholder a{
   float: right;
   font-size: 13px;
+  font-family: 'Square721Regular';
  margin: -25px 1px 11px 11px;
  color:#FFB90F;
 }
@@ -1792,7 +1856,10 @@ border-bottom:none;
     line-height: 22px;
     padding-bottom: 10px;}
     
- body {font-family:arial; font-size:11px;}
+ body {
+  font-family: 'Square721Regular';
+  font-size:11px;
+ }
 .clear {clear:both}
 /* remove the list style */
 #nav {
@@ -1844,6 +1911,7 @@ border-bottom:none;
         font-weight:700; 
         height:23px;
         text-decoration:none;
+        font-family: 'Square721Regular';
         color:#fff;
         text-align:center;
         color:#333;
@@ -1903,6 +1971,7 @@ border-bottom:none;
 }
 .show-verse-number-questionpage,
 .show-verse-number-questionpage a {
+  font-family: 'Square721Regular';
 	font-size:14px;
 	font-weight: bold;
 	color:#4B6A15;
@@ -1914,6 +1983,7 @@ border-bottom:none;
 	text-decoration: underline;
 }
 p.subdesc {
+ font-family: 'Square721Regular';
  font-size:11px !important;
  overflow:hidden;
 }
@@ -1936,6 +2006,7 @@ div.error-box {
  width:535px;
  padding:10px;
  border:1px solid red;
+ font-family: 'Square721Regular';
  color: red;
  margin:0px; 
  font-size:14px;
@@ -1947,11 +2018,13 @@ div.error-box {
 }
 
 .jtruncate {
+ font-family: 'Square721Regular';
  font-size:14px;
  line-height: 18px;
 }
 
 .universal-font {
+ font-family: 'Square721Regular';
  font-size:14px;
  line-height: 18px;
  text-align: justify;
@@ -1962,23 +2035,35 @@ div.error-box {
 }
 
 .static-text {
+ font-family: 'Square721Regular';
  color:black;
 }
 
 .last-updated-by {
+ font-family: 'Square721Regular';
  color:#4b6a15;
  font-size:12px;
 }
 
 .text-body ul{
+ font-family: 'Square721Regular';
  list-style-type:disc;
  margin:15px;
  font-size:14px;
 }
 
 .text-body ol{
+  font-family: 'Square721Regular';
   list-style-type:decimal;
   margin:20px;
   font-size: 14px;
+}
+
+.static-text ul, .static-text ol{
+ font-family: 'Square721Regular';
+}
+
+span p {
+ font-family: 'Square721Regular';
 }
 
