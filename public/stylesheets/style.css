@@ -2078,11 +2078,28 @@ div.error-box {
 }
 
 span p {
- /*font-family: 'Square721Regular';*/
+ font-family: 'Square721Regular' !important;
 }
 
-.static-text p {
- font-family: 'Square721Regular';
+.static-text p, .static-text p span{
+ font-family: 'Square721Regular' !important;
+ text-align: justify;
+ font-size: 14px !important;
  margin-top:20px;
+ background-color:white !important;
+}
+
+.text-body p{
+ font-family: 'Square721Regular' !important;
+ text-align: justify;
+ font-size: 14px !important;
+ background-color:white !important;
+}
+
+.text-body p span, .text-body span{
+ background-color:white !important;
+ font-family: 'Square721Regular' !important;
+ text-align: justify;
+ font-size: 14px !important;
 }
 
