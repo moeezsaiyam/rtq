@@ -10,12 +10,16 @@
       <div class="clear"></div>
     <% end %>
     <% unless (r.to && r.from ).blank? %>
-      <p> <%= truncate(@verses[r.id.to_s].translate_to("eng")[0].text, :length => 100, :omission => '...') %>
-      <%=  parse_tags_detail(r.from,r.to,r) %> </p>
+      <% if(@verses[r.id.to_s].translate_to("eng")[0].text.length>100) %>
+        <p> <%= truncate(@verses[r.id.to_s].translate_to("eng")[0].text, :length => 100, :omission => '...') %>
+        <%= parse_tags_detail(r.from,r.to,r) %> </p>
+      <%else%>
+         <p> <%= @verses[r.id.to_s].translate_to("eng")[0].text%>
+         <%= parse_tags_detail(r.from,r.to,r) %> </p>
+      <%end%>
       <div class = "separator-issue-width <%= verses_list_class(i+1,@question.references.count)%>"></div>
     <% end %>
   <% end %>
-
 </ol>
 </div>
 <% end %>
