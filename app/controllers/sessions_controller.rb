@@ -5,6 +5,10 @@ class SessionsController < ApplicationController
 
   # render new.erb.html
   def new
+    if logged_in?
+      flash[:notice] = "You are already logged in."
+      return  redirect_back_or_default('/admin_dashboard')
+    end
   end
 
   def create
@@ -18,8 +22,8 @@ class SessionsController < ApplicationController
       self.current_user = user
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/admin_dashboard')
       flash[:notice] = "Logged in successfully"
+      redirect_back_or_default('/admin_dashboard')
     else
       note_failed_signin
       @login       = params[:login]
