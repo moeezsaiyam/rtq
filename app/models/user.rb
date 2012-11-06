@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
-  validates_presence_of     :password
+
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
   validates_uniqueness_of   :login
@@ -57,4 +57,13 @@ class User < ActiveRecord::Base
     self.roles.collect(&:name).include?("Admin") || self.roles.collect(&:name).include?("SubAdmin")
   end
   
+  def user_errors(attribute)
+    login_err= " "
+    self.errors.each do |key, value|
+      if key == attribute
+        login_err += value + ", "
+      end
+    end
+    attribute+ " " + login_err
+  end
 end

@@ -11,10 +11,19 @@
     <% end %>
     <div class = "error-box">
       <% if @user.errors.any? %>
-        <h1 class = "error-heading"> <%=@user.errors.count %>  <%=display_errors(@user) %>  has been occured: </h1>
-        <h2 class = "error-heading">Unable to sign-up.</h2>
-        <% @user.errors.full_messages.each do |message| %>
-          <li class = "error"><%= message %> </li>
+        <h1 class = "error-heading"> <%= "Following errors has occured:" %> </h1>
+        <h2 class = "error-heading">Unable to create a new user.</h2>
+        <% if !@user.errors[:login].blank? %>
+          <li class = 'error'><%= @user.user_errors("login") %> </li>
+        <% end %>
+        <% if !@user.errors[:email].blank? %>
+          <li class = 'error'><%= @user.user_errors("email") %> </li>
+        <% end %>
+        <% if !@user.errors[:password].blank? %>
+          <li class = 'error'><%= @user.user_errors("password") %> </li>
+        <% end %>
+        <% if !@user.errors[:password_confirmation].blank? %>
+          <li class = 'error'><%= @user.user_errors("password_confirmation") %> </li>
         <% end %>
       <% end %>
     </div>
