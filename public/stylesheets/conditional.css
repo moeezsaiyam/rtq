@@ -11,5 +11,5 @@ li.error {
  margin-left:30px;
 }
 .topics-left-bar , .quranic-dua {
- display: none
+ display: block;
 }

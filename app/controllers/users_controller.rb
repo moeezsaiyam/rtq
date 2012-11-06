@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       redirect_back_or_default('/')
       flash[:notice] = "New user has been created."
     else
-      render :controller => 'user', :action => 'new'
+      render 'new'
     end
   end
 
@@ -43,12 +43,12 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = 'Your information has been upfdate successfully'
+        flash[:notice] = 'Your information has been update successfully'
         format.html { redirect_to(logout_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" } unless params[:action_page] == "edit_password"
-           format.html { render :action => "change_password" }
+        format.html { render :action => "change_password" }
       end
     end
   end
