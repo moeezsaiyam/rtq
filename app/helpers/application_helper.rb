@@ -110,10 +110,15 @@ module ApplicationHelper
     url = "https://twitter.com"
     link_to(image_tag("twt.png", :width => "32", :height => "32", :alt=>"Twiter"),  "http://www.twitter.com", :target => "_blank",:class => "social")
      end
-     
+
    def popup_window_sharer
-    target_url = request.url
-    link_to(image_tag("fb.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com", :target => "_blank",:class => "social")
+     html= '<!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+        <a class="addthis_button_preferred_1"></a>
+        <a class="addthis_button_preferred_2"></a>
+        </div>
+        <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5098c1585a5ac6da"></script>
+        <!-- AddThis Button END -->'
    end
    
    def rss_window_sharer_footer
