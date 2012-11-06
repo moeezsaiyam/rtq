@@ -428,7 +428,6 @@ body {
 	float:left;
 	width:260px;
 	border-top:1px solid #eeeeee;
-	background:url(/images/side-nav-rep.png) repeat-y; 
 	
 	}
 	
@@ -438,19 +437,20 @@ body {
 	font-size:14px;
 	color:#333;
 	padding:10px 9px 10px 41px;
-	background:url(/images/normal-bullet.png) no-repeat  19px 15px ;
+	background: url(/images/nav-normal-arrow.png) no-repeat 17px 15px;
   width:210px;
   display:inline-block;
 	}
 	
-.side-nav ul li a:hover, .side-nav ul li a.slected{
+.side-nav ul li a:hover, .side-nav ul li a.selected{
   font-family: 'Square721Regular';
 	float:left;
 	font-size:14px;
 	color:#FFF;
 	width:210px;
-	background:url(/images/side-nav-hover.png) no-repeat left top;
-	background-color: #628010; 
+	background-image: url(/images/nav-hover-arrow.png),url(/images/left-nav-rep.png);
+	background-repeat: no-repeat, repeat-x;
+	background-position: 17px 15px,left;
 }
 
 #col1-1 {
