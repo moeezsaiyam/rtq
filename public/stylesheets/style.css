@@ -2103,3 +2103,8 @@ span p {
  font-size: 14px !important;
 }
 
+
+.simple-page span{
+  font-weight:bold;
+  font-size: 12px;
+}
