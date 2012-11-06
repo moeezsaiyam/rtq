@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_author_and_last_updated_by(item)
-    item.created_by = current_user.name
-    item.last_updated_by = current_user.name
+    item.created_by = current_user.login
+    item.last_updated_by = current_user.login
   end
 end
