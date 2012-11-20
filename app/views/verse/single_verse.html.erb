@@ -20,7 +20,7 @@
       <%= numbered_verse_content(@verse) %>
       <%= verse_text(@verse) %>
       <div class="verse-current-last">
-        <%= translated_verse_name(@trans_verses[@verse.id][:name]) %>
+        <%= translated_verse_name_author(@trans_verses[@verse.id][:name],@trans_verses[@verse.id][:author]) %>
         <%= translated_verse_translation(@trans_verses[@verse.id][:name], @trans_verses[@verse.id][:translation]) %>
       </div>
     </div>

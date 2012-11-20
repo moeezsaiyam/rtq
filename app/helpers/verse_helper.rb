@@ -63,17 +63,24 @@ module VerseHelper
 
   def verse_translation(verse, translated_verses)
     content_tag :div, :class => "verse-color " do
-      [translated_verse_name(translated_verses[verse.id][:name]), translated_verse_translation(translated_verses[verse.id][:name], translated_verses[verse.id][:translation])].join
+      [translated_verse_name_author(translated_verses[verse.id][:name],translated_verses[verse.id][:author]), translated_verse_translation(translated_verses[verse.id][:name], translated_verses[verse.id][:translation])].join
     end
   end
 
   def verse_translation_with_link(verse, translated_verses)
     translation = []
-    translation << translated_verse_name(translated_verses[verse.id][:name])
+    translation << translated_verse_name_author(translated_verses[verse.id][:name],translated_verses[verse.id][:author])
     translation << translated_verse_translation(translated_verses[verse.id][:name], translated_verses[verse.id][:translation])
     translation << link_to("View Context", {:controller => "verse", :action => "single_verse", :id => verse.id, :prev => request.url} , { :class => 'show-verse-search'})
     content_tag :div, :class => "verse-color" do
       translation
+    end
+  end
+
+
+  def translated_verse_name_author(name,author)
+    content_tag :h4 do
+      [name,author].join(':')
     end
   end
 

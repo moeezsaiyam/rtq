@@ -7,7 +7,7 @@
     <% Translation.all.each do |translation| %>
 
     <%= radio_button_tag 'translation_name', translation.table_nam, translation_selected(translation)  %>
-    <%= [translation.language,translation.name].join(' - ') %>
+    <%= [translation.language,translation.name].join(' : ') %>
       <div class="clear translation-margin" ></div>
     <% end %>
    </form>

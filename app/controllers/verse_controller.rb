@@ -12,14 +12,14 @@ class VerseController < ApplicationController
     return if @translation.blank?
 
     @trans_verses = Hash.new
-    @trans_verses[@verse.id] = {:name => @translation.language, :translation => @verse.translate_to_by(@translation.table_nam)[0].text }
+    @trans_verses[@verse.id] = {:name => @translation.language, :translation => @verse.translate_to_by(@translation.table_nam)[0].text, :author => @translation.name }
 
     @prev_verses.each do|v|
-      @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text }
+      @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text, :author => @translation.name }
     end
 
     @next_verses.each do|v|
-      @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text }
+      @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text, :author => @translation.name }
     end
   end
 
@@ -35,7 +35,7 @@ class VerseController < ApplicationController
 
     @trans_verses = Hash.new
     @verses_range.each do|v|
-      @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text }
+      @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text, :author => @translation.name }
       end
   end
 
