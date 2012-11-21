@@ -4,6 +4,15 @@
 <div id="social-container">
   <%= popup_window_sharer %>
 </div>
+
+<div class="search-box header-search">
+  <% form_tag("/home/search", :method => "get") do %>
+    <input name="search_term" type="text" class="s-input watermarked" title="Enter a Keyword"/>
+    <%= submit_tag '', :class => "s-btn" %>
+  <% end %>
+  <div class="clear"></div>
+  <%= link_to "Advance Search" ,"#" %>
+</div>
 <!--/social-container -->
 <!--menu-->
 <div id="menu-bar">

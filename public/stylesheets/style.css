@@ -81,10 +81,11 @@ textarea {
   
   }
 input[type=password], input[type=text]{
-	border:1px solid #f3df95;
-	background:#FFF;
-	color:#333333;
-	padding:5px;
+	border: 1px solid #f3df95;
+  background: #FFF;
+  color: #333333;
+  padding: 5px;
+  margin-top: 20px;
 }
 
 ol, ul {
@@ -2162,4 +2163,35 @@ span p {
 p.about-text {
   color:white;
   padding:30px;
+}
+
+.header-search {
+  float: right;
+  width: 294px;
+  height: 62px;
+}
+
+.header-search .s-btn {
+  float: right;
+  background: url(/images/search-top.png) no-repeat right top;
+  width: 43px;
+  height: 28px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.header-search input[type="text"] {
+  width:215px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.header-search a {
+  color:white;
+  text-decoration:underline;
+  float:right;
+  margin-right:65px;
 }
