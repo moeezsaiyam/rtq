@@ -281,7 +281,7 @@ body {
 #social-container{
 	float:right;
 	padding-top:0px;
-	width:77px;
+	width:137px;
 	position:relative;
 	top:17px;
 	}
@@ -645,11 +645,11 @@ body {
 
 .search-field{
 	float:left;
-	width:493px;
+	width:370px;
 	padding:6px 10px 6px 7px;
 	border:1px solid #ebebeb !important;
 	background:#FFF;
-	margin: 16px 0 0 153px;
+	margin: 8px 0 0 0px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -663,7 +663,7 @@ body {
 	background:#FFF;
 	font-family: 'Square721Regular';
 	font-size: 14px;
-	margin: 8px 0 0 153px;
+	margin: 8px 0 0 0px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;}
@@ -674,22 +674,21 @@ body {
   float: right;
   }
 .search-btn{
-	float:left;
-	background:url(/images/srch.png) no-repeat left top;
-	width:110px;
-	height:63px;
-	font-family: 'Square721Regular';
-	font-size:0px;
-	color:white;
-	text-align:center;
-	margin:10px 0px 0px 20px;
-	border:none;
-	cursor:pointer;
-	outline:none !important;
-	text-indent:-9999px;
-	line-height:0;
-	text-transform:capitalize;
-	
+	float: right;
+  background: url(/images/search.png) no-repeat left top;
+  width: 110px;
+  height: 27px;
+  font-family: 'Square721Regular';
+  font-size: 19px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin: 10px 0px 0px 20px;
+  border: none;
+  cursor: pointer;
+  outline: none !important;
+  text-indent: 27px;
+  line-height: 0;
+  text-transform: capitalize;
 	}
 .search-btn:focus{
 background:url(/images/srch.png) no-repeat left top;
@@ -1510,7 +1509,7 @@ table.admin-view th{
 /* Footer CSS Start */
 #footer {
   background:url(/images/footer-bg.png) repeat-x;
-	height:136px;
+	height:235px;
 	width:100%;
 	margin-top:95px;
 	min-width:1020px;
@@ -1520,7 +1519,7 @@ table.admin-view th{
 #footer .inner{
 	width:1000px;
 	margin:0 auto;
-	padding-top:38px;}
+	padding-top:24px;}
 	
 #footer .connect-with{
 	float:left;
@@ -1553,12 +1552,19 @@ table.admin-view th{
 	
 	
 #footer .logo{
-	background:url(/images/footer-logo.png) no-repeat right top;
+	background:url(/images/quran-f.png) no-repeat right top;
 	float:right;
 	width:160px;
 	height:75px;
 	}
 	
+#footer .copy-right{
+	background:url(/images/copy-right.png) no-repeat right top;
+	float:right;
+	width:160px;
+	height:50px;
+}
+
 #footer .search-box{
 	float:left;
 	margin-left:204px;
@@ -1719,7 +1725,6 @@ width:100%;
   right:-157px;
 }
 .footer {
-  padding-right: 30px;
   margin-left: 27px;
 }
 .my_custom_googleplusone{
@@ -1825,17 +1830,17 @@ border-bottom:none;
   margin-top: 9px;
 }
 #slider .textholder{
-  background-color: #0F0F0F !important;
-  border-radius: 12px 12px 12px 12px;
-  box-shadow: 7px 4px 0 #000000;
+  background-color: transparent !important;
+  background: url(/images/slider.png) no-repeat left top;
   color: #4b6a15;
   font-family: 'Square721Regular';
   font-size: 17px;
-  height: 166.1px !important;
-  margin-bottom: 31px !important;
+  height: 167.1px !important;
+  margin-bottom: 7px !important;
   opacity: 0.9 !important;
   padding: 11px;
-  width: 336px !important;
+  padding-left: 17px;
+  width: 325px !important;
 }
 .white-color{
 }
@@ -1845,24 +1850,23 @@ border-bottom:none;
   color:#4b6a15;
   font-family: 'Square721Regular'; 
   font-size:18px;
-  margin-left:23px;
 }
 #carousel .textholder b{
-  float:left;
-  clear:both;
-  font-weight:normal;
+  float: left;
+  clear: both;
+  font-weight: normal;
   font-family: 'Square721Regular';
-  font-size:14px;
-  padding:10px 0;
-  text-align:justify;
-  color:#fff;
+  font-size: 14px;
+  padding: 15px 25px 13px 0px;
+  text-align: justify;
+  color: #fff;
 }
 #carousel .textholder a{
   float: right;
   font-size: 13px;
   font-family: 'Square721Regular';
- margin: -25px 1px 11px 11px;
- color:#FFB90F;
+  margin: 0px 28px 11px 11px;
+  color: #FFB90F;
 }
 .admin-page h1{
   color:#4b6a15;
@@ -2116,4 +2120,46 @@ span p {
 .simple-page span {
   font-weight:bold;
   font-size: 14px;
+}
+
+.footer-colm1 {
+  background: url(/images/footer-box.png) no-repeat right top;
+  float: left;
+  width: 41%;
+  height: 210px;
+}
+
+.footer-colm1-content {
+  background: url(/images/footer-head.png) no-repeat left top;
+  font-family: 'Square721Regular';
+  width: 661px;
+  height: 42px;
+  font-size: 16px;
+  color: #FFF;
+  padding: 10px 0 0 24px;
+  float: left;
+  top: -4px;
+  left: 9px;
+  margin-left: 10px;
+}
+
+.footer-colm1-content p {
+  font-family: 'Square721Regular';
+  font-size: 16px;
+}
+
+.footer-colm2 {
+  float: left;
+  width: 38%;
+  margin-left: 22px;
+}
+
+.footer-colm3 {
+  float:right;
+  width:16%;
+}
+
+p.about-text {
+  color:white;
+  padding:30px;
 }

@@ -26,14 +26,14 @@ $(document).ready(function()
 });
 </script>
 
-<div class="search-topic">Search Keyword</div>
 <div id="search_form">
   <% form_tag("/home/search", :method => "get") do %>   
-    <input name="search_term" type="text" class="search-field watermarked" title="Search" value="<%= params[:search_term]%>"/>
+    <input name="search_term" type="text" class="search-field watermarked" title="Search Keyword" value="<%= params[:search_term]%>"/>
     <div class="search-terms">
        <%= display_topics %>
       <%= display_subtopics %>
     </div>
+    <div class="clear"></div>
     <%= submit_tag 'Search', :class => "search-btn" %>
   <% end %>
 </div>

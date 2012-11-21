@@ -27,6 +27,8 @@
       <%= javascript_include_tag 'script' %>
       <%= javascript_include_tag 'ckeditor/ckeditor' %>
       <%= javascript_include_tag 'main' %>
+      <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+      <script type="text/javascript">stLight.options({publisher: "ur-fb6aa0f2-f7d2-deff-7558-3becde1361ae"});</script>
       <%= yield :head %>
   </head>
 <body>
@@ -67,9 +69,6 @@
     <%= render :partial => "shared/admin_menu" %>
     <!--col-2 -->
     <div id="col-2">
-      <div class="search-container1">
-        <%= render :partial => "shared/search" %>
-      </div>
       <% if !flash[:error].blank? %>
         <div class="error-box">
           <%= flash[:error] %>

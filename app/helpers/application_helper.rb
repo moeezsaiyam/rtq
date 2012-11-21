@@ -112,13 +112,9 @@ module ApplicationHelper
      end
 
    def popup_window_sharer
-     html= '<!-- AddThis Button BEGIN -->
-        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-        <a class="addthis_button_preferred_1"></a>
-        <a class="addthis_button_preferred_2"></a>
-        </div>
-        <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5098c1585a5ac6da"></script>
-        <!-- AddThis Button END -->'
+     html= "<span class='st_googleplus_large' displayText='Google +'></span></span>
+            <span class='st_twitter_large' displayText='Tweet'></span>
+            <span class='st_facebook_large' displayText='Facebook'></span>"
    end
    
    def rss_window_sharer_footer

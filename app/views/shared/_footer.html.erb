@@ -1,26 +1,28 @@
 <!--inner -->
 <div class="inner">
-
-  <!--connect-with -->
-  <div class="connect-with">
-    <h6> Connect with us</h6>
-    <div class = "footer">
-      <%= popup_window_sharer%>
+  <div class="footer-colm1">
+    <div class="footer-colm1-content">
+      <p>About this website</p>
+    </div>
+       <p class="about-text"><%= display_full_text(StaticContent.first.about[0...500]) %>... <%= link_to("[Read more]", { :controller => "main", :action => "about"}, {:class => 'about' })%></p>
+  </div>
+  <div class="footer-colm2">
+    <div>
+      <%= render :partial => "shared/search" %>
     </div>
   </div>
-  <!--/connect-with -->
-
-  <!--search-box -->
-  <div class="search-box"><h5>Quick Search</h5>
-    <% form_tag("/home/search", :method => "get") do %>
-      <input name="search_term" type="text" class="s-input watermarked" title="Search"/>
-      <%= submit_tag '', :class => "s-btn" %>
-    <% end %>
-
+  <div class="footer-colm3">
+  <div>
+    <a href="/" class="logo"></a>
   </div>
-  <!--/search-box -->
-
-  <a href="/" class="logo"></a>
-
-
+  <div class="clear"></div>
+  <div class = "footer">
+    <h6> Connect with us</h6>
+    <%= popup_window_sharer%>
+  </div>
+  <div>
+    <a href="/" class="copy-right"></a>
+  </div>
+  </div>
+  <!--connect-with -->
 </div> <!--/inner -->
