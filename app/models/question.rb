@@ -52,7 +52,6 @@ class Question < ActiveRecord::Base
       self.alternate_phrases.build(new_phrase_attribute)
       puts self.inspect
       puts self.alternate_phrases.inspect
-      puts '@'*100
      else
        alternate = self.alternate_phrases.detect{ |t| t.id.to_s == new_phrase_attribute['id']}
        alternate.attributes = new_phrase_attribute
