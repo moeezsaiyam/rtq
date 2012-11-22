@@ -705,6 +705,44 @@ background:url(/images/srch.png) no-repeat left top;
 	cursor:pointer;
 	outline:none !important;
 	}
+	
+	.f-search-btn{
+	float: right;
+  background: url(/images/search.png) no-repeat left top;
+  width: 110px;
+  height: 27px;
+  font-family: 'Square721Regular';
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin: 10px 0px 0px 20px;
+  border: none;
+  cursor: pointer;
+  outline: none !important;
+  text-indent: 27px;
+  line-height: 0;
+  text-transform: capitalize;
+	}
+	
+.f-search-btn:focus{
+background:url(/images/srch.png) no-repeat left top;
+	float: right;
+  background: url(/images/search.png) no-repeat left top;
+  width: 110px;
+  height: 27px;
+  font-family: 'Square721Regular';
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin: 10px 0px 0px 20px;
+  border: none;
+  cursor: pointer;
+  outline: none !important;
+  text-indent: 27px;
+  line-height: 0;
+  text-transform: capitalize;
+	}
+	
 .search-terms{
   float:left;
   width:535px;
