@@ -23,7 +23,7 @@ ol,ul,dl
 	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
     padding:0 40px;
 }
-body span, body p {
+body span, body p, body li {
  font-family: 'Square721Regular';
  text-align: justify;
  font-size: 14px;
