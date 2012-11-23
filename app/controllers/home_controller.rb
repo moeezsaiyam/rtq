@@ -18,26 +18,30 @@ class HomeController < ApplicationController
   end
 
   def search
-    if params[:search_terms].blank? || (params[:search_terms][:search_topic].blank? && params[:search_term][:search_sub_topic].blank?)
+    if params[:search_terms].blank? || (params[:search_terms][:search_topic].blank? && params[:search_terms][:search_sub_topic].blank?)
       @search = ThinkingSphinx.search params[:search_term], :per_page => 10, :page => params[:page]
       if @search.blank?
-      @empty_search = "abc"
+        @empty_search = "abc"
       end
-     if params[:search_term] == 'Search'
-     @blank_search = ThinkingSphinx.search :per_page => 10, :page => params[:page]
+      if params[:search_term] == 'Enter a Keyword'
+       @search = ThinkingSphinx.search :per_page => 10, :page => params[:page]
       end
-      else
+    else
       search_terms = refactor_search_terms(params[:search_terms])
       @sub_topics_search = SubTopic.perform_search(params[:search_term], search_terms) unless params[:search_terms][:search_sub_topic].blank? && params[:search_term].blank?
       unless params[:search_terms][:search_sub_topic].blank? && params[:search_term].blank? && @sub_topics_search.blank?
       @empty_search = "abc"
       end 
         @questions_search = Question.search params[:search_term]
+        subtopic_questions = Question.find(:all ,:conditions=>["sub_topic_id =?", params[:search_terms][:search_sub_topic]])
+        @questions_search = @questions_search & subtopic_questions
         @topics_search = Topic.perform_search(params[:search_term], search_terms) unless params[:search_terms][:search_topic].blank? && params[:search_term].blank?
+        @topics_search << Topic .find(params[:search_terms][:search_topic])
+        @sub_topics_search = Topic .find(params[:search_terms][:search_topic]).sub_topics
         unless params[:search_terms][:search_topic].blank? && params[:search_term].blank? && @topics_search.blank?
          @empty_search = "abc"
         end
-    end 
+    end
   end
 
   private

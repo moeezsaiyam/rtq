@@ -42,7 +42,6 @@ class Question < ActiveRecord::Base
   end
 
   def self.perform_search(search, search_terms)
-
   end
 
   def alternate_phrase_attributes=(new_phrase_attributes)
