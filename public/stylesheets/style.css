@@ -2203,6 +2203,10 @@ p.about-text {
   padding:30px;
 }
 
+.about-text span{
+  background-color:transparent !important;
+  padding:30px;
+}
 .header-search {
   float: right;
   width: 294px;
