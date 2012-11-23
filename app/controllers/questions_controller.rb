@@ -77,6 +77,7 @@ class QuestionsController < ApplicationController
         format.html { redirect_to(topic_sub_topic_question_path(@question.sub_topic.topic,@question.sub_topic,@question)) }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
+        @question.references.build
         format.html { render :action => "new" }
         format.xml  { render :xml => @question.errors, :status => :unprocessable_entity }
       end
