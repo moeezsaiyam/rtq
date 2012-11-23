@@ -35,6 +35,7 @@
     <% @question.alternate_phrases.each do |alternate_phrase| %>
       <% fields_for "question[alternate_phrase_attributes][]", alternate_phrase do |phrase_form|%>
         <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %><br />
+        <%= phrase_form.hidden_field :question_id, :value=> @question.id, :name => 'question[alternate_phrase_attributes][][question_id]' %>
       <% end %>
     <% end %>
   </div>

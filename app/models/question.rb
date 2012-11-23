@@ -46,6 +46,7 @@ class Question < ActiveRecord::Base
   end
 
   def alternate_phrase_attributes=(new_phrase_attributes)
+    self.save(:validate => false)
     new_phrase_attributes.each do |new_phrase_attribute|
      if new_phrase_attribute[:id].blank?
       self.save(:validate => false)
@@ -73,7 +74,8 @@ class Question < ActiveRecord::Base
   end
 
   def save_tasks
-    alternate_phrases.each do|phrase|
+    self.alternate_phrases.each do|phrase|
+      phrase.question_id = self.id
       phrase.save(false)
     end
     self.references.each do|reference|
