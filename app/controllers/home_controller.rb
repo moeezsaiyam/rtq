@@ -35,9 +35,17 @@ class HomeController < ApplicationController
         @questions_search = Question.search params[:search_term]
         subtopic_questions = Question.find(:all ,:conditions=>["sub_topic_id =?", params[:search_terms][:search_sub_topic]])
         @questions_search = @questions_search & subtopic_questions
-        @topics_search = Topic.perform_search(params[:search_term], search_terms) unless params[:search_terms][:search_topic].blank? && params[:search_term].blank?
-        @topics_search << Topic .find(params[:search_terms][:search_topic])
-        @sub_topics_search = Topic .find(params[:search_terms][:search_topic]).sub_topics
+        if params[:search_terms][:search_topic].present?
+          @topics_search = Topic.perform_search(params[:search_term], search_terms) unless params[:search_terms][:search_topic].blank? && params[:search_term].blank?
+          @topics_search << Topic.find(params[:search_terms][:search_topic])
+          @sub_topics_search = Topic.find(params[:search_terms][:search_topic]).sub_topics
+        else
+          if params[:search_terms][:search_sub_topic].present?
+            @sub_topics_search << SubTopic.find(params[:search_terms][:search_sub_topic])
+            @topics_search = []
+            @topics_search << SubTopic.find(params[:search_terms][:search_sub_topic]).topic
+          end
+        end
         unless params[:search_terms][:search_topic].blank? && params[:search_term].blank? && @topics_search.blank?
          @empty_search = "abc"
         end
