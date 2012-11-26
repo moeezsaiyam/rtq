@@ -4,7 +4,7 @@
     <div class="footer-colm1-content">
       <p>About this website</p>
     </div>
-       <p class="about-text"><%= display_full_text(StaticContent.first.about[0...700]) %>... 
+       <p class="about-text"><%= display_full_text(StaticContent.first.about[0...300]) %>... 
        <%= link_to("[Read more]", { :controller => "main", :action => "about"}, {:class => 'about' })%></p>
   </div>
   <div class="footer-colm2">
