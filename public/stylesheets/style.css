@@ -2211,6 +2211,7 @@ p.about-text {
   float: right;
   width: 294px;
   height: 62px;
+  margin-right:60px;
 }
 
 .header-search .s-btn {
