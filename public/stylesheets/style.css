@@ -2269,3 +2269,7 @@ p.about-text {
 #login .u-input {
   margin-top:1px !important;
 }
+
+.st_googleplus_large .stButton .stLarge {
+ background-image: url("/images/google.png") !important;
+}

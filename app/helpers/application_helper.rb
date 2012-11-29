@@ -116,9 +116,9 @@ module ApplicationHelper
      end
 
    def popup_window_sharer
-     html= "<span class='st_googleplus_large' displayText='Google +'></span></span>
-            <span class='st_twitter_large' displayText='Tweet'></span>
+     html= "<span class='st_googleplus_large google-bg' displayText='Google +'></span>
             <span class='st_facebook_large' displayText='Facebook'></span>
+            <span class='st_twitter_large' displayText='Tweet'></span>
             <script type='text/javascript' src='http://w.sharethis.com/button/buttons.js'></script>
       <script type='text/javascript'>stLight.options({publisher: 'ur-fb6aa0f2-f7d2-deff-7558-3becde1361ae'});</script>"
    end
