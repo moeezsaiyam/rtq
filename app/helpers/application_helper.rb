@@ -10,7 +10,11 @@ module ApplicationHelper
       @tags1 = q_to.split(":")
       verses_ids_to.each_with_index do |id_to,ii|
        verses_ids.each_with_index do |id,i|
-        html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> #{@tags[0]} : #{@tags[1]} - #{@tags1[0]} : #{@tags1[1]}</a>")
+        if @tags[0] == @tags1[0] and @tags[1] == @tags1[1]
+          html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> #{@tags[0]} : #{@tags[1]}</a>")
+        else
+          html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> #{@tags[0]} : #{@tags[1]} - #{@tags1[0]} : #{@tags1[1]}</a>")
+        end
       end
        end
       html = html.join(" , ")
