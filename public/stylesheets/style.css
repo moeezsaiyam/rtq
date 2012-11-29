@@ -468,6 +468,8 @@ background-image:url(/images/nav-hover-arrow.png), -webkit-gradient(
 background-position: 10% 50%, 0% 0%;
 background-origin: border-box, border-box;
 background-repeat: no-repeat, no-repeat;
+position:relative;
+z-index:1;
 }
 
 #col1-1 {
@@ -527,6 +529,7 @@ background-repeat: no-repeat, no-repeat;
 	font-size:14px;
 	color:#FFF;
 	width:210px;
+	 background-image: url(/images/nav-hover-arrow.png)\9;
 	 background-image:url(/images/nav-hover-arrow.png) , linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
 background-image:url(/images/nav-hover-arrow.png), -o-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
 background-image:url(/images/nav-hover-arrow.png), -moz-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
@@ -539,12 +542,12 @@ background-image:url(/images/nav-hover-arrow.png), -webkit-gradient(
  left top,
  color-stop(0.1, rgb(149,175,5)),
  color-stop(0.7, rgb(97,127,16)));
- background-image: url(/images/nav-hover-arrow.png)\9;
  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#96af05', endColorstr='#617f10',GradientType=0); /* IE6-9 */
 background-position: 10% 50%, 0% 0%;
 background-origin: border-box, border-box;
 background-repeat: no-repeat, no-repeat;
-
+position:relative;
+z-index:1, 2;
 	
 	}
 	
