@@ -465,6 +465,7 @@ background-image:url(/images/nav-hover-arrow.png), -webkit-gradient(
  color-stop(0.7, rgb(97,127,16))
 );
 
+ filter:url(/images/nav-hover-arrow.png), progid:DXImageTransform.Microsoft.gradient(startColorstr='#96af05', endColorstr='#617f10',GradientType=0); /* IE6-9 */
 background-position: 10% 50%, 0% 0%;
 background-origin: border-box, border-box;
 background-repeat: no-repeat, no-repeat;
@@ -538,9 +539,8 @@ background-image:url(/images/nav-hover-arrow.png), -webkit-gradient(
  left bottom,
  left top,
  color-stop(0.1, rgb(149,175,5)),
- color-stop(0.7, rgb(97,127,16))
-);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96af05', endColorstr='#617f10',GradientType=0 ); /* IE6-9 */
+ color-stop(0.7, rgb(97,127,16)));
+ filter:url(/images/nav-hover-arrow.png), progid:DXImageTransform.Microsoft.gradient(startColorstr='#96af05', endColorstr='#617f10',GradientType=0); /* IE6-9 */
 
 background-position: 10% 50%, 0% 0%;
 background-origin: border-box, border-box;
