@@ -3,7 +3,7 @@
 <% content_for :html_keywords, @words %>
 <% content_for :html_description, @description[0..255] %>
 <div class="content-body text-body">
-  <h1>ABOUT
+  <h1>ABOUT</h1>
 
     <% if logged_in?  %>
       <% if admin? %>
@@ -19,5 +19,4 @@
           <p><%= display_full_text(@content.about) %></p>
         </span>
     <%end%>
-  </h1>
 </div>
