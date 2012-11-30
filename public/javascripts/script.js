@@ -51,7 +51,10 @@ $(document).ready(function()
    return false;
    });
 
-    
+  $('#advance-search').click(function(){
+    window.location.hash = '#footer2'
+   return true;
+   });
  $('.trans-select form input').click(function() {
   $.cookies.set($(this).val(), this.checked, {path:'/'});
   $('.trans-select form').submit();
