@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = 'Your information has been update successfully'
-        format.html { redirect_to(logout_url) }
+        format.html { redirect_to user_path(@user)}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" } unless params[:action_page] == "edit_password"
