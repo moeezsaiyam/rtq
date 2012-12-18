@@ -2273,3 +2273,8 @@ p.about-text {
 .st_googleplus_large .stButton .stLarge {
  background-image: url("/images/google.png") !important;
 }
+
+.header-search-tab2 {
+  width: 304px;
+  margin-bottom: 30px;
+}

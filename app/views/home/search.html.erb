@@ -1,3 +1,6 @@
+<div class="header-search-tab2">
+  <%= render :partial => "shared/search" %>
+</div>
 <br><div class="content-body">
   <% unless params[:search_term] == 'Search' %>
  <div class = "search-keyword">
@@ -5,10 +8,10 @@
  </div>
  <%end%>
  <% if params[:search_term] == 'Search' %>
- <div class = "search-keyword">
-<h1>Search results </h1><br>
- </div>
-   <% end %>
+   <div class = "search-keyword">
+     <h1>Search results </h1><br>
+   </div>
+<% end %>
   <ul>
     <% unless @topics_search.blank? %>
       <% @topics_search.each_with_index do |topic,i| %>
