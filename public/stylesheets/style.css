@@ -1843,7 +1843,7 @@ position: absolute;
     border-bottom: 1px dashed #cccccc;
     float: left;
     margin-left: 20px;
-    width: 643px;
+    width: 96%;
 }
 
 .separator-issue-width{
@@ -2277,4 +2277,8 @@ p.about-text {
 .header-search-tab2 {
   width: 304px;
   margin-bottom: 30px;
+}
+
+.prev-link {
+  float:right;	
 }

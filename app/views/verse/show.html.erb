@@ -21,9 +21,10 @@
 <% end %>
 
 <div class="clear translation-margin"></div>
+<div class = "verse-wrapper">
+  <%= previous_link("Question") %>
+
+  <%= formatted_verses_with_link(@verses_range, @trans_verses) %>
 
 <%= previous_link("Question") %>
-<div class = "verse-wrapper">
-  <%= formatted_verses_with_link(@verses_range, @trans_verses) %>
 </div>
-<%= previous_link("Question") %>

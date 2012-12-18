@@ -4,12 +4,8 @@
  <div class = "trans-line">
    <form method = "post">  
     <%= hidden_field_tag 'prev', params[:prev] %>
-    <% Translation.all.each do |translation| %>
-
-    <%= radio_button_tag 'translation_name', translation.table_nam, translation_selected(translation)  %>
-    <%= [translation.language,translation.name].join(' : ') %>
-      <div class="clear translation-margin" ></div>
-    <% end %>
+      <%=@translation.table_nam%>
+      <%= select_tag 'translation_name', options_for_select(Translation.all.collect{|c| [[c.language,c.name].join(' : '), c.table_nam]}, params[:translation_name]),  :onchange=>"this.form.submit()" %>
    </form>
 </div>
 </div>
