@@ -3,7 +3,8 @@
    <form method = "post"> 
       <%= hidden_field_tag 'prev', params[:prev] %>
       <%= label_tag 'Select Translation' %>
-      <%= select_tag 'translation_name', options_for_select(Translation.all.collect{|c| [[c.language,c.name].join(' : '), c.table_nam]}, params[:translation_name]),  :onchange=>"this.form.submit()" %>
+
+      <%= select_tag 'translation_name', options_for_select(Translation.all.collect{|c| [[c.language,c.name].join(' : '), c.table_nam]}, Translation.get_translation(cookies, params).table_nam),  :onchange=>"this.form.submit()" %>
    </form>
 </div>
 </div>
