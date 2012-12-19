@@ -1305,7 +1305,7 @@ table.admin-view th{
   text-align:center;
   color:white;
   font-family: 'Square721Regular';
-  font-size:14px;
+  font-size:14px !important;
   line-height:28px;
   margin-right:10px;
 }
@@ -2333,7 +2333,6 @@ p.about-text {
 
 .button a {
   color: #fff;
-  font-size: 16px;
   text-transform: capitalize;
 }
 
@@ -2341,4 +2340,8 @@ p.about-text {
   color: #fff !important;
   border: none;
   background-color:transparent !important;	
+}
+
+.top-links .admin-back-link {
+  margin-top: 5px;	
 }
