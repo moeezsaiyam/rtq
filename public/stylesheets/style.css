@@ -162,12 +162,13 @@ a img.aligncenter {
 }
 
 
-h1{  font-family: 'Square721Regular';
-	 font-size:22px;
-	 line-height:22px;
-	 font-weight:normal;
-	 padding-bottom:10px;
-	 color:#577818;}
+h1{  
+	font-family: 'Square721Regular';
+	font-size:22px;
+	line-height:34px;
+	font-weight:normal;
+	padding-bottom:10px;
+	color:#577818;}
 	 
 	 h1 a{  font-family: 'Square721Regular';
 	 font-size:18px;
@@ -1311,9 +1312,9 @@ table.admin-view th{
 }
 .addthis_toolbox{
   float: right !important;
-  position:absolute:
-  bottom:10px;
-  width:90px
+  width:90px;
+  margin-top: 6px;
+
  }
 
 .list-points{
