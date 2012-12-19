@@ -1844,8 +1844,9 @@ position: absolute;
 .separator-issue-width{
     border-bottom: 1px dashed #cccccc;
     float: left;
-    margin-left: -1px;
+    margin-left: 0px;
     width: 643px;
+    margin-bottom: 10px
 }
 
 .separator-search-width{
