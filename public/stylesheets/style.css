@@ -2337,3 +2337,9 @@ p.about-text {
   font-size: 16px;
   text-transform: capitalize;
 }
+
+.button input[type="submit"] {
+  color: #fff !important;
+  border: none;
+  background-color:transparent !important;	
+}
