@@ -2342,3 +2342,7 @@ p.about-text {
   border: none;
   background-color:transparent !important;	
 }
+
+.top-links .admin-back-link {
+  margin-top: 5px;	
+}
