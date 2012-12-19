@@ -3,6 +3,14 @@
 <div>
 <br><div class ="admin-page"> <h1>Listing Members</div></h1></div>
 
+<div>  
+  <div class="dashboard action-button button rounded-borders">
+    <%= link_to 'New User', new_user_path %>
+  </div>
+  <div class="admin-back-link">
+    <%= link_to 'Back',admin_dashboard_path %>
+  </div>
+</div> 
 <table class="admin-view table-topics">
   <thead>
     <tr>
@@ -23,12 +31,14 @@
     <% end %>
   </tbody>
 </table>
-<div class="dashboard">
-  <%= link_to 'New User', new_user_path %>
+<div>  
+  <div class="dashboard action-button button rounded-borders">
+    <%= link_to 'New User', new_user_path %>
+  </div>
   <div class="admin-back-link">
     <%= link_to 'Back',admin_dashboard_path %>
   </div>
-</div>
+</div>  
 <div class = "clear" ></div>
 <% else %>
   <h1>you don't have permissions for this task.</h1>
