@@ -2,7 +2,7 @@
 <% content_for :html_keywords, @words %>
 <br><div class = "content-body-admin">
 <div class = "content-body1">
-<br><div class ="admin-page"> <h1>New sub_topic</div></h6></div>
+<br><div class ="admin-page"> <h1>New Sub Topic</div></h6></div>
 <%= javascript_include_tag 'main' %>
 <% form_for @sub_topic, :url => topic_sub_topics_path(params[:topic_id]), :method => :post, :html => {:multipart => true} do |f| %>
 
@@ -19,31 +19,33 @@
     <% end %>
   </div>
 
-  <p>
-    <%= f.label :topic_id %><br />
+  
+    <%= f.label :topic_id %>
+    <div class="clear"></div>
     <%= select("sub_topic", "topic_id", Topic.ordered.all.collect {|t| [ t.name, t.id ] }) %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
+    <div class="clear"></div>
+    <br>
+    <%= f.label :name %>
+    <div class="clear"></div>
     <%= f.text_field :name %>
-  </p>
-  <p>
+    <div class="clear"></div>
+    <br>
     <%= f.label :description %>
     <div class="clear"></div>
     <%= hidden_field_tag 'sub_topic[id]', @sub_topic.id %>
     <textarea id="editor" name="sub_topic[description]"></textarea>
-  </p>
-
-  <p>
+    <div class="clear"></div>
+    <br>
     <%= f.label :photo, "Photo" %>
+    <div class="clear"></div>
     <%= f.file_field :photo %>
-  </p>
-  <p>
+    <div class="clear"></div>
+    <br>
     <%= f.check_box :featured %>Click here to feature this sub topic on main page.
-  </p>
-  <p>
+    <div class="clear"></div>
+     <br><br>
     <%= f.submit 'Create' %>
-  </p>
+
 <% end %>
 </div><br>
 
