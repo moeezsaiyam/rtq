@@ -25,10 +25,11 @@
 </table>
 <div class="dashboard">
   <%= link_to 'New User', new_user_path %>
+  <div class="admin-back-link">
+    <%= link_to 'Back',admin_dashboard_path %>
+  </div>
 </div>
 <div class = "clear" ></div>
-</br>
-<%= link_to 'Back',admin_dashboard_path %>
 <% else %>
   <h1>you don't have permissions for this task.</h1>
 <%end%>

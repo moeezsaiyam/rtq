@@ -2325,4 +2325,9 @@ p.about-text {
 
 .header-search input[type="text"] {
 	margin-top: 20px;
-} 
+}
+
+.admin-back-link {
+  float:right;
+  font-size: 21px;
+}

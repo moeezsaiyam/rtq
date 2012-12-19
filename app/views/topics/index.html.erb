@@ -29,12 +29,14 @@
   <% end %>
   </tbody>
 </table>
-<%= submit_tag "Update Order" , :class => "action-button button rounded-borders" %>
+<div>
+  <%= submit_tag "Update Order" , :class => "action-button button rounded-borders" %>
+  <div class="admin-back-link">
+  <%= link_to 'Back',admin_dashboard_path %>
+</div>
+</div>  
 <% end %>
 <div class="clear"></div>
 <div class="dashboard">
   <%= link_to 'New topic', new_topic_path %>
 </div>
-<br>
-<%= link_to 'Back',admin_dashboard_path %>
-
