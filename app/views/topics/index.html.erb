@@ -3,8 +3,17 @@
 <div class = "content-body1">
 <br><div class ="admin-page"> <h1>Listing Topics</div></h1></div>
 
-
+<div>
+  <div class="dashboard action-button button rounded-borders">
+    <%= link_to 'New topic', new_topic_path %>
+  </div>
+  <div class="admin-back-link">
+    <%= link_to 'Back',admin_dashboard_path %>
+  </div>
+</div>  
 <% form_tag( save_order_topics_path ) do %>
+<div class="clear"></div>
+  </br>
 <table class="admin-view table-topics">
   <thead>
     <tr>
@@ -37,6 +46,7 @@
 </div>  
 <% end %>
 <div class="clear"></div>
-<div class="dashboard">
+</br>
+<div class="dashboard action-button button rounded-borders">
   <%= link_to 'New topic', new_topic_path %>
 </div>
