@@ -85,7 +85,8 @@ input[type=password], input[type=text]{
   background: #FFF;
   color: #333333;
   padding: 5px;
-  margin-top: 20px;
+  margin-top: 8px;
+  margin-bottom: 10px;
 }
 
 ol, ul {
@@ -2286,4 +2287,12 @@ p.about-text {
 .verse-wrapper .prev-link {
 	float:left !important;
 	margin-top: 70px;
+}
+
+.admin-view {
+	margin-bottom: 20px;
+}
+
+.change-password {
+  margin-bottom: 20px;
 }
