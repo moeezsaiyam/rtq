@@ -1173,8 +1173,8 @@ border-bottom:none;}
  }
 .trans-select label{
  float:left;
- padding:0px 0px 10px 10px;
- 
+ font-size: 14px;
+ text-transform: capitalize;
  }
 	
 .question ul li a{
@@ -1757,7 +1757,7 @@ bread-crumb .breadfont{
 }
 .verse-background{
     background-color:#EBEBEB;
-    margin:10px 0px 10px 0px;
+    margin:0px 0px 10px 0px;
     border-radius:10px;
     
 ;}
@@ -2277,7 +2277,8 @@ p.about-text {
 }
 
 .prev-link {
-  float:right;	
+  float:right;
+  margin-top:25px; 
 }
 
 .translations-box {
