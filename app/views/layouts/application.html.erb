@@ -43,14 +43,14 @@
   <div class="clear"></div>
   <!--content-->
   <div id="content">
-    <% unless @questions_search.blank? && @sub_topics_search.blank? && @topics_search.blank? && @search.blank? && @empty_search.blank? %>
-  <div id="col1-1">
-  <div class="side1-nav">
-   <%= render :partial => "shared/left_sidebar" %>
+    <% unless @questions_search.blank? && @sub_topics_search.blank? && @topics_search.blank? && @search.blank? && @empty_search.blank?    %>
+      <div id="col1-1">
+        <div class="side1-nav">
+          <%= render :partial => "shared/left_sidebar" %>
+        </div>
+        <div class="clear"></div>
+        <a href="/main/duas" class="quranic-dua1"></a>
       </div>
-       <div class="clear"></div>
-      <a href="/main/duas" class="quranic-dua1"></a>
-    </div>
     <%end%>
     <!-- col-1-->
     <% if @topics_search.blank? && @questions_search.blank? && @sub_topics_search.blank? && @search.blank? && @empty_search.blank? && (@verses_range.blank? && @next_verses.blank? && @prev_verses.blank?) %>
@@ -81,7 +81,7 @@
       <%= yield %>
     </div>
     <!--/col-2 -->
-    <% else %>
+    <% elsif @verses_range.present? || @next_verses.present? || @prev_verses.present? %>
       <div id="col-">
       <% if !flash[:error].blank? %>
         <div class="error-box">
@@ -93,12 +93,25 @@
           <%= flash[:notice] %>
         </div>
       <% end %>
-      <div class="clear"></div>
-        <%= render :partial => "shared/translations" %>
         <%= yield %>
     </div>
     <!--/col-2 -->
-    <%end%>
+    <% else %>
+      <div id="col-2">
+      <% if !flash[:error].blank? %>
+        <div class="error-box">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+      <% if !flash[:notice].blank? %>
+        <div class="notice-box">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <div class="clear"></div>
+      <%= yield %>
+    </div>
+    <% end %>
     <!--/col-1-->
    
     <div class="clear"></div>

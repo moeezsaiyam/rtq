@@ -1,10 +1,7 @@
 <div class="trans-select">
- <div class = "trans">
- Translations </div><br>
  <div class = "trans-line">
    <form method = "post">  
     <%= hidden_field_tag 'prev', params[:prev] %>
-      <%=@translation.table_nam%>
       <%= select_tag 'translation_name', options_for_select(Translation.all.collect{|c| [[c.language,c.name].join(' : '), c.table_nam]}, params[:translation_name]),  :onchange=>"this.form.submit()" %>
    </form>
 </div>

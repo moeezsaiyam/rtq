@@ -19,10 +19,14 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag 'conditional' %>
 <% end %>
-
-<div class="clear translation-margin"></div>
-<div class = "verse-wrapper">
+<div>
+  <div class="clear"></div>
+  <%= render :partial => "shared/translations" %>
   <%= previous_link("Question") %>
+</div>
+<div class="clear translation-margin"></div>
+
+<div class = "verse-wrapper">
 
   <%= formatted_verses_with_link(@verses_range, @trans_verses) %>
 
