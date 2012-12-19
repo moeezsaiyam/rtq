@@ -20,29 +20,30 @@
     <% end %>
   </div>
 
-  <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
+    <div class="clear"></div>
     <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :meaning %><br />
+    <div class="clear"></div>
+    <br>
+    <%= f.label :meaning %>
+    <div class="clear"></div>
     <%= f.text_field :meaning %>
-  </p>
-  <p>
+    <div class="clear"></div>
+    <br>
     <%= f.label :description %>
     <div class="clear"></div>
     <%= hidden_field_tag 'topci[id]', @topic.id %>
     <textarea id="editor" name="topic[description]"></textarea>
-  </p>
-
-  <p>
+    <br>
+    <div class="clear"></div>
     <%= f.label :photo, "Photo" %>
+    <div class="clear"></div>
     <%= f.file_field :photo %>
-  <p>
-
-  <p>
+  
+     <br><br><br>
+  
     <%= f.submit 'Create' %>
-  </p>
+
 <% end %>
 </div><br>
 <%= link_to 'Back', topics_path %>
