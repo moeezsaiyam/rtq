@@ -1,9 +1,5 @@
-<div class="dashboard-trans">
-<div class ="admin-page"> 
-  <h1><%= link_to 'List all Topics', topics_path %>
-</div></h1></div><br>
-<div class="dashboard-trans">
-<div class ="admin-page"> 
- <h1>
-<%= link_to("Translation Setting", :controller => "translations", :action => "index")%>
-</div></h1></div>
+<div class="admin-board">
+
+  <%= link_to 'List all Topics ', topics_path %> |
+  <%= link_to(" Translation Setting", :controller => "translations", :action => "index")%>
+</div>  
