@@ -32,18 +32,18 @@
    </div>
    <div id="full-text" style="display:none">
      <p><%= display_full_text(@topic.description) %></p> 
-     <a href = "#" id = "less" ,class= "lesslink""> Less </a>
+     <a href = "#" id = "less" ,class= "lesslink"> Less </a>
    </div>
 	<% end %>
 </div>
-  <% if admin_role?%>
+  <% if admin_role? %>
     <div class = "actions" >
       <%= link_to 'Edit', edit_topic_path(@topic), :class => "action-button button rounded-borders" %>
       <%= link_to 'Add Sub Topic', new_topic_sub_topic_path(@topic), :class => "action-button button rounded-borders" %>
       <%= link_to 'Back', topics_path, :class => "action-button button rounded-borders" %>
     </div>
   <% end %>
-
+  </br></br></br>
 <div class="clear"></div>
 <div>
   <%= render :partial => "sub_topics" %>
