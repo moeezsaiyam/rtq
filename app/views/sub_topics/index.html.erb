@@ -7,7 +7,16 @@
 <br>
   <div class ="admin-page"> <h1>Listing <%= @topic.name %> Sub Topics</div></h1>
 <% end %>
-
+<div>
+  <div class="dashboard action-button button rounded-borders">
+    <%= link_to 'Add new Sub topic', new_topic_sub_topic_path(@topic) %>
+  </div>
+  <div class="admin-back-link">
+    <%= link_to 'Back',@topic %>
+  </div>
+</div>  
+<div class="clear"></div>
+</br >
 <% form_tag(save_order_topic_sub_topics_path) do %>
   <table class="admin-view table-subtopics">
     <thead>
@@ -41,7 +50,8 @@
 <%end%>
 </br>
 <div class="clear"></div>
-<div class="dashboard">
+</br >
+<div class="dashboard action-button button rounded-borders">
   <%= link_to 'Add new Sub topic', new_topic_sub_topic_path(@topic) %>
 </div>
 
