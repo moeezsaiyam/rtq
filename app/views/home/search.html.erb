@@ -1,7 +1,7 @@
-<div class="header-search-tab2">
-  <%= render :partial => "shared/search" %>
-</div>
 <br><div class="content-body">
+  <div class="header-search-tab2">
+    <%= render :partial => "shared/results_search" %>
+  </div>
   <% unless params[:search_term] == 'Search' %>
  <div class = "search-keyword">
 <h1>Search results for <%= params[:search_term] %></h1><br>

@@ -2272,8 +2272,10 @@ p.about-text {
 }
 
 .header-search-tab2 {
-  width: 304px;
+  width: 645px;
+  height: 174px;
   margin-bottom: 30px;
+  background-color: #F5F5F5
 }
 
 .prev-link {
@@ -2302,4 +2304,18 @@ p.about-text {
 .change-password input[type="password"] {
   margin-bottom: 10px !important;
   margin-top: 6px !important;
+}
+
+.head-search-terms {
+  float:left;
+  width:800px;
+}
+
+.head-search-form select {
+  margin-right: 10px; 
+}
+
+.head-search-form {
+   margin: 5px;
+   margin-right: 20px;
 }
