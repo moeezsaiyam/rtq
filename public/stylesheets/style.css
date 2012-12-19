@@ -1257,7 +1257,6 @@ border-bottom:none;}
 
 div.dashboard{
   font-size:21px;
-  margin-top:20px;
 }
 div.dashboard-trans{
 font-family: 'Square721Regular';
@@ -2293,7 +2292,7 @@ p.about-text {
 }
 
 .admin-view {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .change-password {
