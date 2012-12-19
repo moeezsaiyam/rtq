@@ -2329,11 +2329,16 @@ p.about-text {
 
 .admin-back-link {
   float:right;
-  font-size: 21px;
 }
 
 .button a {
   color: #fff;
   font-size: 16px;
   text-transform: capitalize;
+}
+
+.button input[type="submit"] {
+  color: #fff !important;
+  border: none;
+  background-color:transparent !important;	
 }

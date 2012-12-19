@@ -54,7 +54,9 @@
     <%= select("user", "role", options_for_select(["Admin","SubAdmin"])) %>
     </br></br></br>
     <div class="clear"></div>
-    <%= submit_tag 'Sign up' %>
+    <div>
+      <%= submit_tag 'Sign up' %>
+    </div>
   <% end -%>
 <% else %>
      <%= stylesheet_link_tag 'conditional' %>
