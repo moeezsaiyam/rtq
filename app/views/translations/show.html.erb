@@ -1,12 +1,15 @@
-<br><div class="content-body">
+<br>
+<div class="content-body">
   <h6><%=h @translation.name %></h6>
   <h6>
     <%=h @translation.table_nam %>
   </h6>
+  <div class="clear"></div> 
+</div>
   <% if logged_in? %>
     <div class = "actions">
       <%= link_to 'Edit', edit_translation_path(@translation), :class => "action-button button rounded-borders" %>
       <%= link_to 'Back', translations_path, :class => "action-button button rounded-borders" %>
     </div>
   <% end %>
-  </div>
+ 
