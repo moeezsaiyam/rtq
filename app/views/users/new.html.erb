@@ -27,26 +27,34 @@
         <% end %>
       <% end %>
     </div>
-    <p><%= f.label :login %>
     <div class="clear"></div>
-    <%= f.text_field :login %></p>
-
-    <p><%= f.label :email %><br/>
-    <%= f.text_field :email %></p>
+    <%= f.label :login %>
     <div class="clear"></div>
-
-    <p><%= f.label :password %><br/>
-    <%= f.password_field :password %></p>
-
-    <p><%= f.label :password_confirmation, 'Confirm Password' %>
+    <%= f.text_field :login %>
     <div class="clear"></div>
-    <%= f.password_field :password_confirmation %></p>
-
-    <p><%= f.label :role, "User Role" %>
+    </br>
+    <%= f.label :email %>
     <div class="clear"></div>
-    <%= select("user", "role", options_for_select(["Admin","SubAdmin"])) %> </p>
-
-    <p><%= submit_tag 'Sign up' %></p>
+    <%= f.text_field :email %>
+    <div class="clear"></div>
+    </br>
+    <%= f.label :password %>
+    <div class="clear"></div>
+    <%= f.password_field :password %>
+    <div class="clear"></div>
+    </br>
+    <%= f.label :password_confirmation, 'Confirm Password' %>
+    <div class="clear"></div>
+    <%= f.password_field :password_confirmation %>
+    <div class="clear"></div>
+    </br>
+    <div class="clear"></div>
+    <%= f.label :role, "User Role" %>
+    <div class="clear"></div>
+    <%= select("user", "role", options_for_select(["Admin","SubAdmin"])) %>
+    </br></br></br>
+    <div class="clear"></div>
+    <%= submit_tag 'Sign up' %>
   <% end -%>
 <% else %>
      <%= stylesheet_link_tag 'conditional' %>
