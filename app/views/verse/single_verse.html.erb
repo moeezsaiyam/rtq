@@ -7,7 +7,7 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag 'conditional' %>
 <% end %>
-   <div>
+   <div class="translations-box">
     <div class="clear"></div>
     <%= render :partial => "shared/translations" %>
     <%= previous_link("Verses") %>
@@ -27,8 +27,8 @@
     </div>
 
     <%= formatted_verses(@next_verses, @trans_verses ) %>
-
+    <%= previous_link("Verses") %>
   </div>
 
-<%= previous_link("Verses") %>
+
 

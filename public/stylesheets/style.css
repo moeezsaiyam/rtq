@@ -1767,7 +1767,7 @@ bread-crumb .breadfont{
    
 ;}
 .verse-wrapper{
-    padding-top:20px;
+    padding-top:5px;
     padding-bottom:20px;
     
     
@@ -2276,4 +2276,13 @@ p.about-text {
 
 .prev-link {
   float:right;	
+}
+
+.translations-box {
+  margin-top: 7px;	 
+}
+
+.verse-wrapper .prev-link {
+	float:left !important;
+	margin-top: 70px;
 }
