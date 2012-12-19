@@ -2323,6 +2323,6 @@ p.about-text {
   font-size: 20px;	
 }
 
-label {
-	margin-top: 15px;
-}
+.header-search input[type="text"] {
+	margin-top: 20px;
+} 
