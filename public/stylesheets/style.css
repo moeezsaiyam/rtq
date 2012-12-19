@@ -2345,3 +2345,7 @@ p.about-text {
 .top-links .admin-back-link {
   margin-top: 5px;	
 }
+
+input[type="submit"] {
+  border: none !important;	
+}
