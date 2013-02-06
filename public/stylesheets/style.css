@@ -1933,7 +1933,7 @@ border-bottom:none;
   font-size: 13px;
   font-family: 'Square721Regular';
   margin: 0px 28px 11px 11px;
-  color: #FFB90F;
+  color: #835A35;
 }
 .admin-page h1{
   color:#4b6a15;
@@ -2360,4 +2360,7 @@ input[type="submit"] {
   font-size: 14px;
   font-weight: bold;
   color: white;
+}
+.truncate_ellipsis a, #less {
+  color: #835A35;
 }
