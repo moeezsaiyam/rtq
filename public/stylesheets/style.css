@@ -2356,3 +2356,8 @@ p.about-text {
 input[type="submit"] {
   border: none !important;
 }
+.advance-search {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
