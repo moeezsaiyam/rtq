@@ -1,3 +1,15 @@
+<% topics =Topic.all.collect(&:name) + SubTopic.all.collect(&:name)
+%>
+  <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+  <script>
+  $(function() {
+ $(".s-input").autocomplete({
+    source: <%= topics.to_json
+%>
+  });
+ });
+  </script>
 <a href="/" id="logo"></a>
 
 <!--social-container -->

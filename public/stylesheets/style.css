@@ -2383,3 +2383,22 @@ input[type="submit"] {
   font-size: 14px;
   font-weight: bolder;
 }
+
+ul.ui-menu, .ui-widget {
+  z-index: 1000 !important;
+  width: 300px !important;
+}
+
+.ui-menu .ui-menu-item a
+{
+border-top: none !important;
+display: block !important;
+line-height: normal !important;
+margin-top: 0px !important;
+padding-left: 0px !important;
+padding-right: 0px !important;
+padding-top: 0px !important;
+
+text-decoration: none;
+width: 274px !important;
+}
