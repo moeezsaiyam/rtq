@@ -2364,3 +2364,8 @@ input[type="submit"] {
 .truncate_ellipsis a, #less {
   color: #835A35;
 }
+
+.loggedin-user {
+  margin-top: 8px;
+  margin-left: 36px;
+}
