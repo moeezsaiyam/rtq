@@ -14,9 +14,6 @@ $(document).ready(function(){
     });
     return false;
   });
-});
-
-$(document).ready(function() {
-  $('table.table-subtopics tbody').sortable({handle : '.sort-handle'});
+   $('table.table-subtopics tbody').sortable({handle : '.sort-handle'});
 });
 
