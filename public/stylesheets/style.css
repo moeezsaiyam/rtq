@@ -47,7 +47,7 @@ textarea {
   font-size: 30px;
   font-family: me_quran, 'Traditional Arabic';
   text-align: right;
-  line-height: 72px;
+  line-height: 90px;
   direction: rtl;
   padding:0px 20px 0px 0px;
 }
@@ -2103,8 +2103,8 @@ p.subdesc {
 }
 
 .verse-margin {
-  margin-bottom: 80px;
-  margin-top: 15px;
+margin-bottom: 36px;
+margin-top: -7px;
 }
 
 div.error-box {
