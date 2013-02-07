@@ -25,7 +25,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
          url('font/square721bt-roman-webfont.ttf') format('truetype'),
          url('font/square721bt-roman-webfont.svg#Square721Regular') format('svg');
          }
-         
+
 textarea {
   width:90%;
 }
@@ -170,7 +170,7 @@ h1{
   font-weight:normal;
   padding-bottom:10px;
   color:#577818;}
-   
+
    h1 a{  font-family: 'Square721Regular';
    font-size:18px;
   }
@@ -204,7 +204,7 @@ h5{  font-family: 'Square721Regular';
    font-weight:normal;
    padding-bottom:10px;
    color:#000;}
-   
+
 h6{  font-family: 'Square721Regular';
    font-size:15px;
    line-height:22px;
@@ -239,7 +239,7 @@ table { border-collapse: collapse; border-spacing: 0;}
 th, td, caption { font-weight: normal; vertical-align: top; text-align: left;}
 
 a {
-  font-family: 'Square721Regular'; 
+  font-family: 'Square721Regular';
   text-decoration:none;
   color:#4B6A15;
 }
@@ -292,7 +292,7 @@ body {
   padding-right:5px;
 }
 
-.s-network{ 
+.s-network{
   float:left;
   width:28px;
   height:28px;
@@ -309,7 +309,7 @@ body {
  width: 666px;
 }
 
-#menu-bar  ul{ 
+#menu-bar  ul{
   float:right;
   }
 
@@ -321,7 +321,7 @@ body {
 }
 
 #menu-bar ul li a.active {
-    font-family: 'Square721Regular'; 
+    font-family: 'Square721Regular';
     background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 6px 6px 0 0;
     color:#496719;
@@ -336,20 +336,20 @@ body {
 
 #menu-bar ul li a.home:hover {
     background:url(/images/nav-home.png) no-repeat 16px 6px #FFFFFF;
-    background-position:center; 
+    background-position:center;
     border-radius: 6px 6px 0 0;
 }
 
-#menu-bar ul li a.home.active {  
+#menu-bar ul li a.home.active {
  background:url(/images/hover.png) no-repeat 16px 6px #FFFFFF;
- background-position:center; 
+ background-position:center;
  border-radius: 6px 6px 0 0;
 }
 
-#menu-bar  ul li.last{ 
+#menu-bar  ul li.last{
   float:left;
   list-style:none;
-  margin-left:-16px;  
+  margin-left:-16px;
   }
 
 #admin-menu li{
@@ -386,7 +386,7 @@ body {
     padding-bottom: 4px;
     width: 22px;
     background:url(/images/nav-home-white.png) no-repeat 16px 6px;
-    background-position:center; 
+    background-position:center;
     }
 /* Menu CSS End */
 
@@ -407,7 +407,7 @@ body {
   width:250px;
   height:32px;
   background:url(/images/t-index.png) no-repeat left top;}
-  
+
 .side-arrow{ float:left;
        margin:4px 10px 4px 0px}
 
@@ -417,7 +417,7 @@ body {
   top:-1px;
   width:273px;
   }
-  
+
 .side-nav ul{
   float:left;
   width:260px;
@@ -430,9 +430,9 @@ body {
   float:left;
   width:260px;
   border-top:1px solid #eeeeee;
-  
+
   }
-  
+
 .side-nav ul li a{
   font-family: 'Square721Regular';
   float:left;
@@ -445,7 +445,7 @@ body {
   width:210px;
   display:inline-block;
   }
-  
+
 .side-nav ul li a:hover, .side-nav ul li a.selected{
   font-family: 'Square721Regular';
   float:left;
@@ -464,7 +464,7 @@ background-image:url(/images/nav-hover-arrow.png), -webkit-gradient(
  color-stop(0.1, rgb(149,175,5)),
  color-stop(0.7, rgb(97,127,16))
 );
- background-image: url(/images/nav-hover-arrow.png)\9; 
+ background-image: url(/images/nav-hover-arrow.png)\9;
  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#96af05', endColorstr='#617f10',GradientType=0); /* IE6-9 */
 background-position: 10% 50%, 0% 0%;
 background-origin: border-box, border-box;
@@ -477,7 +477,7 @@ z-index:1;
   float: left;
   position:relative;
   top:147px;
-  
+
 }
 
 .side1-topic{
@@ -487,7 +487,7 @@ z-index:1;
   height:32px;
   background:url(/images/t-index.png) no-repeat left top;
   }
-  
+
 .side1-arrow{ float:left;
        margin:4px 10px 4px 0px}
 
@@ -497,7 +497,7 @@ z-index:1;
   position:relative;
   top:-148px;
   }
-  
+
 .side1-nav ul{
   float:left;
   width:260px;
@@ -505,16 +505,16 @@ z-index:1;
   padding:0px 0px 0px 0px;
   margin-left:7px;
   }
-  
+
 .side1-nav ul li{
   float:left;
   width:260px;
-  
+
   border-top:1px solid #eeeeee;
-  background:url(/images/side-nav-rep.png) repeat-y; 
-  
+  background:url(/images/side-nav-rep.png) repeat-y;
+
   }
-  
+
 .side1-nav ul li a{
   float:left;
   font-size:14px;
@@ -524,7 +524,7 @@ z-index:1;
   width:210px;
   display:inline-block;
   }
-  
+
 .side1-nav ul li a:hover, .side1-nav ul li a.slected{
   float:left;
   font-size:14px;
@@ -536,7 +536,7 @@ background-image:url(/images/nav-hover-arrow.png), -o-linear-gradient(bottom, rg
 background-image:url(/images/nav-hover-arrow.png), -moz-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
 background-image:url(/images/nav-hover-arrow.png), -webkit-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
 background-image:url(/images/nav-hover-arrow.png), -ms-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
- 
+
 background-image:url(/images/nav-hover-arrow.png), -webkit-gradient(
  linear,
  left bottom,
@@ -549,16 +549,16 @@ background-origin: border-box, border-box;
 background-repeat: no-repeat, no-repeat;
 position:relative;
 z-index:1, 2;
-  
+
   }
-  
-  
+
+
   .bread-crumb span{
   font-family: 'Square721Regular';
   font-size:9px;
   font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
   }
-  
+
 .quranic-dua{
   float:left;
   background:url(/images/quranic-dua.gif) no-repeat;
@@ -566,9 +566,9 @@ z-index:1, 2;
   height:158px;
   margin-top:20px;
   margin-left:8px;
-  
+
   }
-  
+
   .quranic-dua1{
   float:left;
   background:url(/images/quranic-dua.gif) no-repeat;
@@ -578,7 +578,7 @@ z-index:1, 2;
   top:-146px;
   margin-top:20px;
   margin-left:8px;
-  
+
   }
 
 #col-2 {
@@ -603,7 +603,7 @@ z-index:1, 2;
   font-size:14px;
 }
 
-.search-container1{ 
+.search-container1{
   float:left;
   background:url(/images/search-rep.png) repeat-x left top;
   width:680px;
@@ -615,7 +615,7 @@ z-index:1, 2;
   border-radius: 5px;
   position:relative;
   }
-  
+
 .search-topic{
   float:left;
   background:url(/images/search-tag.png) no-repeat left top;
@@ -644,7 +644,7 @@ z-index:1, 2;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;}
-  .search-container{ 
+  .search-container{
   float:left;
   background:url(/images/search-rep.png) repeat-x left top;
   width:680px;
@@ -654,7 +654,7 @@ z-index:1, 2;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;}
-  
+
 .search-topic{
   float:left;
   background:url(/images/search-tag.png) no-repeat left top;
@@ -683,7 +683,7 @@ z-index:1, 2;
   -moz-border-radius: 5px;
   border-radius: 5px;
     behavior: url(../javascripts/ie-css3.htc);}
-  
+
 .list{
   float:left;
   width:303px;
@@ -733,7 +733,7 @@ background:url(/images/srch.png) no-repeat left top;
   cursor:pointer;
   outline:none !important;
   }
-  
+
   .f-search-btn{
   float: right;
   background: url(/images/search.png) no-repeat left top;
@@ -751,7 +751,7 @@ background:url(/images/srch.png) no-repeat left top;
   line-height: 0;
   text-transform: capitalize;
   }
-  
+
 .f-search-btn:focus{
 background:url(/images/srch.png) no-repeat left top;
   float: right;
@@ -770,7 +770,7 @@ background:url(/images/srch.png) no-repeat left top;
   line-height: 0;
   text-transform: capitalize;
   }
-  
+
 .search-terms{
   float:left;
   width:535px;
@@ -782,14 +782,14 @@ background:url(/images/srch.png) no-repeat left top;
   border-radius:10px;
   padding:15px 20px 20px;
   margin-bottom: 30px;
-} 
+}
 .content-body-admin{
    font-family: 'Square721Regular';
    background: none repeat scroll 0 0 white;
    border-radius: 10px 10px 10px 10px;
    padding: 8px 28px 0;
   }
- 
+
 .index-subtopic{
   border-radius:10px;
   padding:15px 20px 0px 0px;
@@ -807,19 +807,19 @@ background:url(/images/srch.png) no-repeat left top;
   background:url(/images/slider-bg.png) no-repeat left top;
   width:660px;
   height:340px;
-  float:right; 
+  float:right;
   padding:10px 14px 10px 10px;
   margin-top:25px;}
-  
+
 #slider .imge-slide{
   background:url(/images/sample-1.png) no-repeat left top;
   width:660px;
   height:306px;
-  float:left; 
+  float:left;
   padding:10px;
   }
-  
-#class-container{ 
+
+#class-container{
   float:left;
   padding-top:5px;
 }
@@ -833,7 +833,7 @@ background:url(/images/srch.png) no-repeat left top;
 }
 .class-section p {
 }
-  
+
 .class-img{
   float:left;
   width:100px;
@@ -841,7 +841,7 @@ background:url(/images/srch.png) no-repeat left top;
   background:#FFF;
   margin-right:7px;
   padding:5px;}
-  
+
 .nomargin{  margin-right:0px !important;}
 
 #coin-slider{
@@ -859,7 +859,7 @@ background:url(/images/srch.png) no-repeat left top;
   border-radius: 5px;
   behavior: url(../javascripts/ie-css3.htc);
   }
-  
+
   #popular-Questions .show-more {
     background: url("/images/show-btn.png") repeat-x;
     border-radius: 5px 5px 5px 5px;
@@ -874,7 +874,7 @@ background:url(/images/srch.png) no-repeat left top;
     #bottom:20px;
     text-align: center;
     }
-  
+
   .popular-q{
   float:left;
   background:#FFF;
@@ -888,7 +888,7 @@ background:url(/images/srch.png) no-repeat left top;
   min-height:287px;
   left:10px;
   }
-  
+
   .related-q
   {
   float:left;
@@ -928,7 +928,7 @@ background:url(/images/srch.png) no-repeat left top;
   border-radius: 5px;
   min-height:287px;
   }
-  
+
   .topic-rel-subject{
   float:left;
   background:#FFF;
@@ -950,12 +950,12 @@ background:url(/images/srch.png) no-repeat left top;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;}
-  
+
 .font-9{
   font-size:9px;
   font-family: 'Square721Regular';
   }
-  
+
 .question-bar{
   background:url(/images/question-bar.png) no-repeat left top;
   font-family: 'Square721Regular';
@@ -968,7 +968,7 @@ background:url(/images/srch.png) no-repeat left top;
   top:-4px;
   left:9px;
   margin-left:10px;}
-  
+
   .question-bar-alternate{
   font-family: 'Square721Regular';
   background:url(/images/question-bar.png) no-repeat left top;
@@ -980,7 +980,7 @@ background:url(/images/srch.png) no-repeat left top;
   top:357px;
   margin-left:10px;
   left:9px;}
-  
+
   .question-bar-listquest{
   font-family: 'Square721Regular';
   background:url(/images/question-bar.png) no-repeat left top;
@@ -993,7 +993,7 @@ background:url(/images/srch.png) no-repeat left top;
   top:246px;
   margin-left:10px;
   left:9px;}
-  
+
   .latest-bar{
   background:url(/images/latest-q.png) no-repeat left top;
   width:296px;
@@ -1005,7 +1005,7 @@ background:url(/images/srch.png) no-repeat left top;
   float:left;
   top:-4px;
   left:10px;}
-  
+
   .question-bar_topic_sub_topic{
   background:url(/images/question-bar.png) no-repeat left top;
   width:661px;
@@ -1017,7 +1017,7 @@ background:url(/images/srch.png) no-repeat left top;
   float:left;
   top:-4px;
   left:9px;}
-  
+
 .show-more{
   line-height:24px;
   text-align:center;
@@ -1030,7 +1030,7 @@ background:url(/images/srch.png) no-repeat left top;
   border-radius: 5px;
   color:#FFFFFF;
   padding:4px 6px 4px 6px;}
-  
+
 .show-search{
     background: none repeat scroll 0 0 #F5F5F5;
     color: #000000;
@@ -1070,13 +1070,13 @@ background:url(/images/srch.png) no-repeat left top;
     float:left;
     text-align: center;
     }
-        
+
   a.show-verse-search{
     color:#4b6a15;
     text-decoration: underline;
     font-size: 11px;
    }
-  
+
   .browse-btn{
   line-height:24px;
   text-align:center;
@@ -1091,16 +1091,16 @@ background:url(/images/srch.png) no-repeat left top;
   padding:1px 6px 1px 6px;
   float:right;
   clear:both;}
-  
+
 
 .question{
   float:left;
   padding: 5px 0 0 30px;}
-  
+
 .question ul{
   float:left;
   width:646px;}
-  
+
 .question ul li{
   float:left;
   border-bottom:1px solid #efefef;
@@ -1113,17 +1113,17 @@ background:url(/images/srch.png) no-repeat left top;
   margin-left:-1px;
   }
 .question ul li.last{
-border-bottom:none;}  
+border-bottom:none;}
 
 .question-index{
   float:left;
   padding: 13px 0 0 30px;
   margin-left:-9px;}
-  
+
 .question-index ul{
   float:left;
   width:646px;}
-  
+
 .question-index ul li{
   float:left;
   border-bottom:1px solid #efefef;
@@ -1139,7 +1139,7 @@ border-bottom:none;}
 .question-index ul li.last{
   font-family: 'Square721Regular';
   border-bottom:none;
-  font-size:12px;}  
+  font-size:12px;}
 
 .question_latest_popular{
   font-family: 'Square721Regular';
@@ -1151,7 +1151,7 @@ border-bottom:none;}
  font-family: 'Square721Regular';
  font-size:14px;
  padding:0px 15px 20px 20px;}
- 
+
  .verse-current-last{
  font-family: 'Square721Regular';
  font-size:14px;
@@ -1164,9 +1164,9 @@ border-bottom:none;}
     float: right;
     width: 229px;
     margin-left:7px;
- 
+
  }
- 
+
 .trans-select input[type=checkbox]{
  float:left;
  clear:both;
@@ -1177,23 +1177,23 @@ border-bottom:none;}
  text-transform: capitalize;
  font-weight: bold;
  }
-  
+
 .question ul li a{
   font-family: 'Square721Regular';
   color:#333;
   font-size:14px;}
-  
+
   .question-index ul li a{
   font-family: 'Square721Regular';
   color:#333;
   font-size:14px;}
-  
+
 #log{
   width:500px;
   margin:0 auto;
   min-height:287px;
   padding-top:90px;}
-  
+
 #login{
   width:335px;
   height:220px;
@@ -1205,7 +1205,7 @@ border-bottom:none;}
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;}
-  
+
 .login-bar{
   float:left;
   position:absolute;
@@ -1218,9 +1218,9 @@ border-bottom:none;}
   font-size:16px;
   padding:4px 0px 0px 15px;
   color:#FFF;}
-  
 
-  
+
+
 #login .user{
   float:left;
   width:280px;
@@ -1228,13 +1228,13 @@ border-bottom:none;}
   background:#FFF;
   margin-bottom:20px;
   border:1px solid #f3df95;}
-  
+
 #login .u-icon{
   float:left;
-  
+
   width:36px;
   height:37px;}
-  
+
 #login .u-input{
   float:left;
   width:200px;
@@ -1242,7 +1242,7 @@ border-bottom:none;}
   margin-left:10px;
   padding-top:9px;
   border:none !important;}
-  
+
 .login-btn{
   float:left;
   background:url(/images/log-btn.png) no-repeat left top;
@@ -1332,7 +1332,7 @@ table.admin-view th{
 }
 .list-points h1{
   padding:20px 0px 20px 0px;
-  
+
 }
 
 .list-points li{
@@ -1345,7 +1345,7 @@ table.admin-view th{
     list-style: none outside none;
     margin-bottom: 5px;
     margin-left: 11px;
-    width:80%;    
+    width:80%;
     padding-left: 25px;
 }
 .list-wrapper{
@@ -1369,11 +1369,11 @@ table.admin-view th{
   color:#333;
   border-bottom:1px solid #EFEFEF
   }
-  
+
 
 .list-points-browse h1{
   padding:20px 0px 20px 0px;
-  
+
 }
 
 .list-points-browse li{
@@ -1408,7 +1408,7 @@ table.admin-view th{
 }
 .list-questions h1{
   padding:20px 0px 20px 0px;
-  
+
 }
 
 .list-questions li{
@@ -1420,7 +1420,7 @@ table.admin-view th{
     list-style: none outside none;
     margin-bottom: 5px;
     margin-left: -5px;
-    width:80%;    
+    width:80%;
     padding-left: 25px;
     display:inline;
     #width:600px;
@@ -1434,7 +1434,7 @@ table.admin-view th{
     list-style: none outside none;
     margin-bottom: 5px;
     margin-left: 21px;
-    width:80%;    
+    width:80%;
     padding-left: 25px;
     display:inline;
     #width:600px;
@@ -1448,7 +1448,7 @@ table.admin-view th{
     list-style: none outside none;
     margin-bottom: 5px;
     margin-left: 20px;
-    width:80%;    
+    width:80%;
     padding-left: 25px;
     display:inline;
     #width:600px;
@@ -1505,7 +1505,7 @@ table.admin-view th{
   .verse-brown h1 {
   color:#577818;
  }
-  .verse-color h1{ 
+  .verse-color h1{
    color:#577818;
    font-family: 'Square721Regular';
    font-size:18px;
@@ -1529,10 +1529,10 @@ table.admin-view th{
   font-size:15px;
   padding:0px 15px 20px 20px;
 }
-  
+
 .list-questions-browse h1{
   padding:20px 0px 20px 0px;
-  
+
 }
 
 .list-questions-browse li{
@@ -1579,19 +1579,19 @@ table.admin-view th{
   width:100%;
   margin-top:95px;
   min-width:1020px;
-  
+
 }
 
 #footer .inner{
   width:1000px;
   margin:0 auto;
   padding-top:24px;}
-  
+
 #footer .connect-with{
   float:left;
   width:178px;
   }
-  
+
 #footer h6{
   font-family: 'Square721Regular';
   font-size:14px;
@@ -1600,7 +1600,7 @@ table.admin-view th{
   padding-bottom:15px;
   font-weight:normal;
   }
-  
+
 #footer h5{
   font-family: 'Square721Regular';
   font-size:14px;
@@ -1609,21 +1609,21 @@ table.admin-view th{
   padding-bottom:15px;
   font-weight:normal;
   }
-  
+
 #footer .s-icon{
   float:left;
   width:28px;
   height:28px;
   margin-right:7px;}
-  
-  
+
+
 #footer .logo{
   background:url(/images/quran-f.png) no-repeat right top;
   float:right;
   width:160px;
   height:75px;
   }
-  
+
 #footer .copy-right{
   background:url(/images/copy-right.png) no-repeat right top;
   float:right;
@@ -1646,7 +1646,7 @@ table.admin-view th{
   background:#FFF;
   padding-left:6px;
   }
-    
+
 #footer .s-btn{
   float:left;
   background:url(/images/f-search.png) no-repeat right top;
@@ -1654,7 +1654,7 @@ table.admin-view th{
   height:28px;
   border: none;
   cursor:pointer;}
-  
+
 .footer a.social{
   float:left;
   padding-right:5px
@@ -1694,7 +1694,7 @@ table.admin-view th{
     display: inline;
     margin:0 auto;
     width: 675px;
-    margin-left:300px; 
+    margin-left:300px;
  }
 
  .simple-page .pagination{
@@ -1704,14 +1704,14 @@ table.admin-view th{
   float:left;
   text-align:center;
   margin-bottom:15px;
- 
+
 }
 pagination{
   display: inline;
   margin:0 auto;
   width: 675px;
   margin-left:300px;
- 
+
 }
 .pagination li{
   float:left;
@@ -1747,7 +1747,7 @@ bread-crumb .breadfont{
     position:relative;
     width:50px; /* Change this to your images width */
     height:50px; /* Change this to your images height */
-   
+
 }
 .nivoSlider img {
     position:absolute;
@@ -1763,19 +1763,19 @@ bread-crumb .breadfont{
     background-color:#EBEBEB;
     margin:0px 0px 10px 0px;
     border-radius:10px;
-    
+
 ;}
 .verse-background-pr-post{
     background-color:#FFFFFF;
     border-radius:10px;
-    
-   
+
+
 ;}
 .verse-wrapper{
     padding-top:5px;
     padding-bottom:20px;
-    
-    
+
+
 ;}
 .content-list-body{
 background-color:white;
@@ -1821,11 +1821,11 @@ position: absolute;
 }
 #___plusone_0{
   opacity:0;
-  width:30px !important;  
+  width:30px !important;
 }
 #___plusone_1{
   opacity:0;
-  width:30px !important; 
+  width:30px !important;
 }
 .search-field.error, .s-input.error{
   border:1px solid red !important
@@ -1884,7 +1884,7 @@ border-bottom:none;
   display: block;
   float: left;
   margin: 10px 0;
-  font-family: 'Square721Regular'; 
+  font-family: 'Square721Regular';
   text-align: center;
   width: 660px;
 }
@@ -1915,7 +1915,7 @@ border-bottom:none;
   float:left;
   font-weight:bold;
   color:#4b6a15;
-  font-family: 'Square721Regular'; 
+  font-family: 'Square721Regular';
   font-size:18px;
 }
 #carousel .textholder b{
@@ -1948,7 +1948,7 @@ border-bottom:none;
     font-weight: normal;
     line-height: 22px;
     padding-bottom: 10px;}
-    
+
  body {
   font-family: 'Square721Regular';
   font-size:11px;
@@ -1959,8 +1959,8 @@ border-bottom:none;
     margin:0;
     padding:0;
     list-style:none;
-}  
-     
+}
+
     /* make the LI display inline */
     /* it's position relative so that position absolute */
     /* can be used in submenu */
@@ -1985,7 +1985,7 @@ border-bottom:none;
         z-index:500;
         margin:0 1px;
     }
-    
+
     #nav li.sub_items{
         float:left;
         display:block;
@@ -1996,12 +1996,12 @@ border-bottom:none;
         margin:0 1px;
         border-radius:none;
     }
-         
+
     /* this is the parent menu */
     #nav li a {
         display:block;
         padding:8px 5px 0 5px;
-        font-weight:700; 
+        font-weight:700;
         height:23px;
         text-decoration:none;
         font-family: 'Square721Regular';
@@ -2009,16 +2009,16 @@ border-bottom:none;
         text-align:center;
         color:#333;
     }
- 
+
     #nav li:hover a, #nav li.hover a {
         color:#fff;
     }
-     
+
     /* you can make a different style for default selected value */
     #nav a.selected {
         color:#f00;
     }
-     
+
         /* submenu, it's hidden by default */
         #nav ul {
             position:absolute;
@@ -2029,26 +2029,26 @@ border-bottom:none;
             list-style:none;
             margin-top:34px;
         }
-         
+
         #nav ul li {
             width:79px;
             float:left;
             border-bottom: 1px solid #FFFFFF;
             border-radius:0px;
         }
-         
+
         /* display block will make the link fill the whole area of LI */
         #nav ul a {
-            display:block; 
+            display:block;
             height:15px;
             padding: 8px 5px;
             color:#333;
         }
-         
+
         #nav ul a:hover {
-            text-decoration:underline; 
+            text-decoration:underline;
         }
- 
+
 /* fix ie6 small issue */
 /* we should always avoid using hack like this */
 /* should put it into separate file : ) */
@@ -2101,9 +2101,9 @@ div.error-box {
  border:1px solid red;
  font-family: 'Square721Regular';
  color: red;
- margin:0px; 
+ margin:0px;
  font-size:14px;
- visibility:hidden;
+
 }
 
 .admin-menu {
