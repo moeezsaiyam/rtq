@@ -16,15 +16,16 @@
   <% if @sub_topic.errors.any? %>
     <%= stylesheet_link_tag 'conditional' %>
   <% end %>
-  <div class = "error-box">
-    <% if @sub_topic.errors.any? %>
+
+  <% if @sub_topic.errors.any? %>
+    <div class = "error-box">
       <h1 class = "error-heading"> <%=@sub_topic.errors.count %>  <%=display_errors(@sub_topic) %>  has been occured: </h1>
       <h2 class = "error-heading">Unable to update sub topic.</h2>
       <% @sub_topic.errors.full_messages.each do |message| %>
         <li class = "error"><%= message %> </li>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <p>
     <%= f.label :topic_id %><br />
