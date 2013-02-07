@@ -439,11 +439,23 @@ body {
   font-size:14px;
   color:#333;
   padding:10px 9px 10px 41px;
-  background-image: url(/images/nav-normal-arrow.png);
   background-position:10% 50%;
   background-repeat: no-repeat;
   width:210px;
   display:inline-block;
+  border-top:1px solid #eeeeee;
+background: #f7f7f7; /* Old browsers */
+background-image:url(/images/nav-normal-arrow.png) , linear-gradient(to bottom,  #f7f7f7 0%,#eeeeee 100%);
+background-image:url(/images/nav-normal-arrow.png) , -moz-linear-gradient(top,  #f7f7f7 0%, #eeeeee 100%);
+background-image:url(/images/nav-normal-arrow.png) ,-webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#eeeeee));
+background-image:url(/images/nav-normal-arrow.png) ,-webkit-linear-gradient(top,  #f7f7f7 0%,#eeeeee 100%);
+background-image:url(/images/nav-normal-arrow.png) ,-o-linear-gradient(top,  #f7f7f7 0%,#eeeeee 100%);
+background-image:url(/images/nav-normal-arrow.png) , -ms-linear-gradient(top,  #f7f7f7 0%,#eeeeee 100%);
+background-image: url(/images/nav-normal-arrow.png)\9;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+background-position: 10% 50%, 0% 0%;
+background-origin: border-box, border-box;
+background-repeat: no-repeat, no-repeat;
   }
 
 .side-nav ul li a:hover, .side-nav ul li a.selected{
@@ -453,10 +465,10 @@ body {
   color:#FFF;
   width:210px;
   background-image:url(/images/nav-hover-arrow.png) , linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
-background-image:url(/images/nav-hover-arrow.png), -o-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
-background-image:url(/images/nav-hover-arrow.png), -moz-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
-background-image:url(/images/nav-hover-arrow.png), -webkit-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
-background-image:url(/images/nav-hover-arrow.png), -ms-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
+  background-image:url(/images/nav-hover-arrow.png), -o-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
+  background-image:url(/images/nav-hover-arrow.png), -moz-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
+  background-image:url(/images/nav-hover-arrow.png), -webkit-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
+  background-image:url(/images/nav-hover-arrow.png), -ms-linear-gradient(bottom, rgb(149,175,5) 10%, rgb(97,127,16) 70%);
 background-image:url(/images/nav-hover-arrow.png), -webkit-gradient(
  linear,
  left bottom,
