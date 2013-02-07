@@ -68,7 +68,7 @@ module ApplicationHelper
      <div class="clear"></div>'
      return addthis_html
   end
-  
+
   def addthis_medium_button
     addthis_html='
     <!-- AddThis Button BEGIN -->
@@ -82,21 +82,21 @@ module ApplicationHelper
     <!-- AddThis Button END -->'
      return addthis_html
   end
-  
+
   def twitter_adventure_sharer
     target_url = request.url
-    url = "https://twitter.com/intent/tweet?original_referer=#{request.url}&source=tweetbutton&url=#{target_url}"
-    link_to(image_tag("twt.png", :width => "32", :height => "32"), "#",:class => "social",:onclick => ['window.open("', url,'"', ",'TwitterSharer',","'menubar=1,resizable=1,width=500,height=400');"].join)
+
+    link_to(image_tag("twt.png", :width => "32", :height => "32"), "#",:class => "social")
      end
-     
+
    def popup_window_sharer
     target_url = request.url
-    link_to(image_tag("fb.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank",:class => "social")
+    link_to(image_tag("fb.png", :width => "32", :height => "32", :alt => "facebook"), "#", :target => "_blank",:class => "social")
     end
-    
+
    def rss_window_sharer
     target_url = request.url
-    link_to(image_tag("rss.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank",:class => "social")
+    link_to(image_tag("rss.png", :width => "32", :height => "32", :alt => "facebook"), "#", :target => "_blank",:class => "social")
     end
 
   def addthis_widget
@@ -108,7 +108,7 @@ module ApplicationHelper
     <div class="clear"></div>'
     return addthis_html
   end
-  
+
   def twitter_sharer
   target_url = request.url
     url = "https://twitter.com"
@@ -116,18 +116,17 @@ module ApplicationHelper
      end
 
    def popup_window_sharer
-     html= "<span class='st_googleplus_large google-bg' displayText='Google +'></span>
-            <span class='st_facebook_large' displayText='Facebook'></span>
-            <span class='st_twitter_large' displayText='Tweet'></span>
-            <script type='text/javascript' src='http://w.sharethis.com/button/buttons.js'></script>
-      <script type='text/javascript'>stLight.options({publisher: 'ur-fb6aa0f2-f7d2-deff-7558-3becde1361ae'});</script>"
+     html= "<a class='goog2 google-bg' displayText='Google +' href='#'></a>
+            <a class='goog2' displayText='Facebook'></a>
+            <a class='goog2' displayText='Tweet'></a>
+           "
    end
-   
+
    def rss_window_sharer_footer
    target_url = request.url
     link_to(image_tag("rss.png", :width => "32", :height => "32", :alt => "facebook"), "http://www.facebook.com/sharer/sharer.php?u=#{target_url}", :target => "_blank",:class => "social")
    end
- 
+
 
   def list_topics
     topics = Topic.ordered.all

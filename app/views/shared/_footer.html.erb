@@ -4,7 +4,7 @@
     <div class="footer-colm1-content">
       <p>About this website</p>
     </div>
-       <p class="about-text"><%= display_full_text(StaticContent.first.about[0...300]) %>... 
+       <p class="about-text"><%= display_full_text(StaticContent.first.about[0...300]) %>...
        <%= link_to("[Read more]", { :controller => "main", :action => "about"}, {:class => 'about' })%></p>
   </div>
   <div class="footer-colm2">
@@ -17,9 +17,12 @@
     <a href="/" class="logo"></a>
   </div>
   <div class="clear"></div>
-  <div class = "footer">
+  <div class = "footer social-container">
     <h6> Connect with us</h6>
-    <%= popup_window_sharer%>
+    <a class='goog2' href='#'></a>
+    <a class='facebook' href='#'></a>
+    <a class='twitter footer-twitter' href='#'></a>
+
   </div>
   <div>
     <a href="/" class="copy-right"></a>

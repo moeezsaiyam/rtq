@@ -39,12 +39,15 @@
     <label for="question_sub_topic_id">Alternate Phrases</label><br />
     <% @question.alternate_phrases.each do |alternate_phrase| %>
       <% fields_for "question[alternate_phrase_attributes][]", alternate_phrase do |phrase_form|%>
-        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field', :name => 'question[alternate_phrase_attributes][][content]' %><br /><br />
-        <%= phrase_form.hidden_field :question_id, :value=> @question_id, :name => 'question[alternate_phrase_attributes][][question_id]' %>
+        <div class="existing-phrase">
+          <%= phrase_form.text_field :content, :class => 'alternate_phrase_field', :name => 'question[alternate_phrase_attributes][][content]' %>
+          <%= phrase_form.hidden_field :question_id, :value=> @question_id, :name => 'question[alternate_phrase_attributes][][question_id]' %>
+           <%= link_to ('Remove', "/questions/#{@question.id}/remove_phrase?phrase_id=#{alternate_phrase.id}", :confirm=>'Are you sure you want to delete?')%>
+          <% unless alternate_phrase.new_record?  %>
+            <%= phrase_form.hidden_field :id, :name => 'question[alternate_phrase_attributes][][id]' %>
+          <% end %>
 
-        <% unless alternate_phrase.new_record?  %>
-        <%= phrase_form.hidden_field :id, :name => 'question[alternate_phrase_attributes][][id]' %>
-        <% end %>
+        </div>
       <% end %>
 
     <% end %>
@@ -93,6 +96,7 @@
       <% fields_for "question[alternate_phrase_attributes][]", @question.alternate_phrases.new do |phrase_form|%>
         <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
       <% end %>
+       <%= link_to 'Remove','#', :onclick => 'remove_alternate(this); return false;' %>
    </div>
 </div>
 

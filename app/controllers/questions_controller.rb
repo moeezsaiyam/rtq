@@ -66,7 +66,7 @@ class QuestionsController < ApplicationController
   def popular
     @questions = Question.popular.paginate :per_page => 10, :page => params[:page]
   end
-  
+
   def create
     @question = Question.new(params[:question])
     set_author_and_last_updated_by(@question)
@@ -118,4 +118,9 @@ class QuestionsController < ApplicationController
     redirect_to :back
   end
 
+  def remove_phrase
+    phrase = AlternatePhrase.find(params[:phrase_id])
+    phrase.destroy
+    redirect_to :back
+  end
 end

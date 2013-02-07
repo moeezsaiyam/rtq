@@ -1,8 +1,20 @@
-<a href="/" id="logo"></a>
+<% topics =Topic.all.collect(&:name) + SubTopic.all.collect(&:name)
+%>
 
+  <script>
+  $(function() {
+ $(".s-input").autocomplete({
+    source: <%= topics.to_json
+%>
+  });
+ });
+  </script>
+<a href="/" id="logo"></a>
 <!--social-container -->
 <div id="social-container">
-  <%= popup_window_sharer %>
+  <a class='goog2' href='#'></a>
+  <a class='facebook' href='#'></a>
+  <a class='twitter' href='#'></a>
 </div>
 
 <div class="search-box header-search">
