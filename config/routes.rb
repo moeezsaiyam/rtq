@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.popular '/questions/popular', :controller => 'questions', :action => 'popular'
   map.resources :users, :collection => ["change_password"], :member => ["change_password"]
   map.resources :questions, :member => ['remove_issue']
+  map.resources :questions, :member => ['remove_phrase']
 
   map.resources :topics, :collection => ["save_order"]  do |topic|
     topic.resources :sub_topics, :collection => ["save_order"] do |sub_topic|
@@ -28,7 +29,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 
-  map.suggestions '/suggestions', :controller => 'home', :action => 'suggestions' 
+  map.suggestions '/suggestions', :controller => 'home', :action => 'suggestions'
   map.topic_slug ':topic_name_slug',   :controller => 'topics', :action => 'show'
   map.sub_topic_slug ':topic_name_slug/:sub_topic_name_slug',   :controller => 'sub_topics', :action => 'show'
   map.sub_topic_questions ':topic_name_slug/:sub_topic_name_slug/questions',   :controller => 'questions', :action => 'index'
