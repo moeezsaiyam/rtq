@@ -6,16 +6,18 @@
 <% form_for @question,:url => topic_sub_topic_questions_path(params[:topic_id],params[:sub_topic_id]), :method => :post do |f| %>
   <% if @question.errors.any? %>
     <%= stylesheet_link_tag 'conditional' %>
+  <% end %>
+
+   <% if @question.errors.any? %>
+      <div class = "error-box">
+        <h1 class = "error-heading"> <%=@question.errors.count %>  <%=display_errors(@question) %>  has been occured: has been occured: </h1>
+        <h2 class = "error-heading">Unable to add new question.</h2>
+        <% @question.errors.full_messages.each do |message| %>
+          <li class = "error"><%= message %> </li>
+        <% end %>
+      </div>
    <% end %>
-  <div class = "error-box">
-    <% if @question.errors.any? %>
-      <h1 class = "error-heading"> <%=@question.errors.count %>  <%=display_errors(@question) %>  has been occured: has been occured: </h1>
-      <h2 class = "error-heading">Unable to add new question.</h2>
-      <% @question.errors.full_messages.each do |message| %>
-        <li class = "error"><%= message %> </li>
-      <% end %>
-    <% end %>
-  </div>
+
 
   <p>
     <%= f.label :sub_topic_id %><br />
@@ -53,7 +55,7 @@
         <%= reference_form.text_area  :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
     </p>
      <p>
-        Enter Sura and Aya number like From 1:1 To 1:7 
+        Enter Sura and Aya number like From 1:1 To 1:7
       <p><%= reference_form.label :from, "From"%>
       <%= reference_form.text_field :from, :class => 'issue_from_field' %>
       <%= reference_form.label :to, "To"%>
@@ -96,7 +98,7 @@
         <%= reference_form.text_area:issue, :class => 'issue_field' %>
     </p>
      <p>
-      Enter Sura and Aya number like From 1:1 To 1:7 
+      Enter Sura and Aya number like From 1:1 To 1:7
       <p><%= reference_form.label :from, "From"%>
       <%= reference_form.text_field :from, :class => 'issue_from_field' %>
       <%= reference_form.label :to, "To"%>

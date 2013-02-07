@@ -11,15 +11,16 @@
   <% if @question.errors.any? %>
     <%= stylesheet_link_tag 'conditional' %>
    <% end %>
-  <div class = "error-box">
-    <% if @question.errors.any? %>
+
+  <% if @question.errors.any? %>
+    <div class = "error-box">
       <h1 class = "error-heading"> <%= @question.errors.count %>  <%=display_errors(@question) %>  has been occured: Errors has been occured: </h1>
       <h2 class = "error-heading">Unable to update question.</h2>
       <% @question.errors.full_messages.each do |message| %>
         <li class = "error"><%= message %> </li>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <p>
     <%= f.label :sub_topic_id %><br />
@@ -40,10 +41,12 @@
       <% fields_for "question[alternate_phrase_attributes][]", alternate_phrase do |phrase_form|%>
         <%= phrase_form.text_field :content, :class => 'alternate_phrase_field', :name => 'question[alternate_phrase_attributes][][content]' %><br /><br />
         <%= phrase_form.hidden_field :question_id, :value=> @question_id, :name => 'question[alternate_phrase_attributes][][question_id]' %>
+
         <% unless alternate_phrase.new_record?  %>
         <%= phrase_form.hidden_field :id, :name => 'question[alternate_phrase_attributes][][id]' %>
         <% end %>
       <% end %>
+
     <% end %>
   </div>
   <br>
@@ -60,7 +63,7 @@
         <%= reference_form.text_area :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
     </p>
      <p>
-        Enter Sura and Aya number like From 1:1 To 1:7 
+        Enter Sura and Aya number like From 1:1 To 1:7
       <p><%= reference_form.label :from, "From"%>
       <%= reference_form.text_field :from, :class => 'issue_from_field', :name => 'question[reference_attributes][][from]' %>
       <%= reference_form.label :to, "To"%>
@@ -74,7 +77,7 @@
       <% end %>
     <% end %>
      </div>
-  <p> 
+  <p>
 
     <%= link_to ('Add Another','#',{:id =>'add_reference_button'}) %>
   </p><br>
