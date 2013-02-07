@@ -2366,6 +2366,8 @@ input[type="submit"] {
 }
 
 .loggedin-user {
-  margin-top: 8px;
+  margin-top: 6px;
   margin-left: 36px;
+  font-size: 14px;
+  font-weight: bolder;
 }
