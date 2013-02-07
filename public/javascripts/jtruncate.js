@@ -24,7 +24,7 @@
 					var splitLocation = body.indexOf(' ', options.length);
 					var str1 = body.substring(0, splitLocation);
 					var str2 = body.substring(splitLocation, body.length - 1);
-					obj.html(str1 + '<span class="truncate_ellipsis">' + options.ellipsisText +'<a href="#" class="morelink" id = "more"  >'+ options.moreText+ '</a>' + '</span>' + '<span class="truncate_more">' + str2 +'</span>');
+					obj.html(str1 + '<span class="truncate_ellipsis">' + options.ellipsisText +'<a href="#" class="morelink" id = "more"  >'+ " " + options.moreText + '</a>' + '</span>' + '<span class="truncate_more">' + str2 +'</span>');
 					obj.find('.truncate_more').css("display", "none");
 					
 					// insert more link

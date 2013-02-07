@@ -25,7 +25,7 @@ $(document).ready(function()
   });
 });
 </script>
-
+<div class="advance-search">Advance Search</div>
 <div id="search_form">
   <% form_tag("/home/search", :method => "get") do %>   
     <input name="search_term" type="text" class="search-field watermarked" title="Enter a Keyword" value="<%= params[:search_term]%>"/>
