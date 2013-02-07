@@ -6,18 +6,16 @@
 <div class ="admin-page"> <h1>Editing  user</div></h1></div>
 
 <% form_for(@user)  do |f| %>
-
-  <div class = "error-box">
-    <% if @user.errors.any? %>
-       <%= stylesheet_link_tag 'conditional' %>
-    <% end %>
-    <h1 class = "error-heading">  <%=@user.errors.count %>  <%=display_errors(@user) %>  has been occured: </h1>
-    <h2 class = "error-heading">Unable to update sub topic.</h2>
-    <% @user.errors.full_messages.each do |message| %>
-      <li class = "error"><%= message %> </li>
-    <% end %>
-
-  </div>
+  <% if @user.errors.any? %>
+    <div class = "error-box">
+      <%= stylesheet_link_tag 'conditional' %>
+      <h1 class = "error-heading">  <%=@user.errors.count %>  <%=display_errors(@user) %>  has been occured: </h1>
+      <h2 class = "error-heading">Unable to update sub topic.</h2>
+      <% @user.errors.full_messages.each do |message| %>
+        <li class = "error"><%= message %> </li>
+      <% end %>
+    </div>
+  <% end %>
 
   <p><%= f.label :login %>
   <div class="clear"></div>

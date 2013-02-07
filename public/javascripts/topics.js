@@ -13,9 +13,6 @@ $(document).ready(function(){
     });
     return false;
   });
+   $('table.table-topics tbody').sortable({handle : '.sort-handle'});
 });
-
-$(document).ready(function() { 
-  $('table.table-topics tbody').sortable({handle : '.sort-handle'});
-});   
 
