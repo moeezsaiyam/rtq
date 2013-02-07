@@ -1,7 +1,6 @@
 <% topics =Topic.all.collect(&:name) + SubTopic.all.collect(&:name)
 %>
-  <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+
   <script>
   $(function() {
  $(".s-input").autocomplete({
@@ -11,10 +10,11 @@
  });
   </script>
 <a href="/" id="logo"></a>
-
 <!--social-container -->
 <div id="social-container">
-  <%= popup_window_sharer %>
+  <a class='goog2' href='#'></a>
+  <a class='facebook' href='#'></a>
+  <a class='twitter' href='#'></a>
 </div>
 
 <div class="search-box header-search">

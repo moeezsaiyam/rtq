@@ -2286,8 +2286,44 @@ p.about-text {
   margin-top:1px !important;
 }
 
-.st_googleplus_large .stButton .stLarge {
- background-image: url("/images/google.png") !important;
+.goog2 {
+  background-image: url("/images/social-icons.png") !important;
+  width: 31px;
+  height: 28px;
+  display: inline-block;
+
+}
+
+.goog2:hover {
+  opacity: .75;
+}
+
+.facebook {
+  background-image: url("/images/social-icons.png") !important;
+  background-position: 70px center;
+  width: 33px;
+  height: 28px;
+  display: inline-block;
+}
+
+.facebook:hover {
+  opacity: .75;
+}
+
+.twitter {
+  background-image: url("/images/social-icons.png") !important;
+  background-position: 36px center;
+  width: 31px;
+  height: 28px;
+  display: inline-block;
+
+}
+
+.twitter:hover {
+  opacity: .75;
+}
+.footer-twitter {
+   width: 36px !important;
 }
 
 .header-search-tab2 {
