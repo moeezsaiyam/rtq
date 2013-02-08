@@ -1778,8 +1778,8 @@ bread-crumb .breadfont{
   background-color: #EBEBEB;
   margin: 0px 0px 12px 0px;
   border-radius: 10px;
-
-;}
+  float: left;
+}
 
 .verse-background-pr-post{
     background-color:#FFFFFF;
