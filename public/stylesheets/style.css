@@ -1911,7 +1911,6 @@ border-bottom:none;
 }
 #slider .textholder{
   background-color: transparent !important;
-  background: url(/images/slider.png) no-repeat left top;
   color: #4b6a15;
   font-family: 'Square721Regular';
   font-size: 17px;
