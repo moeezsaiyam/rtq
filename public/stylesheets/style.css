@@ -1779,6 +1779,7 @@ bread-crumb .breadfont{
   margin: 0px 0px 12px 0px;
   border-radius: 10px;
   float: left;
+  min-width: 1000px;
 }
 
 .verse-background-pr-post{
