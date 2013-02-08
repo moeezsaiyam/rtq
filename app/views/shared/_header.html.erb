@@ -4,8 +4,8 @@
   <script>
   $(function() {
  $(".s-input").autocomplete({
-    source: <%= topics.to_json
-%>
+    source: <%= topics.to_json%>,
+    minLength:2
   });
  });
   </script>
