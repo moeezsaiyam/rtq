@@ -1313,18 +1313,24 @@ table.admin-view th{
 
 .button{
   background:url("/images/rep-btn.png") repeat-x;
-  height:28px;
 }
 
 .action-button{
   float:left;
-  width:150px;
   text-align:center;
   color:white;
   font-family: 'Square721Regular';
   font-size:14px !important;
-  line-height:28px;
   margin-right:10px;
+  cursor: pointer;
+}
+.action-button a {
+  float: left;
+  color:white !important;
+  padding: 5px 28px;
+}
+.action-button a:hover {
+  font-family: 'Square721Regular';
 }
 .addthis_toolbox{
   float: right !important;
@@ -2399,6 +2405,7 @@ p.about-text {
   color: #fff !important;
   border: none;
   background-color:transparent !important;
+  cursor: pointer;
 }
 
 .top-links .admin-back-link {
@@ -2407,6 +2414,8 @@ p.about-text {
 
 input[type="submit"] {
   border: none !important;
+   padding: 4px 10px;
+   cursor: pointer;
 }
 .advance-search {
   font-size: 14px;
