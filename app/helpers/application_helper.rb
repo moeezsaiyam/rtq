@@ -199,6 +199,7 @@ module ApplicationHelper
 
   def display_full_text(description)
     description.gsub('<p>','').gsub('</p>','<br /><br />')
+    simple_format(description)
   end
 end
 

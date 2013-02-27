@@ -2321,7 +2321,6 @@ p.about-text {
   width: 31px;
   height: 28px;
   display: inline-block;
-
 }
 
 .twitter:hover {
@@ -2449,7 +2448,13 @@ a:visited {
   text-decoration: none;
   color: #835A35;
 }
-
 .action-button a:visited {
   text-decoration: none;
+}
+a.about-us{
+  color: white !important;
+  font-size: 14px;
+}
+.about-us{
+  margin-left: 25px;
 }
