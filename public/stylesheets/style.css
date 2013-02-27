@@ -2448,3 +2448,7 @@ a:visited {
   text-decoration: none;
   color: #835A35;
 }
+
+.action-button a:visited {
+  text-decoration: none;
+}
