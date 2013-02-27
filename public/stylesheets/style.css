@@ -1611,7 +1611,7 @@ table.admin-view th{
   font-family: 'Square721Regular';
   font-size:14px;
   color:#FFF;
-  text-align:center;
+  text-align: start;
   padding-bottom:15px;
   font-weight:normal;
   }
@@ -1644,6 +1644,7 @@ table.admin-view th{
   float:right;
   width:160px;
   height:50px;
+  margin-left: 6px;
 }
 
 #footer .search-box{
@@ -1808,7 +1809,7 @@ width:100%;
   right:-157px;
 }
 .footer {
-  margin-left: 27px;
+  margin-left: 34px;
 }
 .my_custom_googleplusone{
 background: url("/images/google.png") no-repeat scroll;
@@ -2292,10 +2293,10 @@ p.about-text {
 
 .goog2 {
   background-image: url("/images/social-icons.png") !important;
-  width: 31px;
-  height: 28px;
   display: inline-block;
-
+  height: 28px;
+  margin-left: 2px;
+  width: 31px;
 }
 
 .goog2:hover {
