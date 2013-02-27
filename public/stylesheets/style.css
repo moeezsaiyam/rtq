@@ -1338,7 +1338,11 @@ table.admin-view th{
   margin-top: 6px;
 
  }
-
+.actions a{
+ float: left;
+ color:white !important;
+ padding: 5px 28px; 
+}
 .list-points{
  float:left;
 }
@@ -1815,7 +1819,7 @@ width:100%;
   right:-157px;
 }
 .footer {
-  margin-left: 34px;
+  margin-left: 77px;
 }
 .my_custom_googleplusone{
 background: url("/images/google.png") no-repeat scroll;
@@ -2249,8 +2253,8 @@ span p {
 .footer-colm3 {
   float:right;
   width:16%;
+  margin-right: 68px;
 }
-
 p.about-text {
   color:white;
   padding:30px;
