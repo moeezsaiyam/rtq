@@ -2198,9 +2198,10 @@ span p {
 
 .text-body p{
  font-family: 'Square721Regular' !important;
- text-align: justify;
+ text-align: justify !important;
  font-size: 14px !important;
  background-color:white !important;
+ padding-bottom: 0px !important;
 }
 
 .text-body p span, .text-body span{
@@ -2411,7 +2412,10 @@ p.about-text {
   background-color:transparent !important;
   cursor: pointer;
 }
-
+ #topic_submit{
+  background:url("/images/rep-btn.png") repeat-x;
+  color: white !important;
+}
 .top-links .admin-back-link {
   margin-top: 5px;
 }
@@ -2470,4 +2474,9 @@ a.about-us{
 }
 .about-us{
   margin-left: 25px;
+}
+.content-body ul li {
+  font-family: 'Square721Regular';
+  background:white;
+  font-size: 14px;
 }
