@@ -50,6 +50,7 @@ class User < ActiveRecord::Base
   end
 
   def role=(value)
+    self.roles.delete_all if self.roles.present?
     self.roles << Role.new(:name => value, :user_id => self.id)
   end
 

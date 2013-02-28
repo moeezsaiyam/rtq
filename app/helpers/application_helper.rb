@@ -170,7 +170,8 @@ module ApplicationHelper
   end
 
   def display_description(description)
-    simple_format(strip_tags(description)).gsub('<p>','').gsub('</p>','<br /><br />')
+    description.gsub('<p>',' ').gsub('</p>','<br />')
+    description.gsub('<br>','')
   end
 
   def edit_link(name)
@@ -198,7 +199,8 @@ module ApplicationHelper
   end
 
   def display_full_text(description)
-    description.gsub('<p>','').gsub('</p>','<br /><br />')
+    description.gsub('<p>',' ').gsub('</p>','<br />')
+    description.gsub('<br>','')
   end
 end
 

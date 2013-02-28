@@ -427,10 +427,10 @@ body {
   }
 
 .side-nav ul li{
-  float:left;
-  width:260px;
-  border-top:1px solid #eeeeee;
-
+  border-bottom: 1px solid #E5E5E5;
+  border-top: 1px solid #EEEEEE;
+  float: left;
+  width: 260px;
   }
 
 .side-nav ul li a{
@@ -1313,18 +1313,24 @@ table.admin-view th{
 
 .button{
   background:url("/images/rep-btn.png") repeat-x;
-  height:28px;
 }
 
 .action-button{
   float:left;
-  width:150px;
   text-align:center;
   color:white;
   font-family: 'Square721Regular';
   font-size:14px !important;
-  line-height:28px;
   margin-right:10px;
+  cursor: pointer;
+}
+.action-button a {
+  float: left;
+  color:white !important;
+  padding: 5px 28px;
+}
+.action-button a:hover {
+  font-family: 'Square721Regular';
 }
 .addthis_toolbox{
   float: right !important;
@@ -1332,7 +1338,11 @@ table.admin-view th{
   margin-top: 6px;
 
  }
-
+.actions a{
+ float: left;
+ color:white !important;
+ padding: 5px 28px; 
+}
 .list-points{
  float:left;
 }
@@ -1611,7 +1621,7 @@ table.admin-view th{
   font-family: 'Square721Regular';
   font-size:14px;
   color:#FFF;
-  text-align:center;
+  text-align: start;
   padding-bottom:15px;
   font-weight:normal;
   }
@@ -1644,6 +1654,7 @@ table.admin-view th{
   float:right;
   width:160px;
   height:50px;
+  margin-left: 6px;
 }
 
 #footer .search-box{
@@ -1808,7 +1819,7 @@ width:100%;
   right:-157px;
 }
 .footer {
-  margin-left: 27px;
+  margin-left: 77px;
 }
 .my_custom_googleplusone{
 background: url("/images/google.png") no-repeat scroll;
@@ -2187,9 +2198,10 @@ span p {
 
 .text-body p{
  font-family: 'Square721Regular' !important;
- text-align: justify;
+ text-align: justify !important;
  font-size: 14px !important;
  background-color:white !important;
+ padding-bottom: 0px !important;
 }
 
 .text-body p span, .text-body span{
@@ -2242,8 +2254,8 @@ span p {
 .footer-colm3 {
   float:right;
   width:16%;
+  margin-right: 68px;
 }
-
 p.about-text {
   color:white;
   padding:30px;
@@ -2292,10 +2304,10 @@ p.about-text {
 
 .goog2 {
   background-image: url("/images/social-icons.png") !important;
-  width: 31px;
-  height: 28px;
   display: inline-block;
-
+  height: 28px;
+  margin-left: 2px;
+  width: 31px;
 }
 
 .goog2:hover {
@@ -2320,7 +2332,6 @@ p.about-text {
   width: 31px;
   height: 28px;
   display: inline-block;
-
 }
 
 .twitter:hover {
@@ -2399,14 +2410,20 @@ p.about-text {
   color: #fff !important;
   border: none;
   background-color:transparent !important;
+  cursor: pointer;
 }
-
+ #topic_submit{
+  background:url("/images/rep-btn.png") repeat-x;
+  color: white !important;
+}
 .top-links .admin-back-link {
   margin-top: 5px;
 }
 
 input[type="submit"] {
   border: none !important;
+   padding: 4px 10px;
+   cursor: pointer;
 }
 .advance-search {
   font-size: 14px;
@@ -2447,4 +2464,23 @@ a:visited {
   font-family: 'Square721Regular';
   text-decoration: none;
   color: #835A35;
+}
+.action-button a:visited {
+  text-decoration: none;
+}
+a.about-us{
+  color: white !important;
+  font-size: 14px;
+}
+.about-us{
+  margin-left: 25px;
+}
+.content-body ul li {
+  font-family: 'Square721Regular';
+  background:white;
+  font-size: 14px;
+}
+#question_submit{
+  background:url("/images/rep-btn.png") repeat-x;
+  color: white !important;
 }

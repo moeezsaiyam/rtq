@@ -2,16 +2,25 @@
   <div class="header-search-tab2">
     <%= render :partial => "shared/results_search" %>
   </div>
-  <% unless params[:search_term] == 'Search' %>
+ <% unless params[:search_term] == 'Search' %>
  <div class = "search-keyword">
-<h1>Search results for <%= params[:search_term] %></h1><br>
+   <% if params[:search_term].present? && params[:search_term]!="Enter a Keyword" %>
+     <h1>Search results for <%= params[:search_term] %></h1><br>
+   <% end %>
+
+   <% if @topics_search.present? %>
+     <% @topics_search.each_with_index do |topic,i| %>
+       <h3>Topic: <%= h topic.name %></h3></a><br/><br/>
+     <% end %>
+   <% end %>
  </div>
  <%end%>
+
  <% if params[:search_term] == 'Search' %>
    <div class = "search-keyword">
-     <h1>Search results </h1><br>
+     <h1>ts </h1><br>
    </div>
-<% end %> 
+<% end %>
   <ul>
     <% unless @topics_search.blank? %>
       <% @topics_search.each_with_index do |topic,i| %>
@@ -52,7 +61,7 @@
   </ul>
   <% if @topics_search.blank? && @sub_topics_search.blank? && @questions_search.blank? && @search.blank? && @blank_search.blank? %>
 <h6>No search result found!</h6>
-<% end %>
+  <% end %>
   <% unless @search.blank? %>
   <% @search.each_with_index do |s,i| %>
     <% if s.class == Topic %>

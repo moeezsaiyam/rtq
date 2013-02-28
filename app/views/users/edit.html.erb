@@ -33,8 +33,11 @@
   <div class="clear"></div>
   <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.label :name, "User Role" %><div class="clear"></div>
-  <%= select "user", "name", "<option>admin</option><option>sub-admin</option>".to_s %> </p>
+  <p><div class="clear"></div>
+    <%= f.label :role, "User Role" %>
+    <div class="clear"></div>
+    <%= select("user", "role", options_for_select(["Admin","SubAdmin"])) %>
+  </p>
   <p>
    <%= f.submit 'Update' %>
   </p>
