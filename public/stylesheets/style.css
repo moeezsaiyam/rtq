@@ -427,7 +427,7 @@ body {
   }
 
 .side-nav ul li{
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #FFFFE5;
   border-top: 1px solid #EEEEEE;
   float: left;
   width: 260px;
@@ -2483,4 +2483,10 @@ a.about-us{
 #question_submit, #sub_topic_submit, #user_submit{
   background:url("/images/rep-btn.png") repeat-x;
   color: white !important;
+}
+.about-text p{
+  display: block;
+  margin-left: 20px;
+  max-width: 407px;
+  text-align: left;
 }
