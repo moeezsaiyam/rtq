@@ -2480,3 +2480,7 @@ a.about-us{
   background:white;
   font-size: 14px;
 }
+#question_submit{
+  background:url("/images/rep-btn.png") repeat-x;
+  color: white !important;
+}
