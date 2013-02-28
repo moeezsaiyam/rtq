@@ -427,10 +427,10 @@ body {
   }
 
 .side-nav ul li{
-  float:left;
-  width:260px;
-  border-top:1px solid #eeeeee;
-
+  border-bottom: 1px solid #E5E5E5;
+  border-top: 1px solid #EEEEEE;
+  float: left;
+  width: 260px;
   }
 
 .side-nav ul li a{
