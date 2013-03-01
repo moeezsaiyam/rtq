@@ -6,12 +6,17 @@
  <div class = "search-keyword">
    <% if params[:search_term].present? && params[:search_term]!="Enter a Keyword" %>
      <h1>Search results for <%= params[:search_term] %></h1><br>
-   <% end %>
 
-   <% if @topics_search.present? %>
-     <% @topics_search.each_with_index do |topic,i| %>
-       <h3>Topic: <%= h topic.name %></h3></a><br/><br/>
-     <% end %>
+   <% elsif @topics_search.present? %>
+     <h1>Search results for
+       <% @topics_search.each_with_index do |topic,i| %>
+         <%= h topic.name %></h1><br/>
+       <% end %>
+   <% elsif @sub_topics_search.present?  %>
+     <h1>Search results for
+       <% @sub_topics_search.each do |sub_topic| %>
+         <%= h sub_topic.name %></h1><br/>
+       <% end %>
    <% end %>
  </div>
  <%end%>
