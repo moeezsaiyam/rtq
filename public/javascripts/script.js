@@ -1,6 +1,12 @@
-function remove_alternate(rem){
-      $(rem).parent().remove();
-    };
+function remove_alternate(remove_link){
+  if(confirm("Are you sure you want to delete this?"))
+    $(remove_link).siblings('.alternate_phrase_field').remove();
+}
+function remove_issue(remove_link){
+  if(confirm("Are you sure you want to delete this?"))
+    $(remove_link).siblings('.refernce-details').remove();
+    $(remove_link).remove()
+}
 $(document).ready(function()
 {
    $(document).pngFix();
@@ -47,7 +53,9 @@ $(document).ready(function()
    });
 
   $('#add_reference_button').click(function(){
-    $('#references').append($('#new_references div').clone().val(''));
+    $('#references').append(
+      $('#new_references div').clone().val('')
+      );
    return false;
    });
 
