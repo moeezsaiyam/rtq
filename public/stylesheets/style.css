@@ -1819,7 +1819,7 @@ width:100%;
   right:-157px;
 }
 .footer {
-  margin-left: 32px;
+  margin-left: 77px;
 }
 .my_custom_googleplusone{
 background: url("/images/google.png") no-repeat scroll;
@@ -2222,14 +2222,14 @@ span p {
 .footer-colm1 {
   background: url(/images/footer-box.png) no-repeat right top;
   float: left;
-  width: 41%;
+  width: 400px;
   height: 210px;
 }
 
 .footer-colm1-content {
   background: url(/images/footer-head.png) no-repeat left top;
   font-family: 'Square721Regular';
-  width: 661px;
+  width: 350px;
   height: 42px;
   font-size: 16px;
   color: #FFF;
@@ -2247,13 +2247,14 @@ span p {
 
 .footer-colm2 {
   float: left;
-  width: 31%;
   margin-left: 60px;
+  width: 360px;
 }
 
 .footer-colm3 {
-  float:right;
-  width:16%;
+  float: right;
+  margin-right: 68px;
+  width: 206px;
 }
 p.about-text {
   color:white;
@@ -2486,6 +2487,6 @@ a.about-us{
 .about-text p{
   display: block;
   margin-left: 20px;
-  max-width: 407px;
-  text-align: left;
+  max-width: 350px;
+  text-align: justify;
 }
