@@ -2491,3 +2491,8 @@ a.about-us{
   max-width: 350px;
   text-align: justify;
 }
+.search-keyword h1{
+
+  text-align: justify;
+  word-wrap: break-word;
+}
