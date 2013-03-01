@@ -7,17 +7,14 @@
    <% if params[:search_term].present? && params[:search_term]!="Enter a Keyword" %>
      <h1>Search results for <%= params[:search_term] %></h1><br>
 
-   <% elsif @topics_search.present? %>
+   <% elsif params[:search_terms][:search_topic].present? %>
      <h1>Search results for
-       <% @topics_search.each_with_index do |topic,i| %>
-         <%= h topic.name %></h1><br/>
-       <% end %>
-   <% elsif @sub_topics_search.present?  %>
-     <h1>Search results for
-       <% @sub_topics_search.each do |sub_topic| %>
-         <%= h sub_topic.name %></h1><br/>
-       <% end %>
+        <%= @topic_name %></h1><br/>
    <% end %>
+   <% if params[:search_terms][:search_sub_topic].present? %>
+     <h1>Search results for
+        <%= @sub_topic_name %></h1><br/>
+    <% end %>
  </div>
  <%end%>
 
