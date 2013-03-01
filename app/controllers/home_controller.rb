@@ -18,6 +18,8 @@ class HomeController < ApplicationController
   end
 
   def search
+    @topic_name =Topic.find(params[:search_terms][:search_topic]).name unless params[:search_terms][:search_topic].blank?
+    @sub_topic_name = SubTopic.find(params[:search_terms][:search_sub_topic]).name unless params[:search_terms][:search_sub_topic].blank?
     if params[:search_terms].blank? || (params[:search_terms][:search_topic].blank? && params[:search_terms][:search_sub_topic].blank?)
       @search = ThinkingSphinx.search params[:search_term], :per_page => 10, :page => params[:page]
       if @search.blank?
