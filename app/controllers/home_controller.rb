@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   def index
     @sub_topics = SubTopic.featured
     @questions = Question.popular.limited.all
+    @images = Image.all
   end
 
   def suggestions
@@ -33,7 +34,7 @@ class HomeController < ApplicationController
       @sub_topics_search = SubTopic.perform_search(params[:search_term], search_terms) unless params[:search_terms][:search_sub_topic].blank? && params[:search_term].blank?
       unless params[:search_terms][:search_sub_topic].blank? && params[:search_term].blank? && @sub_topics_search.blank?
       @empty_search = "abc"
-      end 
+      end
         @questions_search = Question.search params[:search_term]
         subtopic_questions = Question.find(:all ,:conditions=>["sub_topic_id =?", params[:search_terms][:search_sub_topic]])
         @questions_search = @questions_search & subtopic_questions

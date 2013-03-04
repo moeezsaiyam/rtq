@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730120950) do
+ActiveRecord::Schema.define(:version => 20130304075637) do
 
   create_table "alternate_phrases", :force => true do |t|
     t.string   "content"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(:version => 20120730120950) do
     t.integer "sura", :default => 0, :null => false
     t.integer "aya",  :default => 0, :null => false
     t.text    "text",                :null => false
+  end
+
+  create_table "images", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "keywords", :force => true do |t|

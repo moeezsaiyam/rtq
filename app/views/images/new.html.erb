@@ -1,0 +1,16 @@
+<% form_tag(images_path, :multipart => true) do %>
+  <div id="upload">
+    <%= file_field_tag "image[]"  %>
+  </div>
+  <%= link_to ('Add Another','#',{:id =>'add_button_image'}) %>
+  <%=link_to 'Show', images_path %><br/><br/><br/>
+
+  <%= submit_tag "upload" , :class=> 'button'%>
+<% end %>
+
+<div class = "upload_image" style="display:none">
+  <div>
+    <%= file_field_tag "image[]"  %>
+  </div>
+</div>
+
