@@ -4,17 +4,21 @@
   </div>
  <% unless params[:search_term] == 'Search' %>
  <div class = "search-keyword">
-   <% if params[:search_term].present? && params[:search_term]!="Enter a Keyword" %>
+   <% search_result = true %>
+   <% if params[:search_term].present? && params[:search_term]!="Enter a Keyword" && search_result %>
      <h1>Search results for <%= params[:search_term] %></h1><br>
-
-   <% elsif params[:search_terms][:search_topic].present? %>
-     <h1>Search results for
-        <%= @topic_name %></h1><br/>
+     <% search_result = false %>
    <% end %>
-   <% if params[:search_terms][:search_sub_topic].present? %>
-     <h1>Search results for
-        <%= @sub_topic_name %></h1><br/>
-    <% end %>
+   <% unless @topics_search.nil? || @sub_topics_search.nil? %>
+     <% if params[:search_terms][:search_topic].present? && search_result %>
+       <h1>Search results for
+          <%= @topic_name %></h1><br/>
+          <% search_result = false %>
+     <% elsif params[:search_terms][:search_sub_topic].present? && search_result %>
+       <h1>Search results for
+          <%= @sub_topic_name %></h1><br/>
+      <% end %>
+   <% end %>
  </div>
  <%end%>
 
