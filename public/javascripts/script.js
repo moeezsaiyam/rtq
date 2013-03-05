@@ -46,10 +46,15 @@ $(document).ready(function()
             $('ul', this).slideUp(100);
         });
 
-   $('#add_button').click(function(){
+  $('#add_button').click(function(){
     $('#alternate_phrases').append('<br/>');
     $('#alternate_phrases').append($('#new_alternate_phrases div').clone().val(''));
     return false;
+   });
+
+
+  $('#add_button_image').click(function(){
+    $('#upload').append($('.upload_image div').clone().val(''));
    });
 
   $('#add_reference_button').click(function(){

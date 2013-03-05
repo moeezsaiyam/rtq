@@ -1,7 +1,7 @@
 <div id="carousel">
 <ul>
-	<li><%= image_tag "01.jpg", :width => "660", :height => "307" %></li>
-	<li><%= image_tag "02.jpg", :width => "660", :height => "307" %></li>
-  <li><%= image_tag "03.jpg", :width => "660", :height => "307" %></li>
+  <%@images.each do |image| %>
+    <li><%= image_tag "#{image.photo.url(:medium)}.jpg"%></li>
+  <% end %>
 </ul>
 </div>

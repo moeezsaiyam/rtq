@@ -1,0 +1,8 @@
+<%= link_to "Back", new_image_path, :class=>"button submit-btn" %>
+<ul>
+  <% @images.each do |image| %>
+    <li><%= image_tag "#{image.photo.url(:small)}.jpg"%></li>
+    <li><%= link_to "Remove Image", image_path(image), :method => :delete, :confirm => 'Are you sure?' %>
+    </li>
+  <% end %>
+</ul>
