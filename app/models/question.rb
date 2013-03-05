@@ -44,31 +44,18 @@ class Question < ActiveRecord::Base
   def self.perform_search(search, search_terms)
   end
 
-  def alternate_phrase_attributes=(new_phrase_attributes)
-    self.save(:validate => false)
+   def alternate_phrase_attributes=(new_phrase_attributes)
+    self.alternate_phrases.delete_all
     new_phrase_attributes.each do |new_phrase_attribute|
-     if new_phrase_attribute[:id].blank?
-      self.save(:validate => false)
-      self.alternate_phrases.build(new_phrase_attribute)
-     else
-       alternate = self.alternate_phrases.detect{ |t| t.id.to_s == new_phrase_attribute['id']}
-       alternate.attributes = new_phrase_attribute
-       self.save(:validate => false)
-     end
+     self.alternate_phrases.build(new_phrase_attribute)
     end
   end
 
   def reference_attributes=(new_reference_attributes)
+    self.references.delete_all
     new_reference_attributes.each do |new_reference_attribute|
      valid = !(new_reference_attribute[:issue] && new_reference_attribute[:to] && new_reference_attribute[:from]).blank?
-     if new_reference_attribute[:id].blank?
          self.references.build(new_reference_attribute) if valid
-     else
-       if valid
-         reference = self.references.detect{ |t| t.id.to_s == new_reference_attribute['id']}
-         reference.update_attributes(new_reference_attribute)
-       end
-     end
     end
   end
 

@@ -1,6 +1,7 @@
 function remove_alternate(remove_link){
   if(confirm("Are you sure you want to delete this?"))
-    $(remove_link).siblings('.alternate_phrase_field').remove();
+    $(remove_link).siblings('.existing-phrase').remove();
+    $(remove_link).remove();
 }
 function remove_issue(remove_link){
   if(confirm("Are you sure you want to delete this?"))
