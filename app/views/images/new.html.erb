@@ -1,9 +1,10 @@
+<%=link_to 'Show Banner Image', images_path, :class =>'button-slider'%><br/><br/><br/>
 <% form_tag(images_path, :multipart => true) do %>
   <div id="upload">
     <%= file_field_tag "image[]"  %>
   </div>
-  <%= link_to ('Add Another','#',{:id =>'add_button_image'}) %>
-  <%=link_to 'Show', images_path %><br/><br/><br/>
+  <div class ="clear"></div>
+  <%= link_to ('Add Another','#',{:id =>'add_button_image'}) %><br/><br/>
 
   <%= submit_tag "upload" , :class=> 'button'%>
 <% end %>

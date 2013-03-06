@@ -9,7 +9,7 @@
     <!--/slider-->
     <% if logged_in?  %>
       <% if admin? %>
-        <%= link_to "Change", new_image_path %>
+        <%= link_to "Add/Edit", new_image_path, :class=>"button-slider" %>
       <% end %>
     <% end %>
   <% end %>
