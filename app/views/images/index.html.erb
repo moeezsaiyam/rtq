@@ -1,4 +1,4 @@
-<%= link_to "Back", new_image_path, :class=>"button submit-btn" %>
+<%= link_to "Back", new_image_path, :class=>"button-slider" %><br/><br/>
 <ul>
   <% @images.each do |image| %>
     <li><%= image_tag "#{image.photo.url(:small)}.jpg"%></li>

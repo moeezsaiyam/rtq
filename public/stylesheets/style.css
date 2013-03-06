@@ -1342,7 +1342,7 @@ table.admin-view th{
 .actions a{
  float: left;
  color:white !important;
- padding: 5px 28px; 
+ padding: 5px 28px;
 }
 .list-points{
  float:left;
@@ -2496,3 +2496,9 @@ a.about-us{
   text-align: justify;
   word-wrap: break-word;
 }
+a.button-slider{
+  background: url("/images/rep-btn.png") repeat-x scroll 0 0 transparent;
+  padding: 4px 15px 5px;
+  color: white;
+}
+
