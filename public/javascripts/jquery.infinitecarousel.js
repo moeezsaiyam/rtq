@@ -9,10 +9,10 @@
  */
 
 (function($){
-	$.fn.extend({ 
+	$.fn.extend({
 		infiniteCarousel: function(options)
 		{
-			var defaults = 
+			var defaults =
 			{
 				transitionSpeed : 1500,
 				displayTime : 6000,
@@ -26,7 +26,7 @@
 				thumbnailFontSize: '.7em'
 			};
 		var options = $.extend(defaults, options);
-	
+
     		return this.each(function() {
     			var randID = Math.round(Math.random()*100000000);
 				var o=options;
@@ -37,17 +37,17 @@
 				var imgHeight = $('img:first', obj).height();
 				var imgWidth = $('img:first', obj).width();
 				var autopilot = 1;
-		
+
 				$('p', obj).hide(); // Hide any text paragraphs in the carousel
 				$(obj).width(imgWidth).height(imgHeight);
-			
+
 				// Build progress bar
 				if(o.displayProgressBar)
 				{
 					$(obj).append('<div id="progress'+randID+'" style="position:absolute;bottom:0;background:#bbb;left:'+$(obj).css('paddingLeft')+'"></div>');
 					$('#progress'+randID).width(imgWidth).height(5).css('opacity','.5');
 				}
-			
+
 				// Move last image and stick it on the front
 				$(obj).css({'overflow':'hidden','position':'relative'});
 				$('li:last', obj).prependTo($('ul', obj));
@@ -56,20 +56,21 @@
 
 				$('ul',obj).css({'list-style':'none','margin':'0','padding':'0','position':'relative'});
 				$('li',obj).css({'display':'inline','float':'left'});
-			
+
 				// Build textholder div thats as wide as the carousel and 20%-25% of the height
 				$(obj).append('<div id="textholder'+randID+'" class="textholder" style="position:absolute;bottom:0px;margin-bottom:'+-imgHeight*o.textholderHeight+'px;left:'+$(obj).css('paddingLeft')+'"></div>');
 				var correctTHWidth = parseInt($('#textholder'+randID).css('paddingTop'));
 				var correctTHHeight = parseInt($('#textholder'+randID).css('paddingRight'));
 				$('#textholder'+randID).width(imgWidth-(correctTHWidth * 2)).height((imgHeight*o.textholderHeight)-(correctTHHeight * 2)).css({'backgroundColor':'#FFF','opacity':'0.5'});
 				showtext($('li:eq(1) p', obj).html());
-			
-				// Prev/next button(img) 
+
+				// Prev/next button(img)
+				imgHeight = 307
 				html = '<div id="btn_rt'+randID+'" style="position:absolute;right:0;top:'+((imgHeight/2)-15)+'px"><a href="javascript:void(0);"><img style="border:none;margin-right:2px" src="/images/rt.png" /></a></div>';
 				html += '<div id="btn_lt'+randID+'" style="position:absolute;left:0;top:'+((imgHeight/2)-15)+'px"><a href="javascript:void(0);"><img style="border:none;margin-left:2px" src="/images/lt.png" /></a></div>';
 				$(obj).append(html);
-			
-				// Pause/play button(img)	
+
+				// Pause/play button(img)
 				html = '<a href="javascript:void(0);"><img id="pause_btn'+randID+'" src="/images/pause.png" style="position:absolute;top:3px;right:3px;border:none" alt="Pause" /></a>';
 				html += '<a href="javascript:void(0);"><img id="play_btn'+randID+'" src="/images/play.png" style="position:absolute;top:3px;right:3px;border:none;display:none;" alt="Play" /></a>';
 				$(obj).append(html);
@@ -90,7 +91,7 @@
 					clearInt=setInterval(function(){anim('next');},o.displayTime+o.transitionSpeed);
 					setTimeout(function(){$('#pause_btn'+randID).show();$('#progress'+randID).fadeIn().width(imgWidth).height(5);},o.transitionSpeed);
 				});
-				
+
 				// Left and right arrow image button actions
 				$('#btn_rt'+randID).css('opacity','.75').click(function(){
 					autopilot = 0;
@@ -126,7 +127,7 @@
 
 					// Assign click handler for the thumbnails. Normally the format $('.thumb') would work but since it's outside of our object (obj) it would get called multiple times
 					$('#thumbs'+randID+' div').bind('click', thumbclick); // We use bind instead of just plain click so that we can repeatedly remove and reattach the handler
-				
+
 					if(!o.displayThumbnailNumbers) $('#thumbs'+randID+' div').text('');
 					if(!o.displayThumbnailBackground) $('#thumbs'+randID+' div').css({'background-image':'none'});
 				}
@@ -186,9 +187,9 @@
 					// Fade left/right arrows out when transitioning
 					$('#btn_rt'+randID).fadeOut(500);
 					$('#btn_lt'+randID).fadeOut(500);
-					
+
 					// animate textholder out of frame
-					$('#textholder'+randID).animate({marginBottom:(-imgHeight*o.textholderHeight)-(correctTHHeight * 2)+'px'},500);					
+					$('#textholder'+randID).animate({marginBottom:(-imgHeight*o.textholderHeight)-(correctTHHeight * 2)+'px'},500);
 
 					//?? Fade out play/pause?
 					$('#pause_btn'+randID).fadeOut(250);
@@ -222,7 +223,7 @@
 							borderpatrol($('#thumb'+randID+'_'+(curr+1)));
 							$('#thumbs'+randID+' div').css({'cursor':'default'}).unbind('click'); // Unbind the thumbnail click event until the transition has ended
 							// Copy leftmost (first) li and insert it after the last li
-							$('li:first', obj).clone().insertAfter($('li:last', obj));	
+							$('li:first', obj).clone().insertAfter($('li:last', obj));
 							// Update width and left position of ul and animate ul to the left
 							$('ul', obj)
 								.animate({left:-imgWidth*2},o.transitionSpeed,function(){
