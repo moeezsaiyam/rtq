@@ -1,7 +1,7 @@
 class Image < ActiveRecord::Base
 
   has_attached_file :photo,
-                    :styles => {  :medium => ["660x307#",:jpg],
+                    :styles => {  :medium => ["660x307!",:jpg],
                                   :small =>["100x100#",:jpg],
                                },
                     :default_style => :medium,
