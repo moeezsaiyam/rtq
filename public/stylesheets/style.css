@@ -1898,12 +1898,19 @@ border-bottom:none;
     padding-top: 10px;
     text-align: left;
     }
+#carousel {
+    width: 660px !important;
+    height: 307px !important;
+    margin: 0 auto;
+    position: relative;
+}
+
  #carousel ul {
   list-style: none;
   width:1600px;
   margin: 0;
   padding: 0;
-  position:relative;
+  position:relative !important;
 }
 #carousel li {
   display:inline;
