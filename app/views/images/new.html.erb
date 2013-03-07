@@ -1,4 +1,9 @@
-<%=link_to 'Show Banner Image', images_path, :class =>'button-slider'%><br/><br/><br/>
+<div>
+  <%if params[:image].blank? %>
+    <br/><br/>
+    <% end %>
+</div>
+<%=link_to 'Show Banner Images', images_path, :class =>'button-slider'%><br/><br/><br/>
 <% form_tag(images_path, :multipart => true) do %>
   <div id="upload">
     <%= file_field_tag "image[]"  %>
@@ -14,4 +19,3 @@
     <%= file_field_tag "image[]"  %>
   </div>
 </div>
-

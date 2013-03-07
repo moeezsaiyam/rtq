@@ -1,8 +1,10 @@
 <%= link_to "Back", new_image_path, :class=>"button-slider" %><br/><br/>
-<ul>
+
+<ul class="slide-view">
   <% @images.each do |image| %>
-    <li><%= image_tag "#{image.photo.url(:small)}.jpg"%></li>
-    <li><%= link_to "Remove Image", image_path(image), :method => :delete, :confirm => 'Are you sure?' %>
+    <li>
+      <div><%= image_tag "#{image.photo.url(:small)}.jpg"%></div>
+      <div class="image"><%= link_to "Remove Image", image_path(image), :method => :delete, :confirm => 'Are you sure?' %></div>
     </li>
   <% end %>
 </ul>

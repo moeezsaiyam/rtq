@@ -40,13 +40,17 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.xml
   def create
-    images = params[:image]
-    images.each do |img|
-      image = Image.new
-      image.photo = img
-      image.save
+    if params[:image].blank?
+      flash[:notice] = "Must Add the Picture for Slider"
+      return redirect_to :back
+    else
+      images = params[:image]
+      images.each do |img|
+        image = Image.new
+        image.photo = img
+        image.save
+      end
     end
-
     respond_to do |format|
       if params[:image].present?
         flash[:notice] = 'Image was successfully created.'

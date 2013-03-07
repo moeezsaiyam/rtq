@@ -2425,6 +2425,7 @@ input[type="submit"] {
   border: none !important;
    padding: 4px 10px;
    cursor: pointer;
+   color:white;
 }
 .advance-search {
   font-size: 14px;
@@ -2501,4 +2502,24 @@ a.button-slider{
   padding: 4px 15px 5px;
   color: white;
 }
-
+.slide-view{
+  width:100px;
+}
+ul.slide-view{
+  float:left;
+  width:100%;
+  }
+.slide-view li{
+  float: left;
+  margin: 10px;
+  width: 150px;
+  }
+.image{
+  background: url("/images/rep-btn.png") repeat-x scroll 0 0 transparent;
+  color: white;
+  padding: 0 8px 4px;
+  width: 85px;
+}
+.image a{
+  color: white !important;
+}
