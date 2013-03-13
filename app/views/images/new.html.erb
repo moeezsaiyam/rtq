@@ -7,6 +7,7 @@
 <% form_tag(images_path, :multipart => true) do %>
   <div id="upload">
     <%= file_field_tag "image[]"  %>
+    <%= text_area_tag 'url[]', "", :placeholder => "URL for the image", :class => "text-area-image"  %>
   </div>
   <div class ="clear"></div>
   <%= link_to ('Add Another','#',{:id =>'add_button_image'}) %><br/><br/>
@@ -17,5 +18,6 @@
 <div class = "upload_image" style="display:none">
   <div>
     <%= file_field_tag "image[]"  %>
+    <%= text_area_tag 'url[]', "", :placeholder => "URL for the image", :class => "text-area-image"  %>
   </div>
 </div>

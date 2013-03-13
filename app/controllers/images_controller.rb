@@ -45,9 +45,11 @@ class ImagesController < ApplicationController
       return redirect_to :back
     else
       images = params[:image]
-      images.each do |img|
+      urls = params[:url]
+      images.zip(urls) do |img,ulr|
         image = Image.new
         image.photo = img
+        image.url = ulr
         image.save
       end
     end
