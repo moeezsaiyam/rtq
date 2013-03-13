@@ -1820,7 +1820,7 @@ width:100%;
   right:-157px;
 }
 .footer {
-  margin-left: 77px;
+  margin-left: 64px;
 }
 .my_custom_googleplusone{
 background: url("/images/google.png") no-repeat scroll;
@@ -2263,7 +2263,7 @@ span p {
 .footer-colm3 {
   float: left;
   margin-left: 40px;
-  width: 206px;
+  width: 194px;
 }
 p.about-text {
   color:white;
@@ -2489,7 +2489,7 @@ a.about-us{
   margin-left: 25px;
 }
 .content-body ul li {
-  font-family: 'Square721Regular';
+  font-family: 'Square721Regular'.
   background:white;
   font-size: 14px;
 }
