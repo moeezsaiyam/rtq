@@ -1,5 +1,8 @@
 class Image < ActiveRecord::Base
 
+  before_save :check_the_link
+
+  LINK_REGEX = /http[s]*/
   has_attached_file :photo,
                     :styles => {  :medium => ["660x307!",:jpg],
                                   :small =>["100x100#",:jpg],
@@ -13,5 +16,12 @@ class Image < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
 
   validates_presence_of :photo
+  attr_accessible :url
+
+  def check_the_link
+    unless self.url.match(LINK_REGEX)
+      self.url = "https://" + self.url
+    end
+  end
 
 end

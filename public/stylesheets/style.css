@@ -2535,3 +2535,12 @@ ul.slide-view{
 .image a{
   color: white !important;
 }
+.text-area-image{
+  height: 25px;
+  position: relative;
+  top: 8px;
+  width: 306px;
+}
+#carousel ul li a {
+  display: block !important;
+}
