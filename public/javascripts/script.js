@@ -1,12 +1,18 @@
 function remove_alternate(remove_link){
-  if(confirm("Are you sure you want to delete this?"))
+  if(confirm("Are you sure you want to delete this?")){
     $(remove_link).siblings('.existing-phrase').remove();
     $(remove_link).remove();
+    }
+  else
+    return false;
 }
 function remove_issue(remove_link){
-  if(confirm("Are you sure you want to delete this?"))
+  if(confirm("Are you sure you want to delete this?")){
     $(remove_link).siblings('.refernce-details').remove();
     $(remove_link).remove()
+    }
+    else
+      return false;
 }
 $(document).ready(function()
 {
