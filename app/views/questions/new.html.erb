@@ -30,7 +30,7 @@
   <p>
     <%= f.label :Answer %>
     <%= hidden_field_tag 'question[id]', @question.id %>
-    <textarea id="editor" name="question[answer]"></textarea>
+    <%= f.text_area :answer, :id =>"editor" %>
   </p>
   <div id="alternate_phrases">
       <label for="question_sub_topic_id">Alternate Phrases</label><br />
