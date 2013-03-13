@@ -36,7 +36,7 @@
   <p><div class="clear"></div>
     <%= f.label :role, "User Role" %>
     <div class="clear"></div>
-    <%= select("user", "role", options_for_select(["Admin","SubAdmin"])) %>
+    <%= f.select :role,  options_for_select(user_role_type(@user)) %>
   </p>
   <p>
    <%= f.submit 'Update' %>
