@@ -2230,7 +2230,7 @@ span p {
 .footer-colm1 {
   background: url(/images/footer-box.png) no-repeat right top;
   float: left;
-  width: 400px;
+  width: 409px;
   height: 210px;
 }
 
@@ -2246,6 +2246,7 @@ span p {
   top: -4px;
   left: 9px;
   margin-left: 10px;
+  position: relative;
 }
 
 .footer-colm1-content p {
@@ -2255,14 +2256,14 @@ span p {
 
 .footer-colm2 {
   float: left;
-  margin-left: 60px;
+  margin-left: 50px;
   width: 307px;
 }
 
 .footer-colm3 {
-  float: right;
+  float: left;
+  margin-left: 40px;
   width: 206px;
-}
 }
 p.about-text {
   color:white;
@@ -2480,6 +2481,9 @@ a:visited {
 a.about-us{
   color: white !important;
   font-size: 14px;
+  left: 45px;
+  position: relative;
+  top: -18px;
 }
 .about-us{
   margin-left: 25px;
@@ -2498,6 +2502,7 @@ a.about-us{
   margin-left: 20px;
   max-width: 350px;
   text-align: justify;
+  color:white;
 }
 .search-keyword h1{
 
