@@ -2473,7 +2473,9 @@ width: 274px !important;
 a:visited {
   font-family: 'Square721Regular';
   text-decoration: none;
-  color: #835A35;
+  color: #1F0F00;
+  font-weight:bold;
+  font-weight:1000
 }
 .action-button a:visited {
   text-decoration: none;
