@@ -97,15 +97,11 @@
 					autopilot = 0;
 					$('#progress'+randID).stop().fadeOut();
 					anim('next');
-					setTimeout(function(){$('#play_btn'+randID).fadeIn(250);},o.transitionSpeed);
-					clearTimeout(clearInt);
-				}).hover(function(){$(this).animate({opacity:'1'},250)},function(){$(this).animate({opacity:'.75'},250)});
+						}).hover(function(){$(this).animate({opacity:'1'},250)},function(){$(this).animate({opacity:'.75'},250)});
 				$('#btn_lt'+randID).css('opacity','.75').click(function(){
 					autopilot = 0;
 					$('#progress'+randID).stop().fadeOut();
 					anim('prev');
-					setTimeout(function(){$('#play_btn'+randID).fadeIn(250);},o.transitionSpeed);
-					clearTimeout(clearInt);
 				}).hover(function(){$(this).animate({opacity:'1'},250)},function(){$(this).animate({opacity:'.75'},250)});
 
 				if(o.displayThumbnails)
