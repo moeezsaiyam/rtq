@@ -2544,3 +2544,6 @@ ul.slide-view{
 #carousel ul li a {
   display: block !important;
 }
+#carousel .textholder{
+  display: none !important;
+}
