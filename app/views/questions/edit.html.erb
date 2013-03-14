@@ -83,6 +83,7 @@
           </div>
       <% end %>
     </div>
+    <p><%= link_to ('Add Another','#',{:id =>'add_reference_button'}) %></p><br><p>
   <%= f.submit 'Update' %></p>
   <% end %>
 
@@ -92,7 +93,7 @@
         <span class="existing-phrase">
           <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
         </span>
-         <%= link_to 'Remove','#', :onclick => 'remove_alternate(this); return false;' %>
+         <br><%= link_to 'Remove','#', :onclick => 'remove_alternate(this); return false;' %>
       </div>
     <% end %>
   </div>
@@ -112,11 +113,10 @@
           </p>
           <%= reference_form.hidden_field :question_id, :value=> @question_id, :name => 'question[reference_attributes][][question_id]' %>
         </span>
-        <%= link_to ('Remove', "#" , :onclick => "remove_issue(this); return false;")%>
+        <br><%= link_to ('Remove', "#" , :onclick => "remove_issue(this); return false;")%>
       </div>
     <% end %>
   </div>
-  <p><%= link_to ('Add Another','#',{:id =>'add_reference_button'}) %></p><br><p>
-
+  <p>
 
 </div>
