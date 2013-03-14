@@ -32,7 +32,7 @@ class ImagesController < ApplicationController
     end
   end
 
-  # GET /images/1/edit
+  # GET /images/1/ed
   def edit
     @image = Image.find(params[:id])
   end
@@ -46,11 +46,13 @@ class ImagesController < ApplicationController
     else
       images = params[:image]
       urls = params[:url]
-      images.zip(urls) do |img,ulr|
+      positions = params[:order]
+      images.zip(urls,positions) do |img,ulr,position|
         image = Image.new
         image.photo = img
         image.url = ulr
-        image.save
+        image.position = position
+        image.save(false)
       end
     end
     respond_to do |format|
@@ -68,11 +70,10 @@ class ImagesController < ApplicationController
   # PUT /images/1.xml
   def update
     @image = Image.find(params[:id])
-
     respond_to do |format|
       if @image.update_attributes(params[:image])
         flash[:notice] = 'Image was successfully updated.'
-        format.html { redirect_to(@image) }
+        format.html { redirect_to images_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

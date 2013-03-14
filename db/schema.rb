@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313122539) do
+ActiveRecord::Schema.define(:version => 20130314081511) do
 
   create_table "alternate_phrases", :force => true do |t|
     t.string   "content"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130313122539) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.text     "url"
+    t.integer  "position"
   end
 
   create_table "keywords", :force => true do |t|

@@ -8,6 +8,7 @@
   <div id="upload">
     <%= file_field_tag "image[]"  %>
     <%= text_area_tag 'url[]', "", :placeholder => "URL for the image", :class => "text-area-image"  %>
+    <%= text_field_tag 'order[]',"", :class=>"image-order-by", :placeholder => "Order" %>
   </div>
   <div class ="clear"></div>
   <%= link_to ('Add Another','#',{:id =>'add_button_image'}) %><br/><br/>
@@ -19,5 +20,6 @@
   <div>
     <%= file_field_tag "image[]"  %>
     <%= text_area_tag 'url[]', "", :placeholder => "URL for the image", :class => "text-area-image"  %>
+    <%= text_field_tag 'order[]',"",:class=>"image-order-by", :placeholder => "Order" %>
   </div>
 </div>

@@ -2529,9 +2529,13 @@ ul.slide-view{
   width: 150px;
   }
 .image{
-  background: url("/images/rep-btn.png") repeat-x scroll 0 0 transparent;
+   background: url("/images/rep-btn.png") repeat-x scroll 0 0 transparent;
   color: white;
-  padding: 0 8px 4px;
+  margin-bottom: 2px;
+  padding: 1px 8px 4px;
+  position: relative;
+  text-align: center;
+  top: 3px;
   width: 85px;
 }
 .image a{
@@ -2541,11 +2545,35 @@ ul.slide-view{
   height: 25px;
   position: relative;
   top: 8px;
-  width: 306px;
+  width: 289px;
 }
 #carousel ul li a {
   display: block !important;
 }
 #carousel .textholder{
   display: none !important;
+}
+p.button-slider{
+  margin-bottom: 10px;
+}
+#image_submit{
+  background:url("/images/rep-btn.png") repeat-x;
+  color: white !important;
+  position: relative;
+  top:10px;
+}
+.image-show{
+  position: relative;
+  float:left;
+  right:10px;
+}
+.image-order-by{
+  width:42px;
+  height: 17px;
+}
+.pos-show{
+  height: 13px;
+  width: 89px;
+  text-align: center;
+  background-color: grey !important;
 }
