@@ -44,13 +44,12 @@
                 <%= phrase_form.hidden_field :id, :name => 'question[alternate_phrase_attributes][][id]' %>
               <% end %>
 
-            </div>
+            </div><br>
             <%= link_to ('Remove', "#" , :onclick => "remove_alternate(this); return false;")%>
          </div>
        <% end %>
       <% end %>
     </div>
-    <br>
      <p>
       <%= link_to ('Add Another','#',{:id =>'add_button'}) %>
     </p>

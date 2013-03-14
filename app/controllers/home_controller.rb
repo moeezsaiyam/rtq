@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     @sub_topics = SubTopic.featured
     @questions = Question.popular.limited.all
-    @images = Image.all
+    @images = Image.ordered.all
   end
 
   def suggestions
