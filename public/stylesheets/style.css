@@ -2483,12 +2483,6 @@ a:visited {
 a.about-us{
   color: white !important;
   font-size: 14px;
-  left: 45px;
-  position: relative;
-  top: -18px;
-}
-.about-us{
-  margin-left: 25px;
 }
 .content-body ul li {
   font-family: 'Square721Regular'.
@@ -2500,7 +2494,7 @@ a.about-us{
   color: white !important;
 }
 .about-text p{
-  display: block;
+  display: inline-block;
   margin-left: 20px;
   max-width: 350px;
   text-align: justify;
@@ -2576,4 +2570,8 @@ p.button-slider{
   width: 89px;
   text-align: center;
   background-color: grey !important;
+}
+.issue-address{
+  font-size: 14px;
+
 }
