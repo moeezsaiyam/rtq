@@ -59,11 +59,11 @@
     </p>
 
     <div id="references">
+      <div class="issue-address">Issue Addressed</div><br/>
       <% @question.references.each do |reference| %>
         <% fields_for "question[reference_attributes][]", reference do |reference_form|%>
           <div>
             <div class ="refernce-details">
-              <p><%= reference_form.label :issue, "Issue Addressed" %></p>
               <p><%= reference_form.text_area :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
               </p>
               <p>Enter Sura and Aya number like From 1:1 To 1:7</p>
@@ -101,7 +101,6 @@
     <% fields_for "question[reference_attributes][]", @question.references.new do |reference_form|%>
       <div>
         <span class ="refernce-details">
-          <p><%= reference_form.label :issue, "Issue Addressed" %></p>
           <p><%= reference_form.text_area :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
           </p>
           <p>Enter Sura and Aya number like From 1:1 To 1:7</p>
