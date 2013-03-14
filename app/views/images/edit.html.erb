@@ -1,12 +1,18 @@
 <h1>Editing image</h1>
 
-<% form_for(@image) do |f| %>
+<% form_for(@image, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
-
+  <div id="upload">
+    <%= image_tag @image.photo.url(:small),  :class=>"image-show" %>
+    <%= f.file_field :photo  %>
+    <%= f.text_area :url, :placeholder => "URL for the image", :class => "text-area-image"  %>
+    <%= f.text_field :position, :class=>"image-order-by"%>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Update'%>
   </p>
+  </div>
+
 <% end %>
 
-<%= link_to 'Show', @image %> |
 <%= link_to 'Back', images_path %>
+
