@@ -21,12 +21,13 @@ class Image < ActiveRecord::Base
 
   def check_the_link
     unless self.url.match(LINK_REGEX)
-      self.url = "https://" + self.url
+      self.url = "https://" + self.url if self.url.present?
+      self.url = "#" unless self.url.present?
     end
   end
   def position_check
     if self.position.blank?
-      self.position = Image.maximum("position")+1 if Image.maximum("position")>0
+      self.position = Image.maximum("position").to_i + 1 if Image.maximum("position").to_i > 0
     end
 
   end
