@@ -7,6 +7,11 @@
       <%= render :partial => "shared/slider" %>
     </div>
     <!--/slider-->
+    <% if logged_in?  %>
+      <% if admin? %>
+        <%= link_to "Add/Edit", new_image_path, :class=>"button-slider" %>
+      <% end %>
+    <% end %>
   <% end %>
   <div class = "index-subtopic">
     <h1>Popular Subtopics</h1></div>

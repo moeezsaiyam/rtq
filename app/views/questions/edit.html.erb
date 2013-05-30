@@ -6,118 +6,116 @@
 <div class = "content-body1">
 <br>
 <div class ="admin-page"> <h1>Editing <%= @question.quest unless @question.blank? %> Question</div></h1></div>
-<% form_for @question do |f| %>
+  <% form_for @question, :url => topic_sub_topic_question_path(@question.sub_topic.topic, @question.sub_topic) do |f| %>
 
-  <% if @question.errors.any? %>
-    <%= stylesheet_link_tag 'conditional' %>
-   <% end %>
+    <% if @question.errors.any? %>
+      <%= stylesheet_link_tag 'conditional' %>
+     <% end %>
 
-  <% if @question.errors.any? %>
-    <div class = "error-box">
-      <h1 class = "error-heading"> <%= @question.errors.count %>  <%=display_errors(@question) %>  has been occured: Errors has been occured: </h1>
-      <h2 class = "error-heading">Unable to update question.</h2>
-      <% @question.errors.full_messages.each do |message| %>
-        <li class = "error"><%= message %> </li>
+    <% if @question.errors.any? %>
+      <div class = "error-box">
+        <h1 class = "error-heading"> <%= @question.errors.count %>  <%=display_errors(@question) %>  has been occured: Errors has been occured: </h1>
+        <h2 class = "error-heading">Unable to update question.</h2>
+        <% @question.errors.full_messages.each do |message| %>
+          <li class = "error"><%= message %> </li>
+        <% end %>
+      </div>
+    <% end %>
+
+    <p>
+      <%= f.label :sub_topic_id %><br />
+      <%= select("question", "sub_topic_id", SubTopic.find_all_by_topic_id(params[:topic_id]).collect {|t| [ t.name, t.id ] }) %>
+    </p>
+    <p>
+      <%= f.label :Question %><br />
+      <%= f.text_field :quest %>
+    </p>
+    <p>
+      <%= f.label :Answer %>
+      <%= hidden_field_tag 'question[id]', @question.id %>
+      <textarea id="editor" name="question[answer]"><%= @question.answer %></textarea>
+    </p>
+    <div id="alternate_phrases">
+      <label for="question_sub_topic_id">Alternate Phrases</label><br />
+      <% @question.alternate_phrases.each do |alternate_phrase| %>
+        <% fields_for "question[alternate_phrase_attributes][]", alternate_phrase do |phrase_form|%>
+          <div>
+            <div class="existing-phrase">
+              <%= phrase_form.text_field :content, :class => 'alternate_phrase_field', :name => 'question[alternate_phrase_attributes][][content]' %>
+              <%= phrase_form.hidden_field :question_id, :value=> @question_id, :name => 'question[alternate_phrase_attributes][][question_id]' %>
+              <% unless alternate_phrase.new_record?  %>
+                <%= phrase_form.hidden_field :id, :name => 'question[alternate_phrase_attributes][][id]' %>
+              <% end %>
+
+            </div>
+            <%= link_to ('Remove', "#" , :onclick => "remove_alternate(this); return false;")%>
+         </div>
+       <% end %>
       <% end %>
     </div>
+    <br>
+     <p>
+      <%= link_to ('Add Another','#',{:id =>'add_button'}) %>
+    </p>
+
+    <div id="references">
+      <div class="issue-address">Issue Addressed</div><br/>
+      <% @question.references.each do |reference| %>
+        <% fields_for "question[reference_attributes][]", reference do |reference_form|%>
+          <div>
+            <div class ="refernce-details">
+              <p><%= reference_form.text_area :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
+              </p>
+              <p>Enter Sura and Aya number like From 1:1 To 1:7</p>
+              <p>
+                <%= reference_form.label :from, "From"%>
+                <%= reference_form.text_field :from, :class => 'issue_from_field', :name => 'question[reference_attributes][][from]' %>
+                <%= reference_form.label :to, "To"%>
+                <%= reference_form.text_field :to, :class => 'issue_to_field', :name => 'question[reference_attributes][][to]' %>
+              </p>
+              <%= reference_form.hidden_field :question_id, :value=> @question_id, :name => 'question[reference_attributes][][question_id]' %>
+              <% unless reference.new_record?  %>
+                <%= reference_form.hidden_field :id, :name => 'question[reference_attributes][][id]' %>
+              <% end %>
+            <% end %>
+            </div>
+              <%= link_to ('Remove', "#" , :onclick => "remove_issue(this); return false;")%>
+          </div>
+      <% end %>
+    </div>
+    <p><%= link_to ('Add Another','#',{:id =>'add_reference_button'}) %></p><br><p>
+  <%= f.submit 'Update' %></p>
   <% end %>
 
-  <p>
-    <%= f.label :sub_topic_id %><br />
-    <%= select("question", "sub_topic_id", SubTopic.find_all_by_topic_id(params[:topic_id]).collect {|t| [ t.name, t.id ] }) %>
-  </p>
-  <p>
-    <%= f.label :Question %><br />
-    <%= f.text_field :quest %>
-  </p>
-  <p>
-    <%= f.label :Answer %>
-    <%= hidden_field_tag 'question[id]', @question.id %>
-    <textarea id="editor" name="question[answer]"><%= @question.answer %></textarea>
-  </p>
-  <div id="alternate_phrases">
-    <label for="question_sub_topic_id">Alternate Phrases</label><br />
-    <% @question.alternate_phrases.each do |alternate_phrase| %>
-      <% fields_for "question[alternate_phrase_attributes][]", alternate_phrase do |phrase_form|%>
-        <div class="existing-phrase">
-          <%= phrase_form.text_field :content, :class => 'alternate_phrase_field', :name => 'question[alternate_phrase_attributes][][content]' %>
-          <%= phrase_form.hidden_field :question_id, :value=> @question_id, :name => 'question[alternate_phrase_attributes][][question_id]' %>
-           <%= link_to ('Remove', "/questions/#{@question.id}/remove_phrase?phrase_id=#{alternate_phrase.id}", :confirm=>'Are you sure you want to delete?')%>
-          <% unless alternate_phrase.new_record?  %>
-            <%= phrase_form.hidden_field :id, :name => 'question[alternate_phrase_attributes][][id]' %>
-          <% end %>
-
-        </div>
-      <% end %>
-
+  <div id="new_alternate_phrases" style="display:none;">
+    <% fields_for "question[alternate_phrase_attributes][]", @question.alternate_phrases.new do |phrase_form|%>
+      <div>
+        <span class="existing-phrase">
+          <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
+        </span>
+         <br><%= link_to 'Remove','#', :onclick => 'remove_alternate(this); return false;' %>
+      </div>
     <% end %>
   </div>
-  <br>
-   <p>
-    <%= link_to ('Add Another','#',{:id =>'add_button'}) %>
-  </p>
-  <div id="references">
-    <% @question.references.each do |reference| %>
-      <% fields_for "question[reference_attributes][]", reference do |reference_form|%>
-    <p>
-      <%= reference_form.label :issue, "Issue Addressed" %>
-    </p>
-    <p>
-        <%= reference_form.text_area :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
-    </p>
-     <p>
-        Enter Sura and Aya number like From 1:1 To 1:7
-      <p><%= reference_form.label :from, "From"%>
-      <%= reference_form.text_field :from, :class => 'issue_from_field', :name => 'question[reference_attributes][][from]' %>
-      <%= reference_form.label :to, "To"%>
-      <%= reference_form.text_field :to, :class => 'issue_to_field', :name => 'question[reference_attributes][][to]' %>
-    </p>
-      <%= reference_form.hidden_field :question_id, :value=> @question_id, :name => 'question[reference_attributes][][question_id]' %>
-      <%= link_to ('Remove', "/questions/#{@question.id}/remove_issue?reference_id=#{reference.id}", :confirm=>'Are you sure you want to delete?')%>
-      <% unless reference.new_record?  %>
-      <%= reference_form.hidden_field :id, :name => 'question[reference_attributes][][id]' %>
-      <% end %>
-      <% end %>
+  <div id="new_references" style="display:none;">
+    <% fields_for "question[reference_attributes][]", @question.references.new do |reference_form|%>
+      <div>
+        <span class ="refernce-details">
+          <p><%= reference_form.text_area :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
+          </p>
+          <p>Enter Sura and Aya number like From 1:1 To 1:7</p>
+          <p>
+            <%= reference_form.label :from, "From"%>
+            <%= reference_form.text_field :from, :class => 'issue_from_field', :name => 'question[reference_attributes][][from]' %>
+            <%= reference_form.label :to, "To"%>
+            <%= reference_form.text_field :to, :class => 'issue_to_field', :name => 'question[reference_attributes][][to]' %>
+          </p>
+          <%= reference_form.hidden_field :question_id, :value=> @question_id, :name => 'question[reference_attributes][][question_id]' %>
+        </span>
+        <br><%= link_to ('Remove', "#" , :onclick => "remove_issue(this); return false;")%>
+      </div>
     <% end %>
-     </div>
-  <p>
-
-    <%= link_to ('Add Another','#',{:id =>'add_reference_button'}) %>
-  </p><br>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-</div><br>
-
-
-<div id="new_alternate_phrases" style="display:none;">
-    <div>
-      <% fields_for "question[alternate_phrase_attributes][]", @question.alternate_phrases.new do |phrase_form|%>
-        <%= phrase_form.text_field :content, :class => 'alternate_phrase_field' %>
-      <% end %>
-       <%= link_to 'Remove','#', :onclick => 'remove_alternate(this); return false;' %>
-   </div>
-</div>
-
-<div id="new_references" style="display:none;">
-  <div>
-      <% fields_for "question[reference_attributes][]", @question.references.new do |reference_form|%>
-    <p>
-      <%= reference_form.label :issue, "Issue Addressed" %>
-    </p>
-    <p>
-        <%= reference_form.text_area :issue, :class => 'issue_field', :name => 'question[reference_attributes][][issue]' %>
-    </p>
-     <p>
-      <p><%= reference_form.label :from, "From"%>
-      <%= reference_form.text_field :from, :class => 'issue_from_field', :name => 'question[reference_attributes][][from]' %>
-      <%= reference_form.label :to, "To"%>
-      <%= reference_form.text_field :to, :class => 'issue_to_field', :name => 'question[reference_attributes][][to]' %>
-    </p>
-      <%= reference_form.hidden_field :question_id, :value=> @question_id, :name => 'question[reference_attributes][][question_id]' %>
-      <% end %>
-      <%= link_to ('Remove','#', :onclick => 'remove_alternate(this); return false;', :confirm=>'Are you sure you want to delete?') %>
   </div>
-</div>
+  <p>
 
+</div>

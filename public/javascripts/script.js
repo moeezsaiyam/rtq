@@ -1,6 +1,19 @@
-function remove_alternate(rem){
-      $(rem).parent().remove();
-    };
+function remove_alternate(remove_link){
+  if(confirm("Are you sure you want to delete this?")){
+    $(remove_link).siblings('.existing-phrase').remove();
+    $(remove_link).remove();
+    }
+  else
+    return false;
+}
+function remove_issue(remove_link){
+  if(confirm("Are you sure you want to delete this?")){
+    $(remove_link).siblings('.refernce-details').remove();
+    $(remove_link).remove()
+    }
+    else
+      return false;
+}
 $(document).ready(function()
 {
    $(document).pngFix();
@@ -40,14 +53,21 @@ $(document).ready(function()
             $('ul', this).slideUp(100);
         });
 
-   $('#add_button').click(function(){
+  $('#add_button').click(function(){
     $('#alternate_phrases').append('<br/>');
     $('#alternate_phrases').append($('#new_alternate_phrases div').clone().val(''));
     return false;
    });
 
+
+  $('#add_button_image').click(function(){
+    $('#upload').append($('.upload_image div').clone().val(''));
+   });
+
   $('#add_reference_button').click(function(){
-    $('#references').append($('#new_references div').clone().val(''));
+    $('#references').append(
+      $('#new_references div').clone().val('')
+      );
    return false;
    });
 

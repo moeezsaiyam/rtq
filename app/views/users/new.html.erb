@@ -9,8 +9,8 @@
     <% if @user.errors.any? %>
       <%= stylesheet_link_tag 'conditional' %>
     <% end %>
-    <div class = "error-box">
-      <% if @user.errors.any? %>
+    <% if @user.errors.any? %>
+      <div class = "error-box">
         <h1 class = "error-heading"> <%= "Following errors has occured:" %> </h1>
         <h2 class = "error-heading">Unable to create a new user.</h2>
         <% if !@user.errors[:login].blank? %>
@@ -25,8 +25,8 @@
         <% if !@user.errors[:password_confirmation].blank? %>
           <li class = 'error'><%= @user.user_errors("password_confirmation") %> </li>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
     <div class="clear"></div>
     <%= f.label :login %>
     <div class="clear"></div>

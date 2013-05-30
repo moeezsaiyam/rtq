@@ -1,0 +1,14 @@
+<%= link_to "Back", new_image_path, :class=>"button-slider" %><br/><br/>
+
+<ul class="slide-view">
+  <% @images.each do |image| %>
+    <li>
+      <div><%= image_tag "#{image.photo.url(:small)}.jpg"%></div>
+      <%= text_field_tag 'position',image.position, :class=>"pos-show", :disabled => true %>
+      <div class="image"><%= link_to "Remove Image", image_path(image), :method => :delete, :confirm => 'Are you sure?' %></div>
+      <div class ="image"> <%= link_to "Edit", edit_image_path(image)%>
+      </div><br/><br/>
+
+    </li>
+  <% end %>
+</ul>
