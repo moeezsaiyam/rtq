@@ -24,7 +24,7 @@ module ApplicationHelper
   def previous_link(name)
     return unless params[:prev]
     content_tag :div, :class => "prev-link" do
-      link_to("&lt;&lt; Back to #{name}", params[:prev])
+      link_to("&lt;&lt; Back to Sub Topic", params[:prev])
     end
   end
 
