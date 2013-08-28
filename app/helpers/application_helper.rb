@@ -170,8 +170,11 @@ module ApplicationHelper
   end
 
   def display_description(description)
-    description.gsub('<p>',' ').gsub('</p>','<br />')
-    description.gsub('<br>','')
+    if description.length > 301
+     description.gsub('<p>',' ').gsub('</p>','<br />')
+    else
+      description
+    end
   end
 
   def edit_link(name)
