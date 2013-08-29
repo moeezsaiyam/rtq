@@ -83,7 +83,7 @@
           </div>
             <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
       <% elsif s.class == Question %>
-    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Question </div>
+    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Sub Topic </div>
      <div>
             <p>
               <%= truncate(strip_tags(s.answer), :length => 100, :omission => '...') %>
@@ -111,7 +111,7 @@
           </div>
             <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
       <% elsif s.class == Question %>
-    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Question </div>
+    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Sub Topic </div>
      <div>
             <p>
               <%=h s.answer[0..100] %><%= "..." if s.answer.chars.count > 100 %>

@@ -1,5 +1,5 @@
 <br><div class = "content-body-admin">
-<br><div class ="admin-page"> 
+<br><div class ="admin-page">
   <h1>New translation</h7></div></h1>
 <% form_for(@translation) do |f| %>
   <% if @translation.errors.any? %>
@@ -8,7 +8,7 @@
   <div class = "error-box">
     <% if @translation.errors.any? %>
       <h1 class = "error-heading"> <%=@translation.errors.count %>  <%=display_errors(@translation) %>  has been occured: </h1>
-      <h2 class = "error-heading">Unable to add new question.</h2>
+      <h2 class = "error-heading">Unable to add new sub topic.</h2>
       <% @translation.errors.full_messages.each do |message| %>
         <li class = "error"><%= message %> </li>
       <% end %>
