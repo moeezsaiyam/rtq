@@ -19,7 +19,6 @@ class Question < ActiveRecord::Base
   named_scope :limited, :limit => 6
 
   validates_presence_of :quest, :message => "You didn't entered question. please enter question."
-  validates_presence_of :answer, :message => "You didn't provide answer of the question."
 
 
   def validate

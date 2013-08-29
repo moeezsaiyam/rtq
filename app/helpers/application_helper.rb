@@ -24,7 +24,7 @@ module ApplicationHelper
   def previous_link(name)
     return unless params[:prev]
     content_tag :div, :class => "prev-link" do
-      link_to("&lt;&lt; Back to #{name}", params[:prev])
+      link_to("&lt;&lt; Back to Sub Topic", params[:prev])
     end
   end
 
@@ -170,8 +170,11 @@ module ApplicationHelper
   end
 
   def display_description(description)
-    description.gsub('<p>',' ').gsub('</p>','<br />')
-    description.gsub('<br>','')
+    if description.length > 301
+     description.gsub('<p>',' ').gsub('</p>','<br />')
+    else
+      description
+    end
   end
 
   def edit_link(name)
