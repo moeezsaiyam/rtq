@@ -171,7 +171,7 @@ module ApplicationHelper
 
   def display_description(description)
     if description.length > 301
-     description.gsub('<p>',' ').gsub('</p>','<br />')
+     description[0..300]
     else
       description
     end
