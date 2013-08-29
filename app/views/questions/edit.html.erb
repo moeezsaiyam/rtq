@@ -15,7 +15,7 @@
     <% if @question.errors.any? %>
       <div class = "error-box">
         <h1 class = "error-heading"> <%= @question.errors.count %>  <%=display_errors(@question) %>  has been occured: Errors has been occured: </h1>
-        <h2 class = "error-heading">Unable to update question.</h2>
+        <h2 class = "error-heading">Unable to update sub topic.</h2>
         <% @question.errors.full_messages.each do |message| %>
           <li class = "error"><%= message %> </li>
         <% end %>

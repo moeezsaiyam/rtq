@@ -3,7 +3,7 @@
 <br>
 <div class = "content-body-admin">
 <div><br>
-  <div class ="admin-page"> <h1>New question</div></h1></div>
+  <div class ="admin-page"> <h1>New Sub Topic</div></h1></div>
   <% form_for @question,:url => topic_sub_topic_questions_path(params[:topic_id],params[:sub_topic_id]), :method => :post do |f| %>
       <% if @question.errors.any? %>
         <%= stylesheet_link_tag 'conditional' %>
@@ -12,7 +12,7 @@
       <% if @question.errors.any? %>
         <div class = "error-box">
           <h1 class = "error-heading"> <%= @question.errors.count %>  <%=display_errors(@question) %>  has been occured: Errors has been occured: </h1>
-          <h2 class = "error-heading">Unable to update question.</h2>
+          <h2 class = "error-heading">Unable to update sub topic.</h2>
           <% @question.errors.full_messages.each do |message| %>
             <li class = "error"><%= message %> </li>
           <% end %>
@@ -81,7 +81,7 @@
       <% end %>
     </div>
     <%= link_to ('Add Another','#',{:id =>'add_reference_button'}) %></p><br><p>
-  <%= f.submit 'Create Question' %></p>
+  <%= f.submit 'Create Sub Topic' %></p>
   <% end %>
 
   <div id="new_alternate_phrases" style="display:none;">
