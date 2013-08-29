@@ -12,7 +12,7 @@
     <br>
     <%= link_to 'Back',admin_dashboard_path %>
   </div>
-</div>  
+</div>
 <% form_tag( save_order_topics_path ) do %>
 <table class="admin-view table-topics">
   <thead>
@@ -30,7 +30,7 @@
         <%= image_tag("arrow.png", :class => 'sort-handle') %>
       </td>
       <td><%=h topic.name %></td>
-      <td><%= link_to 'Sub Topics', topic_sub_topics_path(topic) %></td>
+      <td><%= link_to 'Topics', topic_sub_topics_path(topic) %></td>
       <td><%= link_to 'Show', topic_slug_path(topic.name_slug) %></td>
       <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
       <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure to delete?', :method => :delete %></td>
@@ -43,7 +43,7 @@
   <div class="admin-back-link">
   <%= link_to 'Back',admin_dashboard_path %>
 </div>
-</div>  
+</div>
 <% end %>
 <div class="clear"></div>
 </br>

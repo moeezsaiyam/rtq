@@ -31,9 +31,7 @@ class VerseController < ApplicationController
     return head(404) unless @verse
     @verses_range = Verse.from_to_verses(params[:id],params[:range])
     @translation=Translation.get_translation(cookies, params)
-    puts @translation.inspect
     cookies['translation_name'] = @translation.table_nam
-
     @trans_verses = Hash.new
     @verses_range.each do|v|
       @trans_verses[v.id] = {:name => @translation.language, :translation => v.translate_to_by(@translation.table_nam)[0].text, :author => @translation.name }
