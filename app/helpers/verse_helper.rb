@@ -12,7 +12,7 @@ module VerseHelper
   end
 
    def verses_list_class(index,count)
-   return "verses-last" if index == count || index == 10
+   return "verses-last" if index == count
    end
 
    def sub_topic_list_class(question)
