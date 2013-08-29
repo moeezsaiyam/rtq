@@ -6,11 +6,11 @@
 <%if logged_in?%>
 <br>
 <div class = "content-body1">
-<div class ="admin-page"> <h1>Listing <%= @sub_topic.name unless @sub_topic.blank? %> Questions</div></h1></div>
+<div class ="admin-page"> <h1>Listing <%= @sub_topic.name unless @sub_topic.blank? %> Sub Topics</div></h1></div>
 <table class="admin-view">
   <tr>
     <th>Question</th>
-    <th>Topic</th>
+    <th>Quranic Subjects</th>
     <th colspan="3">Actions</th>
   </tr>
 
@@ -34,7 +34,7 @@
   <%end %>
   <%if !(logged_in?)%>
     <div class="content-body">
-    <h1>Questions in <%=h @sub_topic.name %></h1>
+    <h1>Sub Topics in <%=h @sub_topic.name %></h1>
    <div class="list-questions">
     <ol>
        <% @questions.each do |q| %>

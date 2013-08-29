@@ -2,7 +2,7 @@
 <% content_for :html_keywords, @words %>
 <br><div class = "content-body-admin">
 <div class = "content-body1">
-<br><div class ="admin-page"> <h1>New Sub Topic</div></h6></div>
+<br><div class ="admin-page"> <h1>New Topic</div></h6></div>
 <%= javascript_include_tag 'main' %>
 <% form_for @sub_topic, :url => topic_sub_topics_path(params[:topic_id]), :method => :post, :html => {:multipart => true} do |f| %>
 

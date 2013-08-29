@@ -2,14 +2,14 @@
 <% content_for :html_keywords, @words %>
 <% if @topic.blank? %>
 <div class = "content-body1">
-<div class ="admin-page"> <h1>Listing Sub Topics</div></h1></div>
+<div class ="admin-page"> <h1>Listing Topics</div></h1></div>
 <% else %>
 <br>
-  <div class ="admin-page"> <h1>Listing <%= @topic.name %> Sub Topics</div></h1>
+  <div class ="admin-page"> <h1>Listing <%= @topic.name %> Topics</div></h1>
 <% end %>
 <div>
   <div class="dashboard action-button button rounded-borders">
-    <%= link_to 'Add Sub Topic', new_topic_sub_topic_path(@topic) %>
+    <%= link_to 'Add Topic', new_topic_sub_topic_path(@topic) %>
   </div>
 
   <div class="admin-back-link">
