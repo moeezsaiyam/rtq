@@ -22,9 +22,9 @@ module ApplicationHelper
   end
 
   def previous_set_verses(name,id,id_to,index_no)
-    if (index_no.to_i + 1) > 1 && (id_to.to_i + 1) < @question.references.count
+    if (index_no.to_i + 1) > 1 && (@question.references[index_no.to_i].verse_ids_to.to_i - @question.references[index_no.to_i].verse_ids.to_i - 1) < @question.references.count
       content_tag :div, :class => "prev-set" do
-        link_to("&lt;&lt; #{name} set of verses","/verse/#{params[:id]}/#{id_to}/#{index_no.to_i - 1}?prev=#{params[:prev]}")
+        link_to("&lt;&lt; #{name} set of verses","/verse/#{@question.references[index_no.to_i - 1].verse_ids}/#{@question.references[index_no.to_i - 1 ].verse_ids_to}/#{index_no.to_i - 1}?prev=#{params[:prev]}")
       end
     end
   end
@@ -32,7 +32,7 @@ module ApplicationHelper
   def next_set_verses(name,id,id_to,index_no)
     if index_no.to_i + 1 < @question.references.count
       content_tag :div, :class => "next-set" do
-        link_to("#{name} set of verses &gt;&gt","/verse/#{params[:id]}/#{id_to}/#{index_no.to_i + 1}?prev=#{params[:prev]}")
+        link_to("#{name} set of verses &gt;&gt","/verse/#{@question.references[index_no.to_i + 1].verse_ids}/#{@question.references[index_no.to_i + 1 ].verse_ids_to}/#{index_no.to_i + 1}?prev=#{params[:prev]}")
       end
     end
   end
