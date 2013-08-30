@@ -1,7 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
-  def parse_tags(q_from,q_to,q)
+  def parse_tags(q_from,q_to,q,index_no)
     unless q.verse_ids.blank?
       html = Array.new
       verses_ids = q.verse_ids.split(",")
@@ -11,13 +11,29 @@ module ApplicationHelper
       verses_ids_to.each_with_index do |id_to,ii|
        verses_ids.each_with_index do |id,i|
         if @tags[0] == @tags1[0] and @tags[1] == @tags1[1]
-          html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> #{@tags[0]} : #{@tags[1]}</a>")
+          html.push("<a href='/verse/#{id}/#{id_to}/#{index_no}?prev=#{request.fullpath}'> #{@tags[0]} : #{@tags[1]}</a>")
         else
-          html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> #{@tags[0]} : #{@tags[1]} - #{@tags1[0]} : #{@tags1[1]}</a>")
+          html.push("<a href='/verse/#{id}/#{id_to}/#{index_no}?prev=#{request.fullpath}'> #{@tags[0]} : #{@tags[1]} - #{@tags1[0]} : #{@tags1[1]}</a>")
         end
       end
        end
       html = html.join(" , ")
+    end
+  end
+
+  def previous_set_verses(name,id,id_to,index_no)
+    if (index_no.to_i + 1) > 1 && (id_to.to_i + 1) < @question.references.count
+      content_tag :div, :class => "prev-set" do
+        link_to("&lt;&lt; #{name} set of verses","/verse/#{params[:id]}/#{id_to}/#{index_no.to_i - 1}?prev=#{params[:prev]}")
+      end
+    end
+  end
+
+  def next_set_verses(name,id,id_to,index_no)
+    if index_no.to_i + 1 < @question.references.count
+      content_tag :div, :class => "next-set" do
+        link_to("#{name} set of verses &gt;&gt","/verse/#{params[:id]}/#{id_to}/#{index_no.to_i + 1}?prev=#{params[:prev]}")
+      end
     end
   end
 
@@ -28,7 +44,7 @@ module ApplicationHelper
     end
   end
 
-  def parse_tags_detail(q_from,q_to,q)
+  def parse_tags_detail(q_from,q_to,q,index_no)
     unless q.verse_ids.blank?
       html = Array.new
       verses_ids = q.verse_ids.split(",")
@@ -37,7 +53,7 @@ module ApplicationHelper
       @tags1 = q_to.split(":")
       verses_ids_to.each_with_index do |id_to,ii|
         verses_ids.each_with_index do |id,i|
-          html.push("<a href='/verse/#{id}/#{id_to}?prev=#{request.fullpath}'> Read more</a>")
+          html.push("<a href='/verse/#{id}/#{id_to}/#{index_no+1}?prev=#{request.fullpath}'> Read more</a>")
         end
       end
       html = html.join(" , ")
