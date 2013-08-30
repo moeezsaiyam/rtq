@@ -25,7 +25,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :verse, :collection => ["get_context"]
   map.connect '/verse_context/:id', :controller => 'verse', :action => 'single_verse'
-  map.connect '/verse/:id/:range', :controller => 'verse', :action => 'show'
+  map.connect '/verse/:id/:range/:index', :controller => 'verse', :action => 'show'
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

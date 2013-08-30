@@ -23,13 +23,19 @@
     <div class="clear"></div>
     <%= render :partial => "shared/translations" %>
     <div class="clear"></div>
-  </div>
-   <%= previous_link("Verses") %>
+</div>
+<%= previous_link("Verses") %>
+
+<div class="count">
+  <%= params[:index].to_i + 1 %> of <%= @question.references.count %> related verses
+</div>
+
+<%= previous_set_verses("Previous",params[:id], @verses_range.count ,params[:index]) %>
+<%= next_set_verses("Next",params[:id],@verses_range.count,params[:index]) %>
+
 <div class="clear translation-margin"></div>
 
 <div class = "verse-wrapper">
-
   <%= formatted_verses_with_link(@verses_range, @trans_verses) %>
-
-  <%= previous_link("Question") %>
+  <%= previous_link("Sub Topic") %>
 </div>
