@@ -1,11 +1,11 @@
 <% content_for :html_title, controller.action_name %>
 <% content_for :html_keywords, @words %>
 <div class = "content-body1">
-<br><div class ="admin-page"> <h1>Listing Topics</div></h1></div>
+<br><div class ="admin-page"> <h1>Listing Quranic Subjects</div></h1></div>
 
 <div>
   <div class="dashboard action-button button rounded-borders">
-    <%= link_to 'New topic', new_topic_path %>
+    <%= link_to 'New Quranic Subject', new_topic_path %>
   </div>
   <div class="admin-back-link">
     <div class="clear"></div>
@@ -30,7 +30,7 @@
         <%= image_tag("arrow.png", :class => 'sort-handle') %>
       </td>
       <td><%=h topic.name %></td>
-      <td><%= link_to 'Topics', topic_sub_topics_path(topic) %></td>
+      <td class='td-center'><%= link_to 'Quranic Subject', topic_sub_topics_path(topic) %></td>
       <td><%= link_to 'Show', topic_slug_path(topic.name_slug) %></td>
       <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
       <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure to delete?', :method => :delete %></td>
