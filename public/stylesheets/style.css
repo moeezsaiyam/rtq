@@ -2357,7 +2357,8 @@ p.about-text {
 }
 
 .prev-link {
-  float:right;
+  float:right !important;
+  margin-top: 10px;
 }
 
 .translations-box {
@@ -2366,7 +2367,7 @@ p.about-text {
 
 .verse-wrapper .prev-link {
   float:left !important;
-  margin-top: 70px;
+  margin-top: 15px;
 }
 
 .admin-view {

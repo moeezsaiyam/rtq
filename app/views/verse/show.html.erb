@@ -37,5 +37,11 @@
 
 <div class = "verse-wrapper">
   <%= formatted_verses_with_link(@verses_range, @trans_verses) %>
+
+
+  <%= previous_set_verses("Previous",params[:id], @verses_range.count ,params[:index]) %>
+  <%= next_set_verses("Next",params[:id],@verses_range.count,params[:index]) %>
+
+  <div class="clear"></div>
   <%= previous_link("Sub Topic") %>
 </div>
