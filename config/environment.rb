@@ -32,8 +32,8 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   config.gem 'thinking-sphinx', :lib => 'thinking_sphinx', :version => '1.3.16'
-  config.gem 'paperclip'
-  config.gem 'will_paginate'
+  config.gem 'paperclip', :version => '2.3.1'
+  config.gem 'will_paginate', :version => '2.3.16'
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.
   config.time_zone = 'UTC'
