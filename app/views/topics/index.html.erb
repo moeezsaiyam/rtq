@@ -30,7 +30,7 @@
         <%= image_tag("arrow.png", :class => 'sort-handle') %>
       </td>
       <td><%=h topic.name %></td>
-      <td class='td-center'><%= link_to 'Quranic Subject', topic_sub_topics_path(topic) %></td>
+      <td class='td-center'><%= link_to 'Topic', topic_sub_topics_path(topic) %></td>
       <td><%= link_to 'Show', topic_slug_path(topic.name_slug) %></td>
       <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
       <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure to delete?', :method => :delete %></td>
