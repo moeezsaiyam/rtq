@@ -5,7 +5,6 @@ class Image < ActiveRecord::Base
   LINK_REGEX = /http[s]*/
   has_attached_file :photo,
                     :styles => {  :medium => ["660x307!",:jpg],
-                                   :small =>["100x100#",:jpg],
                                },
                     :default_style => :medium,
                     :url  => "/images/slider/:id/:style/:basename.:extension",

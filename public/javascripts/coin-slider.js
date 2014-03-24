@@ -164,7 +164,6 @@
 				
 		
 		$.transitionCall = function(el){
-		
 			clearInterval(interval[el.id]);	
 			delay = params[el.id].delay + params[el.id].spw*params[el.id].sph*params[el.id].sDelay;
 			interval[el.id] = setInterval(function() { $.transition(el)  }, delay);

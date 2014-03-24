@@ -36,7 +36,7 @@
   <% if admin_role? %>
     <div class = "actions">
       <%= link_to 'Edit', edit_topic_sub_topic_path(@sub_topic.topic,@sub_topic), :class => "action-button button rounded-borders" %>
-      <%= link_to 'Add New Sub Topic', new_topic_sub_topic_question_path(@sub_topic.topic,@sub_topic), :class => "action-button button rounded-borders" %>
+      <%= link_to 'Add New Sub topic', new_topic_sub_topic_question_path(@sub_topic.topic,@sub_topic), :class => "action-button button rounded-borders" %>
       <%= link_to 'Back', topic_sub_topics_path(@sub_topic.topic), :class => "action-button button rounded-borders" %>
     </div>
   <% end %>

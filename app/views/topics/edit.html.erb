@@ -9,7 +9,7 @@
 <% end %>
 <br>
 <div class = "content-body1">
-<div class ="admin-page"> <h1>Editing <%= @topic.name unless @topic.blank? %> topic</div></h1></div>
+<div class ="admin-page"> <h1>Editing <%= @topic.name unless @topic.blank? %> Quranic Subject</div></h1></div>
 
 <% form_for(@topic, :html => {:multipart => true}) do |f| %>
   <% if @topic.errors.any? %>
@@ -18,7 +18,7 @@
   <% if @topic.errors.any? %>
     <div class = "error-box">
       <h1 class = "error-heading"><%=@topic.errors.count %>  <%=display_errors(@topic) %>  has been occured: </h1>
-      <h2 class = "error-heading">Unable to update topic.</h2>
+      <h2 class = "error-heading">Unable to update Quranic Subjects.</h2>
       <% @topic.errors.full_messages.each do |message| %>
         <li class = "error"><%= message %> </li>
       <% end %>

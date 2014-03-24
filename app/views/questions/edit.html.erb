@@ -5,7 +5,7 @@
 <br><div class = "content-body-admin">
 <div class = "content-body1">
 <br>
-<div class ="admin-page"> <h1>Editing <%= @question.quest unless @question.blank? %> Question</div></h1></div>
+<div class ="admin-page"> <h1>Editing <%= @question.quest unless @question.blank? %> Sub Topic</div></h1></div>
   <% form_for @question, :url => topic_sub_topic_question_path(@question.sub_topic.topic, @question.sub_topic) do |f| %>
 
     <% if @question.errors.any? %>

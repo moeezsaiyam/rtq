@@ -165,15 +165,15 @@ module ApplicationHelper
   end
 
   def display_topics
-    search_select("search_topic", Topic.ordered.all, "All Topics")
+    search_select("search_topic", Topic.ordered.all, "All Quranic Subjects")
   end
 
  def display_subtopics
-    search_select("search_sub_topic", SubTopic.all, "All Sub Topics")
+    search_select("search_sub_topic", SubTopic.all, "All Topics")
   end
 
   def display_subtopics_in_searchbar
-    search_select("search_sub_topic", @subtopics, "All Sub Topics")
+    search_select("search_sub_topic", @subtopics, "All Topics")
   end
 
   def search_select(name, collection, blank_message)

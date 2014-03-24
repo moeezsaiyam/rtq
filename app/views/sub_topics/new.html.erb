@@ -12,7 +12,7 @@
   <% if @sub_topic.errors.any? %>
     <div class = "error-box">
       <h1 class = "error-heading"> <%=@sub_topic.errors.count %>  <%=display_errors(@sub_topic) %> has been occured: </h1>
-      <h2 class = "error-heading">Unable to add new sub topic.</h2>
+      <h2 class = "error-heading">Unable to add new Topic.</h2>
       <% @sub_topic.errors.full_messages.each do |message| %>
         <li class = "error"><%= message %> </li>
       <% end %>
@@ -41,7 +41,7 @@
     <%= f.file_field :photo %>
     <div class="clear"></div>
     <br>
-    <%= f.check_box :featured %>Click here to feature this sub topic on main page.
+    <%= f.check_box :featured %>Click here to feature this topic on main page.
     <div class="clear"></div>
      <br><br>
     <div class="dashboard action-button button rounded-borders">
