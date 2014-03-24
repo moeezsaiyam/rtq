@@ -26,6 +26,7 @@
   <% else %>
    <div   id="truncated"  class="jtruncate">
      <%= display_description(@sub_topic.description) %>
+          <a href = "#" id = "more" ,class= "morelink"></a>
    </div>
    <div id="full-text" style="display:none">
      <p><%=  display_full_text(@sub_topic.description) %></p>
