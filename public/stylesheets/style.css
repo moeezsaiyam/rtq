@@ -2441,7 +2441,8 @@ input[type="submit"] {
   color: white;
 }
 .truncate_ellipsis a, #less {
-  color: #835A35;
+  color: #664424;
+  font-size: 14px !important;
 }
 
 .loggedin-user {
