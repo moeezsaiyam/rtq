@@ -9,13 +9,9 @@
         <%= stylesheet_link_tag 'conditional' %>
        <% end %>
 
-      <% if @question.errors.any? %>
-        <div class = "error-box">
-          <h1 class = "error-heading"> <%= @question.errors.count %>  <%=display_errors(@question) %>  has been occured: Errors has been occured: </h1>
-          <h2 class = "error-heading">Unable to update sub topic.</h2>
-          <li class = "error"><%= "Text Field Cannot Blank" %> </li>
-        </div>
-      <% end %>
+    <% if @question.errors.any? %>
+    <%= render :partial => "shared/error_message", :locals => { :object => @question, :action_name => controller.action_name  } %>
+    <% end %>
 
       <p>
         <%= f.label :sub_topic_id %><br />

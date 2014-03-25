@@ -10,15 +10,8 @@
     <%= stylesheet_link_tag 'conditional' %>
   <% end %>
   <% if @sub_topic.errors.any? %>
-    <div class = "error-box">
-      <h1 class = "error-heading"> <%=@sub_topic.errors.count %>  <%=display_errors(@sub_topic) %> has been occured: </h1>
-      <h2 class = "error-heading">Unable to add new Topic.</h2>
-      <% @sub_topic.errors.full_messages.each do |message| %>
-        <li class = "error"><%= message %> </li>
-      <% end %>
-    </div>
+    <%= render :partial => "shared/error_message", :locals => { :object => @sub_topic, :action_name => controller.action_name  } %>
   <% end %>
-
 
     <%= f.label :topic_id %>
     <div class="clear"></div>

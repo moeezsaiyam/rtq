@@ -10,14 +10,9 @@
    <% if @topic.errors.any? %>
     <%= stylesheet_link_tag 'conditional' %>
    <% end %>
+
   <% if @topic.errors.any? %>
-    <div class = "error-box">
-      <h1 class = "error-heading"> <%=@topic.errors.count %>  <%=display_errors(@topic) %>  has been occured: </h1>
-      <h2 class = "error-heading">Unable to add new Quranic Subjects.</h2>
-      <% @topic.errors.full_messages.each do |message| %>
-        <li class = "error"><%= message %> </li>
-      <% end %>
-    </div>
+    <%= render :partial => "shared/error_message", :locals => { :object => @topic, :action_name => controller.action_name  } %>
   <% end %>
 
     <%= f.label :name %>
