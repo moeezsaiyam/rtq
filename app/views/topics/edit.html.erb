@@ -16,7 +16,8 @@
     <%= stylesheet_link_tag 'conditional' %>
   <% end %>
   <% if @topic.errors.any? %>
-    <%= render :partial => "shared/error_message", :locals => { :object => @topic, :action_name => controller.action_name  } %>
+      <% header_name="Quranic Subject" %>
+      <%= render :partial => "shared/error_message", :locals => { :object => @topic, :action_name => @controller.action_name, :header_name => header_name} %>
   <% end %>
 
   <p>

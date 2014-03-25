@@ -10,7 +10,8 @@
        <% end %>
 
     <% if @question.errors.any? %>
-    <%= render :partial => "shared/error_message", :locals => { :object => @question, :action_name => controller.action_name  } %>
+      <% header_name="Sub Topic" %>
+      <%= render :partial => "shared/error_message", :locals => { :object => @question, :action_name => @controller.action_name, :header_name => header_name} %>
     <% end %>
 
       <p>

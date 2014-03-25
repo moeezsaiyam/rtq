@@ -1,7 +1,7 @@
     <div class = "error-box">
       <h1 class = "error-heading"> <%=object.errors.count %>  <%=display_errors(object) %>  has been occured: </h1>
-      <h2 class = "error-heading">Unable to <%= action_name %> Quranic Subjects.</h2>
+      <h2 class = "error-heading">Unable to <%= action_name %> <%= header_name %>.</h2>
       <% object.errors.each do |attribute, message| %>
-        <li class = "error"><%= attribute %>: <%= message %> </li>
+        <li class = "error"><%= message %> </li>
       <% end %>
     </div>

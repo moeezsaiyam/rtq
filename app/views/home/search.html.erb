@@ -31,7 +31,7 @@
     <% unless @topics_search.blank? %>
       <% @topics_search.each_with_index do |topic,i| %>
         <li>
-          <a href="/<%= topic.name_slug %>"><h3><%= h topic.name %></h3></a><div class = "show-search"> Topic </div>
+          <a href="/<%= topic.name_slug %>"><h3><%= h topic.name %></h3></a><div class = "show-search"> Quranic Subject </div>
           <div>
            <p class="description"><%= truncate(strip_tags(topic.description), :length => 100, :omission => '...') %></p>
           </div>
@@ -42,7 +42,7 @@
     <% unless @sub_topics_search.blank? %>
       <% @sub_topics_search.each do |sub_topic| %>
         <li>
-          <a href="/<%= sub_topic.topic.name_slug %>/<%= sub_topic.name_slug %>"><h3><%= h sub_topic.name %></h3></a><div class = "show-search"> SubTopic </div>
+          <a href="/<%= sub_topic.topic.name_slug %>/<%= sub_topic.name_slug %>"><h3><%= h sub_topic.name %></h3></a><div class = "show-search"> Topic </div>
           <div>
             <p class="description"><%= truncate(strip_tags(sub_topic.description), :length => 100, :omission => '...') %></p>
             </p>
@@ -54,7 +54,7 @@
     <% unless @questions_search.blank? %>
       <% @questions_search.each_with_index do |question,i| %>
         <li>
-          <a href="/<%= question.sub_topic.topic.name_slug %>/<%= question.sub_topic.name_slug %>/<%= question.quest_slug %>"><h3><%= h question.quest %></h3></a><div class = "show-search"> Question </div>
+          <a href="/<%= question.sub_topic.topic.name_slug %>/<%= question.sub_topic.name_slug %>/<%= question.quest_slug %>"><h3><%= h question.quest %></h3></a><div class = "show-search"> SubTopic </div>
           <div>
             <p>
               <%= truncate(strip_tags(question.answer), :length => 100, :omission => '...') %>
@@ -71,7 +71,7 @@
   <% unless @search.blank? %>
   <% @search.each_with_index do |s,i| %>
     <% if s.class == Topic %>
-      <a href="/<%= s.name_slug %>"><h3><%= h s.name %></h3></a> <div class = "show-search"> Topic </div>
+      <a href="/<%= s.name_slug %>"><h3><%= h s.name %></h3></a> <div class = "show-search"> Quranic Subject </div>
        <div>
             <p class="description"><%= truncate(strip_tags(s.description), :length => 100, :omission => '...') %></p>
           </div>
@@ -83,7 +83,7 @@
           </div>
             <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
       <% elsif s.class == Question %>
-    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Sub Topic </div>
+    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Topic </div>
      <div>
             <p>
               <%= truncate(strip_tags(s.answer), :length => 100, :omission => '...') %>
@@ -99,7 +99,7 @@
  <% unless @blank_search.blank? %>
   <% @blank_search.each_with_index do |s,i| %>
     <% if s.class == Topic %>
-      <a href="/<%= s.name_slug %>"><h3><%= h s.name %></h3></a> <div class = "show-search"> Topic </div>
+      <a href="/<%= s.name_slug %>"><h3><%= h s.name %></h3></a> <div class = "show-search"> Quranic Subject </div>
        <div>
             <p class="description"><%= truncate(strip_tags(s.description), :length => 100, :omission => '...') %></p>
           </div>
@@ -111,7 +111,7 @@
           </div>
             <div class = "separator-search-width <%= verses_list_class(i+1,@search.count)%>"></div><br>
       <% elsif s.class == Question %>
-    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Sub Topic </div>
+    <a href="/<%= s.sub_topic.topic.name_slug %>/<%= s.sub_topic.name_slug %>/<%= s.quest_slug %>"><h3><%= h s.quest %></h3></a><div class = "show-search"> Topic </div>
      <div>
             <p>
               <%=h s.answer[0..100] %><%= "..." if s.answer.chars.count > 100 %>

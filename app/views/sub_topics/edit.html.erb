@@ -18,7 +18,8 @@
   <% end %>
 
   <% if @sub_topic.errors.any? %>
-    <%= render :partial => "shared/error_message", :locals => { :object => @sub_topic, :action_name => controller.action_name  } %>
+      <% header_name1 = "Topic" %>
+      <%= render :partial => "shared/error_message", :locals => { :object => @sub_topic, :action_name => @controller.action_name, :header_name => header_name1} %>
   <% end %>
 
   <p>

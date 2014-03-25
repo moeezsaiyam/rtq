@@ -10,7 +10,8 @@
     <%= stylesheet_link_tag 'conditional' %>
   <% end %>
   <% if @sub_topic.errors.any? %>
-    <%= render :partial => "shared/error_message", :locals => { :object => @sub_topic, :action_name => controller.action_name  } %>
+      <% header_name="Topic" %>
+      <%= render :partial => "shared/error_message", :locals => { :object => @sub_topic, :action_name => @controller.action_name, :header_name => header_name} %>
   <% end %>
 
     <%= f.label :topic_id %>

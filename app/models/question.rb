@@ -18,7 +18,7 @@ class Question < ActiveRecord::Base
   named_scope :popular, :order => 'view_count DESC'
   named_scope :limited, :limit => 6
 
-  validates_presence_of :quest, :message => "You didn't entered question. please enter question."
+  validates_presence_of :quest, :message => "You didn't enter question. Please enter question."
 
 
   def validate

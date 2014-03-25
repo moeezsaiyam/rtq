@@ -12,7 +12,7 @@ class SubTopic < ActiveRecord::Base
   named_scope :featured,:conditions => {:featured => 1}, :limit => 6
   named_scope :ordered, :order => 'position ASC'
 
-  validates_presence_of :name
+  validates_presence_of :name, :message => "You didn't enter topic name. Please enter topic name."
 
   define_index do
     indexes name
