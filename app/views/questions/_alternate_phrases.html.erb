@@ -4,9 +4,11 @@ Alternate Phrases</div>
  <div class="question-index">
  <ul>
     <% @question.alternate_phrases.each_with_index do |phrase,i| %>
-    <li class = "universal-font">
+      <% unless phrase.content.blank? %>
+        <li class = "universal-font">
           <%= phrase.content %>
-    </li>
+        </li>
+      <% end %>
     <% end %>
  </ul>
  </div>

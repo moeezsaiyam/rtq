@@ -43,7 +43,8 @@
   <div>
     <%= render :partial => "references" %>
   </div><br>
-  <% unless @question.alternate_phrases.blank? %>
+  <% pharases = @question.alternate_phrases %>
+  <% unless (@question.alternate_phrases.first.content.blank? && @question.alternate_phrases.count == 1) %>
     <%= render :partial => "alternate_phrases" %>
   <%end%>
   <% unless admin_role? %>
