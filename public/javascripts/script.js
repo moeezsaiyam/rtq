@@ -33,13 +33,13 @@ $(document).ready(function()
     $(this).Watermark($(this).attr('title'));
   });
 
-  $('#carousel').infiniteCarousel({
-   transitionSpeed : 800,
-   displayTime : 5000,
-   textholderHeight : .30,
-   displayProgressBar : 0,
-   displayThumbnails :false
-  });
+  // $('#carousel').infiniteCarousel({
+  //  transitionSpeed : 800,
+  //  displayTime : 5000,
+  //  textholderHeight : .30,
+  //  displayProgressBar : 0,
+  //  displayThumbnails :false
+  // });
 
 
    $('#nav li').hover(

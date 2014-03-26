@@ -1,4 +1,4 @@
-<div id="carousel">
+<div id="carousel" class="hidden">
   <ul>
     <% @images.each do |image| %>
       <li>
@@ -7,3 +7,16 @@
     <% end %>
   </ul>
 </div>
+
+<script type="text/javascript">
+window.onload = function(){
+  $("#carousel").removeClass("hidden");
+  $('#carousel').infiniteCarousel({
+    transitionSpeed : 800,
+    displayTime : 5000,
+    textholderHeight : .30,
+    displayProgressBar : 0,
+    displayThumbnails :false
+  });
+}
+</script>

@@ -817,7 +817,6 @@ background:url(/images/srch.png) no-repeat left top;
 
 
 #slider{
-  background:url(/images/slider-bg.png) no-repeat left top;
   width:660px;
   height:340px;
   float:right;
@@ -825,7 +824,6 @@ background:url(/images/srch.png) no-repeat left top;
   margin-top:25px;}
 
 #slider .imge-slide{
-  background:url(/images/sample-1.png) no-repeat left top;
   width:660px;
   height:306px;
   float:left;
@@ -1899,7 +1897,7 @@ border-bottom:none;
     text-align: left;
     }
 #carousel {
-    width: 660px !important;
+    width: 640px !important;
     height: 307px !important;
     margin: 0 auto;
     position: relative;
@@ -2605,4 +2603,8 @@ p.button-slider{
 
 .td-center {
   text-align:  center;
+}
+
+.hidden{
+  visibility: hidden;
 }
