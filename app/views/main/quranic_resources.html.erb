@@ -1,0 +1,22 @@
+<% get_keywords(@content.quranic_resources) %>
+<% content_for :html_title, "Quranic Resources" %>
+<% content_for :html_keywords, @words %>
+<% content_for :html_description, @description[0..255] %>
+<div class="content-body text-body">
+  <h1>Quranic Resources </h1>
+  <% if logged_in?  %>
+    <% if admin? %>
+      <span class="editlink-margin">
+        <%= edit_link("quranic_resources") %>
+      </span>
+    <% end %>
+    <span class="static-text">
+      <p><%= display_full_text(@content.quranic_resources) %></p>
+    </span>
+  <% else %>
+    <span class="static-text">
+      <p><%= display_full_text(@content.quranic_resources) %></p>
+    </span>
+  <%end%>
+</div>
+

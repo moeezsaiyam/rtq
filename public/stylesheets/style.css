@@ -303,10 +303,11 @@ body {
 
 /* Menu CSS Start */
 #menu-bar {
- float: right;
- margin-right: 98px;
- margin-top: -34px;
- width: 666px;
+  float: right;
+  margin-right: 0px;
+  margin-top: -34px;
+  width: 666px;
+  clear: both;
 }
 
 #menu-bar  ul{
@@ -357,15 +358,15 @@ body {
 }
 
 #menu-bar ul li a{
-    color:#fff;
-    float: left;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 25px;
-    padding: 6px 14px 5px;
-    text-decoration: none;
-    width:52px;
-  }
+  color:#fff;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 25px;
+  padding: 6px 14px 5px;
+  text-decoration: none;
+  width:auto;
+}
  #menu ul li a.active{
   width:100px;
   float:left;

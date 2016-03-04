@@ -1,11 +1,11 @@
 class MainController < ApplicationController
 
-  before_filter :get_static_content, :only => [:about, :duas, :contact, :credit, :faqs, :edit_content]
+  before_filter :get_static_content, :only => [:about, :quranic_resources, :contact, :credit, :faqs, :edit_content]
 
   def about
   end
 
-  def duas
+  def quranic_resources
   end
 
   def contact
