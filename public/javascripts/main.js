@@ -2,17 +2,21 @@
 $(document).ready(function() {
   if($('#editor').length > 0)
     CKEDITOR.replace( 'editor',
-	{
-		toolbar :
-		[
-		  { name: 'basicstyles', items : [ 'Bold','Italic' ] },
-		  { name: 'paragraph', items : ['BulletedList','NumberedList' ] },
-		  { name: 'document', items : [ 'NewPage','Preview' ] },
-		  { name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
-		  { name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','Scayt' ] },
-		]
-	});
-});
+      {
+        toolbar :
+        [
+          { name: 'basicstyles', items : [ 'Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat' ] },
+          { name: 'paragraph', items : [ 'BulletedList', 'NumberedList' ] },
+          { name: 'document', items : [ 'NewPage', 'Preview' ] },
+          { name: 'clipboard', items : [ 'Cut', 'Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+          { name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','Scayt' ] },
+          { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+          { name: 'insert', items: [ 'Image' ] },
+          { name: 'styles', items: [ 'Format', 'FontSize' ] },
+          { name: 'colors', items: [ 'TextColor', 'BGColor' ] }
+        ]
+      });
+    });
 
 function toggleMe(truncated,full,more,less){
   var truncated_text=document.getElementById(truncated);

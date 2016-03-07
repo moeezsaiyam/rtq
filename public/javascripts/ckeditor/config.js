@@ -10,4 +10,5 @@ CKEDITOR.editorConfig = function( config )
 	config.uiColor = '#AADC6E';
   config.forcePasteAsPlainText = true;
   config.contentsLangDirection = 'ltr';
+  config.format_tags = 'p;h4;h5;h6;address;div';
 };
