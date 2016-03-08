@@ -3,20 +3,27 @@
 <% content_for :html_keywords, @words %>
 <% content_for :html_description, @description[0..255] %>
 <div class="content-body text-body">
- <h1>CONTACT
-   <% if logged_in?  %>
-     <% if admin? %>
-       <span class="editlink-margin">
-          <%= edit_link("contact") %>
-       </span>
-     <% end %>
-      <span class="static-text">
-        <p><%= display_full_text(@content.contact) %></p>
-      </span>
-   <% else %>
-     <span class="static-text">
-       <p><%= display_full_text(@content.contact) %></p>
-     </span>
-   <%end%>
- </h1>
+  <h1>CONTACT
+    <span class="static-text">
+      <p><strong>Your question may already be answered</strong> in our FAQ's page. If not, send us a message: </p>
+
+      <% form_for :contact_us do |f| %>
+        <p>Your Email Address</p>
+        <%= f.text_field :email, required: true %>
+
+        <p>Re-enter Email Address</p>
+        <%= f.text_field :re_email, required: true %>
+
+        <p>Your Full Name</p>
+        <%= f.text_field :full_name, required: true %>
+
+        <p>Message</p>
+        <%= f.text_area :message %>
+
+        <div class="dashboard action-button button rounded-borders">
+          <%= f.submit 'Send message' %>
+        </div>
+      <% end %>
+    </span>
+  </h1>
 </div>

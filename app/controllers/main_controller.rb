@@ -9,6 +9,7 @@ class MainController < ApplicationController
   end
 
   def contact
+    ContactMailer.deliver_contact_us(params[:contact_us][:email], params[:contact_us][:full_name], params[:contact_us][:message]) if params[:contact_us].present?
   end
 
   def credit

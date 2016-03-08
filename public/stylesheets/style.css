@@ -2198,7 +2198,7 @@ span p {
  text-align: justify;
  font-size: 14px;
  margin-top:20px;
- background-color:white !important;
+ background-color:white;
  line-height: normal;
 }
 
@@ -2211,7 +2211,7 @@ span p {
 }
 
 .text-body p span, .text-body span{
- background-color:white !important;
+ background-color: white;
  font-family: 'Square721Regular' !important;
  text-align: justify;
  font-size: 14px;
