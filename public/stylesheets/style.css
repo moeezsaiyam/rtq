@@ -2197,24 +2197,25 @@ span p {
 .static-text p, .static-text p span{
  font-family: 'Square721Regular' !important;
  text-align: justify;
- font-size: 14px !important;
+ font-size: 14px;
  margin-top:20px;
- background-color:white !important;
+ background-color:white;
+ line-height: normal;
 }
 
 .text-body p{
  font-family: 'Square721Regular' !important;
  text-align: justify !important;
- font-size: 14px !important;
+ font-size: 14px;
  background-color:white !important;
  padding-bottom: 0px !important;
 }
 
 .text-body p span, .text-body span{
- background-color:white !important;
+ background-color: white;
  font-family: 'Square721Regular' !important;
  text-align: justify;
- font-size: 14px !important;
+ font-size: 14px;
 }
 
 
