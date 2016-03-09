@@ -3,8 +3,8 @@ class ContactMailer < ActionMailer::Base
   def contact_us(email, name, message)
     recipients    "info@refertoquran.com"
     from          email
-    subject       "Refer to Quran"
-    body          name: name, message: message
+    subject       "Someone Has Contacted on RTQ"
+    body          name: name, message: message, email: email
   end
 
 end
