@@ -9,7 +9,12 @@ class MainController < ApplicationController
   end
 
   def contact
-    ContactMailer.deliver_contact_us(params[:contact_us][:email], params[:contact_us][:full_name], params[:contact_us][:message]) if params[:contact_us].present?
+    if params[:contact_us].present? && params[:contact_us][:email] == params[:contact_us][:email_confirmation]
+      ContactMailer.deliver_contact_us(params[:contact_us][:email], params[:contact_us][:full_name], params[:contact_us][:message])
+    elsif params[:contact_us].present?
+      flash[:error] = "Emails does not match"
+      redirect_to '/main/contact'
+    end
   end
 
   def credit
